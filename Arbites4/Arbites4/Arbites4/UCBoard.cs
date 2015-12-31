@@ -26,13 +26,22 @@ namespace Arbites4
             this.y = y;
             this.maxLay = z;
             InitializeComponent();
-
+            createLayers();
         }
 
         private void btNewLayer_Click(object sender, EventArgs e)
         {
             UCLayer newl = new UCLayer(x, y, 0);
             newl.Parent = flpMain;
+        }
+
+        private void createLayers()
+        {
+            for (int i = 0; i < maxLay; i++)
+            {
+                UCLayer newl = new UCLayer(x, y, i);
+                newl.Parent = flpMain;
+            }
         }
     }
 }

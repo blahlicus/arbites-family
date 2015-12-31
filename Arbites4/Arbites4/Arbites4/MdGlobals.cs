@@ -11,5 +11,7 @@ namespace Arbites4
         public static int selectedX { get; set; }
         public static int selectedY { get; set; }
         public static int selectedZ { get; set; }
+
+        public static List<List<List<ClKey>>> keys;
     }
 }

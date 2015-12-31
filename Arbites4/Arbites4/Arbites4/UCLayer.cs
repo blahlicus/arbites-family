@@ -32,14 +32,15 @@ namespace Arbites4
                     newb.Name = "bt_" + i + "_" + j;
                     newb.Text = "";
                     newb.Size = new Size(72, 72);
-                    newb.Location = new Point(32 + (72*i), 72 + (72*j));
+                    newb.Location = new Point(8 + (72*i), 16 + (72*j));
                     newb.Parent = this;
                     newb.Click += new EventHandler(this.KeyBtnClicked);
                     newb.KeyPress += new KeyPressEventHandler(this.KeyBtnKeyPressed);
-                    MessageBox.Show(newb.Name);
                     
                 }
             }
+
+            this.Size = new Size(64 + (72) * x, 64 + (72) * y);
         }
 
         private void KeyBtnClicked (object sender, EventArgs e)
@@ -60,7 +61,7 @@ namespace Arbites4
         private void KeyBtnKeyPressed (object sender, KeyPressEventArgs e)
         {
             var btn = sender as Button;
-            btn.Text = e.KeyChar.ToString();
+            btn.Text = ClKey.GetDisplayFromChar(e.KeyChar);
             lLayer.Focus();
         }
 

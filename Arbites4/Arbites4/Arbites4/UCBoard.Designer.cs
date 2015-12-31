@@ -104,6 +104,10 @@
             // 
             // flpMain
             // 
+            this.flpMain.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.flpMain.AutoScroll = true;
             this.flpMain.Location = new System.Drawing.Point(3, 28);
             this.flpMain.Name = "flpMain";
             this.flpMain.Size = new System.Drawing.Size(1062, 606);

@@ -24,9 +24,14 @@ namespace Arbites4
 
         private void button1_Click(object sender, EventArgs e)
         {
-            UCBoard newb = new UCBoard(2, 3, 4);
-            newb.Parent = this;
-            newb.Location = new Point(32, 32);
+            UCBoard newb = new UCBoard(8, 5, 3);
+            newb.Parent = pMain;
+            newb.Dock = DockStyle.Fill;
+        }
+
+        private void FmMain_Load(object sender, EventArgs e)
+        {
+            ClKey.iniList();
         }
     }
 }

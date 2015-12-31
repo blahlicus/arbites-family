@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClKey.cs" />
     <Compile Include="FmMain.cs">
       <SubType>Form</SubType>
     </Compile>
