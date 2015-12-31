@@ -1,1 +1,10 @@
 C:\Users\blahlicus\Documents\GitHub\arbites-family\Arbites4\Arbites4\Arbites4\bin\Debug\Arbites4.exe.config
+C:\Users\blahlicus\Documents\GitHub\arbites-family\Arbites4\Arbites4\Arbites4\bin\Debug\Arbites4.exe
+C:\Users\blahlicus\Documents\GitHub\arbites-family\Arbites4\Arbites4\Arbites4\bin\Debug\Arbites4.pdb
+C:\Users\blahlicus\Documents\GitHub\arbites-family\Arbites4\Arbites4\Arbites4\obj\Debug\Arbites4.FmMain.resources
+C:\Users\blahlicus\Documents\GitHub\arbites-family\Arbites4\Arbites4\Arbites4\obj\Debug\Arbites4.Properties.Resources.resources
+C:\Users\blahlicus\Documents\GitHub\arbites-family\Arbites4\Arbites4\Arbites4\obj\Debug\Arbites4.UCBoard.resources
+C:\Users\blahlicus\Documents\GitHub\arbites-family\Arbites4\Arbites4\Arbites4\obj\Debug\Arbites4.UCLayer.resources
+C:\Users\blahlicus\Documents\GitHub\arbites-family\Arbites4\Arbites4\Arbites4\obj\Debug\Arbites4.csproj.GenerateResource.Cache
+C:\Users\blahlicus\Documents\GitHub\arbites-family\Arbites4\Arbites4\Arbites4\obj\Debug\Arbites4.exe
+C:\Users\blahlicus\Documents\GitHub\arbites-family\Arbites4\Arbites4\Arbites4\obj\Debug\Arbites4.pdb
