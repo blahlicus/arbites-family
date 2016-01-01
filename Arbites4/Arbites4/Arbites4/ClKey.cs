@@ -152,11 +152,20 @@ namespace Arbites4
 
         public static string GetDisplayFromChar(char input)
         {
-            if (dKeys.Find(k => k.val == Convert.ToByte(input)) != null)
+            if (dKeys.Find(k => k.val == Convert.ToByte(input)) != null && dKeys.Find(k => k.val == Convert.ToByte(input)).ktype == 0)
             {
                 return dKeys.Find(k => k.val == Convert.ToByte(input)).display;
             }
             return "";
+        }
+
+        public static ClKey GetKeyFromChar(char input)
+        {
+            if (dKeys.Find(k => k.val == Convert.ToByte(input)) != null && dKeys.Find(k => k.val == Convert.ToByte(input)).ktype == 0)
+            {
+                return dKeys.Find(k => k.val == Convert.ToByte(input));
+            }
+            return new ClKey();
         }
 
     }

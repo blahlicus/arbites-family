@@ -45,6 +45,7 @@ namespace Arbites4
 
         private void KeyBtnClicked (object sender, EventArgs e)
         {
+
             var btn = sender as Button;
             string input = btn.Name;
             input = input.Substring(input.IndexOf("_")+1);
@@ -56,12 +57,21 @@ namespace Arbites4
             MdGlobals.selectedX = x;
             MdGlobals.selectedY = y;
             MdGlobals.selectedZ = z;
+            if (MdGlobals.specialS)
+            {
+
+                btn.Text = MdGlobals.selectedS.display;
+                MdGlobals.keys[MdGlobals.selectedX][MdGlobals.selectedY][MdGlobals.selectedZ] = MdGlobals.selectedS;
+                lLayer.Focus();
+                MdGlobals.specialS = false;
+            }
         }
 
         private void KeyBtnKeyPressed (object sender, KeyPressEventArgs e)
         {
             var btn = sender as Button;
             btn.Text = ClKey.GetDisplayFromChar(e.KeyChar);
+            MdGlobals.keys[MdGlobals.selectedX][MdGlobals.selectedY][MdGlobals.selectedZ] = ClKey.GetKeyFromChar(e.KeyChar);
             lLayer.Focus();
         }
 

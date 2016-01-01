@@ -34,6 +34,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.pMain = new System.Windows.Forms.Panel();
+            this.flpOSwitches = new System.Windows.Forms.FlowLayoutPanel();
             this.SuspendLayout();
             // 
             // test
@@ -87,14 +88,23 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pMain.Location = new System.Drawing.Point(13, 40);
             this.pMain.Name = "pMain";
-            this.pMain.Size = new System.Drawing.Size(1077, 597);
+            this.pMain.Size = new System.Drawing.Size(743, 597);
             this.pMain.TabIndex = 5;
+            // 
+            // flpOSwitches
+            // 
+            this.flpOSwitches.AutoScroll = true;
+            this.flpOSwitches.Location = new System.Drawing.Point(762, 40);
+            this.flpOSwitches.Name = "flpOSwitches";
+            this.flpOSwitches.Size = new System.Drawing.Size(624, 597);
+            this.flpOSwitches.TabIndex = 6;
             // 
             // FmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1102, 649);
+            this.ClientSize = new System.Drawing.Size(1398, 649);
+            this.Controls.Add(this.flpOSwitches);
             this.Controls.Add(this.pMain);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.textBox1);
@@ -119,6 +129,7 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Panel pMain;
+        private System.Windows.Forms.FlowLayoutPanel flpOSwitches;
     }
 }
 
