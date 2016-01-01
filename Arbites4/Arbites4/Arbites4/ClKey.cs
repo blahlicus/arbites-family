@@ -117,18 +117,18 @@ namespace Arbites4
 
             255 null
             */
-            dKeys.Add(new ClKey(11, 1, "Fn"));
-            dKeys.Add(new ClKey(12, 1, "Fn2"));
-            dKeys.Add(new ClKey(13, 1, "Fn3"));
-            dKeys.Add(new ClKey(14, 1, "Fn4"));
-            dKeys.Add(new ClKey(15, 1, "Fn5"));
-            dKeys.Add(new ClKey(16, 1, "Fn6"));
-            dKeys.Add(new ClKey(11, 2, "spaceFn"));
-            dKeys.Add(new ClKey(12, 2, "spaceFn2"));
-            dKeys.Add(new ClKey(13, 2, "spaceFn3"));
-            dKeys.Add(new ClKey(14, 2, "spaceFn4"));
-            dKeys.Add(new ClKey(15, 2, "spaceFn5"));
-            dKeys.Add(new ClKey(16, 2, "spaceFn6"));
+            dKeys.Add(new ClKey(1, 1, "Fn"));
+            dKeys.Add(new ClKey(2, 1, "Fn2"));
+            dKeys.Add(new ClKey(3, 1, "Fn3"));
+            dKeys.Add(new ClKey(4, 1, "Fn4"));
+            dKeys.Add(new ClKey(5, 1, "Fn5"));
+            dKeys.Add(new ClKey(6, 1, "Fn6"));
+            dKeys.Add(new ClKey(1, 2, "spaceFn"));
+            dKeys.Add(new ClKey(2, 2, "spaceFn2"));
+            dKeys.Add(new ClKey(3, 2, "spaceFn3"));
+            dKeys.Add(new ClKey(4, 2, "spaceFn4"));
+            dKeys.Add(new ClKey(5, 2, "spaceFn5"));
+            dKeys.Add(new ClKey(6, 2, "spaceFn6"));
 
             dKeys.Add(new ClKey(0, 3, "Layer Dn"));
             dKeys.Add(new ClKey(1, 3, "Layer Up"));

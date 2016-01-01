@@ -100,7 +100,6 @@
             this.btNewLayer.TabIndex = 6;
             this.btNewLayer.Text = "New Layer";
             this.btNewLayer.UseVisualStyleBackColor = true;
-            this.btNewLayer.Click += new System.EventHandler(this.btNewLayer_Click);
             // 
             // flpMain
             // 

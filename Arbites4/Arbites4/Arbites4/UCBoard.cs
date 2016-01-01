@@ -29,11 +29,6 @@ namespace Arbites4
             createLayers();
         }
 
-        private void btNewLayer_Click(object sender, EventArgs e)
-        {
-            UCLayer newl = new UCLayer(x, y, 0);
-            newl.Parent = flpMain;
-        }
 
         private void createLayers()
         {

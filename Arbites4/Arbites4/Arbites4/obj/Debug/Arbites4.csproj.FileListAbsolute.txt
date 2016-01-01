@@ -8,4 +8,4 @@ C:\Users\blahlicus\Documents\GitHub\arbites-family\Arbites4\Arbites4\Arbites4\ob
 C:\Users\blahlicus\Documents\GitHub\arbites-family\Arbites4\Arbites4\Arbites4\obj\Debug\Arbites4.csproj.GenerateResource.Cache
 C:\Users\blahlicus\Documents\GitHub\arbites-family\Arbites4\Arbites4\Arbites4\obj\Debug\Arbites4.exe
 C:\Users\blahlicus\Documents\GitHub\arbites-family\Arbites4\Arbites4\Arbites4\obj\Debug\Arbites4.pdb
-C:\Users\blahlicus\Documents\GitHub\arbites-family\Arbites4\Arbites4\Arbites4\obj\Debug\Arbites4.csprojResolveAssemblyReference.cache
+C:\Users\blahlicus\Documents\GitHub\arbites-family\Arbites4\Arbites4\Arbites4\obj\Debug\Arbites4.FmOutput.resources

@@ -39,7 +39,7 @@ namespace Arbites4
                     
                 }
             }
-
+            layCount = z;
             this.Size = new Size(64 + (72) * x, 64 + (72) * y);
         }
 
@@ -70,8 +70,8 @@ namespace Arbites4
         private void KeyBtnKeyPressed (object sender, KeyPressEventArgs e)
         {
             var btn = sender as Button;
-            btn.Text = ClKey.GetDisplayFromChar(e.KeyChar);
             MdGlobals.keys[MdGlobals.selectedX][MdGlobals.selectedY][MdGlobals.selectedZ] = ClKey.GetKeyFromChar(e.KeyChar);
+            btn.Text = ClKey.GetDisplayFromChar(e.KeyChar);
             lLayer.Focus();
         }
 
