@@ -54,10 +54,10 @@ namespace Arbites4
             dKeys.Add(new ClKey(Convert.ToByte('u'), 0, "u")); dKeys.Add(new ClKey(210, 0, "Home"));
             dKeys.Add(new ClKey(Convert.ToByte('v'), 0, "v")); dKeys.Add(new ClKey(213, 0, "End"));
             dKeys.Add(new ClKey(Convert.ToByte('w'), 0, "w")); dKeys.Add(new ClKey(193, 0, "Capslock"));
-            dKeys.Add(new ClKey(Convert.ToByte('x'), 0, "x")); dKeys.Add(new ClKey((136 + 101), 0, "Menu"));
-            dKeys.Add(new ClKey(Convert.ToByte('y'), 0, "y")); dKeys.Add(new ClKey(32, 0, "Space"));
-            dKeys.Add(new ClKey(Convert.ToByte('z'), 0, "z")); dKeys.Add(new ClKey((136 + 83), 0, "Numlock"));
-
+            dKeys.Add(new ClKey(Convert.ToByte('x'), 0, "x"));
+            dKeys.Add(new ClKey(Convert.ToByte('y'), 0, "y"));
+            dKeys.Add(new ClKey(Convert.ToByte('z'), 0, "z"));
+            dKeys.Add(new ClKey(32, 0, "Space"));
             // symbols
             dKeys.Add(new ClKey(91, 0, "[ {")); /* [ { */
             dKeys.Add(new ClKey(93, 0, "] }")); /* ] } */

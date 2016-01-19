@@ -61,7 +61,14 @@ namespace Arbites4
             {
 
                 btn.Text = MdGlobals.selectedS.display;
-                MdGlobals.keys[MdGlobals.selectedX][MdGlobals.selectedY][MdGlobals.selectedZ] = MdGlobals.selectedS;
+                MdGlobals.keys.keys[MdGlobals.selectedX][MdGlobals.selectedY][MdGlobals.selectedZ] = MdGlobals.selectedS;
+                if (checkBox1.Checked)
+                {
+                    MdGlobals.keys.keys[MdGlobals.selectedX][MdGlobals.selectedY][0] = MdGlobals.selectedS;
+                    MdGlobals.keys.keys[MdGlobals.selectedX][MdGlobals.selectedY][1] = MdGlobals.selectedS;
+                    MdGlobals.keys.keys[MdGlobals.selectedX][MdGlobals.selectedY][2] = MdGlobals.selectedS;
+
+                }
                 lLayer.Focus();
                 MdGlobals.specialS = false;
             }
@@ -70,7 +77,14 @@ namespace Arbites4
         private void KeyBtnKeyPressed (object sender, KeyPressEventArgs e)
         {
             var btn = sender as Button;
-            MdGlobals.keys[MdGlobals.selectedX][MdGlobals.selectedY][MdGlobals.selectedZ] = ClKey.GetKeyFromChar(e.KeyChar);
+            MdGlobals.keys.keys[MdGlobals.selectedX][MdGlobals.selectedY][MdGlobals.selectedZ] = ClKey.GetKeyFromChar(e.KeyChar);
+            if (checkBox1.Checked)
+            {
+                MdGlobals.keys.keys[MdGlobals.selectedX][MdGlobals.selectedY][0] = ClKey.GetKeyFromChar(e.KeyChar);
+                MdGlobals.keys.keys[MdGlobals.selectedX][MdGlobals.selectedY][1] = ClKey.GetKeyFromChar(e.KeyChar);
+                MdGlobals.keys.keys[MdGlobals.selectedX][MdGlobals.selectedY][2] = ClKey.GetKeyFromChar(e.KeyChar);
+
+            }
             btn.Text = ClKey.GetDisplayFromChar(e.KeyChar);
             lLayer.Focus();
         }

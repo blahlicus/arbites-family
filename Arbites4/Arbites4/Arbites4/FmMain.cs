@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
 using System.IO.Ports;
+using System.IO;
+using System.Xml.Serialization;
 
 namespace Arbites4
 {
@@ -29,23 +31,8 @@ namespace Arbites4
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MdGlobals.keys = new List<List<List<ClKey>>>();
-            UCBoard newb = new UCBoard(8, 5, 3);
-            for (int i = 0; i<8; i++)
-            {
-                var il = new List<List<ClKey>>();
-                MdGlobals.keys.Add(il);
-                for (int j = 0; j<5; j++)
-                {
-                    var jl = new List<ClKey>();
-                    il.Add(jl);
-                    for (int k = 0; k<3; k++)
-                    {
-                        var kl = new ClKey();
-                        jl.Add(kl);
-                    }
-                }
-            }
+            MdGlobals.keys = new ClLayoutContainer((int)nudx.Value, (int)nudy.Value, (int)nudz.Value);
+            UCBoard newb = new UCBoard((int)nudx.Value, (int)nudy.Value, (int)nudz.Value);
 
             newb.Parent = pMain;
             newb.Dock = DockStyle.Fill;
@@ -78,26 +65,29 @@ namespace Arbites4
 
         private void button2_Click(object sender, EventArgs e)
         {
+
+            serialPort1.Open();
             var output = new List<string>();
-            output.Add("uniqueksetlay(3 ");
-            serialPort1.Write("uniqueksetlay(3 ");
+            output.Add("uniqueksetlay(" + nudz.Value.ToString() + " ");
+            serialPort1.Write("uniqueksetlay(" + nudz.Value.ToString() + " ");
             Thread.Sleep(50);
-            for (int k = 0; k < 3; k++)
+            for (int k = 0; k < (int)nudz.Value; k++)
             {
-                for (int j = 0; j < 5; j++)
+                for (int j = 0; j < (int)nudy.Value; j++)
                 {
-                    for (int i = 0; i < 8; i++)
+                    for (int i = 0; i < (int)nudx.Value; i++)
                     {
-                        if (MdGlobals.keys[i][j][k].ktype !=255)
+                        if (MdGlobals.keys.keys[i][j][k].ktype != 255)
                         {
                             Thread.Sleep(50);
-                            output.Add(textBox1.Text + "(" + i.ToString() + "(" + j.ToString() + "(" + k.ToString() + "(" + MdGlobals.keys[i][j][k].val.ToString() + "(" + MdGlobals.keys[i][j][k].ktype.ToString());
-                            serialPort1.Write(textBox1.Text + "(" + i.ToString() + "(" + j.ToString() + "(" + k.ToString() + "(" + MdGlobals.keys[i][j][k].val.ToString() + "(" + MdGlobals.keys[i][j][k].ktype.ToString() + " ");
+                            output.Add(textBox1.Text + "(" + i.ToString() + "(" + j.ToString() + "(" + k.ToString() + "(" + MdGlobals.keys.keys[i][j][k].val.ToString() + "(" + MdGlobals.keys.keys[i][j][k].ktype.ToString());
+                            serialPort1.Write(textBox1.Text + "(" + i.ToString() + "(" + j.ToString() + "(" + k.ToString() + "(" + MdGlobals.keys.keys[i][j][k].val.ToString() + "(" + MdGlobals.keys.keys[i][j][k].ktype.ToString() + " ");
                         }
                     }
                 }
             }
 
+            serialPort1.Close();
             var dout = new FmOutput(output);
             dout.Show();
         }
@@ -110,9 +100,44 @@ namespace Arbites4
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            serialPort1.Close();
+            if (serialPort1.IsOpen && serialPort1 != null)
+            {
+                
+                serialPort1.Close();
+            }
             serialPort1.PortName = comboBox1.SelectedItem.ToString();
-            serialPort1.Open();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog dialog = new SaveFileDialog();
+            dialog.Filter = "Terminus Mini Layout | *.arb4l";
+            dialog.Title = "Save Layout";
+            dialog.InitialDirectory = Environment.CurrentDirectory + "/data";
+            dialog.ShowDialog();
+            if (dialog.FileName != "")
+            {
+                StreamWriter sw = new StreamWriter(dialog.FileName, false);
+                XmlSerializer ser = new XmlSerializer(typeof(ClLayoutContainer));
+                ser.Serialize(sw, MdGlobals.keys);
+                sw.Close();
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog dialog = new OpenFileDialog();
+            dialog.Filter = "Terminus Mini Layout | *.arb4l";
+            dialog.Title = "Load Layout";
+            dialog.InitialDirectory = Environment.CurrentDirectory + "/data";
+            dialog.ShowDialog();
+            if (dialog.FileName != "")
+            {
+                StreamReader sr = new StreamReader(dialog.FileName);
+                XmlSerializer ser = new XmlSerializer(typeof(ClLayoutContainer));
+                MdGlobals.keys = (ClLayoutContainer)ser.Deserialize(sr);
+                sr.Close();
+            }
         }
     }
 }

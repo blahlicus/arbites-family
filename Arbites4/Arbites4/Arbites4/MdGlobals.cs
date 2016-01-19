@@ -13,6 +13,6 @@ namespace Arbites4
         public static int selectedZ { get; set; }
         public static bool specialS { get; set; }
         public static ClKey selectedS { get; set; }
-        public static List<List<List<ClKey>>> keys { get; set; }
+        public static ClLayoutContainer keys { get; set; }
     }
 }
