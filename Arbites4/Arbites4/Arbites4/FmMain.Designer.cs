@@ -53,9 +53,9 @@
             this.test.AutoSize = true;
             this.test.Location = new System.Drawing.Point(12, 9);
             this.test.Name = "test";
-            this.test.Size = new System.Drawing.Size(35, 13);
+            this.test.Size = new System.Drawing.Size(29, 13);
             this.test.TabIndex = 0;
-            this.test.Text = "label1";
+            this.test.Text = "Start";
             // 
             // button1
             // 
@@ -63,7 +63,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 1;
-            this.button1.Text = "button1";
+            this.button1.Text = "Begin";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -86,11 +86,11 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(724, 4);
+            this.button2.Location = new System.Drawing.Point(689, 4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 4;
-            this.button2.Text = "button2";
+            this.button2.Text = "Upload";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -101,15 +101,17 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pMain.Location = new System.Drawing.Point(13, 40);
             this.pMain.Name = "pMain";
-            this.pMain.Size = new System.Drawing.Size(1373, 376);
+            this.pMain.Size = new System.Drawing.Size(1471, 447);
             this.pMain.TabIndex = 5;
             // 
             // flpOSwitches
             // 
+            this.flpOSwitches.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.flpOSwitches.AutoScroll = true;
-            this.flpOSwitches.Location = new System.Drawing.Point(15, 431);
+            this.flpOSwitches.Location = new System.Drawing.Point(12, 493);
             this.flpOSwitches.Name = "flpOSwitches";
-            this.flpOSwitches.Size = new System.Drawing.Size(1371, 206);
+            this.flpOSwitches.Size = new System.Drawing.Size(1472, 215);
             this.flpOSwitches.TabIndex = 6;
             // 
             // comboBox1
@@ -129,15 +131,16 @@
             "COM10",
             "COM11",
             "COM12"});
-            this.comboBox1.Location = new System.Drawing.Point(805, 6);
+            this.comboBox1.Location = new System.Drawing.Point(770, 5);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 7;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.comboBox1.Click += new System.EventHandler(this.comboBox1_Click);
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(1013, 4);
+            this.button3.Location = new System.Drawing.Point(978, 5);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 8;
@@ -147,7 +150,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(932, 4);
+            this.button4.Location = new System.Drawing.Point(897, 4);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 9;
@@ -161,6 +164,11 @@
             this.nudx.Name = "nudx";
             this.nudx.Size = new System.Drawing.Size(48, 20);
             this.nudx.TabIndex = 10;
+            this.nudx.Value = new decimal(new int[] {
+            8,
+            0,
+            0,
+            0});
             // 
             // nudy
             // 
@@ -168,6 +176,11 @@
             this.nudy.Name = "nudy";
             this.nudy.Size = new System.Drawing.Size(48, 20);
             this.nudy.TabIndex = 11;
+            this.nudy.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
             // 
             // nudz
             // 
@@ -175,12 +188,17 @@
             this.nudz.Name = "nudz";
             this.nudz.Size = new System.Drawing.Size(48, 20);
             this.nudz.TabIndex = 12;
+            this.nudz.Value = new decimal(new int[] {
+            3,
+            0,
+            0,
+            0});
             // 
             // FmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1398, 649);
+            this.ClientSize = new System.Drawing.Size(1496, 720);
             this.Controls.Add(this.nudz);
             this.Controls.Add(this.nudy);
             this.Controls.Add(this.nudx);

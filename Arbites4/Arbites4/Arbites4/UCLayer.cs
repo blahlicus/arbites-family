@@ -13,15 +13,21 @@ namespace Arbites4
     public partial class UCLayer : UserControl
     {
         public event EventHandler deleteSent;
-
+        public List<Button> buttons { get; set; }
         public int layCount { get; set; }
+        public int x { get; set; }
+        public int y { get; set; }
         public UCLayer()
         {
             InitializeComponent();
         }
 
-        public UCLayer(int x, int y, int z)
+        public UCLayer(int cx, int cy, int z)
         {
+            this.x = cx;
+            this.y = cy;
+            buttons = new List<Button>();
+            layCount = z;
             InitializeComponent();
             lLayer.Text = "Layer " + z;
             for (int i = 0; i < x; i++)
@@ -30,16 +36,16 @@ namespace Arbites4
                 {
                     Button newb = new Button();
                     newb.Name = "bt_" + i + "_" + j;
-                    newb.Text = "";
+                    newb.Text = "Null";
                     newb.Size = new Size(72, 72);
                     newb.Location = new Point(8 + (72*i), 16 + (72*j));
                     newb.Parent = this;
                     newb.Click += new EventHandler(this.KeyBtnClicked);
                     newb.KeyPress += new KeyPressEventHandler(this.KeyBtnKeyPressed);
+                    buttons.Add(newb);
                     
                 }
             }
-            layCount = z;
             this.Size = new Size(64 + (72) * x, 64 + (72) * y);
         }
 
@@ -71,6 +77,7 @@ namespace Arbites4
                 }
                 lLayer.Focus();
                 MdGlobals.specialS = false;
+                MdGlobals.board.updateLayers();
             }
         }
 
@@ -87,6 +94,20 @@ namespace Arbites4
             }
             btn.Text = ClKey.GetDisplayFromChar(e.KeyChar);
             lLayer.Focus();
+            MdGlobals.board.updateLayers();
+        }
+
+        public void updateLayer()
+        {
+            
+            for (int i = 0; i < x; i++)
+            {
+                for (int j = 0; j < y; j++)
+                {
+                    Button btn = buttons.Find(b => b.Name == "bt_" + i + "_" + j);
+                    btn.Text = MdGlobals.keys.keys[i][j][layCount].display;
+                }
+            }
         }
 
 

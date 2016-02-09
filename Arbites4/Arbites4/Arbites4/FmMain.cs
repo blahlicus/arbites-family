@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Threading;
 using System.IO.Ports;
 using System.IO;
+using System.Management;
 using System.Xml.Serialization;
 
 namespace Arbites4
@@ -21,7 +22,8 @@ namespace Arbites4
             InitializeComponent();
             serialPort1.BaudRate = 19200;
             serialPort1.Open();
-            
+            button1.PerformClick();
+
         }
 
         private void FmMain_KeyPress(object sender, KeyPressEventArgs e)
@@ -32,16 +34,16 @@ namespace Arbites4
         private void button1_Click(object sender, EventArgs e)
         {
             MdGlobals.keys = new ClLayoutContainer((int)nudx.Value, (int)nudy.Value, (int)nudz.Value);
-            UCBoard newb = new UCBoard((int)nudx.Value, (int)nudy.Value, (int)nudz.Value);
+            MdGlobals.board = new UCBoard((int)nudx.Value, (int)nudy.Value, (int)nudz.Value);
 
-            newb.Parent = pMain;
-            newb.Dock = DockStyle.Fill;
+            MdGlobals.board.Parent = pMain;
+            MdGlobals.board.Dock = DockStyle.Fill;
         }
 
         private void KeyBtnClicked(object sender, EventArgs e)
         {
             var btn = sender as Button;
-            int str = Convert.ToInt32(btn.Name.Substring(btn.Name.IndexOf("_")+1));
+            int str = Convert.ToInt32(btn.Name.Substring(btn.Name.IndexOf("_") + 1));
             MdGlobals.specialS = true;
             MdGlobals.selectedS = ClKey.dKeys[str];
         }
@@ -102,16 +104,19 @@ namespace Arbites4
         {
             if (serialPort1.IsOpen && serialPort1 != null)
             {
-                
+
                 serialPort1.Close();
             }
+
+
+
             serialPort1.PortName = comboBox1.SelectedItem.ToString();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             SaveFileDialog dialog = new SaveFileDialog();
-            dialog.Filter = "Terminus Mini Layout | *.arb4l";
+            dialog.Filter = "Arbites Layout | *.arb4l";
             dialog.Title = "Save Layout";
             dialog.InitialDirectory = Environment.CurrentDirectory + "/data";
             dialog.ShowDialog();
@@ -137,6 +142,34 @@ namespace Arbites4
                 XmlSerializer ser = new XmlSerializer(typeof(ClLayoutContainer));
                 MdGlobals.keys = (ClLayoutContainer)ser.Deserialize(sr);
                 sr.Close();
+            }
+
+            MdGlobals.board.updateLayers();
+        }
+
+        private void comboBox1_Click(object sender, EventArgs e)
+        {
+            comboBox1.Items.Clear();
+
+            ManagementScope connectionScope = new ManagementScope();
+            SelectQuery serialQuery = new SelectQuery("SELECT * FROM Win32_SerialPort");
+            ManagementObjectSearcher searcher = new ManagementObjectSearcher(connectionScope, serialQuery);
+
+            try
+            {
+                foreach (ManagementObject item in searcher.Get())
+                {
+                    string desc = item["Description"].ToString();
+                    string deviceId = item["DeviceID"].ToString();
+                    if (desc.Contains("Arduino Leonardo") || desc.Contains("SparkFun Pro"))
+                    {
+                        comboBox1.Items.Add(deviceId);
+                    }
+                }
+            }
+            catch (ManagementException ex)
+            {
+                /* Do Nothing */
             }
         }
     }

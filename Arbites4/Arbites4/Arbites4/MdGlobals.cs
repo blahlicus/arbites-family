@@ -14,5 +14,6 @@ namespace Arbites4
         public static bool specialS { get; set; }
         public static ClKey selectedS { get; set; }
         public static ClLayoutContainer keys { get; set; }
+        public static UCBoard board { get; set; }
     }
 }

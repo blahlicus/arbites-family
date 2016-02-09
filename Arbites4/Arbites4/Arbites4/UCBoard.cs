@@ -15,6 +15,7 @@ namespace Arbites4
         public int x { get; set; }
         public int y { get; set; }
         public int maxLay { get; set; }
+        public List<UCLayer> layers { get; set; }
         public UCBoard()
         {
             InitializeComponent();
@@ -26,6 +27,7 @@ namespace Arbites4
             this.y = y;
             this.maxLay = z;
             InitializeComponent();
+            layers = new List<UCLayer>();
             createLayers();
         }
 
@@ -36,6 +38,15 @@ namespace Arbites4
             {
                 UCLayer newl = new UCLayer(x, y, i);
                 newl.Parent = flpMain;
+                layers.Add(newl);
+            }
+        }
+
+        public void updateLayers()
+        {
+            for (int i = 0; i < maxLay; i++)
+            {
+                layers[i].updateLayer();
             }
         }
     }
