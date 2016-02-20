@@ -150,7 +150,7 @@ namespace Arbites4
         private void comboBox1_Click(object sender, EventArgs e)
         {
             comboBox1.Items.Clear();
-
+            /*
             ManagementScope connectionScope = new ManagementScope();
             SelectQuery serialQuery = new SelectQuery("SELECT * FROM Win32_SerialPort");
             ManagementObjectSearcher searcher = new ManagementObjectSearcher(connectionScope, serialQuery);
@@ -169,8 +169,15 @@ namespace Arbites4
             }
             catch (ManagementException ex)
             {
-                /* Do Nothing */
+                // Do Nothing
             }
+             */
+            string[] ports = SerialPort.GetPortNames();
+            foreach(string port in ports)
+            {
+                comboBox1.Items.Add(port);
+            }
+        
         }
     }
 }
