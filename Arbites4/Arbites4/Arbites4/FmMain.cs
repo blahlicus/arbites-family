@@ -21,8 +21,8 @@ namespace Arbites4
         {
             InitializeComponent();
             serialPort1.BaudRate = 19200;
-            serialPort1.Open();
-            button1.PerformClick();
+            //serialPort1.Open();
+            //button1.PerformClick();
 
         }
 

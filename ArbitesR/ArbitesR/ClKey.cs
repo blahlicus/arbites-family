@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
-namespace Arbites4
+namespace ArbitesR
 {
     public class ClKey
     {
@@ -167,6 +166,5 @@ namespace Arbites4
             }
             return new ClKey();
         }
-
     }
 }
