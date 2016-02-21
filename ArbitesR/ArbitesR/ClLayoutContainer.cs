@@ -10,5 +10,12 @@ namespace ArbitesR
         public string keyboardType { get; set; }
         public int layers { get; set; }
         public List<ClKeyData> keys { get; set; }
+
+        public ClLayoutContainer()
+        {
+            keys = new List<ClKeyData>();
+        }
+
+
     }
 }

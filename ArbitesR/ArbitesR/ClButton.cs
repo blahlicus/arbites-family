@@ -13,7 +13,7 @@ namespace ArbitesR
         public int gh { get; set; }
         public int gx { get; set; }
         public int gy { get; set; }
-        public List<ClKey> keys { get; set; }
+        //public List<ClKey> keys { get; set; }
 
         public ClButton()
         {
@@ -23,7 +23,7 @@ namespace ArbitesR
             gh = 0;
             gx = 0;
             gy = 0;
-            keys = new List<ClKey>();
+            //keys = new List<ClKey>();
         }
 
         public ClButton(int x, int y, int gw, int gh, int gx, int gy)
@@ -34,7 +34,7 @@ namespace ArbitesR
             this.gh = gh;
             this.gx = gx;
             this.gy = gy;
-            keys = new List<ClKey>();
+            //keys = new List<ClKey>();
         }
     }
 }

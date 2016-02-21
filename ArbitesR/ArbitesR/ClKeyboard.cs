@@ -21,28 +21,14 @@ namespace ArbitesR
             slices = new List<ClBoardSlice>();
         }
 
-        public bool LoadLayout(ClLayoutContainer input)
-        {
-            bool output = false;
-            if (input.keyboardType == this.keyboardType)
-            {
-                this.layers = input.layers;
-                foreach(ClKeyData key in input.keys)
-                {
-                    slices[key.slice].keys.Where(o => (o.x == key.x && o.y == key.y)).FirstOrDefault().keys.Add(key.key);
-                }
-            }
 
-            return output;
-        }
-
-        public List<string> GetSerialCommand()
+        public List<string> GenerateSerialCommands(ClLayoutContainer input)
         {
             List<string> output = new List<string>();
-            output.Add(MdGlobals.SERIAL_SET_LAYER_COMMAND + "(" + layers.ToString());
+            output.Add(MdGlobals.SERIAL_SET_LAYER_COMMAND + "(" + layers);
             foreach (ClBoardSlice slice in slices)
             {
-                output.AddRange(slice.GetSerialCommand());
+                output.AddRange(slice.GenerateSerialCommands(input));
             }
             return output;
         }

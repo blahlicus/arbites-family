@@ -30,7 +30,7 @@
         {
             this.btSave = new System.Windows.Forms.Button();
             this.btLoad = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lKeyboardName = new System.Windows.Forms.Label();
             this.flpMain = new System.Windows.Forms.FlowLayoutPanel();
             this.btAddLayer = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -44,6 +44,7 @@
             this.btSave.TabIndex = 1;
             this.btSave.Text = "Save Layout";
             this.btSave.UseVisualStyleBackColor = true;
+            this.btSave.Click += new System.EventHandler(this.btSave_Click);
             // 
             // btLoad
             // 
@@ -55,14 +56,14 @@
             this.btLoad.Text = "Load Layout";
             this.btLoad.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // lKeyboardName
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 8);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(209, 13);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Keyboard Type: Terminus Mini BLAHBLAH";
+            this.lKeyboardName.AutoSize = true;
+            this.lKeyboardName.Location = new System.Drawing.Point(3, 8);
+            this.lKeyboardName.Name = "lKeyboardName";
+            this.lKeyboardName.Size = new System.Drawing.Size(209, 13);
+            this.lKeyboardName.TabIndex = 3;
+            this.lKeyboardName.Text = "Keyboard Type: Terminus Mini BLAHBLAH";
             // 
             // flpMain
             // 
@@ -94,7 +95,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.btAddLayer);
             this.Controls.Add(this.flpMain);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lKeyboardName);
             this.Controls.Add(this.btLoad);
             this.Controls.Add(this.btSave);
             this.Name = "UCBoard";
@@ -108,7 +109,7 @@
 
         private System.Windows.Forms.Button btSave;
         private System.Windows.Forms.Button btLoad;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lKeyboardName;
         private System.Windows.Forms.FlowLayoutPanel flpMain;
         private System.Windows.Forms.Button btAddLayer;
     }

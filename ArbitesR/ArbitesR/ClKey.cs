@@ -45,7 +45,7 @@ namespace ArbitesR
             dKeys.Add(new ClKey(Convert.ToByte('m'), 0, "m")); dKeys.Add(new ClKey(178, 0, "BkSpace")); dKeys.Add(new ClKey((136 + 71), 0, "ScrlLck"));
             dKeys.Add(new ClKey(Convert.ToByte('n'), 0, "n")); dKeys.Add(new ClKey(179, 0, "Tab")); dKeys.Add(new ClKey((136 + 70), 0, "PrtSc"));
             dKeys.Add(new ClKey(Convert.ToByte('o'), 0, "o")); dKeys.Add(new ClKey(176, 0, "Enter")); dKeys.Add(new ClKey((136 + 72), 0, "PsBrk"));
-            dKeys.Add(new ClKey(Convert.ToByte('p'), 0, "p")); dKeys.Add(new ClKey(177, 0, "Esc"));
+            dKeys.Add(new ClKey(Convert.ToByte('p'), 0, "p")); dKeys.Add(new ClKey(177, 0, "Esc")); dKeys.Add(new ClKey((136 + 83), 0, "NumLock"));
             dKeys.Add(new ClKey(Convert.ToByte('q'), 0, "q")); dKeys.Add(new ClKey(209, 0, "Insert"));
             dKeys.Add(new ClKey(Convert.ToByte('r'), 0, "r")); dKeys.Add(new ClKey(212, 0, "Delete"));
             dKeys.Add(new ClKey(Convert.ToByte('s'), 0, "s")); dKeys.Add(new ClKey(211, 0, "Pg Up"));
@@ -158,11 +158,13 @@ namespace ArbitesR
             return "";
         }
 
+
         public static ClKey GetKeyFromChar(char input)
         {
-            if (dKeys.Find(k => k.val == Convert.ToByte(input)) != null && dKeys.Find(k => k.val == Convert.ToByte(input)).ktype == 0)
+            ClKey cky = dKeys.Find(k => (k.ktype == 0 && k.val == Convert.ToByte(input)));
+            if (cky != null)
             {
-                return dKeys.Find(k => k.val == Convert.ToByte(input));
+                return cky;
             }
             return new ClKey();
         }

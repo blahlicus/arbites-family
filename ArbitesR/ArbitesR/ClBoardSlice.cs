@@ -29,14 +29,14 @@ namespace ArbitesR
             keys = new List<ClButton>();
         }
 
-        public List<string> GetSerialCommand()
+        public List<string> GenerateSerialCommands(ClLayoutContainer input)
         {
             List<string> output = new List<string>();
-            foreach (ClButton btn in keys)
+            foreach (ClKeyData ckd in input.keys)
             {
-                for (int i = 0; i < btn.keys.Count; i++ )
+                if (ckd.slice == sliceIndex)
                 {
-                    output.Add(command + "(" + btn.x.ToString() + "(" + btn.y.ToString() + "(" + i.ToString() + "(" + btn.keys[i].val.ToString() + "(" + btn.keys[i].ktype.ToString());
+                    output.Add(command + "(" + ckd.x + "(" + ckd.y + "(" + ckd.z + "(" + ckd.key.val + "(" + ckd.key.ktype);
                 }
             }
             return output;

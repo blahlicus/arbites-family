@@ -16,10 +16,13 @@ namespace ArbitesR
         [EditorBrowsable(EditorBrowsableState.Never)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public List<UCSlice> slices { get; set; }
+        public string saveExtension { get; set; }
+        public ClLayoutContainer layout { get; set; }
         public UCBoard()
         {
             InitializeComponent();
             slices = new List<UCSlice>();
+            layout = new ClLayoutContainer();
         }
 
 
@@ -27,11 +30,38 @@ namespace ArbitesR
         {
             InitializeComponent();
             slices = new List<UCSlice>();
+            layout = new ClLayoutContainer();
+            layout.keyboardType = keyboard.keyboardType;
+            saveExtension = keyboard.fileFormat;
             foreach (ClBoardSlice slice in keyboard.slices)
             {
-                var ns = new UCSlice(slice);
+                var ns = new UCSlice(slice, this.layout);
                 this.slices.Add(ns);
                 ns.Parent = this.flpMain;
+            }
+            lKeyboardName.Text = keyboard.keyboardName;
+        }
+
+        public void LoadLayout(ClLayoutContainer input)
+        {
+            foreach (UCSlice slice in slices)
+            {
+                slice.LoadLayout(input);
+            }
+        }
+
+        private void btSave_Click(object sender, EventArgs e)
+        {
+
+            SaveFileDialog dialog = new SaveFileDialog();
+            dialog.Filter = layout.keyboardType + " layout | *." + saveExtension;
+            dialog.Title = "Save Layout";
+            dialog.InitialDirectory = Environment.CurrentDirectory + "/layouts";
+            dialog.ShowDialog();
+            if (dialog.FileName != "")
+            {
+
+                MdCore.Serialize<ClLayoutContainer>(layout, dialog.FileName);
             }
         }
     }

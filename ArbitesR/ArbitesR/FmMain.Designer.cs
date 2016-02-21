@@ -32,7 +32,6 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.ucBoard1 = new ArbitesR.UCBoard();
             this.tabControl1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -77,13 +76,6 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Animus Builder";
             // 
-            // ucBoard1
-            // 
-            this.ucBoard1.Location = new System.Drawing.Point(0, 0);
-            this.ucBoard1.Name = "ucBoard1";
-            this.ucBoard1.Size = new System.Drawing.Size(1425, 606);
-            this.ucBoard1.TabIndex = 0;
-            // 
             // FmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -103,7 +95,6 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
-        private UCBoard ucBoard1;
     }
 }
 

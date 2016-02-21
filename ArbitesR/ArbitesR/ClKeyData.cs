@@ -20,5 +20,13 @@ namespace ArbitesR
             z = 0;
             slice = 0;
         }
+        public ClKeyData(int slice, int x, int y, int z)
+        {
+            key = new ClKey();
+            this.x = x;
+            this.y = y;
+            this.z = z;
+            this.slice = slice;
+        }
     }
 }
