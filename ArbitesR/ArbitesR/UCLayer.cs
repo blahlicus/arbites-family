@@ -65,6 +65,7 @@ namespace ArbitesR
 
         public void LoadLayout(ClLayoutContainer input)
         {
+            this.layout = input;
             foreach (Button btn in buttons )
             {
                 foreach (ClKeyData kd in input.keys)
@@ -124,6 +125,12 @@ namespace ArbitesR
             {
                 layout.keys.Find(k => (k.slice == slice && k.x == x && k.y == y && k.z == z)).key = ClKey.GetKeyFromChar(input);
             }
+            MdGlobals.board.LoadLayout(layout);
+        }
+
+        private void btDelete_Click(object sender, EventArgs e)
+        {
+            layout.DeleteLayer(this.index);
             MdGlobals.board.LoadLayout(layout);
         }
 

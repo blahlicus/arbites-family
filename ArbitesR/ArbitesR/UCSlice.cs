@@ -17,7 +17,7 @@ namespace ArbitesR
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public List<UCLayer> layers { get; set; }
         public ClLayoutContainer layout { get; set; }
-
+        public ClBoardSlice sliceInfo { get; set; }
         public UCSlice()
         {
             InitializeComponent();
@@ -31,22 +31,36 @@ namespace ArbitesR
             this.layout = layout;
             layers = new List<UCLayer>();
             lName.Text = input.sliceName;
+            this.sliceInfo = input;
             this.sliceIndex = input.sliceIndex;
 
             for (int i = 0; i < input.layers; i++)
             {
-                var nl = new UCLayer(input.keys, input.sliceIndex, i, this.layout);
-                layers.Add(nl);
-                nl.Parent = this;
-                nl.Location = new Point(3, 20 + i * nl.Size.Height);
+                AddLayer();
                 
             }
-            this.Size = new Size(layers[0].Size.Width + 30, layers[0].Size.Height * layers.Count + 30);
         }
 
+        public void AddLayer()
+        {
+            var nl = new UCLayer(sliceInfo.keys, sliceInfo.sliceIndex, layers.Count, this.layout);
+            nl.Parent = this.flpMain;
+            layers.Add(nl);
+            this.Size = new Size(layers[0].Size.Width + 30, layers[0].Size.Height * layers.Count + 30);
+        }
         
         public void LoadLayout(ClLayoutContainer input)
         {
+            this.layout = input;
+            while(layout.layers < layers.Count)
+            {
+                this.flpMain.Controls.Remove(layers[layers.Count - 1]);
+                layers.RemoveAt(layers.Count - 1);
+            }
+            while (layout.layers > layers.Count)
+            {
+                AddLayer();
+            }
             foreach (UCLayer layer in layers)
             {
                 layer.LoadLayout(input);

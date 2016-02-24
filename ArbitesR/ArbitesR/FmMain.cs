@@ -18,7 +18,7 @@ namespace ArbitesR
             ClKey.iniList();
             MdGlobals.Initiate();
 
-            //*
+            /*
             var nkb = new ClKeyboard();
             nkb.keyboardName = "Diverge II";
             nkb.keyboardType = "Diverge II";
@@ -91,15 +91,6 @@ namespace ArbitesR
                     else
                     {
                         var clb = new ClButton(i, j, 72, 72, 5 + (72 * i), 30 + (72 * j));
-                        for (int k = 0; k < nkb.layers; k++)
-                        {
-                            var cky = new ClKey();
-                            clb.keys.Add(cky);
-                        }
-                        if (i == 4 && j == 3)
-                        {
-                            clb.gw = clb.gw * 2;
-                        }
                         nbs1.keys.Add(clb);
 
                     }
@@ -122,16 +113,6 @@ namespace ArbitesR
                     {
 
                         var clb = new ClButton(i, j, 72, 72, 365 - (72 * i), 30 + (72 * j));
-                        for (int k = 0; k < nkb.layers; k++)
-                        {
-                            var cky = new ClKey();
-                            clb.keys.Add(cky);
-                        }
-                        if (i == 4 && j == 3)
-                        {
-                            clb.gx = clb.gx - 72;
-                            clb.gw = clb.gw * 2;
-                        }
                         nbs2.keys.Add(clb);
                     }
 
@@ -167,17 +148,6 @@ namespace ArbitesR
                     else
                     {
                         var clb = new ClButton(i, j, 72, 72, 5 + (72 * i), 30 + (72 * j));
-                        for (int k = 0; k < nkb.layers; k++)
-                        {
-                            var cky = new ClKey();
-                            clb.keys.Add(cky);
-                        }
-
-                        if ((i == 4 || i == 6) && j == 3)
-                        {
-                            clb.gw = clb.gw * 2;
-                            
-                        }
                         nbs1.keys.Add(clb);
 
                     }
@@ -193,14 +163,52 @@ namespace ArbitesR
 
 
 
-
+            /*
             MdGlobals.board = new UCBoard(nkb);
             MdGlobals.board.Dock = DockStyle.Fill;
             MdGlobals.board.Location = new Point(30, 30);
-            MdGlobals.board.Parent = tabPage1;
+            MdGlobals.board.Parent = spcEditLayout.Panel2;
             var dp = new FmRichTextDisplay(nkb.GenerateSerialCommands(MdGlobals.board.layout));
             dp.Show();
+            */
 
+        }
+
+        private void DisplayKeyboard(ClKeyboard input)
+        {
+            MdGlobals.boardType = input;
+            MdGlobals.board = new UCBoard(input);
+            MdGlobals.board.Dock = DockStyle.Fill;
+            MdGlobals.board.Location = new Point(30, 30);
+            MdGlobals.board.Parent = spcEditLayout.Panel2;
+        }
+        private void btSelectCom_Click(object sender, EventArgs e)
+        {
+            var dia =  new FmSelectPortDialog();
+            DialogResult dr = dia.ShowDialog();
+            if (dr == DialogResult.OK)
+            {
+                lPort.Text = dia.output;
+            }
+        }
+
+        private void btSelectDevice_Click(object sender, EventArgs e)
+        {
+            List<string> files = System.IO.Directory.GetFiles(MdConstants.keyboards, MdConstants.eKeyboards).ToList<string>();
+            var dia = new FmSelectTextDialog("Select a Keyboard", "Select your keyboard", files.Select(str => str.Substring(str.LastIndexOf(MdConstants.pseparator)+1)).ToList());
+            DialogResult dr = dia.ShowDialog();
+            if (dr == DialogResult.OK)
+            {
+                ClKeyboard output = MdCore.Deserialize<ClKeyboard>(files[dia.index]);
+                DisplayKeyboard(output);
+            }
+        }
+
+        private void btUpload_Click(object sender, EventArgs e)
+        {
+
+            var dp = new FmRichTextDisplay(MdGlobals.boardType.GenerateSerialCommands(MdGlobals.board.layout));
+            dp.Show();
         }
 
 

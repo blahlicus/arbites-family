@@ -55,6 +55,7 @@
             this.btLoad.TabIndex = 2;
             this.btLoad.Text = "Load Layout";
             this.btLoad.UseVisualStyleBackColor = true;
+            this.btLoad.Click += new System.EventHandler(this.btLoad_Click);
             // 
             // lKeyboardName
             // 
@@ -88,6 +89,7 @@
             this.btAddLayer.TabIndex = 5;
             this.btAddLayer.Text = "Add Layer";
             this.btAddLayer.UseVisualStyleBackColor = true;
+            this.btAddLayer.Click += new System.EventHandler(this.btAddLayer_Click);
             // 
             // UCBoard
             // 

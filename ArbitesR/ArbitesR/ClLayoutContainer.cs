@@ -16,6 +16,20 @@ namespace ArbitesR
             keys = new List<ClKeyData>();
         }
 
+        public void DeleteLayer(int index)
+        {
+            if (layers > 1)
+            {
+                layers--;
+                keys = keys.Where(k => k.z != index).ToList();
+                var tlist = keys.Where(k => k.z > index).ToList();
+                foreach (ClKeyData kd in tlist)
+                {
+                    kd.z--;
+                }
+            }
+        }
+
 
     }
 }

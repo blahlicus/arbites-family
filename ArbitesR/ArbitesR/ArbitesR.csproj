@@ -62,6 +62,19 @@
     <Compile Include="FmRichTextDisplay.Designer.cs">
       <DependentUpon>FmRichTextDisplay.cs</DependentUpon>
     </Compile>
+    <Compile Include="FmSelectPortDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FmSelectPortDialog.Designer.cs">
+      <DependentUpon>FmSelectPortDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FmSelectTextDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FmSelectTextDialog.Designer.cs">
+      <DependentUpon>FmSelectTextDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MdConstants.cs" />
     <Compile Include="MdCore.cs" />
     <Compile Include="MdGlobals.cs" />
     <Compile Include="Program.cs" />
@@ -89,6 +102,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FmRichTextDisplay.resx">
       <DependentUpon>FmRichTextDisplay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FmSelectPortDialog.resx">
+      <DependentUpon>FmSelectPortDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FmSelectTextDialog.resx">
+      <DependentUpon>FmSelectTextDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

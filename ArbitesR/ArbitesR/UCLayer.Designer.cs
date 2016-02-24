@@ -61,6 +61,7 @@
             this.btDelete.TabIndex = 2;
             this.btDelete.Text = "Delete Layer";
             this.btDelete.UseVisualStyleBackColor = true;
+            this.btDelete.Click += new System.EventHandler(this.btDelete_Click);
             // 
             // UCLayer
             // 
