@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FmMain));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.spcEditLayout = new System.Windows.Forms.SplitContainer();
@@ -105,9 +106,9 @@
             this.lPort.AutoSize = true;
             this.lPort.Location = new System.Drawing.Point(695, 8);
             this.lPort.Name = "lPort";
-            this.lPort.Size = new System.Drawing.Size(28, 13);
+            this.lPort.Size = new System.Drawing.Size(93, 13);
             this.lPort.TabIndex = 4;
-            this.lPort.Text = "lPort";
+            this.lPort.Text = "No Ports Selected";
             // 
             // label1
             // 
@@ -204,8 +205,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 572);
             this.Controls.Add(this.tabControl1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FmMain";
-            this.Text = "Form1";
+            this.Text = "Arbites Innova 1.0";
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.spcEditLayout.Panel1.ResumeLayout(false);

@@ -58,8 +58,9 @@
             this.ClientSize = new System.Drawing.Size(210, 248);
             this.Controls.Add(this.flpMain);
             this.Controls.Add(this.lTip);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FmSelectTextDialog";
-            this.Text = "FmSelectTextDialog";
+            this.Text = "texttext";
             this.ResumeLayout(false);
             this.PerformLayout();
 

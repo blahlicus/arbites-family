@@ -28,20 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FmKeySelector));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.tabPage6 = new System.Windows.Forms.TabPage();
-            this.tabPage7 = new System.Windows.Forms.TabPage();
             this.flpAll = new System.Windows.Forms.FlowLayoutPanel();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.flpAlpha = new System.Windows.Forms.FlowLayoutPanel();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
             this.flpNumeric = new System.Windows.Forms.FlowLayoutPanel();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
             this.flpSymbol = new System.Windows.Forms.FlowLayoutPanel();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
             this.flpNpad = new System.Windows.Forms.FlowLayoutPanel();
+            this.tabPage6 = new System.Windows.Forms.TabPage();
             this.flpControl = new System.Windows.Forms.FlowLayoutPanel();
+            this.tabPage7 = new System.Windows.Forms.TabPage();
             this.flpSpecial = new System.Windows.Forms.FlowLayoutPanel();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -80,6 +81,15 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "All";
             // 
+            // flpAll
+            // 
+            this.flpAll.AutoScroll = true;
+            this.flpAll.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flpAll.Location = new System.Drawing.Point(3, 3);
+            this.flpAll.Name = "flpAll";
+            this.flpAll.Size = new System.Drawing.Size(555, 444);
+            this.flpAll.TabIndex = 0;
+            // 
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.SystemColors.Control;
@@ -90,6 +100,15 @@
             this.tabPage2.Size = new System.Drawing.Size(561, 450);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Alphabets";
+            // 
+            // flpAlpha
+            // 
+            this.flpAlpha.AutoScroll = true;
+            this.flpAlpha.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flpAlpha.Location = new System.Drawing.Point(3, 3);
+            this.flpAlpha.Name = "flpAlpha";
+            this.flpAlpha.Size = new System.Drawing.Size(555, 444);
+            this.flpAlpha.TabIndex = 1;
             // 
             // tabPage3
             // 
@@ -102,6 +121,15 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Numbers";
             // 
+            // flpNumeric
+            // 
+            this.flpNumeric.AutoScroll = true;
+            this.flpNumeric.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flpNumeric.Location = new System.Drawing.Point(3, 3);
+            this.flpNumeric.Name = "flpNumeric";
+            this.flpNumeric.Size = new System.Drawing.Size(555, 444);
+            this.flpNumeric.TabIndex = 1;
+            // 
             // tabPage4
             // 
             this.tabPage4.BackColor = System.Drawing.SystemColors.Control;
@@ -112,6 +140,15 @@
             this.tabPage4.Size = new System.Drawing.Size(561, 450);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Symbols";
+            // 
+            // flpSymbol
+            // 
+            this.flpSymbol.AutoScroll = true;
+            this.flpSymbol.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flpSymbol.Location = new System.Drawing.Point(3, 3);
+            this.flpSymbol.Name = "flpSymbol";
+            this.flpSymbol.Size = new System.Drawing.Size(555, 444);
+            this.flpSymbol.TabIndex = 1;
             // 
             // tabPage5
             // 
@@ -124,6 +161,15 @@
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Numpad";
             // 
+            // flpNpad
+            // 
+            this.flpNpad.AutoScroll = true;
+            this.flpNpad.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flpNpad.Location = new System.Drawing.Point(3, 3);
+            this.flpNpad.Name = "flpNpad";
+            this.flpNpad.Size = new System.Drawing.Size(555, 444);
+            this.flpNpad.TabIndex = 1;
+            // 
             // tabPage6
             // 
             this.tabPage6.BackColor = System.Drawing.SystemColors.Control;
@@ -135,6 +181,15 @@
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "Controls";
             // 
+            // flpControl
+            // 
+            this.flpControl.AutoScroll = true;
+            this.flpControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flpControl.Location = new System.Drawing.Point(3, 3);
+            this.flpControl.Name = "flpControl";
+            this.flpControl.Size = new System.Drawing.Size(555, 444);
+            this.flpControl.TabIndex = 1;
+            // 
             // tabPage7
             // 
             this.tabPage7.BackColor = System.Drawing.SystemColors.Control;
@@ -145,60 +200,6 @@
             this.tabPage7.Size = new System.Drawing.Size(561, 450);
             this.tabPage7.TabIndex = 6;
             this.tabPage7.Text = "Specials";
-            // 
-            // flpAll
-            // 
-            this.flpAll.AutoScroll = true;
-            this.flpAll.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flpAll.Location = new System.Drawing.Point(3, 3);
-            this.flpAll.Name = "flpAll";
-            this.flpAll.Size = new System.Drawing.Size(555, 444);
-            this.flpAll.TabIndex = 0;
-            // 
-            // flpAlpha
-            // 
-            this.flpAlpha.AutoScroll = true;
-            this.flpAlpha.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flpAlpha.Location = new System.Drawing.Point(3, 3);
-            this.flpAlpha.Name = "flpAlpha";
-            this.flpAlpha.Size = new System.Drawing.Size(555, 444);
-            this.flpAlpha.TabIndex = 1;
-            // 
-            // flpNumeric
-            // 
-            this.flpNumeric.AutoScroll = true;
-            this.flpNumeric.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flpNumeric.Location = new System.Drawing.Point(3, 3);
-            this.flpNumeric.Name = "flpNumeric";
-            this.flpNumeric.Size = new System.Drawing.Size(555, 444);
-            this.flpNumeric.TabIndex = 1;
-            // 
-            // flpSymbol
-            // 
-            this.flpSymbol.AutoScroll = true;
-            this.flpSymbol.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flpSymbol.Location = new System.Drawing.Point(3, 3);
-            this.flpSymbol.Name = "flpSymbol";
-            this.flpSymbol.Size = new System.Drawing.Size(555, 444);
-            this.flpSymbol.TabIndex = 1;
-            // 
-            // flpNpad
-            // 
-            this.flpNpad.AutoScroll = true;
-            this.flpNpad.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flpNpad.Location = new System.Drawing.Point(3, 3);
-            this.flpNpad.Name = "flpNpad";
-            this.flpNpad.Size = new System.Drawing.Size(555, 444);
-            this.flpNpad.TabIndex = 1;
-            // 
-            // flpControl
-            // 
-            this.flpControl.AutoScroll = true;
-            this.flpControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flpControl.Location = new System.Drawing.Point(3, 3);
-            this.flpControl.Name = "flpControl";
-            this.flpControl.Size = new System.Drawing.Size(555, 444);
-            this.flpControl.TabIndex = 1;
             // 
             // flpSpecial
             // 
@@ -215,6 +216,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(569, 476);
             this.Controls.Add(this.tabControl1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FmKeySelector";
             this.Text = "Key Selector";
             this.tabControl1.ResumeLayout(false);

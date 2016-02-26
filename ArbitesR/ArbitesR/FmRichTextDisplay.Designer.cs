@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FmRichTextDisplay));
             this.rtbMain = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
@@ -46,8 +47,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(689, 596);
             this.Controls.Add(this.rtbMain);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FmRichTextDisplay";
-            this.Text = "FmRichTextDisplay";
+            this.Text = "Rich Text Displayer";
             this.ResumeLayout(false);
 
         }
