@@ -14,28 +14,26 @@ namespace ArbitesR
         public FmKeySelector()
         {
             InitializeComponent();
-
-            List<FlowLayoutPanel> plist = new List<FlowLayoutPanel>();
-            plist.Add(flpAll);
-            plist.Add(flpAlpha);
-            plist.Add(flpNumeric);
-            plist.Add(flpSymbol);
-            plist.Add(flpNpad);
-            plist.Add(flpControl);
-            plist.Add(flpSpecial);
-
-            for (int i = 0; i < plist.Count; i++ )
+            foreach (ClKeyGroup kg in ClKey.lists)
             {
-                foreach (ClKey key in ClKey.lists[i])
+                var tp = new TabPage();
+                tp.Text = kg.name;
+                tp.BackColor = SystemColors.Control;
+                tcMain.TabPages.Add(tp);
+                var flp = new FlowLayoutPanel();
+                flp.Dock = DockStyle.Fill;
+                flp.Parent = tp;
+                foreach (ClKey key in kg.key)
                 {
 
                     var newb = new Button();
                     newb.Name = "bt_" + key.val + "_" + key.ktype;
                     newb.Text = key.display;
                     newb.Size = new Size(72, 72);
-                    newb.Parent = plist[i];
+                    newb.Parent = flp;
                     newb.Click += new EventHandler(this.KeyBtnClicked);
                 }
+
             }
         }
 

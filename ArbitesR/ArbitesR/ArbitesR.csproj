@@ -52,6 +52,7 @@
     <Compile Include="ClKey.cs" />
     <Compile Include="ClKeyboard.cs" />
     <Compile Include="ClKeyData.cs" />
+    <Compile Include="ClKeyGroup.cs" />
     <Compile Include="ClLayoutContainer.cs" />
     <Compile Include="FmKeySelector.cs">
       <SubType>Form</SubType>

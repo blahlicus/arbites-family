@@ -24,7 +24,7 @@ namespace ArbitesR
             this.ktype = ktype;
             this.display = display;
         }
-
+        /*
         public static List<ClKey> dKeys { get; set; }
         public static List<ClKey> alpha { get; set; }
         public static List<ClKey> numeric { get; set; }
@@ -32,10 +32,12 @@ namespace ArbitesR
         public static List<ClKey> numpad { get; set; }
         public static List<ClKey> control { get; set; }
         public static List<ClKey> special { get; set; }
-        public static List<List<ClKey>> lists { get; set; }
+        //*/
+        public static List<ClKeyGroup> lists { get; set; }
+        public static List<ClKey> dKeys { get; set; }
         public static void iniList()
         {
-
+            /*
             dKeys = new List<ClKey>();
             alpha = new List<ClKey>();
             numeric = new List<ClKey>();
@@ -97,22 +99,22 @@ namespace ArbitesR
 
             // npad
 
-            numpad.Add(new ClKey(220, 0, "NPad /")); /* numpad / */
-            numpad.Add(new ClKey(221, 0, "NPad *")); /* numpad * */
-            numpad.Add(new ClKey(222, 0, "NPad -")); /* numpad - */
-            numpad.Add(new ClKey(223, 0, "NPad +")); /* numpad + */
-            numpad.Add(new ClKey(224, 0, "NPad Enter")); /* numpad enter */
-            numpad.Add(new ClKey(225, 0, "NPad 1")); /* numpad 1 */
-            numpad.Add(new ClKey(226, 0, "NPad 2")); /* numpad 2 */
-            numpad.Add(new ClKey(227, 0, "NPad 3")); /* numpad 3 */
-            numpad.Add(new ClKey(228, 0, "NPad 4")); /* numpad 4 */
-            numpad.Add(new ClKey(229, 0, "NPad 5")); /* numpad 5 */
-            numpad.Add(new ClKey(230, 0, "NPad 6")); /* numpad 6 */
-            numpad.Add(new ClKey(231, 0, "NPad 7")); /* numpad 7 */
-            numpad.Add(new ClKey(232, 0, "NPad 8")); /* numpad 8 */
-            numpad.Add(new ClKey(233, 0, "NPad 9")); /* numpad 9 */
-            numpad.Add(new ClKey(234, 0, "NPad 0")); /* numpad 0 */
-            numpad.Add(new ClKey(235, 0, "NPad .")); /* numpad . */
+            numpad.Add(new ClKey(220, 0, "NPad /")); 
+            numpad.Add(new ClKey(221, 0, "NPad *")); /* numpad * *
+            numpad.Add(new ClKey(222, 0, "NPad -")); /* numpad - *
+            numpad.Add(new ClKey(223, 0, "NPad +")); /* numpad + *
+            numpad.Add(new ClKey(224, 0, "NPad Enter")); /* numpad enter *
+            numpad.Add(new ClKey(225, 0, "NPad 1")); /* numpad 1 *
+            numpad.Add(new ClKey(226, 0, "NPad 2")); /* numpad 2 *
+            numpad.Add(new ClKey(227, 0, "NPad 3")); /* numpad 3 *
+            numpad.Add(new ClKey(228, 0, "NPad 4")); /* numpad 4 *
+            numpad.Add(new ClKey(229, 0, "NPad 5")); /* numpad 5 *
+            numpad.Add(new ClKey(230, 0, "NPad 6")); /* numpad 6 *
+            numpad.Add(new ClKey(231, 0, "NPad 7")); /* numpad 7 *
+            numpad.Add(new ClKey(232, 0, "NPad 8")); /* numpad 8 *
+            numpad.Add(new ClKey(233, 0, "NPad 9")); /* numpad 9 *
+            numpad.Add(new ClKey(234, 0, "NPad 0")); /* numpad 0 *
+            numpad.Add(new ClKey(235, 0, "NPad .")); /* numpad . *
 
             // control
             control.Add(new ClKey(194, 0, "F1")); control.Add(new ClKey(128, 0, "L Ctrl"));
@@ -142,17 +144,17 @@ namespace ArbitesR
 
             // symbols
 
-            symbol.Add(new ClKey(91, 0, "[ {")); /* [ { */
-            symbol.Add(new ClKey(93, 0, "] }")); /* ] } */
-            symbol.Add(new ClKey(92, 0, @"\ |")); /* \ | */
-            symbol.Add(new ClKey(59, 0, "); :")); /* ); : */
-            symbol.Add(new ClKey(39, 0, "' \"")); /* ' " */
-            symbol.Add(new ClKey(45, 0, "- _")); /* - _ */
-            symbol.Add(new ClKey(61, 0, "= +")); /*(+ */
-            symbol.Add(new ClKey(47, 0, "/ ?")); /* / ? */
-            symbol.Add(new ClKey(96, 0, "` ~")); /* ` ~ */
-            symbol.Add(new ClKey(44, 0, ", <")); /* , < */
-            symbol.Add(new ClKey(46, 0, ". >")); /* . > */
+            symbol.Add(new ClKey(91, 0, "[ {")); /* [ { *
+            symbol.Add(new ClKey(93, 0, "] }")); /* ] } *
+            symbol.Add(new ClKey(92, 0, @"\ |")); /* \ | *
+            symbol.Add(new ClKey(59, 0, "); :")); /* ); : *
+            symbol.Add(new ClKey(39, 0, "' \"")); /* ' " *
+            symbol.Add(new ClKey(45, 0, "- _")); /* - _ *
+            symbol.Add(new ClKey(61, 0, "= +")); /*(+ *
+            symbol.Add(new ClKey(47, 0, "/ ?")); /* / ? *
+            symbol.Add(new ClKey(96, 0, "` ~")); /* ` ~ *
+            symbol.Add(new ClKey(44, 0, ", <")); /* , < *
+            symbol.Add(new ClKey(46, 0, ". >")); /* . > *
 
 
             // specials
@@ -202,7 +204,29 @@ namespace ArbitesR
             dKeys.AddRange(symbol);
             dKeys.AddRange(control);
             dKeys.AddRange(special);
-            
+
+
+            ClKeyGroup kgall = new ClKeyGroup("All", 0, dKeys);
+            ClKeyGroup kgalpha = new ClKeyGroup("Alphabets", 1, alpha);
+            ClKeyGroup kgnumeric = new ClKeyGroup("Numbers", 2, numeric);
+            ClKeyGroup kgnpad = new ClKeyGroup("Numpad", 3, numpad);
+            ClKeyGroup kgsymbol = new ClKeyGroup("Symbols", 4, symbol);
+            ClKeyGroup kgspecial = new ClKeyGroup("Special", 5, special);
+            //*/
+            lists = new List<ClKeyGroup>();
+            dKeys = new List<ClKey>();
+            List<string> files = System.IO.Directory.GetFiles(MdConstants.keygroups, MdConstants.eKeygroups).ToList<string>();
+
+            foreach (string file in files)
+            {
+                
+                var kg = MdCore.Deserialize<ClKeyGroup>(file);
+                lists.Add(kg);
+                dKeys.AddRange(kg.key);
+            }
+            dKeys = dKeys.Distinct().ToList();
+            lists = lists.OrderBy(kg => kg.priority).ToList();
+
 
 
         }

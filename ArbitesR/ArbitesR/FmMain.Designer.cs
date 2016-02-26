@@ -194,6 +194,8 @@
             // 
             // pbUpload
             // 
+            this.pbUpload.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pbUpload.Location = new System.Drawing.Point(8, 32);
             this.pbUpload.Name = "pbUpload";
             this.pbUpload.Size = new System.Drawing.Size(981, 23);
