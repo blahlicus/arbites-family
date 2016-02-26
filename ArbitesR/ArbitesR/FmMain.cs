@@ -233,7 +233,7 @@ namespace ArbitesR
             for (int i = 0; i < output.Count; i++ )
             {
                 sp.Write(output[i]);
-                Thread.Sleep(5);
+                Thread.Sleep(10);
                 int pg = (i * 100)/output.Count;
                 if (pg >0 && pg < 101)
                 {
