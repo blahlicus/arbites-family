@@ -80,6 +80,11 @@ namespace ArbitesR
 
         private void KeyBtnClicked (object sender, EventArgs e)
         {
+            if (MdGlobals.selectedSpecial)
+            {
+                SetLayoutWithKey(sender as Button, MdGlobals.selectedKey);
+                MdGlobals.selectedSpecial = false;
+            }
         }
         /*
         private void KeyBtnKeyDown(object sender, KeyEventArgs e)
@@ -95,6 +100,36 @@ namespace ArbitesR
         private void KeyBtnKeyPressed(object sender, KeyPressEventArgs e)
         {
             SetLayoutFromButton(sender as Button, e.KeyChar);
+        }
+
+        private void SetLayoutWithKey(Button sender, ClKey key)
+        {
+            string btn = sender.Name;
+            btn = btn.Substring(btn.IndexOf("_") + 1);
+            int slice = Convert.ToInt32(btn.Substring(0, btn.IndexOf("_")));
+            btn = btn.Substring(btn.IndexOf("_") + 1);
+            int x = Convert.ToInt32(btn.Substring(0, btn.IndexOf("_")));
+            btn = btn.Substring(btn.IndexOf("_") + 1);
+            int y = Convert.ToInt32(btn.Substring(0, btn.IndexOf("_")));
+            btn = btn.Substring(btn.IndexOf("_") + 1);
+            int z = Convert.ToInt32(btn);
+
+
+            if (cbAllLayers.Checked)
+            {
+                foreach (ClKeyData k in layout.keys)
+                {
+                    if (k.slice == slice && k.x == x && k.y == y)
+                    {
+                        k.key = key;
+                    }
+                }
+            }
+            else
+            {
+                layout.keys.Find(k => (k.slice == slice && k.x == x && k.y == y && k.z == z)).key = key;
+            }
+            MdGlobals.board.LoadLayout(layout);
         }
 
         private void SetLayoutFromButton(Button sender, char input)

@@ -31,6 +31,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>favicon.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -50,6 +53,12 @@
     <Compile Include="ClKeyboard.cs" />
     <Compile Include="ClKeyData.cs" />
     <Compile Include="ClLayoutContainer.cs" />
+    <Compile Include="FmKeySelector.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FmKeySelector.Designer.cs">
+      <DependentUpon>FmKeySelector.cs</DependentUpon>
+    </Compile>
     <Compile Include="FmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,6 +106,9 @@
     <Compile Include="UCSlice.Designer.cs">
       <DependentUpon>UCSlice.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FmKeySelector.resx">
+      <DependentUpon>FmKeySelector.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FmMain.resx">
       <DependentUpon>FmMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -136,6 +148,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="favicon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

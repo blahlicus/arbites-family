@@ -38,10 +38,14 @@
             this.btSelectDevice = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.btKeyMenu = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.pbUpload = new System.Windows.Forms.ProgressBar();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spcEditLayout)).BeginInit();
             this.spcEditLayout.Panel1.SuspendLayout();
+            this.spcEditLayout.Panel2.SuspendLayout();
             this.spcEditLayout.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -79,13 +83,19 @@
             // 
             // spcEditLayout.Panel1
             // 
+            this.spcEditLayout.Panel1.Controls.Add(this.pbUpload);
+            this.spcEditLayout.Panel1.Controls.Add(this.btKeyMenu);
             this.spcEditLayout.Panel1.Controls.Add(this.lPort);
             this.spcEditLayout.Panel1.Controls.Add(this.label1);
             this.spcEditLayout.Panel1.Controls.Add(this.btUpload);
             this.spcEditLayout.Panel1.Controls.Add(this.btSelectCom);
             this.spcEditLayout.Panel1.Controls.Add(this.btSelectDevice);
+            // 
+            // spcEditLayout.Panel2
+            // 
+            this.spcEditLayout.Panel2.Controls.Add(this.label2);
             this.spcEditLayout.Size = new System.Drawing.Size(994, 540);
-            this.spcEditLayout.SplitterDistance = 40;
+            this.spcEditLayout.SplitterDistance = 65;
             this.spcEditLayout.SplitterWidth = 1;
             this.spcEditLayout.TabIndex = 0;
             // 
@@ -160,6 +170,34 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Animus Builder";
             // 
+            // btKeyMenu
+            // 
+            this.btKeyMenu.Location = new System.Drawing.Point(110, 3);
+            this.btKeyMenu.Name = "btKeyMenu";
+            this.btKeyMenu.Size = new System.Drawing.Size(107, 23);
+            this.btKeyMenu.TabIndex = 5;
+            this.btKeyMenu.Text = "Open Key Menu";
+            this.btKeyMenu.UseVisualStyleBackColor = true;
+            this.btKeyMenu.Click += new System.EventHandler(this.btKeyMenu_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(5, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(772, 13);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Start by pressing \"Select Device,\" then select your device type, then proceed to " +
+    "rebind you keys by clicking on a key button and pressing a key on your keyboard." +
+    "";
+            // 
+            // pbUpload
+            // 
+            this.pbUpload.Location = new System.Drawing.Point(8, 32);
+            this.pbUpload.Name = "pbUpload";
+            this.pbUpload.Size = new System.Drawing.Size(981, 23);
+            this.pbUpload.TabIndex = 6;
+            // 
             // FmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -172,6 +210,8 @@
             this.tabPage1.ResumeLayout(false);
             this.spcEditLayout.Panel1.ResumeLayout(false);
             this.spcEditLayout.Panel1.PerformLayout();
+            this.spcEditLayout.Panel2.ResumeLayout(false);
+            this.spcEditLayout.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spcEditLayout)).EndInit();
             this.spcEditLayout.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -190,6 +230,9 @@
         private System.Windows.Forms.Button btUpload;
         private System.Windows.Forms.Button btSelectCom;
         private System.Windows.Forms.Button btSelectDevice;
+        private System.Windows.Forms.Button btKeyMenu;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ProgressBar pbUpload;
     }
 }
 

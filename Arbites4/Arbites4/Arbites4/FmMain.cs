@@ -81,7 +81,7 @@ namespace Arbites4
                     {
                         if (MdGlobals.keys.keys[i][j][k].ktype != 255)
                         {
-                            Thread.Sleep(50);
+                            Thread.Sleep(5);
                             output.Add(textBox1.Text + "(" + i.ToString() + "(" + j.ToString() + "(" + k.ToString() + "(" + MdGlobals.keys.keys[i][j][k].val.ToString() + "(" + MdGlobals.keys.keys[i][j][k].ktype.ToString());
                             serialPort1.Write(textBox1.Text + "(" + i.ToString() + "(" + j.ToString() + "(" + k.ToString() + "(" + MdGlobals.keys.keys[i][j][k].val.ToString() + "(" + MdGlobals.keys.keys[i][j][k].ktype.ToString() + " ");
                         }

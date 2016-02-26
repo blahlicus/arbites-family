@@ -36,7 +36,7 @@ namespace ArbitesR
             {
                 if (ckd.slice == sliceIndex)
                 {
-                    output.Add(command + "(" + ckd.x + "(" + ckd.y + "(" + ckd.z + "(" + ckd.key.val + "(" + ckd.key.ktype);
+                    output.Add(command + "(" + ckd.x + "(" + ckd.y + "(" + ckd.z + "(" + ckd.key.val + "(" + ckd.key.ktype + " ");
                 }
             }
             return output;

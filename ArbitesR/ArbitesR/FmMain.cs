@@ -6,6 +6,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Threading;
+using System.IO.Ports;
 
 namespace ArbitesR
 {
@@ -176,6 +178,7 @@ namespace ArbitesR
 
         private void DisplayKeyboard(ClKeyboard input)
         {
+            spcEditLayout.Panel2.Controls.Clear();
             MdGlobals.boardType = input;
             MdGlobals.board = new UCBoard(input);
             MdGlobals.board.Dock = DockStyle.Fill;
@@ -206,9 +209,51 @@ namespace ArbitesR
 
         private void btUpload_Click(object sender, EventArgs e)
         {
+            var sp = new SerialPort();
+            sp.PortName = lPort.Text;
 
+            try
+            {
+                sp.Open();
+            }
+            catch (Exception ex)
+            {
+                DialogResult dr = MessageBox.Show("Arbites failed to detect the selected port\nAre you sure you wish to upload to this port?", "Port Confirmation", MessageBoxButtons.YesNo);
+                if (dr == DialogResult.Yes)
+                {
+                    //do nothing
+                }
+                else
+                {
+                    return;
+                }
+            }
+            var output = MdGlobals.boardType.GenerateSerialCommands(MdGlobals.board.layout);
+            
+            for (int i = 0; i < output.Count; i++ )
+            {
+                sp.Write(output[i]);
+                Thread.Sleep(5);
+                int pg = (i * 100)/output.Count;
+                if (pg >0 && pg < 101)
+                {
+                    pbUpload.Value = pg;
+                }
+
+            }
+            pbUpload.Value = 100;
+            MessageBox.Show("Upload completed");
+            pbUpload.Value = 0;
+            sp.Close();
+            /*
             var dp = new FmRichTextDisplay(MdGlobals.boardType.GenerateSerialCommands(MdGlobals.board.layout));
             dp.Show();
+            //*/
+        }
+
+        private void btKeyMenu_Click(object sender, EventArgs e)
+        {
+            MdGlobals.kselect.Show();
         }
 
 

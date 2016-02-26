@@ -25,7 +25,7 @@ namespace ArbitesR
         public List<string> GenerateSerialCommands(ClLayoutContainer input)
         {
             List<string> output = new List<string>();
-            output.Add(MdGlobals.SERIAL_SET_LAYER_COMMAND + "(" + layers);
+            output.Add(MdGlobals.SERIAL_SET_LAYER_COMMAND + "(" + layers + " ");
             foreach (ClBoardSlice slice in slices)
             {
                 output.AddRange(slice.GenerateSerialCommands(input));
