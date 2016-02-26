@@ -1,0 +1,11 @@
+C:\Users\blahlicus\Documents\GitHub\arbites-family\Arbites4\Arbites4\Arbites4\obj\Release\.NETFramework,Version=v4.5.AssemblyAttribute.cs
+C:\Users\blahlicus\Documents\GitHub\arbites-family\Arbites4\Arbites4\Arbites4\obj\Release\Arbites4.FmMain.resources
+C:\Users\blahlicus\Documents\GitHub\arbites-family\Arbites4\Arbites4\Arbites4\obj\Release\Arbites4.FmOutput.resources
+C:\Users\blahlicus\Documents\GitHub\arbites-family\Arbites4\Arbites4\Arbites4\obj\Release\Arbites4.Properties.Resources.resources
+C:\Users\blahlicus\Documents\GitHub\arbites-family\Arbites4\Arbites4\Arbites4\obj\Release\Arbites4.UCBoard.resources
+C:\Users\blahlicus\Documents\GitHub\arbites-family\Arbites4\Arbites4\Arbites4\obj\Release\Arbites4.UCLayer.resources
+C:\Users\blahlicus\Documents\GitHub\arbites-family\Arbites4\Arbites4\Arbites4\bin\Release\Arbites4.exe.config
+C:\Users\blahlicus\Documents\GitHub\arbites-family\Arbites4\Arbites4\Arbites4\bin\Release\Arbites4.exe.mdb
+C:\Users\blahlicus\Documents\GitHub\arbites-family\Arbites4\Arbites4\Arbites4\bin\Release\Arbites4.exe
+C:\Users\blahlicus\Documents\GitHub\arbites-family\Arbites4\Arbites4\Arbites4\obj\Release\Arbites4.exe
+C:\Users\blahlicus\Documents\GitHub\arbites-family\Arbites4\Arbites4\Arbites4\obj\Release\Arbites4.exe.mdb
