@@ -49,7 +49,6 @@ namespace ArbitesR
             {
                 SerialPort port = new SerialPort(output);
                 port.Open();
-                port.Close();
             }
             catch (Exception ex)
             {

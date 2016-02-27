@@ -23,6 +23,7 @@ namespace ArbitesR
                 var flp = new FlowLayoutPanel();
                 flp.Dock = DockStyle.Fill;
                 flp.Parent = tp;
+                flp.AutoScroll = true;
                 foreach (ClKey key in kg.key)
                 {
 
