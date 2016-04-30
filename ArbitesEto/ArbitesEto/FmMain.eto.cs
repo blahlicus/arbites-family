@@ -6,8 +6,14 @@ namespace ArbitesEto
 {
     partial class FmMain : Form
     {
-        MenuBar MBMain;
-        ButtonMenuItem BMIDevice, BMIKeyMenu, BMIUpload, BMIHardware, BMIPort;
+        StackLayout SLTopBar;
+        PixelLayout PLMain;
+
+        DropDown DDDevice, DDPort;
+
+        Button BtnSave, BtnLoad, BtnUpload, BtnKeyMenu;
+
+        ProgressBar PBMain;
 
 
         void InitializeComponent()
@@ -15,52 +21,72 @@ namespace ArbitesEto
             Title = "Arbites Innova - 1.2.0 0000";
             ClientSize = new Size(1000, 600);
 
-            var layout = new PixelLayout();
+            var layout = new Splitter();
+            layout.Orientation = Orientation.Vertical;
+            layout.SplitterWidth = 0;
 
+            var topSplitter = new Splitter();
+            
+            topSplitter.Orientation = Orientation.Vertical;
+            topSplitter.SplitterWidth = 0;
 
+            var l1 = new Label();
+            l1.Text = "Select Device: ";
 
-            BMIHardware = new ButtonMenuItem();
-            BMIHardware.Text = "Keyboard";
+            DDDevice = new DropDown();
+            DDDevice.Size = new Size(120, 22);
 
-            BMIPort = new ButtonMenuItem();
-            BMIPort.Text = "Port";
+            var l2 = new Label();
+            l2.Text = "Select Port: ";
 
+            DDPort = new DropDown();
+            DDPort.Size = new Size(120, 22);
 
-
-            Button cmb = new Button();
-
-            BMIDevice = new ButtonMenuItem();
-            BMIDevice.Text = "Select Device";
-            BMIDevice.Items.Add(cmb);
-            //BMIDevice.Items.Add(BMIHardware);
-            //BMIDevice.Items.Add(BMIPort);
-
-            BMIKeyMenu = new ButtonMenuItem();
-            BMIKeyMenu.Text = "Open Key Menu";
-
-
-            BMIUpload = new ButtonMenuItem();
-            BMIUpload.Text = "Upload";
-
-
-
-            MBMain = new MenuBar();
-
-
-            MBMain.Items.Add(BMIDevice);
-            MBMain.Items.Add(BMIKeyMenu);
-            MBMain.Items.Add(BMIUpload);
-
-            Menu = MBMain;
-
-            var BtnSelectDevice = new Button();
-            BtnSelectDevice.Text = "Select Device";
-            layout.Add(BtnSelectDevice, 5, 5);
-
-            var BtnKeyMenu = new Button();
+            BtnKeyMenu = new Button();
             BtnKeyMenu.Text = "Open Key Menu";
 
-            layout.Add(BtnKeyMenu, 90, 5);
+
+            BtnSave = new Button();
+            BtnSave.Text = "Save";
+
+            BtnLoad = new Button();
+            BtnLoad.Text = "Load";
+
+            BtnUpload = new Button();
+            BtnUpload.Text = "Apply";
+
+            PBMain = new ProgressBar();
+            PBMain.Value = 50;
+
+            SLTopBar = new StackLayout();
+            SLTopBar.Padding = 5;
+            SLTopBar.Spacing = 5;
+            SLTopBar.Orientation = Orientation.Horizontal;
+            SLTopBar.Items.Add(l1);
+            SLTopBar.Items.Add(DDDevice);
+            SLTopBar.Items.Add(l2);
+            SLTopBar.Items.Add(DDPort);
+            SLTopBar.Items.Add(BtnKeyMenu);
+            SLTopBar.Items.Add(BtnSave);
+            SLTopBar.Items.Add(BtnLoad);
+            SLTopBar.Items.Add(BtnUpload);
+
+            topSplitter.Panel1 = SLTopBar;
+            topSplitter.Panel2 = PBMain;
+
+            PLMain = new PixelLayout();
+
+            Button lala = new Button();
+            lala.Text = "stuff";
+            PLMain.Add(lala, 20, 20);
+
+            layout.Panel1 = topSplitter;
+            layout.Panel2 = PLMain;
+
+            //var layout = new PixelLayout();
+
+
+
 
 
 

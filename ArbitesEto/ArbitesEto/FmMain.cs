@@ -14,8 +14,11 @@ namespace ArbitesEto
         {
             InitializeComponent();
 
-            // click port button event
-            BMIDevice.Click += (sender, e) => LoadDevices();
+            // load ports event
+            DDPort.MouseEnter += (sender, e) => LoadPortList();
+
+            // load devices event
+            DDDevice.MouseEnter += (sender, e) => LoadHardwareList();
         }
 
 
@@ -31,32 +34,23 @@ namespace ArbitesEto
             List<string> files = System.IO.Directory.GetFiles(MdConstants.keyboards, MdConstants.eKeyboards).ToList<string>();
             var fileDisplayName = files.Select(str => str.Substring(str.LastIndexOf(MdConstants.pseparator) + 1)).ToList();
 
+            DDDevice.Items.Clear();
             foreach(string str in fileDisplayName)
             {
-                var nc = new Command();
-                nc.MenuText = str;
-                nc.ToolBarText = str;
-                nc.Executed += (sender, e) => SelectDeviceClicked(sender, e);
-                BMIHardware.Items.Add(nc);
+                DDDevice.Items.Add(str);
             }
-            BMIDevice.Items.Add(BMIHardware);
         }
 
         public void LoadPortList()
         {
 
-            BMIPort.Items.Clear();
+            DDPort.Items.Clear();
             string[] ports = SerialPort.GetPortNames();
             foreach (string str in ports)
             {
-                var nc = new Command();
-                nc.MenuText = str;
-                nc.ToolBarText = str;
-                nc.Executed += (sender, e) => SelectDeviceClicked(sender, e);
-                BMIPort.Items.Add(nc);
+                DDPort.Items.Add(str);
             }
 
-            BMIDevice.Items.Add(BMIPort);
 
         }
 
