@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArbitesEto", "ArbitesEto\ArbitesEto.csproj", "{00D8E908-9869-4E67-8012-E93A7E370B8A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArbitesEto.Desktop", "ArbitesEto.Desktop\ArbitesEto.Desktop.csproj", "{ED67564F-3323-43C8-ADEA-39A11209A97B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{00D8E908-9869-4E67-8012-E93A7E370B8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00D8E908-9869-4E67-8012-E93A7E370B8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00D8E908-9869-4E67-8012-E93A7E370B8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00D8E908-9869-4E67-8012-E93A7E370B8A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED67564F-3323-43C8-ADEA-39A11209A97B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED67564F-3323-43C8-ADEA-39A11209A97B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED67564F-3323-43C8-ADEA-39A11209A97B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED67564F-3323-43C8-ADEA-39A11209A97B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

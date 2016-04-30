@@ -13,6 +13,7 @@ namespace ArbitesR
         public static ClKeyboard boardType { get; set; }
         public static bool selectedSpecial { get; set; }
         public static ClKey selectedKey { get; set; }
+        public static FmMain mainForm { get; set; }
 
         public static void Initiate()
         {

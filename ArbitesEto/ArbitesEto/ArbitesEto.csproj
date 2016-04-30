@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{00D8E908-9869-4E67-8012-E93A7E370B8A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>ArbitesEto</RootNamespace>
+    <AssemblyName>ArbitesEto</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <DoNotCopyLocalIfInGac>true</DoNotCopyLocalIfInGac>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Eto">
+      <HintPath>..\packages\Eto.Forms.2.2.0\lib\net40\Eto.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.XML" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ClBoardSlice.cs" />
+    <Compile Include="ClButton.cs" />
+    <Compile Include="ClKey.cs" />
+    <Compile Include="ClKeyboard.cs" />
+    <Compile Include="ClKeyData.cs" />
+    <Compile Include="ClKeyGroup.cs" />
+    <Compile Include="ClLayoutContainer.cs" />
+    <Compile Include="FmKeySelector.cs">
+      <SubType>Eto.Forms</SubType>
+    </Compile>
+    <Compile Include="FmKeySelector.eto.cs">
+      <DependentUpon>FmKeySelector.cs</DependentUpon>
+      <SubType>Eto.Forms</SubType>
+    </Compile>
+    <Compile Include="FmMain.cs">
+      <SubType>Eto.Forms</SubType>
+    </Compile>
+    <Compile Include="FmMain.eto.cs">
+      <DependentUpon>FmMain.cs</DependentUpon>
+      <SubType>Eto.Forms</SubType>
+    </Compile>
+    <Compile Include="MdConstants.cs" />
+    <Compile Include="MdCore.cs" />
+    <Compile Include="MdEto.cs" />
+    <Compile Include="MdGlobals.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UCBoard.cs">
+      <SubType>Eto.Forms</SubType>
+    </Compile>
+    <Compile Include="UCBoard.eto.cs">
+      <DependentUpon>UCBoard.cs</DependentUpon>
+      <SubType>Eto.Forms</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

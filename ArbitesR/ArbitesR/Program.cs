@@ -13,9 +13,11 @@ namespace ArbitesR
         [STAThread]
         static void Main()
         {
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FmMain());
+            MdGlobals.mainForm = new FmMain();
+            Application.Run(MdGlobals.mainForm);
         }
     }
 }

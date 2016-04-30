@@ -1,0 +1,6 @@
+C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesGTK\ArbitesGTK\obj\Debug\ArbitesGTK.csprojResolveAssemblyReference.cache
+C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesGTK\ArbitesGTK\bin\Debug\ArbitesGTK.exe.config
+C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesGTK\ArbitesGTK\bin\Debug\ArbitesGTK.exe
+C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesGTK\ArbitesGTK\bin\Debug\ArbitesGTK.pdb
+C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesGTK\ArbitesGTK\obj\Debug\ArbitesGTK.exe
+C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesGTK\ArbitesGTK\obj\Debug\ArbitesGTK.pdb
