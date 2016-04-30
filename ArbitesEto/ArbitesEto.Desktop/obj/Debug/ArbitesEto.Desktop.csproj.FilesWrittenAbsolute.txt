@@ -1,0 +1,13 @@
+C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesEto\ArbitesEto.Desktop\obj\Debug\.NETFramework,Version=v4.0,Profile=Mono.AssemblyAttribute.cs
+C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesEto\ArbitesEto.Desktop\obj\Debug\ArbitesEto.Desktop.exe
+C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesEto\ArbitesEto.Desktop\bin\Debug\Eto.dll
+C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesEto\ArbitesEto.Desktop\bin\Debug\Eto.Gtk2.dll
+C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesEto\ArbitesEto.Desktop\bin\Debug\Eto.Gtk3.dll
+C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesEto\ArbitesEto.Desktop\bin\Debug\Eto.Mac.dll
+C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesEto\ArbitesEto.Desktop\bin\Debug\Eto.WinForms.dll
+C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesEto\ArbitesEto.Desktop\bin\Debug\Eto.Wpf.dll
+C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesEto\ArbitesEto.Desktop\bin\Debug\MonoMac.dll
+C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesEto\ArbitesEto.Desktop\bin\Debug\ArbitesEto.dll
+C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesEto\ArbitesEto.Desktop\bin\Debug\ArbitesEto.dll.mdb
+C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesEto\ArbitesEto.Desktop\bin\Debug\ArbitesEto.Desktop.exe.config
+C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesEto\ArbitesEto.Desktop\bin\Debug\ArbitesEto.Desktop.exe

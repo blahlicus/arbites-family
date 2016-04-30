@@ -9,9 +9,9 @@ namespace ArbitesEto
         StackLayout SLTopBar;
         PixelLayout PLMain;
 
-        DropDown DDDevice, DDPort;
+        Label LDevice, LPort;
 
-        Button BtnSave, BtnLoad, BtnUpload, BtnKeyMenu;
+        Button BtnDevice, BtnPort, BtnKeyMenu, BtnSave, BtnLoad, BtnUpload;
 
         ProgressBar PBMain;
 
@@ -21,69 +21,74 @@ namespace ArbitesEto
             Title = "Arbites Innova - 1.2.0 0000";
             ClientSize = new Size(1000, 600);
 
-            var layout = new Splitter();
-            layout.Orientation = Orientation.Vertical;
-            layout.SplitterWidth = 0;
+            var layout = new TableLayout();
 
-            var topSplitter = new Splitter();
-            
-            topSplitter.Orientation = Orientation.Vertical;
-            topSplitter.SplitterWidth = 0;
-
-            var l1 = new Label();
-            l1.Text = "Select Device: ";
-
-            DDDevice = new DropDown();
-            DDDevice.Size = new Size(120, 22);
-
-            var l2 = new Label();
-            l2.Text = "Select Port: ";
-
-            DDPort = new DropDown();
-            DDPort.Size = new Size(120, 22);
-
-            BtnKeyMenu = new Button();
-            BtnKeyMenu.Text = "Open Key Menu";
-
-
-            BtnSave = new Button();
-            BtnSave.Text = "Save";
-
-            BtnLoad = new Button();
-            BtnLoad.Text = "Load";
-
-            BtnUpload = new Button();
-            BtnUpload.Text = "Apply";
-
-            PBMain = new ProgressBar();
-            PBMain.Value = 50;
+            var topSplitter = new TableLayout();
+            layout.Rows.Add(new TableRow(topSplitter));
 
             SLTopBar = new StackLayout();
             SLTopBar.Padding = 5;
             SLTopBar.Spacing = 5;
             SLTopBar.Orientation = Orientation.Horizontal;
+            SLTopBar.VerticalContentAlignment = VerticalAlignment.Center;
+            topSplitter.Rows.Add(new TableRow(SLTopBar));
+
+
+            var l1 = new Label();
+            l1.Text = "Current Device:";
             SLTopBar.Items.Add(l1);
-            SLTopBar.Items.Add(DDDevice);
+
+            LDevice = new Label();
+            LDevice.Text = "None Selected";
+            SLTopBar.Items.Add(LDevice);
+
+            BtnDevice = new Button();
+            BtnDevice.Text = "Select Device";
+            SLTopBar.Items.Add(BtnDevice);
+                
+            var l2 = new Label();
+            l2.Text = "Current Port:";
             SLTopBar.Items.Add(l2);
-            SLTopBar.Items.Add(DDPort);
-            SLTopBar.Items.Add(BtnKeyMenu);
+
+            LPort = new Label();
+            LPort.Text = "None Selected";
+            SLTopBar.Items.Add(LPort);
+
+            BtnPort = new Button();
+            BtnPort.Text = "Select Port";
+            SLTopBar.Items.Add(BtnPort);
+
+            BtnKeyMenu = new Button();
+            BtnKeyMenu.Text = "Open Key Menu";
+            SLTopBar.Items.Add(BtnPort);
+
+
+            BtnSave = new Button();
+            BtnSave.Text = "Save";
             SLTopBar.Items.Add(BtnSave);
+
+            BtnLoad = new Button();
+            BtnLoad.Text = "Load";
             SLTopBar.Items.Add(BtnLoad);
+
+            BtnUpload = new Button();
+            BtnUpload.Text = "Apply";
             SLTopBar.Items.Add(BtnUpload);
 
-            topSplitter.Panel1 = SLTopBar;
-            topSplitter.Panel2 = PBMain;
+            PBMain = new ProgressBar();
+            PBMain.Value = 50;
+            PBMain.Size = new Size(100, 23);
+            topSplitter.Rows.Add(new TableRow(PBMain));
+
+
+
 
             PLMain = new PixelLayout();
+            layout.Rows.Add(new TableRow(PLMain));
 
             Button lala = new Button();
             lala.Text = "stuff";
             PLMain.Add(lala, 20, 20);
-
-            layout.Panel1 = topSplitter;
-            layout.Panel2 = PLMain;
-
-            //var layout = new PixelLayout();
 
 
 

@@ -10,8 +10,7 @@
     <AssemblyName>ArbitesEto</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <DoNotCopyLocalIfInGac>true</DoNotCopyLocalIfInGac>
-    <TargetFrameworkProfile>
-    </TargetFrameworkProfile>
+    <TargetFrameworkProfile>Mono</TargetFrameworkProfile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -29,6 +28,9 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Eto">
@@ -58,6 +60,13 @@
     </Compile>
     <Compile Include="FmMain.eto.cs">
       <DependentUpon>FmMain.cs</DependentUpon>
+      <SubType>Eto.Forms</SubType>
+    </Compile>
+    <Compile Include="FmSelectTextDialog.cs">
+      <SubType>Eto.Forms</SubType>
+    </Compile>
+    <Compile Include="FmSelectTextDialog.eto.cs">
+      <DependentUpon>FmSelectTextDialog.cs</DependentUpon>
       <SubType>Eto.Forms</SubType>
     </Compile>
     <Compile Include="MdConstants.cs" />

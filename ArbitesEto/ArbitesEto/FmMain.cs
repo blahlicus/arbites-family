@@ -15,10 +15,11 @@ namespace ArbitesEto
             InitializeComponent();
 
             // load ports event
-            DDPort.MouseEnter += (sender, e) => LoadPortList();
+            BtnDevice.Click += (sender, e) => LoadHardwareList();
 
             // load devices event
-            DDDevice.MouseEnter += (sender, e) => LoadHardwareList();
+            BtnPort.Click += (sender, e) => LoadPortList();
+            
         }
 
 
@@ -34,21 +35,25 @@ namespace ArbitesEto
             List<string> files = System.IO.Directory.GetFiles(MdConstants.keyboards, MdConstants.eKeyboards).ToList<string>();
             var fileDisplayName = files.Select(str => str.Substring(str.LastIndexOf(MdConstants.pseparator) + 1)).ToList();
 
-            DDDevice.Items.Clear();
-            foreach(string str in fileDisplayName)
+            FmSelectTextDialog dialog = new FmSelectTextDialog("Select Device", "Select Your Keyboard:", fileDisplayName, files);
+            dialog.ShowModal();
+            if (dialog.hasResult)
             {
-                DDDevice.Items.Add(str);
+                LDevice.Text = dialog.outputDisplay;
             }
+            
         }
 
         public void LoadPortList()
         {
 
-            DDPort.Items.Clear();
-            string[] ports = SerialPort.GetPortNames();
-            foreach (string str in ports)
+            //CMBPort.Items.Clear();
+            List<string> ports = SerialPort.GetPortNames().ToList();
+            FmSelectTextDialog dialog = new FmSelectTextDialog("Select Port", "Select Your Port:", ports, ports);
+            dialog.ShowModal();
+            if (dialog.hasResult)
             {
-                DDPort.Items.Add(str);
+                LPort.Text = dialog.outputDisplay;
             }
 
 
