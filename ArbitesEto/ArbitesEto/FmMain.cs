@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
+using System.IO;
 using System.IO.Ports;
 using Eto.Forms;
 using Eto.Drawing;
@@ -48,7 +50,41 @@ namespace ArbitesEto
         {
 
             //CMBPort.Items.Clear();
-            List<string> ports = SerialPort.GetPortNames().ToList();
+
+            // POSIX specific
+            List<string> ports = new List<string>();
+            if (Environment.OSVersion.Platform == PlatformID.Unix || Environment.OSVersion.Platform == PlatformID.MacOSX)
+            {
+                if (Directory.Exists(@"/dev/serial/by-id"))
+                {
+                    // probably is unix
+
+                }
+                else
+                {
+                    // probably is mac
+
+                    var psi = new Process();
+                    psi.StartInfo.WindowStyle = ProcessWindowStyle.Normal;
+                    psi.EnableRaisingEvents = false;
+                    psi.StartInfo.UseShellExecute = false;
+                    psi.StartInfo.RedirectStandardOutput = true;
+                    psi.StartInfo.FileName = @"sh";
+                    psi.StartInfo.Arguments = @"-c 'ls /dev/tty.*'";
+
+                    psi.Start();
+                    psi.WaitForExit();
+                    ports = psi.StandardOutput.ReadToEnd().Split('\n').ToList();
+
+                    //ports = psi.StandardOutput.
+
+                }
+            }
+            else
+            {
+
+                ports = SerialPort.GetPortNames().ToList();
+            }
             FmSelectTextDialog dialog = new FmSelectTextDialog("Select Port", "Select Your Port:", ports, ports);
             dialog.ShowModal();
             if (dialog.hasResult)
