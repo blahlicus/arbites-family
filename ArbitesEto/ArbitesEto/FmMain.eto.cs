@@ -60,7 +60,7 @@ namespace ArbitesEto
 
             BtnKeyMenu = new Button();
             BtnKeyMenu.Text = "Open Key Menu";
-            SLTopBar.Items.Add(BtnPort);
+            SLTopBar.Items.Add(BtnKeyMenu);
 
 
             BtnSave = new Button();

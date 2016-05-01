@@ -18,16 +18,13 @@ namespace ArbitesEto
             Resizable = false;
             ClientSize = new Size(230, 290);
 
-            var spLayout = new Splitter();
-            spLayout.Orientation = Orientation.Vertical;
-            spLayout.SplitterWidth = 1;
-            spLayout.FixedPanel = SplitterFixedPanel.Panel1;
+            var spLayout = new TableLayout();
 
             var topLayout = new StackLayout();
             topLayout.Orientation = Orientation.Vertical;
             topLayout.Padding = 5;
             topLayout.Spacing = 5;
-            spLayout.Panel1 = topLayout;
+            spLayout.Rows.Add(new TableRow(topLayout));
 
             SLMain = new StackLayout();
             SLMain.Orientation = Orientation.Vertical;
@@ -40,7 +37,7 @@ namespace ArbitesEto
             scrBot.Border = BorderType.None;
 
 
-            spLayout.Panel2 = scrBot;
+            spLayout.Rows.Add(new TableRow(scrBot));
 
             LDesc = new Label();
             LDesc.Text = "Default Description";

@@ -7,11 +7,18 @@ namespace ArbitesEto
 {
     partial class FmKeySelector : Form
     {
+        TabControl TCMain;
+
         void InitializeComponent()
         {
-            Title = "My Form";
+            Title = "Key Selector";
+            ClientSize = new Size(610, 515);
+            Resizable = false;
+            TCMain = new TabControl();
 
-            Content = new Label { Text = "Some Content" };
+
+
+            Content = TCMain;
         }
     }
 }

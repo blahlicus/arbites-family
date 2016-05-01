@@ -16,14 +16,24 @@ namespace ArbitesEto
         {
             InitializeComponent();
 
+            ClKey.iniList();
+            MdGlobals.Initiate();
+
             // load ports event
             BtnDevice.Click += (sender, e) => LoadHardwareList();
 
             // load devices event
             BtnPort.Click += (sender, e) => LoadPortList();
+
+            // launch key selector
+            BtnKeyMenu.Click += (sender, e) => LaunchKeyMenu();
             
         }
 
+        public void LaunchKeyMenu()
+        {
+            MdGlobals.kselect.Show();
+        }
 
         public void LoadDevices()
         {
@@ -55,29 +65,51 @@ namespace ArbitesEto
             List<string> ports = new List<string>();
             if (Environment.OSVersion.Platform == PlatformID.Unix || Environment.OSVersion.Platform == PlatformID.MacOSX)
             {
-                if (Directory.Exists(@"/dev/serial/by-id"))
+                try
                 {
-                    // probably is unix
 
+                    if (Directory.Exists(@"/dev/serial/by-id"))
+                    {
+                        // probably is unix
+                        var psi = new Process();
+                        psi.StartInfo.WindowStyle = ProcessWindowStyle.Normal;
+                        psi.EnableRaisingEvents = false;
+                        psi.StartInfo.UseShellExecute = false;
+                        psi.StartInfo.RedirectStandardOutput = true;
+                        psi.StartInfo.FileName = @"sh";
+                        psi.StartInfo.Arguments = @"-c 'for s in /dev/serial/by-path/*; do readlink -f $s; done'";
+
+                        psi.Start();
+                        psi.WaitForExit();
+                        ports = psi.StandardOutput.ReadToEnd().Split('\n').ToList();
+                        ports.RemoveAt(ports.Count - 1);
+
+
+                    }
+                    else
+                    {
+                        // probably is mac
+
+                        var psi = new Process();
+                        psi.StartInfo.WindowStyle = ProcessWindowStyle.Normal;
+                        psi.EnableRaisingEvents = false;
+                        psi.StartInfo.UseShellExecute = false;
+                        psi.StartInfo.RedirectStandardOutput = true;
+                        psi.StartInfo.FileName = @"sh";
+                        psi.StartInfo.Arguments = @"-c 'ls /dev/tty.*'";
+
+                        psi.Start();
+                        psi.WaitForExit();
+                        ports = psi.StandardOutput.ReadToEnd().Split('\n').ToList();
+                        ports.RemoveAt(ports.Count - 1);
+
+                        //ports = psi.StandardOutput.
+
+                    }
                 }
-                else
+                catch (Exception e)
                 {
-                    // probably is mac
-
-                    var psi = new Process();
-                    psi.StartInfo.WindowStyle = ProcessWindowStyle.Normal;
-                    psi.EnableRaisingEvents = false;
-                    psi.StartInfo.UseShellExecute = false;
-                    psi.StartInfo.RedirectStandardOutput = true;
-                    psi.StartInfo.FileName = @"sh";
-                    psi.StartInfo.Arguments = @"-c 'ls /dev/tty.*'";
-
-                    psi.Start();
-                    psi.WaitForExit();
-                    ports = psi.StandardOutput.ReadToEnd().Split('\n').ToList();
-
-                    //ports = psi.StandardOutput.
-
+                    ports = SerialPort.GetPortNames().ToList();
                 }
             }
             else
