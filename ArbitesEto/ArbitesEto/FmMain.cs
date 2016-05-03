@@ -32,7 +32,16 @@ namespace ArbitesEto
 
         public void LaunchKeyMenu()
         {
-            MdGlobals.kselect.Show();
+            if (MdGlobals.kselect.Loaded)
+            {
+                MdGlobals.kselect.Focus();
+            }
+            else
+            {
+                MdGlobals.kselect = new FmKeySelector();
+                MdGlobals.kselect.Show();
+            }
+            
         }
 
         public void LoadDevices()

@@ -73,5 +73,10 @@ namespace ArbitesEto
             MdGlobals.selectedKey = ClKey.dKeys.Find(k => (k.val == val && k.ktype == ktype));
             MdGlobals.selectedSpecial = true;
         }
+
+
+
+
+
     }
 }
