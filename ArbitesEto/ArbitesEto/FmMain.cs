@@ -44,12 +44,6 @@ namespace ArbitesEto
             
         }
 
-        public void LoadDevices()
-        {
-            LoadHardwareList();
-            LoadPortList();
-
-        }
 
         public void LoadHardwareList()
         {
@@ -60,9 +54,18 @@ namespace ArbitesEto
             dialog.ShowModal();
             if (dialog.hasResult)
             {
-                LDevice.Text = dialog.outputDisplay;
+                ClKeyboard output = MdCore.Deserialize<ClKeyboard>(dialog.output);
+
+                DisplayKeyboard(output);
             }
             
+        }
+
+        private void DisplayKeyboard(ClKeyboard input)
+        {
+            MdGlobals.boardType = input;
+            MdGlobals.board = new UCBoard(input);
+            PMain.Content = MdGlobals.board;
         }
 
         public void LoadPortList()
@@ -112,7 +115,6 @@ namespace ArbitesEto
                         ports = psi.StandardOutput.ReadToEnd().Split('\n').ToList();
                         ports.RemoveAt(ports.Count - 1);
 
-                        //ports = psi.StandardOutput.
 
                     }
                 }
@@ -136,10 +138,6 @@ namespace ArbitesEto
 
         }
 
-        public void SelectDeviceClicked(object sender, EventArgs e)
-        {
-            MessageBox.Show((sender as Command).MenuText);
-        }
 
     }
 }

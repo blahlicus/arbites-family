@@ -8,10 +8,11 @@ namespace ArbitesEto
     {
         StackLayout SLTopBar;
         PixelLayout PLMain;
+        Panel PMain;
 
         Label LDevice, LPort;
 
-        Button BtnDevice, BtnPort, BtnKeyMenu, BtnSave, BtnLoad, BtnUpload;
+        Button BtnDevice, BtnPort, BtnKeyMenu, BtnUpload;
 
         ProgressBar PBMain;
 
@@ -62,15 +63,6 @@ namespace ArbitesEto
             BtnKeyMenu.Text = "Open Key Menu";
             SLTopBar.Items.Add(BtnKeyMenu);
 
-
-            BtnSave = new Button();
-            BtnSave.Text = "Save";
-            SLTopBar.Items.Add(BtnSave);
-
-            BtnLoad = new Button();
-            BtnLoad.Text = "Load";
-            SLTopBar.Items.Add(BtnLoad);
-
             BtnUpload = new Button();
             BtnUpload.Text = "Apply";
             SLTopBar.Items.Add(BtnUpload);
@@ -84,12 +76,14 @@ namespace ArbitesEto
 
 
             PLMain = new PixelLayout();
-            layout.Rows.Add(new TableRow(PLMain));
+            //layout.Rows.Add(new TableRow(PLMain));
 
             Button lala = new Button();
             lala.Text = "stuff";
             PLMain.Add(lala, 20, 20);
 
+            PMain = new Panel();
+            layout.Rows.Add(PMain);
 
 
 

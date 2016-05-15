@@ -81,6 +81,20 @@
       <DependentUpon>UCBoard.cs</DependentUpon>
       <SubType>Eto.Forms</SubType>
     </Compile>
+    <Compile Include="UCLayer.cs">
+      <SubType>Eto.Forms</SubType>
+    </Compile>
+    <Compile Include="UCLayer.eto.cs">
+      <DependentUpon>UCLayer.cs</DependentUpon>
+      <SubType>Eto.Forms</SubType>
+    </Compile>
+    <Compile Include="UCSlice.cs">
+      <SubType>Eto.Forms</SubType>
+    </Compile>
+    <Compile Include="UCSlice.eto.cs">
+      <DependentUpon>UCSlice.cs</DependentUpon>
+      <SubType>Eto.Forms</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config">

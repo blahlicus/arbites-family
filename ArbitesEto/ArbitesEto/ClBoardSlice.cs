@@ -23,7 +23,7 @@ namespace ArbitesEto
         public ClBoardSlice(string command, string sliceName, int sliceIndex, int layers)
         {
             this.command = command;
-            this.layers = layers;
+            this.layers = -1; // deprecated
             this.sliceIndex = sliceIndex;
             this.sliceName = sliceName;
             keys = new List<ClButton>();
@@ -32,12 +32,18 @@ namespace ArbitesEto
         public List<string> GenerateSerialCommands(ClLayoutContainer input)
         {
             List<string> output = new List<string>();
-            foreach (ClKeyData ckd in input.keys)
+            int _lay = 0;
+            foreach (List<ClKeyData> ckdl in input.keys)
             {
-                if (ckd.slice == sliceIndex)
+
+                foreach (ClKeyData ckd in ckdl)
                 {
-                    output.Add(command + "(" + ckd.x + "(" + ckd.y + "(" + ckd.z + "(" + ckd.key.val + "(" + ckd.key.ktype + " ");
+                    if (ckd.slice == sliceIndex)
+                    {
+                        output.Add(command + "(" + ckd.x + "(" + ckd.y + "(" + _lay + "(" + ckd.key.val + "(" + ckd.key.ktype + " ");
+                    }
                 }
+                _lay++;
             }
             return output;
         }
