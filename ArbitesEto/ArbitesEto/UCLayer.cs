@@ -107,7 +107,7 @@ namespace ArbitesEto
             int z = Convert.ToInt32(btn);
 
 
-            if (CBAllLayers.Checked.Value)
+            if (CBAllLayers.Checked.Value || key.allLayers)
             {
                 foreach (List<ClKeyData> kl in layout.keys)
                 {
@@ -165,8 +165,17 @@ namespace ArbitesEto
 
         private void btDelete_Click(object sender, EventArgs e)
         {
-            this.layout.keys.RemoveAt(index);
-            MdGlobals.board.LoadLayout(layout);
+            if (layout.keys.Count > 1)
+            {
+
+                this.layout.keys.RemoveAt(index);
+                MdGlobals.board.LoadLayout(layout);
+                MdGlobals.board.UpdateScrollable();
+            }
+            else
+            {
+                MessageBox.Show("Error: Minimum number of layers reached: 1");
+            }
         }
 
     }

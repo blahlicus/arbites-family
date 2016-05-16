@@ -10,6 +10,7 @@ namespace ArbitesEto
         public List<UCSlice> slices { get; set; }
         public string saveExtension { get; set; }
         public ClLayoutContainer layout { get; set; }
+        public int maxLayer { get; set; }
         public UCBoard()
         {
             //teste dit
@@ -28,7 +29,7 @@ namespace ArbitesEto
             slices = new List<UCSlice>();
             layout = new ClLayoutContainer();
 
-            for (int i = 0; i < keyboard.layers; i++ )
+            for (int i = 0; i < 3; i++ )
             {
                 layout.keys.Add(new List<ClKeyData>());
             }
@@ -40,6 +41,7 @@ namespace ArbitesEto
                 this.slices.Add(ns);
                 SLMain.Items.Add(ns);
             }
+            maxLayer = keyboard.layers;
             LName.Text = "Keyboard Type: " + keyboard.keyboardName;
             BtnSave.Click += (sender, e) => btSave_Click(sender, e);
             BtnLoad.Click += (sender, e) => btLoad_Click(sender, e);
@@ -89,8 +91,21 @@ namespace ArbitesEto
 
         private void btAddLayer_Click(object sender, EventArgs e)
         {
-            this.layout.keys.Add(new List<ClKeyData>());
-            LoadLayout(this.layout);
+            if (layout.keys.Count < maxLayer)
+            {
+
+                this.layout.keys.Add(new List<ClKeyData>());
+                LoadLayout(this.layout);
+            }
+            else
+            {
+                MessageBox.Show("Error: Maximum number of layers reached: " + maxLayer.ToString());
+            }
+        }
+
+        public void UpdateScrollable()
+        {
+            SCMain.UpdateScrollSizes();
         }
     }
 }

@@ -3,7 +3,7 @@
   <keyboardName>Wootpat Planck</keyboardName>
   <keyboardType>Wootpat Planck</keyboardType>
   <fileFormat>ukwpp</fileFormat>
-  <layers>3</layers>
+  <layers>6</layers>
   <slices>
     <ClBoardSlice>
       <command>uniqueksetkey</command>

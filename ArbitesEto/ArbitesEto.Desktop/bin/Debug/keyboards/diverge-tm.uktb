@@ -3,7 +3,7 @@
   <keyboardName>Diverge TM</keyboardName>
   <keyboardType>Diverge TM</keyboardType>
   <fileFormat>ukdtm</fileFormat>
-  <layers>3</layers>
+  <layers>13</layers>
   <slices>
     <ClBoardSlice>
       <command>uniqueksetkey</command>

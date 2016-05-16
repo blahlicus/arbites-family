@@ -10,19 +10,22 @@ namespace ArbitesEto
         public Byte val { get; set; }
         public Byte ktype { get; set; }
         public string display { get; set; }
+        public bool allLayers { get; set; }
 
         public ClKey()
         {
             val = 0;
             display = "Null";
             ktype = 255;
+            allLayers = false;
         }
 
-        public ClKey(byte val, Byte ktype, string display)
+        public ClKey(byte val, Byte ktype, string display, bool allLayers)
         {
             this.val = val;
             this.ktype = ktype;
             this.display = display;
+            this.allLayers = allLayers;
         }
         /*
         public static List<ClKey> dKeys { get; set; }

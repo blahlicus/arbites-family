@@ -10,6 +10,7 @@ namespace ArbitesEto
         public FmKeySelector()
         {
             InitializeComponent();
+            Icon = new Icon(MdConstants.icon);
             AddTabs(ClKey.lists);
         }
 
@@ -19,6 +20,9 @@ namespace ArbitesEto
 
             foreach (ClKeyGroup kg in ClKey.lists)
             {
+                /*del
+                var kng = new ClNKeyGroup(kg.name, kg.priority, new List<ClNKey>());
+                //*/
                 var tp = new TabPage();
                 tp.Text = kg.name;
                 TCMain.Pages.Add(tp);
@@ -46,6 +50,16 @@ namespace ArbitesEto
 
                 foreach (ClKey key in kg.key)
                 {
+                    /*del
+                    var clnk = new ClNKey(key.val, key.ktype, key.display, false);
+                    if (clnk.display.Contains("Fn") || clnk.display.Contains("Layer"))
+                    {
+                        clnk.allLayers = true;
+                    }
+                    kng.key.Add(clnk);
+                    //*/
+
+
 
                     var newb = new Button();
                     newb.Tag = "bt_" + key.val + "_" + key.ktype;
@@ -60,6 +74,10 @@ namespace ArbitesEto
                     }
                 }
 
+                /*
+                System.IO.Directory.CreateDirectory("keygroups2");
+                MdCore.Serialize<ClNKeyGroup>(kng, "keygroups2" + MdConstants.pseparator + kng.name.ToLower() + MdConstants.eKeygroups.Substring(1));
+                //*/
             }
         }
 

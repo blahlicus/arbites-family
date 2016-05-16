@@ -3,7 +3,7 @@
   <keyboardName>Diverge II</keyboardName>
   <keyboardType>Diverge II</keyboardType>
   <fileFormat>ukd2</fileFormat>
-  <layers>3</layers>
+  <layers>8</layers>
   <slices>
     <ClBoardSlice>
       <command>uniqueksetkey</command>

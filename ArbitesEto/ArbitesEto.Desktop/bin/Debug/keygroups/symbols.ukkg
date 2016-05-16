@@ -5,56 +5,67 @@
       <val>91</val>
       <ktype>0</ktype>
       <display>[ {</display>
+      <allLayers>false</allLayers>
     </ClKey>
     <ClKey>
       <val>93</val>
       <ktype>0</ktype>
       <display>] }</display>
+      <allLayers>false</allLayers>
     </ClKey>
     <ClKey>
       <val>92</val>
       <ktype>0</ktype>
       <display>\ |</display>
+      <allLayers>false</allLayers>
     </ClKey>
     <ClKey>
       <val>59</val>
       <ktype>0</ktype>
       <display>); :</display>
+      <allLayers>false</allLayers>
     </ClKey>
     <ClKey>
       <val>39</val>
       <ktype>0</ktype>
       <display>' "</display>
+      <allLayers>false</allLayers>
     </ClKey>
     <ClKey>
       <val>45</val>
       <ktype>0</ktype>
       <display>- _</display>
+      <allLayers>false</allLayers>
     </ClKey>
     <ClKey>
       <val>61</val>
       <ktype>0</ktype>
       <display>= +</display>
+      <allLayers>false</allLayers>
     </ClKey>
     <ClKey>
       <val>47</val>
       <ktype>0</ktype>
       <display>/ ?</display>
+      <allLayers>false</allLayers>
     </ClKey>
     <ClKey>
       <val>96</val>
       <ktype>0</ktype>
       <display>` ~</display>
+      <allLayers>false</allLayers>
     </ClKey>
     <ClKey>
       <val>44</val>
       <ktype>0</ktype>
       <display>, &lt;</display>
+      <allLayers>false</allLayers>
     </ClKey>
     <ClKey>
       <val>46</val>
       <ktype>0</ktype>
       <display>. &gt;</display>
+      <allLayers>false</allLayers>
     </ClKey>
   </key>
   <name>Symbols</name>

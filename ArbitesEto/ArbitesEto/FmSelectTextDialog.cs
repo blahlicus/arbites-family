@@ -16,6 +16,7 @@ namespace ArbitesEto
         public FmSelectTextDialog()
         {
             InitializeComponent();
+            Icon = new Icon(MdConstants.icon);
             outputList = new List<string>();
             outputDisplayList = new List<string>();
             hasResult = false;
@@ -25,6 +26,7 @@ namespace ArbitesEto
         {
 
             InitializeComponent();
+            Icon = new Icon(MdConstants.icon);
             hasResult = false;
 
             Title = title;

@@ -3,7 +3,7 @@
   <keyboardName>Terminus Mini</keyboardName>
   <keyboardType>Terminus Mini</keyboardType>
   <fileFormat>uktm</fileFormat>
-  <layers>3</layers>
+  <layers>6</layers>
   <slices>
     <ClBoardSlice>
       <command>uniqueksetkey</command>

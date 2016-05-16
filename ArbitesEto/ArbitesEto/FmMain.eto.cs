@@ -22,6 +22,7 @@ namespace ArbitesEto
             Title = "Arbites Innova - 1.2.0 0000";
             ClientSize = new Size(1000, 600);
 
+
             var layout = new TableLayout();
 
             var topSplitter = new TableLayout();

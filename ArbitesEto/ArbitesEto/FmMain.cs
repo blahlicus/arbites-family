@@ -15,7 +15,9 @@ namespace ArbitesEto
         public FmMain()
         {
             InitializeComponent();
-
+            Icon = new Icon(MdConstants.icon);
+            //Icon = ArbitesEto.Properties.Resources.favicon as Eto.Drawing.Icon;
+            //Icon = Icon.FromResource("favicon.ico", typeof(System.Drawing.Icon));
             ClKey.iniList();
             MdGlobals.Initiate();
 

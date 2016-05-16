@@ -5,51 +5,61 @@
       <val>48</val>
       <ktype>0</ktype>
       <display>0</display>
+      <allLayers>false</allLayers>
     </ClKey>
     <ClKey>
       <val>49</val>
       <ktype>0</ktype>
       <display>1</display>
+      <allLayers>false</allLayers>
     </ClKey>
     <ClKey>
       <val>50</val>
       <ktype>0</ktype>
       <display>2</display>
+      <allLayers>false</allLayers>
     </ClKey>
     <ClKey>
       <val>51</val>
       <ktype>0</ktype>
       <display>3</display>
+      <allLayers>false</allLayers>
     </ClKey>
     <ClKey>
       <val>52</val>
       <ktype>0</ktype>
       <display>4</display>
+      <allLayers>false</allLayers>
     </ClKey>
     <ClKey>
       <val>53</val>
       <ktype>0</ktype>
       <display>5</display>
+      <allLayers>false</allLayers>
     </ClKey>
     <ClKey>
       <val>54</val>
       <ktype>0</ktype>
       <display>6</display>
+      <allLayers>false</allLayers>
     </ClKey>
     <ClKey>
       <val>55</val>
       <ktype>0</ktype>
       <display>7</display>
+      <allLayers>false</allLayers>
     </ClKey>
     <ClKey>
       <val>56</val>
       <ktype>0</ktype>
       <display>8</display>
+      <allLayers>false</allLayers>
     </ClKey>
     <ClKey>
       <val>57</val>
       <ktype>0</ktype>
       <display>9</display>
+      <allLayers>false</allLayers>
     </ClKey>
   </key>
   <name>Numbers</name>

@@ -5,3 +5,5 @@ C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesEto\ArbitesEto\bin\Deb
 C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesEto\ArbitesEto\obj\Debug\ArbitesEto.csprojResolveAssemblyReference.cache
 C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesEto\ArbitesEto\obj\Debug\ArbitesEto.dll
 C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesEto\ArbitesEto\obj\Debug\ArbitesEto.pdb
+C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesEto\ArbitesEto\obj\Debug\ArbitesEto.Properties.Resources.resources
+C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesEto\ArbitesEto\obj\Debug\ArbitesEto.csproj.GenerateResource.Cache
