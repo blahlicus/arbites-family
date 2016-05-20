@@ -29,7 +29,14 @@ namespace ArbitesEto
 
             // launch key selector
             BtnKeyMenu.Click += (sender, e) => LaunchKeyMenu();
+
+            BtnUpload.Click += (sender, e) => BtnUploadClicked();
             
+        }
+
+        public void BtnUploadClicked()
+        {
+            MdGlobals.board.slices[0].ClientSize = new Size(200, 400);
         }
 
         public void LaunchKeyMenu()

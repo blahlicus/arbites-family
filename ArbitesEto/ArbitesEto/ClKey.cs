@@ -27,6 +27,15 @@ namespace ArbitesEto
             this.display = display;
             this.allLayers = allLayers;
         }
+
+        public ClKey(ClKey input)
+        {
+            this.val = input.val;
+            this.ktype = input.ktype;
+            this.display = input.display;
+            this.allLayers = input.allLayers;
+
+        }
         /*
         public static List<ClKey> dKeys { get; set; }
         public static List<ClKey> alpha { get; set; }

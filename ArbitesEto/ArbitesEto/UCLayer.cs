@@ -46,7 +46,19 @@ namespace ArbitesEto
                 btn.Tag = "bt_" + sliceIndex + "_" + input.x + "_" + input.y + "_" + index;
                 if (init)
                 {
-                    layout.keys[index].Add(new ClKeyData(sliceIndex, input.x, input.y));
+                    var nkd = new ClKeyData(sliceIndex, input.x, input.y);
+                    if (index != 0)
+                    {
+                        foreach (ClKeyData kd in layout.keys[0])
+                        {
+                            if (kd.slice == sliceIndex && kd.x == input.x && kd.y == input.y && kd.key.allLayers)
+                            {
+                                nkd.key = new ClKey(kd.key);
+                                break;
+                            }
+                        }
+                    }
+                    layout.keys[index].Add(nkd);
                 }
                 btn.Size = new Size(input.gw, input.gh);
                 PLMain.Add(btn, input.gx, input.gy);
@@ -107,23 +119,20 @@ namespace ArbitesEto
             int z = Convert.ToInt32(btn);
 
 
-            if (CBAllLayers.Checked.Value || key.allLayers)
-            {
-                foreach (List<ClKeyData> kl in layout.keys)
-                {
 
-                    foreach (ClKeyData k in kl)
+            foreach (List<ClKeyData> kl in layout.keys)
+            {
+
+                foreach (ClKeyData k in kl)
+                {
+                    if (k.slice == slice && k.x == x && k.y == y)
                     {
-                        if (k.slice == slice && k.x == x && k.y == y)
+                        if (CBAllLayers.Checked.Value || key.allLayers || k.key.allLayers || layout.keys.IndexOf(kl) == this.index)
                         {
                             k.key = key;
                         }
                     }
                 }
-            }
-            else
-            {
-                layout.keys[index].Find(k => (k.slice == slice && k.x == x && k.y == y)).key = key;
             }
             MdGlobals.board.LoadLayout(layout);
         }
@@ -142,23 +151,20 @@ namespace ArbitesEto
             int z = Convert.ToInt32(btn);
 
 
-            if (CBAllLayers.Checked.Value)
-            {
-                foreach (List<ClKeyData> kl in layout.keys)
-                {
 
-                    foreach (ClKeyData k in kl)
+            foreach (List<ClKeyData> kl in layout.keys)
+            {
+
+                foreach (ClKeyData k in kl)
+                {
+                    if (k.slice == slice && k.x == x && k.y == y)
                     {
-                        if (k.slice == slice && k.x == x && k.y == y)
+                        if (CBAllLayers.Checked.Value || ClKey.GetKeyFromChar(input).allLayers || k.key.allLayers || layout.keys.IndexOf(kl) == this.index)
                         {
                             k.key = ClKey.GetKeyFromChar(input);
                         }
                     }
                 }
-            }
-            else
-            {
-                layout.keys[index].Find(k => (k.slice == slice && k.x == x && k.y == y)).key = ClKey.GetKeyFromChar(input);
             }
             MdGlobals.board.LoadLayout(layout);
         }

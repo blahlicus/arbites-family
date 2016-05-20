@@ -40,24 +40,28 @@ namespace ArbitesEto
             var nl = new UCLayer(sliceInfo.keys, sliceInfo.sliceIndex, layer, this.layout, init);
             SLMain.Items.Add(nl);
             layers.Add(nl);
-            ClientSize = new Size(layers[0].Size.Width + 30, layers[0].Size.Height * layers.Count + 30);
+            
+            //MessageBox.Show("Added to client");
+            //ClientSize = new Size(layers[0].ClientSize.Width + 30, layers[0].ClientSize.Height * layers.Count + 30);
+            //ClientSize = new Size(472, 1023);
+            //MessageBox.Show(layers[0].ClientSize.Width.ToString());
         }
 
         public void LoadLayout(ClLayoutContainer input)
         {
             this.layout = input;
-            /*
-            while (layout.layers < layers.Count)
+
+            while (layout.keys.Count < layers.Count)
             {
                 this.SLMain.Items.RemoveAt(layers.Count - 1);
                 layers.RemoveAt(layers.Count - 1);
             }
-            while (layout.layers > layers.Count)
+            while (layers.Count < layout.keys.Count)
             {
-                AddLayer();
+                AddLayer(layers.Count, true);
             }
             //*/
-
+            /*
             if (layout.keys.Count < layers.Count)
             {
                 this.SLMain.Items.Clear();
@@ -85,8 +89,8 @@ namespace ArbitesEto
                     }
                     AddLayer(i, init);
                 }
-                //*/
             }
+                //*/
 
 
 
