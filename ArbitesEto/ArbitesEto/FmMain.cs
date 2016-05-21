@@ -4,15 +4,20 @@ using System.Diagnostics;
 using System.Linq;
 using System.IO;
 using System.IO.Ports;
+using System.Timers;
 using Eto.Forms;
 using Eto.Drawing;
 using System.Threading;
+using System.ComponentModel;
 
 namespace ArbitesEto
 {
     public partial class FmMain
     {
 
+        BackgroundWorker BWProgress;
+
+        SerialPort sp;
         public FmMain()
         {
             InitializeComponent();
@@ -32,12 +37,23 @@ namespace ArbitesEto
             BtnKeyMenu.Click += (sender, e) => LaunchKeyMenu();
 
             BtnUpload.Click += (sender, e) => BtnUploadClicked();
+
+            this.Closing += (sender, e) => FormClosing();
             
+        }
+
+        public void FormClosing()
+        {
+            if (MdGlobals.kselect.Loaded)
+            {
+                MdGlobals.kselect.Close();
+            }
         }
 
         public void BtnUploadClicked()
         {
-            var sp = new SerialPort();
+            BtnUpload.Enabled = false;
+            sp = new SerialPort();
             sp.PortName = LPort.Text;
 
             try
@@ -50,14 +66,31 @@ namespace ArbitesEto
                 if (dr == DialogResult.Yes)
                 {
                     //do nothing
+                    BtnUpload.Enabled = true;
                 }
                 else
                 {
                     return;
                 }
             }
-            var output = MdGlobals.boardType.GenerateSerialCommands(MdGlobals.board.layout);
+            if (MdGlobals.board == null)
+            {
+                MessageBox.Show("You must first select your device type by pressing the \"Select Device\" button.");
+                BtnUpload.Enabled = true;
+            }
+            else
+            {
+                var output = MdGlobals.boardType.GenerateSerialCommands(MdGlobals.board.layout);
 
+                BWProgress = new BackgroundWorker();
+                BWProgress.DoWork += (sender, e) => BWDoWork(sender, e, output, output.Count);
+                BWProgress.ProgressChanged += (sender, e) => BWUpdate(sender, e);
+                BWProgress.WorkerReportsProgress = true;
+                BWProgress.RunWorkerAsync();
+
+            }
+
+            /*
             for (int i = 0; i < output.Count; i++)
             {
                 sp.Write(output[i]);
@@ -73,6 +106,54 @@ namespace ArbitesEto
             MessageBox.Show("Upload completed");
             PBMain.Value = 0;
             sp.Close();
+            /*
+            var dp = new FmRichTextDisplay(MdGlobals.boardType.GenerateSerialCommands(MdGlobals.board.layout));
+            dp.Show();
+            //*/
+        }
+        public void BWDoWork(object sender, DoWorkEventArgs e, List<string> input, int max)
+        {
+            try
+            {
+                int lastpg = 0;
+                while (input.Count > 0)
+                {
+                    sp.Write(input[0]);
+                    input.RemoveAt(0);
+
+                    Thread.Sleep(5);
+                    int pg = ((max - input.Count) * 100) / max;
+                    if ((pg > 0 && pg < 101) && (pg > lastpg + 8 || pg == 100))
+                    {
+                        BWProgress.ReportProgress(pg);
+                        lastpg = pg;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                BWProgress.ReportProgress(0);
+
+            }
+        }
+
+        public void BWUpdate(object sender, ProgressChangedEventArgs e)
+        {
+            PBMain.Value = e.ProgressPercentage;
+            if (e.ProgressPercentage == 100)
+            {
+                MessageBox.Show("Upload Completed");
+                PBMain.Value = 0;
+                BtnUpload.Enabled = true;
+                sp.Close();
+            }
+            else if (e.ProgressPercentage == 0)
+            {
+                MessageBox.Show("Intermediate Upload Error!");
+                PBMain.Value = 0;
+                BtnUpload.Enabled = true;
+                sp.Close();
+            }
         }
 
         public void LaunchKeyMenu()

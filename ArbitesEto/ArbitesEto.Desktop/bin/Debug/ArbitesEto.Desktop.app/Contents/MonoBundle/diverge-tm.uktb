@@ -2,7 +2,7 @@
 <ClKeyboard xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <keyboardName>Diverge TM</keyboardName>
   <keyboardType>Diverge TM</keyboardType>
-  <fileFormat>ukdtm</fileFormat>
+  <fileFormat>uk2dtm</fileFormat>
   <layers>13</layers>
   <slices>
     <ClBoardSlice>
@@ -166,7 +166,7 @@
         <ClButton>
           <x>4</x>
           <y>3</y>
-          <gw>72</gw>
+          <gw>144</gw>
           <gh>72</gh>
           <gx>293</gx>
           <gy>221</gy>
@@ -358,9 +358,9 @@
         <ClButton>
           <x>4</x>
           <y>3</y>
-          <gw>72</gw>
+          <gw>144</gw>
           <gh>72</gh>
-          <gx>77</gx>
+          <gx>5</gx>
           <gy>221</gy>
         </ClButton>
         <ClButton>

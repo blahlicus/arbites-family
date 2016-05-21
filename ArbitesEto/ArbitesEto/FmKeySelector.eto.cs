@@ -15,7 +15,7 @@ namespace ArbitesEto
             ClientSize = new Size(610, 515);
             Resizable = false;
             TCMain = new TabControl();
-
+            this.Topmost = true;
 
 
             Content = TCMain;

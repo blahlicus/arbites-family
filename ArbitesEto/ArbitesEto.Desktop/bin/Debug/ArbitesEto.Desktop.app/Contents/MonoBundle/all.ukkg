@@ -334,7 +334,7 @@
     <ClKey>
       <val>59</val>
       <ktype>0</ktype>
-      <display>); :</display>
+      <display>; :</display>
       <allLayers>false</allLayers>
     </ClKey>
     <ClKey>
@@ -545,6 +545,12 @@
       <val>206</val>
       <ktype>0</ktype>
       <display>PrtSc</display>
+      <allLayers>false</allLayers>
+    </ClKey>
+    <ClKey>
+      <val>237</val>
+      <ktype>0</ktype>
+      <display>Menu</display>
       <allLayers>false</allLayers>
     </ClKey>
     <ClKey>

@@ -2,7 +2,7 @@
 <ClKeyboard xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <keyboardName>Terminus Mini</keyboardName>
   <keyboardType>Terminus Mini</keyboardType>
-  <fileFormat>uktm</fileFormat>
+  <fileFormat>uk2tm</fileFormat>
   <layers>6</layers>
   <slices>
     <ClBoardSlice>
@@ -166,7 +166,7 @@
         <ClButton>
           <x>4</x>
           <y>3</y>
-          <gw>72</gw>
+          <gw>144</gw>
           <gh>72</gh>
           <gx>293</gx>
           <gy>221</gy>
@@ -222,7 +222,7 @@
         <ClButton>
           <x>6</x>
           <y>3</y>
-          <gw>72</gw>
+          <gw>144</gw>
           <gh>72</gh>
           <gx>437</gx>
           <gy>221</gy>

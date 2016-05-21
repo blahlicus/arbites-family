@@ -7,3 +7,14 @@ C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesEto\ArbitesEto\obj\Deb
 C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesEto\ArbitesEto\obj\Debug\ArbitesEto.Properties.Resources.resources
 C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesEto\ArbitesEto\obj\Debug\ArbitesEto.csproj.GenerateResource.Cache
 C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesEto\ArbitesEto\obj\Debug\ArbitesEto.csprojResolveAssemblyReference.cache
+C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesEto\ArbitesEto\bin\Debug\config\favicon.ico
+C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesEto\ArbitesEto\bin\Debug\keyboards\diverge-ii.uktb
+C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesEto\ArbitesEto\bin\Debug\keyboards\diverge-tm.uktb
+C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesEto\ArbitesEto\bin\Debug\keyboards\terminus-mini.uktb
+C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesEto\ArbitesEto\bin\Debug\keygroups\all.ukkg
+C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesEto\ArbitesEto\bin\Debug\keygroups\alphabets.ukkg
+C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesEto\ArbitesEto\bin\Debug\keygroups\control.ukkg
+C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesEto\ArbitesEto\bin\Debug\keygroups\numbers.ukkg
+C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesEto\ArbitesEto\bin\Debug\keygroups\numpad.ukkg
+C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesEto\ArbitesEto\bin\Debug\keygroups\special.ukkg
+C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesEto\ArbitesEto\bin\Debug\keygroups\symbols.ukkg

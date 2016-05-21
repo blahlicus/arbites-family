@@ -69,7 +69,7 @@ namespace ArbitesEto
             SLTopBar.Items.Add(BtnUpload);
 
             PBMain = new ProgressBar();
-            PBMain.Value = 50;
+            PBMain.Value = 0;
             PBMain.Size = new Size(100, 23);
             topSplitter.Rows.Add(new TableRow(PBMain));
 

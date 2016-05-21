@@ -241,6 +241,12 @@
       <display>Space</display>
       <allLayers>false</allLayers>
     </ClKey>
+    <ClKey>
+      <val>237</val>
+      <ktype>0</ktype>
+      <display>Menu</display>
+      <allLayers>false</allLayers>
+    </ClKey>
   </key>
   <name>Control</name>
   <priority>5</priority>

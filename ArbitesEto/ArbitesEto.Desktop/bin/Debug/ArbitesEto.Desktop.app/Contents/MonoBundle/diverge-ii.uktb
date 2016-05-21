@@ -2,7 +2,7 @@
 <ClKeyboard xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <keyboardName>Diverge II</keyboardName>
   <keyboardType>Diverge II</keyboardType>
-  <fileFormat>ukd2</fileFormat>
+  <fileFormat>uk2d2</fileFormat>
   <layers>8</layers>
   <slices>
     <ClBoardSlice>
