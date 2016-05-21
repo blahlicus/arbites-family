@@ -66,10 +66,10 @@ namespace ArbitesEto
                 if (dr == DialogResult.Yes)
                 {
                     //do nothing
-                    BtnUpload.Enabled = true;
                 }
                 else
                 {
+                    BtnUpload.Enabled = true;
                     return;
                 }
             }

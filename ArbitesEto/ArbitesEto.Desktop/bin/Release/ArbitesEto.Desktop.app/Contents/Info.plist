@@ -5,15 +5,15 @@
 <key>MonoBundleExecutable</key>
 <string>ArbitesEto.Desktop.exe</string>
 <key>CFBundleName</key>
-<string>Arbites Innova</string>
+<string>ArbitesEto.Desktop</string>
 <key>CFBundleIdentifier</key>
-<string>Arbites.Innova.Eto.Mac</string>
+<string>com.yourcompany.myapp</string>
 <key>CFBundleShortVersionString</key>
-<string>1.2</string>
+<string>1.0</string>
 <key>CFBundleVersion</key>
 <string>1</string>
 <key>NSHumanReadableCopyright</key>
-<string>Copyright © UniKeyboard</string>
+<string>Copyright © Yourself</string>
 <key>CFBundleIconFile</key>
 <string>Icon.icns</string>
 <key>CFBundleExecutable</key>
