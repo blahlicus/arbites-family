@@ -7,6 +7,6 @@ Yes, I am aware of the spaghetti code going on inside, I wrote the entirety of t
 
 Do note the projects above are as follows:
 
-Arbites4: Outdated testing use layout uploader
-ArbitesR: Outdated Arbites software based on Winforms
-ArbitesEto: Up to date and working software based on Eto.Forms + Mono, runs smoothly in windows, linux, and mac.
+* Arbites4: Outdated testing use layout uploader
+* ArbitesR: Outdated Arbites software based on Winforms
+* ArbitesEto: Up to date and working software based on Eto.Forms + Mono, runs smoothly in windows, linux, and mac.
