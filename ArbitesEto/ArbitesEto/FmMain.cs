@@ -6,6 +6,7 @@ using System.IO;
 using System.IO.Ports;
 using Eto.Forms;
 using Eto.Drawing;
+using System.Threading;
 
 namespace ArbitesEto
 {
@@ -36,7 +37,42 @@ namespace ArbitesEto
 
         public void BtnUploadClicked()
         {
-            MdGlobals.board.slices[0].ClientSize = new Size(200, 400);
+            var sp = new SerialPort();
+            sp.PortName = LPort.Text;
+
+            try
+            {
+                sp.Open();
+            }
+            catch (Exception ex)
+            {
+                DialogResult dr = MessageBox.Show("Arbites failed to detect the selected port\nAre you sure you wish to upload to this port?", "Port Confirmation", MessageBoxButtons.YesNo);
+                if (dr == DialogResult.Yes)
+                {
+                    //do nothing
+                }
+                else
+                {
+                    return;
+                }
+            }
+            var output = MdGlobals.boardType.GenerateSerialCommands(MdGlobals.board.layout);
+
+            for (int i = 0; i < output.Count; i++)
+            {
+                sp.Write(output[i]);
+                Thread.Sleep(10);
+                int pg = (i * 100) / output.Count;
+                if (pg > 0 && pg < 101)
+                {
+                    PBMain.Value = pg;
+                }
+
+            }
+            PBMain.Value = 100;
+            MessageBox.Show("Upload completed");
+            PBMain.Value = 0;
+            sp.Close();
         }
 
         public void LaunchKeyMenu()
