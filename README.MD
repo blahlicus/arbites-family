@@ -11,9 +11,17 @@ Do note the projects above are as follows:
 * ArbitesR: Outdated Arbites software based on Winforms
 * ArbitesEto: Up to date and working software based on Eto.Forms + Mono, runs smoothly in windows, linux, and mac.
 
-To install Arbites, follow the instructions below
+## To install Arbites, follow the instructions below
 
-For UNIX platforms that support .deb packages, run the following command:
+For UNIX platforms that support .deb packages, run the following commands:
+
+First, we will install mono-complete from apt:
+
+```
+sudo apt-get install mono-complete
+```
+
+Then we could install the .deb package for arbites:
 
 ```
 URL='http://raw.githubusercontent.com/blahlicus/arbites-family/master/release/Deb/arbites_1.2-0.deb'; FILE=`mktemp`; wget "$URL" -qO $FILE && sudo dpkg -i $FILE; rm $FILE
