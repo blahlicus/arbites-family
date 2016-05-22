@@ -10,3 +10,11 @@ Do note the projects above are as follows:
 * Arbites4: Outdated testing use layout uploader
 * ArbitesR: Outdated Arbites software based on Winforms
 * ArbitesEto: Up to date and working software based on Eto.Forms + Mono, runs smoothly in windows, linux, and mac.
+
+To install Arbites, follow the instructions below
+
+For UNIX platforms that support .deb packages, run the following command:
+
+```
+URL='http://raw.githubusercontent.com/blahlicus/arbites-family/master/release/Deb/arbites_1.2-0.deb'; FILE=`mktemp`; wget "$URL" -qO $FILE && sudo dpkg -i $FILE; rm $FILE
+```
