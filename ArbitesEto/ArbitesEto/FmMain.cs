@@ -192,6 +192,7 @@ namespace ArbitesEto
             MdGlobals.boardType = input;
             MdGlobals.board = new UCBoard(input);
             PMain.Content = MdGlobals.board;
+            LDevice.Text = input.keyboardName;
         }
 
         public void LoadPortList()

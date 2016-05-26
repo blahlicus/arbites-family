@@ -54,13 +54,13 @@ namespace ArbitesEto
             this.layout = input;
             foreach (UCSlice slice in slices)
             {
-                slice.LoadLayout(input);
+                slice.LoadLayout(layout);
             }
         }
 
         private void btSave_Click(object sender, EventArgs e)
         {
-
+            
             SaveFileDialog dialog = new SaveFileDialog();
             dialog.Filters.Add(new FileDialogFilter(layout.keyboardType + " layout",  saveExtension));
             dialog.Title = "Save Layout";
@@ -76,13 +76,12 @@ namespace ArbitesEto
 
         private void btLoad_Click(object sender, EventArgs e)
         {
-
             OpenFileDialog dialog = new OpenFileDialog();
             dialog.Filters.Add(new FileDialogFilter(layout.keyboardType + " layout", saveExtension));
             dialog.Title = "Load Layout";
             dialog.Directory = new Uri(Environment.CurrentDirectory + MdConstants.pseparator + "layouts");
             dialog.ShowDialog(this);
-            if (System.IO.File.Exists(dialog.FileName))
+            if (dialog.FileName != "" && System.IO.File.Exists(dialog.FileName))
             {
 
                 LoadLayout(MdCore.Deserialize<ClLayoutContainer>(dialog.FileName));
@@ -90,6 +89,11 @@ namespace ArbitesEto
         }
 
         private void btAddLayer_Click(object sender, EventArgs e)
+        {
+            AddLayer();
+        }
+
+        private void AddLayer()
         {
             if (layout.keys.Count < maxLayer)
             {

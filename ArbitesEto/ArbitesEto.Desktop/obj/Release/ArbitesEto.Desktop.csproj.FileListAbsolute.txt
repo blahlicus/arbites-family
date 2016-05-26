@@ -23,3 +23,4 @@ C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesEto\ArbitesEto.Desktop
 C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesEto\ArbitesEto.Desktop\bin\Release\keygroups\numpad.ukkg
 C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesEto\ArbitesEto.Desktop\bin\Release\keygroups\special.ukkg
 C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesEto\ArbitesEto.Desktop\bin\Release\keygroups\symbols.ukkg
+C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesEto\ArbitesEto.Desktop\bin\Release\Eto.Wpf.dll

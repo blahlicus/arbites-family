@@ -17,6 +17,7 @@ namespace ArbitesEto
             LName = new Label();
             LName.Text = "Slice N";
             tb.Rows.Add(LName);
+            
 
 
             SLMain = new StackLayout();

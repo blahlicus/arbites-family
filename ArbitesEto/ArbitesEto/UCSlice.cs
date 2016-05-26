@@ -40,7 +40,6 @@ namespace ArbitesEto
             var nl = new UCLayer(sliceInfo.keys, sliceInfo.sliceIndex, layer, this.layout, init);
             SLMain.Items.Add(nl);
             layers.Add(nl);
-            
             //MessageBox.Show("Added to client");
             //ClientSize = new Size(layers[0].ClientSize.Width + 30, layers[0].ClientSize.Height * layers.Count + 30);
             //ClientSize = new Size(472, 1023);
@@ -56,50 +55,28 @@ namespace ArbitesEto
                 this.SLMain.Items.RemoveAt(layers.Count - 1);
                 layers.RemoveAt(layers.Count - 1);
             }
+            int tempi = layers.Count;
             while (layers.Count < layout.keys.Count)
             {
-                AddLayer(layers.Count, true);
-            }
-            //*/
-            /*
-            if (layout.keys.Count < layers.Count)
-            {
-                this.SLMain.Items.Clear();
-                this.layers.Clear();
-                for (int i = 0; i < layout.keys.Count; i++)
+                if (layout.keys[tempi].Count == sliceInfo.keys.Count)
                 {
-                    AddLayer(i, false);
+
+                    AddLayer(layers.Count, false);
                 }
-            }
-            else if (layout.keys.Count > layers.Count)
-            {
-                while (layers.Count < layout.keys.Count)
+                else
                 {
+
                     AddLayer(layers.Count, true);
                 }
-                /*
-                this.SLMain.Items.Clear();
-                this.layers.Clear();
-                for (int i = 0; i < layers.Count; i++)
-                {
-                    var init = false;
-                    if (layout.keys[i].Count == 0)
-                    {
-                        init = true;
-                    }
-                    AddLayer(i, init);
-                }
+                tempi++;
+
             }
-                //*/
-
-
-
-
-
             foreach (UCLayer layer in layers)
             {
-                layer.LoadLayout(input);
+                layer.LoadLayout(layout);
             }
+
+
         }
     }
 }

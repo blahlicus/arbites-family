@@ -9,7 +9,17 @@ namespace ArbitesEto.Desktop
         [STAThread]
         public static void Main(string[] args)
         {
-            new Application(Platform.Detect).Run(new FmMain());
+
+            if (Platform.Detect.IsMac)
+            {
+                new Application(Eto.Platforms.Gtk2).Run(new FmMain());
+            }
+            else
+            {
+                //new Application(Eto.Platforms.WinForms).Run(new FmMain());
+                new Application(Platform.Detect).Run(new FmMain());
+
+            }
         }
     }
 }

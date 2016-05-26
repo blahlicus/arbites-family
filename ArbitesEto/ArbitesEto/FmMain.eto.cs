@@ -19,7 +19,7 @@ namespace ArbitesEto
 
         void InitializeComponent()
         {
-            Title = "Arbites Innova - 1.2.0 0000";
+            Title = "Arbites Innova - 1.2.1 0003";
             ClientSize = new Size(1000, 600);
 
 

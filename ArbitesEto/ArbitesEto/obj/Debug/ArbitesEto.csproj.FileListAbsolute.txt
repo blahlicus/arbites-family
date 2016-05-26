@@ -6,7 +6,6 @@ C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesEto\ArbitesEto\obj\Deb
 C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesEto\ArbitesEto\obj\Debug\ArbitesEto.pdb
 C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesEto\ArbitesEto\obj\Debug\ArbitesEto.Properties.Resources.resources
 C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesEto\ArbitesEto\obj\Debug\ArbitesEto.csproj.GenerateResource.Cache
-C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesEto\ArbitesEto\obj\Debug\ArbitesEto.csprojResolveAssemblyReference.cache
 C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesEto\ArbitesEto\bin\Debug\config\favicon.ico
 C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesEto\ArbitesEto\bin\Debug\keyboards\diverge-ii.uktb
 C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesEto\ArbitesEto\bin\Debug\keyboards\diverge-tm.uktb
