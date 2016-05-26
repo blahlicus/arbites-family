@@ -82,6 +82,20 @@ namespace ArbitesEto
                     if (btn.Tag.ToString() == "bt_" + kd.slice + "_" + kd.x + "_" + kd.y + "_" + index)
                     {
                         btn.Text = kd.key.display;
+                        if (kd.key.ktype == 255 && kd.key.val == 0)
+                        {
+                            float cf = 0.09f;
+                            var nc =  new Color (SystemColors.Control);
+                            nc.R = (255 - SystemColors.Control.R) * cf + SystemColors.Control.R;
+                            nc.G = (255 - SystemColors.Control.G) * cf + SystemColors.Control.G;
+                            nc.B = (255 - SystemColors.Control.B) * cf + SystemColors.Control.B;
+                            btn.BackgroundColor = nc;
+                        }
+                        else
+                        {
+                            btn.BackgroundColor = SystemColors.Control;
+
+                        }
                     }
                 }
             }

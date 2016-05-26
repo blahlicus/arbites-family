@@ -15,4 +15,3 @@ C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesEto\ArbitesEto\bin\Rel
 C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesEto\ArbitesEto\bin\Release\keygroups\numpad.ukkg
 C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesEto\ArbitesEto\bin\Release\keygroups\special.ukkg
 C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesEto\ArbitesEto\bin\Release\keygroups\symbols.ukkg
-C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesEto\ArbitesEto\obj\Release\ArbitesEto.csprojResolveAssemblyReference.cache
