@@ -1,0 +1,10 @@
+C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.Wpf\obj\Debug\ArbitesEto2.Wpf.csprojResolveAssemblyReference.cache
+C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.Wpf\bin\Debug\ArbitesEto2.Wpf.exe
+C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.Wpf\bin\Debug\ArbitesEto2.Wpf.pdb
+C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.Wpf\bin\Debug\ArbitesEto2.dll
+C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.Wpf\bin\Debug\Eto.dll
+C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.Wpf\bin\Debug\Eto.Wpf.dll
+C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.Wpf\bin\Debug\ArbitesEto2.pdb
+C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.Wpf\bin\Debug\Eto.xml
+C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.Wpf\obj\Debug\ArbitesEto2.Wpf.exe
+C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.Wpf\obj\Debug\ArbitesEto2.Wpf.pdb

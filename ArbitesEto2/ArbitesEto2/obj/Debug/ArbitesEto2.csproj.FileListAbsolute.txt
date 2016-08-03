@@ -1,0 +1,7 @@
+C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2\obj\Debug\ArbitesEto2.csprojResolveAssemblyReference.cache
+C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2\bin\Debug\ArbitesEto2.dll
+C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2\bin\Debug\ArbitesEto2.pdb
+C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2\bin\Debug\Eto.dll
+C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2\bin\Debug\Eto.xml
+C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2\obj\Debug\ArbitesEto2.dll
+C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2\obj\Debug\ArbitesEto2.pdb

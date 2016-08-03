@@ -13,7 +13,6 @@ C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesEto\ArbitesEto.Desktop
 C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesEto\ArbitesEto.Desktop\obj\Release\ArbitesEto.Desktop.csproj.GenerateResource.Cache
 C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesEto\ArbitesEto.Desktop\obj\Release\ArbitesEto.Desktop.exe
 C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesEto\ArbitesEto.Desktop\bin\Release\config\favicon.ico
-C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesEto\ArbitesEto.Desktop\bin\Release\keyboards\diverge-ii.uktb
 C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesEto\ArbitesEto.Desktop\bin\Release\keyboards\diverge-tm.uktb
 C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesEto\ArbitesEto.Desktop\bin\Release\keyboards\terminus-mini.uktb
 C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesEto\ArbitesEto.Desktop\bin\Release\keygroups\all.ukkg
@@ -24,3 +23,6 @@ C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesEto\ArbitesEto.Desktop
 C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesEto\ArbitesEto.Desktop\bin\Release\keygroups\special.ukkg
 C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesEto\ArbitesEto.Desktop\bin\Release\keygroups\symbols.ukkg
 C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesEto\ArbitesEto.Desktop\bin\Release\Eto.Wpf.dll
+C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesEto\ArbitesEto.Desktop\bin\Release\keyboards\diverge-2-leftonly.uktb
+C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesEto\ArbitesEto.Desktop\bin\Release\keyboards\diverge-2-rightonly.uktb
+C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesEto\ArbitesEto.Desktop\bin\Release\keyboards\diverge-2.uktb

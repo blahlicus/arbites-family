@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ClKeyGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <key>
+    <ClKey>
+      <val>246</val>
+      <ktype>10</ktype>
+      <display>LED -</display>
+      <allLayers>false</allLayers>
+    </ClKey>
+    <ClKey>
+      <val>236</val>
+      <ktype>10</ktype>
+      <display>LED --</display>
+      <allLayers>false</allLayers>
+    </ClKey>
+    <ClKey>
+      <val>10</val>
+      <ktype>10</ktype>
+      <display>LED +</display>
+      <allLayers>false</allLayers>
+    </ClKey>
+    <ClKey>
+      <val>20</val>
+      <ktype>10</ktype>
+      <display>LED ++</display>
+      <allLayers>false</allLayers>
+    </ClKey>
+    <ClKey>
+      <val>101</val>
+      <ktype>10</ktype>
+      <display>LED Off</display>
+      <allLayers>false</allLayers>
+    </ClKey>
+    <ClKey>
+      <val>102</val>
+      <ktype>10</ktype>
+      <display>LED Very Low</display>
+      <allLayers>false</allLayers>
+    </ClKey>
+    <ClKey>
+      <val>103</val>
+      <ktype>10</ktype>
+      <display>LED Low</display>
+      <allLayers>false</allLayers>
+    </ClKey>
+    <ClKey>
+      <val>104</val>
+      <ktype>10</ktype>
+      <display>LED Mid</display>
+      <allLayers>false</allLayers>
+    </ClKey>
+    <ClKey>
+      <val>105</val>
+      <ktype>10</ktype>
+      <display>LED Hi</display>
+      <allLayers>false</allLayers>
+    </ClKey>
+    <ClKey>
+      <val>106</val>
+      <ktype>10</ktype>
+      <display>LED Very Hi</display>
+      <allLayers>false</allLayers>
+    </ClKey>
+  </key>
+  <name>Backlight</name>
+  <priority>4</priority>
+</ClKeyGroup>

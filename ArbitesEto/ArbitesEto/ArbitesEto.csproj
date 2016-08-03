@@ -108,7 +108,26 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="keyboards\diverge-ii.uktb">
+    <None Include="keyboards\diverge-1-left.uktb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="keyboards\diverge-2-leftonly.uktb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="keyboards\diverge-1-right.uktb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="keyboards\diverge-2-rightonly.uktb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="keyboards\diverge-2.uktb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="keyboards\diverge-tm-leftonly.uktb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="keyboards\diverge-tm-rightonly.uktb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="keyboards\diverge-tm.uktb">
@@ -133,6 +152,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="keygroups\special.ukkg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="keygroups\shifted.ukkg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="keygroups\symbols.ukkg">

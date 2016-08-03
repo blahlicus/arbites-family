@@ -16,7 +16,6 @@ C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesEto\ArbitesEto.Desktop
 C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesEto\ArbitesEto.Desktop\bin\Debug\ArbitesEto.dll
 C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesEto\ArbitesEto.Desktop\bin\Debug\ArbitesEto.pdb
 C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesEto\ArbitesEto.Desktop\bin\Debug\config\favicon.ico
-C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesEto\ArbitesEto.Desktop\bin\Debug\keyboards\diverge-ii.uktb
 C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesEto\ArbitesEto.Desktop\bin\Debug\keyboards\diverge-tm.uktb
 C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesEto\ArbitesEto.Desktop\bin\Debug\keyboards\terminus-mini.uktb
 C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesEto\ArbitesEto.Desktop\bin\Debug\keygroups\all.ukkg
@@ -27,3 +26,11 @@ C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesEto\ArbitesEto.Desktop
 C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesEto\ArbitesEto.Desktop\bin\Debug\keygroups\special.ukkg
 C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesEto\ArbitesEto.Desktop\bin\Debug\keygroups\symbols.ukkg
 C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesEto\ArbitesEto.Desktop\bin\Debug\Eto.Wpf.dll
+C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesEto\ArbitesEto.Desktop\bin\Debug\keyboards\diverge-2-leftonly.uktb
+C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesEto\ArbitesEto.Desktop\bin\Debug\keyboards\diverge-2-rightonly.uktb
+C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesEto\ArbitesEto.Desktop\bin\Debug\keyboards\diverge-2.uktb
+C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesEto\ArbitesEto.Desktop\bin\Debug\keyboards\diverge-tm-leftonly.uktb
+C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesEto\ArbitesEto.Desktop\bin\Debug\keyboards\diverge-tm-rightonly.uktb
+C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesEto\ArbitesEto.Desktop\bin\Debug\keyboards\diverge-1-left.uktb
+C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesEto\ArbitesEto.Desktop\bin\Debug\keyboards\diverge-1-right.uktb
+C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesEto\ArbitesEto.Desktop\bin\Debug\keygroups\shifted.ukkg
