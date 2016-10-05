@@ -1,0 +1,7 @@
+E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2\bin\Release\favicon.ico
+E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2\bin\Release\ArbitesEto2.dll
+E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2\bin\Release\ArbitesEto2.pdb
+E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2\bin\Release\Eto.dll
+E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2\bin\Release\Eto.xml
+E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2\obj\Release\ArbitesEto2.dll
+E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2\obj\Release\ArbitesEto2.pdb

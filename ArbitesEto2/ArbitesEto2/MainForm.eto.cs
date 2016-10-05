@@ -6,11 +6,16 @@ namespace ArbitesEto2
 {
     partial class FmMain : Form
     {
-        Button BtnSelectDevice, BtnOpenKeyMenu, BtnEditMacro, BtnEditDualRoles, BtnEditMouse, BtnSelectPort, BtnApply;
-
-        TableCell TCContent;
+        Button BtnSelectDevice, BtnOpenKeyMenu, BtnSettings, BtnEditMacro, BtnEditDualRoles, BtnEditMouse, BtnEditLED, BtnSelectPort, BtnApply;
+        DropDown DDInputMethod;
+        Panel PnMain;
         void InitializeComponent()
         {
+
+            Title = "Arbites Innova - 2 0002";
+            ClientSize = new Size(1000, 600);
+
+            
             var tlMain = new TableLayout();
             tlMain.Padding = 5;
 
@@ -22,56 +27,67 @@ namespace ArbitesEto2
 
             var tlTop = new TableLayout();
             tcTop.Control = tlTop;
+            tlTop.Padding = 5;
 
             var trContext = new TableRow();
+            
             tlTop.Rows.Add(trContext);
 
             var tcTopLeft = new TableCell();
             tcTopLeft.ScaleWidth = true;
             trContext.Cells.Add(tcTopLeft);
 
-            var scTopLeft = new StackLayout();
-            scTopLeft.Orientation = Orientation.Horizontal;
-            scTopLeft.HorizontalContentAlignment = HorizontalAlignment.Center;
-            scTopLeft.Spacing = 5;
-            tcTopLeft.Control = scTopLeft;
+            var slTopLeft = new StackLayout();
+            slTopLeft.Orientation = Orientation.Horizontal;
+            slTopLeft.VerticalContentAlignment = VerticalAlignment.Center;
+            slTopLeft.Spacing = 5;
+            tcTopLeft.Control = slTopLeft;
 
             BtnSelectDevice = new Button();
             BtnSelectDevice.Text = "Select Device";
             BtnSelectDevice.ToolTip = "Select Device";
-            scTopLeft.Items.Add(BtnSelectDevice);
+            slTopLeft.Items.Add(BtnSelectDevice);
 
             BtnOpenKeyMenu = new Button();
             BtnOpenKeyMenu.Text = "Key Menu";
             BtnOpenKeyMenu.ToolTip = "Key Menu";
-            scTopLeft.Items.Add(BtnOpenKeyMenu);
+            slTopLeft.Items.Add(BtnOpenKeyMenu);
 
+            BtnSettings = new Button();
+            BtnSettings.Text = "Preferences";
+            BtnSettings.ToolTip = "Preferences";
+            slTopLeft.Items.Add(BtnSettings);
 
             var tcTopMid = new TableCell();
             tcTopMid.ScaleWidth = true;
             trContext.Cells.Add(tcTopMid);
 
 
-            var scTopMid = new StackLayout();
-            scTopMid.Orientation = Orientation.Horizontal;
-            scTopMid.HorizontalContentAlignment = HorizontalAlignment.Center;
-            scTopMid.Spacing = 5;
-            tcTopMid.Control = scTopMid;
+            var slTopMid = new StackLayout();
+            slTopMid.Orientation = Orientation.Horizontal;
+            slTopMid.VerticalContentAlignment = VerticalAlignment.Center;
+            slTopMid.Spacing = 5;
+            tcTopMid.Control = slTopMid;
 
             BtnEditMacro = new Button();
             BtnEditMacro.Text = "Edit Macros";
             BtnEditMacro.ToolTip = "Edit Macros";
-            scTopMid.Items.Add(BtnEditMacro);
+            slTopMid.Items.Add(BtnEditMacro);
 
             BtnEditDualRoles = new Button();
             BtnEditDualRoles.Text = "Edit Dual-Roles";
             BtnEditDualRoles.ToolTip = "Edit Dual-Roles";
-            scTopMid.Items.Add(BtnEditDualRoles);
+            //slTopMid.Items.Add(BtnEditDualRoles);
 
             BtnEditMouse = new Button();
             BtnEditMouse.Text = "Edit Mouse Keys";
             BtnEditMouse.ToolTip = "Edit Mouse Keys";
-            scTopMid.Items.Add(BtnEditMouse);
+            //slTopMid.Items.Add(BtnEditMouse);
+
+            BtnEditLED = new Button();
+            BtnEditLED.Text = "Edit LEDs";
+            BtnEditLED.ToolTip = "Edit LEDs";
+            //slTopMid.Items.Add(BtnEditLED);
 
             var tcTopRight = new TableCell();
             tcTopRight.ScaleWidth = true;
@@ -83,31 +99,57 @@ namespace ArbitesEto2
             var trTopRight = new TableRow();
             tlTopRight.Rows.Add(trTopRight);
 
-            var tcTopRightSpacer = new TableCell();
-            tcTopRightSpacer.ScaleWidth = true;
-            trTopRight.Cells.Add(tcTopRightSpacer);
+            var tcTopInputMethod = new TableCell();
+            tcTopInputMethod.ScaleWidth = true;
+            trTopRight.Cells.Add(tcTopInputMethod);
+
+            var tlInputMethod = new TableLayout();
+            tcTopInputMethod.Control = tlInputMethod;
+
+            var trInputMethod = new TableRow();
+            tlInputMethod.Rows.Add(trInputMethod);
+
+            var lInputmethod = new Label();
+            lInputmethod.Text = "Input Method:";
+            lInputmethod.VerticalAlignment = VerticalAlignment.Center;
+            trInputMethod.Cells.Add(lInputmethod);
+
+            DDInputMethod = new DropDown();
+            trInputMethod.Cells.Add(DDInputMethod);
+
 
             var tcTopRightContent = new TableCell();
             tcTopRightContent.ScaleWidth = false;
             trTopRight.Cells.Add(tcTopRightContent);
 
 
-            var scTopRight = new StackLayout();
-            scTopRight.Orientation = Orientation.Horizontal;
-            scTopRight.HorizontalContentAlignment = HorizontalAlignment.Center;
-            scTopRight.Spacing = 5;
-            tcTopRightContent.Control = scTopRight;
+            var slTopRight = new StackLayout();
+            slTopRight.Orientation = Orientation.Horizontal;
+            slTopRight.VerticalContentAlignment = VerticalAlignment.Center;
+            slTopRight.Spacing = 5;
+            tcTopRightContent.Control = slTopRight;
 
 
             BtnSelectPort = new Button();
             BtnSelectPort.Text = "Select Port";
             BtnSelectPort.ToolTip = "Select Port";
-            scTopRight.Items.Add(BtnSelectPort);
+            slTopRight.Items.Add(BtnSelectPort);
 
             BtnApply = new Button();
             BtnApply.Text = "Apply";
             BtnApply.ToolTip = "Apply";
-            scTopRight.Items.Add(BtnApply);
+            slTopRight.Items.Add(BtnApply);
+
+            var trMain = new TableRow();
+            tlMain.Rows.Add(trMain);
+
+            var tcContent = new TableCell();
+            trMain.Cells.Add(tcContent);
+
+            PnMain = new Panel();
+            tcContent.Control = PnMain;
+
+            this.Size = new Size(1200, 480);
 
             this.Content = tlMain;
         }

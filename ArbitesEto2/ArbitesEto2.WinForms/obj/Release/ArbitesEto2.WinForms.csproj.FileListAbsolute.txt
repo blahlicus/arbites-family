@@ -1,0 +1,13 @@
+E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.WinForms\bin\Release\favicon.ico
+E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.WinForms\bin\Release\persistent-data.arb2pd
+E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.WinForms\bin\Release\ArbitesEto2.WinForms.exe
+E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.WinForms\bin\Release\ArbitesEto2.WinForms.pdb
+E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.WinForms\bin\Release\ArbitesEto2.dll
+E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.WinForms\bin\Release\Eto.dll
+E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.WinForms\bin\Release\Eto.WinForms.dll
+E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.WinForms\bin\Release\ArbitesEto2.pdb
+E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.WinForms\bin\Release\Eto.xml
+E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.WinForms\obj\Release\ArbitesEto2.WinForms.csprojResolveAssemblyReference.cache
+E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.WinForms\obj\Release\ArbitesEto2.WinForms.exe
+E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.WinForms\obj\Release\ArbitesEto2.WinForms.pdb
+E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.WinForms\bin\Release\drivers.zip
