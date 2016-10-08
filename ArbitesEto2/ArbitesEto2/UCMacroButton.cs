@@ -105,7 +105,8 @@ namespace ArbitesEto2
         private void SetKeyFromButton(Button sender, char input)
         {
 
-
+            var btn = sender as Button;
+            btn.Focus();
             for (int i = 0; i < MdSessionData.CurrentInputMethod.Display.Count; i++)
             {
                 if (MdSessionData.CurrentInputMethod.Display[i][0] == input && MdSessionData.CurrentInputMethod.GroupIndex[i] <3)
