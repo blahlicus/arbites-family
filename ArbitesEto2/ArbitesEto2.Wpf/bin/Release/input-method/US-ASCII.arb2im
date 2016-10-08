@@ -1,0 +1,2349 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ClDisplayCharacterContainer xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>US ANSI</Name>
+  <Display>
+    <string>-Scncde 0</string>
+    <string>-Scncde 1</string>
+    <string>-Scncde 2</string>
+    <string>-Scncde 3</string>
+    <string>a</string>
+    <string>b</string>
+    <string>c</string>
+    <string>d</string>
+    <string>e</string>
+    <string>f</string>
+    <string>g</string>
+    <string>h</string>
+    <string>i</string>
+    <string>j</string>
+    <string>k</string>
+    <string>l</string>
+    <string>m</string>
+    <string>n</string>
+    <string>o</string>
+    <string>p</string>
+    <string>q</string>
+    <string>r</string>
+    <string>s</string>
+    <string>t</string>
+    <string>u</string>
+    <string>v</string>
+    <string>w</string>
+    <string>x</string>
+    <string>y</string>
+    <string>z</string>
+    <string>1 !</string>
+    <string>2 @</string>
+    <string>3 #</string>
+    <string>4 $</string>
+    <string>5 %</string>
+    <string>6 ^</string>
+    <string>7 &amp;</string>
+    <string>8 *</string>
+    <string>9 (</string>
+    <string>0 )</string>
+    <string>Enter</string>
+    <string>Esc</string>
+    <string>Backspace</string>
+    <string>Tab</string>
+    <string>Space</string>
+    <string>- _</string>
+    <string>= +</string>
+    <string>[ {</string>
+    <string>] }</string>
+    <string>\ |</string>
+    <string>Non-US # ~</string>
+    <string>; :</string>
+    <string>' "</string>
+    <string>` ~</string>
+    <string>, &lt;</string>
+    <string>. &gt;</string>
+    <string>/ ?</string>
+    <string>Capslock</string>
+    <string>F1</string>
+    <string>F2</string>
+    <string>F3</string>
+    <string>F4</string>
+    <string>F5</string>
+    <string>F6</string>
+    <string>F7</string>
+    <string>F8</string>
+    <string>F9</string>
+    <string>F10</string>
+    <string>F11</string>
+    <string>F12</string>
+    <string>PrntScn</string>
+    <string>ScrlLck</string>
+    <string>Pause</string>
+    <string>Insert</string>
+    <string>Home</string>
+    <string>Page Up</string>
+    <string>Delete</string>
+    <string>End</string>
+    <string>Page Down</string>
+    <string>Right</string>
+    <string>Left</string>
+    <string>Down</string>
+    <string>Up</string>
+    <string>NumLock</string>
+    <string>Num /</string>
+    <string>Num *</string>
+    <string>Num -</string>
+    <string>Num +</string>
+    <string>Num Enter</string>
+    <string>Num 1</string>
+    <string>Num 2</string>
+    <string>Num 3</string>
+    <string>Num 4</string>
+    <string>Num 5</string>
+    <string>Num 6</string>
+    <string>Num 7</string>
+    <string>Num 8</string>
+    <string>Num 9</string>
+    <string>Num 0</string>
+    <string>Num .</string>
+    <string>Non-US \ |</string>
+    <string>App</string>
+    <string>Power Off</string>
+    <string>Num =</string>
+    <string>F13</string>
+    <string>F14</string>
+    <string>F15</string>
+    <string>F16</string>
+    <string>F17</string>
+    <string>F18</string>
+    <string>F19</string>
+    <string>F20</string>
+    <string>F21</string>
+    <string>F22</string>
+    <string>F23</string>
+    <string>F24</string>
+    <string>-Scncde 116</string>
+    <string>KB Help</string>
+    <string>Menu</string>
+    <string>KB Select</string>
+    <string>KB Stop</string>
+    <string>KB Again</string>
+    <string>KB Undo</string>
+    <string>KB Cut</string>
+    <string>KB Copy</string>
+    <string>KB Paste</string>
+    <string>KB Find</string>
+    <string>KB Mute</string>
+    <string>KB Vol Up</string>
+    <string>KB Vol Dn</string>
+    <string>L Ctrl</string>
+    <string>L Shift</string>
+    <string>L Alt</string>
+    <string>L Win</string>
+    <string>R Ctrl</string>
+    <string>R Shift</string>
+    <string>R Alt</string>
+    <string>R Win</string>
+    <string>Null</string>
+    <string>Fn</string>
+    <string>Fn2</string>
+    <string>Fn3</string>
+    <string>Fn4</string>
+    <string>Fn5</string>
+    <string>Fn6</string>
+    <string>Fn7</string>
+    <string>Fn8</string>
+    <string>Fn9</string>
+    <string>Fn10</string>
+    <string>Fn11</string>
+    <string>Fn12</string>
+    <string>Fn13</string>
+    <string>Fn14</string>
+    <string>Fn15</string>
+    <string>Fn16</string>
+    <string>Fn17</string>
+    <string>Fn18</string>
+    <string>Fn19</string>
+    <string>spaceFn</string>
+    <string>spaceFn2</string>
+    <string>spaceFn3</string>
+    <string>spaceFn4</string>
+    <string>spaceFn5</string>
+    <string>spaceFn6</string>
+    <string>spaceFn7</string>
+    <string>spaceFn8</string>
+    <string>spaceFn9</string>
+    <string>spaceFn10</string>
+    <string>spaceFn11</string>
+    <string>spaceFn12</string>
+    <string>spaceFn13</string>
+    <string>spaceFn14</string>
+    <string>spaceFn15</string>
+    <string>spaceFn16</string>
+    <string>spaceFn17</string>
+    <string>spaceFn18</string>
+    <string>spaceFn19</string>
+    <string>toggleFn</string>
+    <string>toggleFn2</string>
+    <string>toggleFn3</string>
+    <string>toggleFn4</string>
+    <string>toggleFn5</string>
+    <string>toggleFn6</string>
+    <string>toggleFn7</string>
+    <string>toggleFn8</string>
+    <string>toggleFn9</string>
+    <string>toggleFn10</string>
+    <string>toggleFn11</string>
+    <string>toggleFn12</string>
+    <string>toggleFn13</string>
+    <string>toggleFn14</string>
+    <string>toggleFn15</string>
+    <string>toggleFn16</string>
+    <string>toggleFn17</string>
+    <string>toggleFn18</string>
+    <string>toggleFn19</string>
+    <string>Vol Up</string>
+    <string>Vol Dn</string>
+    <string>Mute</string>
+    <string>M Play</string>
+    <string>M Pause</string>
+    <string>M Next</string>
+    <string>M Back</string>
+    <string>Set 6KRO</string>
+    <string>Win NKRO</string>
+    <string>UNIX NKRO</string>
+    <string>LED Off</string>
+    <string>LED--</string>
+    <string>LED-</string>
+    <string>LED+</string>
+    <string>LED++</string>
+    <string>macro0</string>
+    <string>macro1</string>
+    <string>macro2</string>
+    <string>macro3</string>
+    <string>macro4</string>
+    <string>macro5</string>
+    <string>macro6</string>
+    <string>macro7</string>
+    <string>macro8</string>
+    <string>macro9</string>
+    <string>macro10</string>
+    <string>macro11</string>
+    <string>-Shift + Scncde 0</string>
+    <string>-Shift + Scncde 1</string>
+    <string>-Shift + Scncde 2</string>
+    <string>-Shift + Scncde 3</string>
+    <string>Shift + a</string>
+    <string>Shift + b</string>
+    <string>Shift + c</string>
+    <string>Shift + d</string>
+    <string>Shift + e</string>
+    <string>Shift + f</string>
+    <string>Shift + g</string>
+    <string>Shift + h</string>
+    <string>Shift + i</string>
+    <string>Shift + j</string>
+    <string>Shift + k</string>
+    <string>Shift + l</string>
+    <string>Shift + m</string>
+    <string>Shift + n</string>
+    <string>Shift + o</string>
+    <string>Shift + p</string>
+    <string>Shift + q</string>
+    <string>Shift + r</string>
+    <string>Shift + s</string>
+    <string>Shift + t</string>
+    <string>Shift + u</string>
+    <string>Shift + v</string>
+    <string>Shift + w</string>
+    <string>Shift + x</string>
+    <string>Shift + y</string>
+    <string>Shift + z</string>
+    <string>Shift + 1 !</string>
+    <string>Shift + 2 @</string>
+    <string>Shift + 3 #</string>
+    <string>Shift + 4 $</string>
+    <string>Shift + 5 %</string>
+    <string>Shift + 6 ^</string>
+    <string>Shift + 7 &amp;</string>
+    <string>Shift + 8 *</string>
+    <string>Shift + 9 (</string>
+    <string>Shift + 0 )</string>
+    <string>Shift + Enter</string>
+    <string>Shift + Esc</string>
+    <string>Shift + Backspace</string>
+    <string>Shift + Tab</string>
+    <string>Shift + Space</string>
+    <string>Shift + - _</string>
+    <string>Shift + = +</string>
+    <string>Shift + [ {</string>
+    <string>Shift + ] }</string>
+    <string>Shift + \ |</string>
+    <string>Shift + Non-US # ~</string>
+    <string>Shift + ; :</string>
+    <string>Shift + ' "</string>
+    <string>Shift + ` ~</string>
+    <string>Shift + , &lt;</string>
+    <string>Shift + . &gt;</string>
+    <string>Shift + / ?</string>
+    <string>Shift + Capslock</string>
+    <string>Shift + F1</string>
+    <string>Shift + F2</string>
+    <string>Shift + F3</string>
+    <string>Shift + F4</string>
+    <string>Shift + F5</string>
+    <string>Shift + F6</string>
+    <string>Shift + F7</string>
+    <string>Shift + F8</string>
+    <string>Shift + F9</string>
+    <string>Shift + F10</string>
+    <string>Shift + F11</string>
+    <string>Shift + F12</string>
+    <string>Shift + PrntScn</string>
+    <string>Shift + ScrlLck</string>
+    <string>Shift + Pause</string>
+    <string>Shift + Insert</string>
+    <string>Shift + Home</string>
+    <string>Shift + Page Up</string>
+    <string>Shift + Delete</string>
+    <string>Shift + End</string>
+    <string>Shift + Page Down</string>
+    <string>Shift + Right</string>
+    <string>Shift + Left</string>
+    <string>Shift + Down</string>
+    <string>Shift + Up</string>
+    <string>Shift + NumLock</string>
+    <string>Shift + Num /</string>
+    <string>Shift + Num *</string>
+    <string>Shift + Num -</string>
+    <string>Shift + Num +</string>
+    <string>Shift + Num Enter</string>
+    <string>Shift + Num 1</string>
+    <string>Shift + Num 2</string>
+    <string>Shift + Num 3</string>
+    <string>Shift + Num 4</string>
+    <string>Shift + Num 5</string>
+    <string>Shift + Num 6</string>
+    <string>Shift + Num 7</string>
+    <string>Shift + Num 8</string>
+    <string>Shift + Num 9</string>
+    <string>Shift + Num 0</string>
+    <string>Shift + Num .</string>
+    <string>Shift + Non-US \ |</string>
+    <string>Shift + App</string>
+    <string>Shift + Power Off</string>
+    <string>Shift + Num =</string>
+    <string>Shift + F13</string>
+    <string>Shift + F14</string>
+    <string>Shift + F15</string>
+    <string>Shift + F16</string>
+    <string>Shift + F17</string>
+    <string>Shift + F18</string>
+    <string>Shift + F19</string>
+    <string>Shift + F20</string>
+    <string>Shift + F21</string>
+    <string>Shift + F22</string>
+    <string>Shift + F23</string>
+    <string>Shift + F24</string>
+    <string>-Shift + Scncde 116</string>
+    <string>Shift + KB Help</string>
+    <string>Shift + Menu</string>
+    <string>Shift + KB Select</string>
+    <string>Shift + KB Stop</string>
+    <string>Shift + KB Again</string>
+    <string>Shift + KB Undo</string>
+    <string>Shift + KB Cut</string>
+    <string>Shift + KB Copy</string>
+    <string>Shift + KB Paste</string>
+    <string>Shift + KB Find</string>
+    <string>Shift + KB Mute</string>
+    <string>Shift + KB Vol Up</string>
+    <string>Shift + KB Vol Dn</string>
+    <string>Shift + L Ctrl</string>
+    <string>Shift + L Shift</string>
+    <string>Shift + L Alt</string>
+    <string>Shift + L Win</string>
+    <string>Shift + R Ctrl</string>
+    <string>Shift + R Shift</string>
+    <string>Shift + R Alt</string>
+    <string>Shift + R Win</string>
+    <string>-Ctrl + Scncde 0</string>
+    <string>-Ctrl + Scncde 1</string>
+    <string>-Ctrl + Scncde 2</string>
+    <string>-Ctrl + Scncde 3</string>
+    <string>Ctrl + a</string>
+    <string>Ctrl + b</string>
+    <string>Ctrl + c</string>
+    <string>Ctrl + d</string>
+    <string>Ctrl + e</string>
+    <string>Ctrl + f</string>
+    <string>Ctrl + g</string>
+    <string>Ctrl + h</string>
+    <string>Ctrl + i</string>
+    <string>Ctrl + j</string>
+    <string>Ctrl + k</string>
+    <string>Ctrl + l</string>
+    <string>Ctrl + m</string>
+    <string>Ctrl + n</string>
+    <string>Ctrl + o</string>
+    <string>Ctrl + p</string>
+    <string>Ctrl + q</string>
+    <string>Ctrl + r</string>
+    <string>Ctrl + s</string>
+    <string>Ctrl + t</string>
+    <string>Ctrl + u</string>
+    <string>Ctrl + v</string>
+    <string>Ctrl + w</string>
+    <string>Ctrl + x</string>
+    <string>Ctrl + y</string>
+    <string>Ctrl + z</string>
+    <string>Ctrl + 1 !</string>
+    <string>Ctrl + 2 @</string>
+    <string>Ctrl + 3 #</string>
+    <string>Ctrl + 4 $</string>
+    <string>Ctrl + 5 %</string>
+    <string>Ctrl + 6 ^</string>
+    <string>Ctrl + 7 &amp;</string>
+    <string>Ctrl + 8 *</string>
+    <string>Ctrl + 9 (</string>
+    <string>Ctrl + 0 )</string>
+    <string>Ctrl + Enter</string>
+    <string>Ctrl + Esc</string>
+    <string>Ctrl + Backspace</string>
+    <string>Ctrl + Tab</string>
+    <string>Ctrl + Space</string>
+    <string>Ctrl + - _</string>
+    <string>Ctrl + = +</string>
+    <string>Ctrl + [ {</string>
+    <string>Ctrl + ] }</string>
+    <string>Ctrl + \ |</string>
+    <string>Ctrl + Non-US # ~</string>
+    <string>Ctrl + ; :</string>
+    <string>Ctrl + ' "</string>
+    <string>Ctrl + ` ~</string>
+    <string>Ctrl + , &lt;</string>
+    <string>Ctrl + . &gt;</string>
+    <string>Ctrl + / ?</string>
+    <string>Ctrl + Capslock</string>
+    <string>Ctrl + F1</string>
+    <string>Ctrl + F2</string>
+    <string>Ctrl + F3</string>
+    <string>Ctrl + F4</string>
+    <string>Ctrl + F5</string>
+    <string>Ctrl + F6</string>
+    <string>Ctrl + F7</string>
+    <string>Ctrl + F8</string>
+    <string>Ctrl + F9</string>
+    <string>Ctrl + F10</string>
+    <string>Ctrl + F11</string>
+    <string>Ctrl + F12</string>
+    <string>Ctrl + PrntScn</string>
+    <string>Ctrl + ScrlLck</string>
+    <string>Ctrl + Pause</string>
+    <string>Ctrl + Insert</string>
+    <string>Ctrl + Home</string>
+    <string>Ctrl + Page Up</string>
+    <string>Ctrl + Delete</string>
+    <string>Ctrl + End</string>
+    <string>Ctrl + Page Down</string>
+    <string>Ctrl + Right</string>
+    <string>Ctrl + Left</string>
+    <string>Ctrl + Down</string>
+    <string>Ctrl + Up</string>
+    <string>Ctrl + NumLock</string>
+    <string>Ctrl + Num /</string>
+    <string>Ctrl + Num *</string>
+    <string>Ctrl + Num -</string>
+    <string>Ctrl + Num +</string>
+    <string>Ctrl + Num Enter</string>
+    <string>Ctrl + Num 1</string>
+    <string>Ctrl + Num 2</string>
+    <string>Ctrl + Num 3</string>
+    <string>Ctrl + Num 4</string>
+    <string>Ctrl + Num 5</string>
+    <string>Ctrl + Num 6</string>
+    <string>Ctrl + Num 7</string>
+    <string>Ctrl + Num 8</string>
+    <string>Ctrl + Num 9</string>
+    <string>Ctrl + Num 0</string>
+    <string>Ctrl + Num .</string>
+    <string>Ctrl + Non-US \ |</string>
+    <string>Ctrl + App</string>
+    <string>Ctrl + Power Off</string>
+    <string>Ctrl + Num =</string>
+    <string>Ctrl + F13</string>
+    <string>Ctrl + F14</string>
+    <string>Ctrl + F15</string>
+    <string>Ctrl + F16</string>
+    <string>Ctrl + F17</string>
+    <string>Ctrl + F18</string>
+    <string>Ctrl + F19</string>
+    <string>Ctrl + F20</string>
+    <string>Ctrl + F21</string>
+    <string>Ctrl + F22</string>
+    <string>Ctrl + F23</string>
+    <string>Ctrl + F24</string>
+    <string>-Ctrl + Scncde 116</string>
+    <string>Ctrl + KB Help</string>
+    <string>Ctrl + Menu</string>
+    <string>Ctrl + KB Select</string>
+    <string>Ctrl + KB Stop</string>
+    <string>Ctrl + KB Again</string>
+    <string>Ctrl + KB Undo</string>
+    <string>Ctrl + KB Cut</string>
+    <string>Ctrl + KB Copy</string>
+    <string>Ctrl + KB Paste</string>
+    <string>Ctrl + KB Find</string>
+    <string>Ctrl + KB Mute</string>
+    <string>Ctrl + KB Vol Up</string>
+    <string>Ctrl + KB Vol Dn</string>
+    <string>Ctrl + L Ctrl</string>
+    <string>Ctrl + L Shift</string>
+    <string>Ctrl + L Alt</string>
+    <string>Ctrl + L Win</string>
+    <string>Ctrl + R Ctrl</string>
+    <string>Ctrl + R Shift</string>
+    <string>Ctrl + R Alt</string>
+    <string>Ctrl + R Win</string>
+    <string>-Alt + Scncde 0</string>
+    <string>-Alt + Scncde 1</string>
+    <string>-Alt + Scncde 2</string>
+    <string>-Alt + Scncde 3</string>
+    <string>Alt + a</string>
+    <string>Alt + b</string>
+    <string>Alt + c</string>
+    <string>Alt + d</string>
+    <string>Alt + e</string>
+    <string>Alt + f</string>
+    <string>Alt + g</string>
+    <string>Alt + h</string>
+    <string>Alt + i</string>
+    <string>Alt + j</string>
+    <string>Alt + k</string>
+    <string>Alt + l</string>
+    <string>Alt + m</string>
+    <string>Alt + n</string>
+    <string>Alt + o</string>
+    <string>Alt + p</string>
+    <string>Alt + q</string>
+    <string>Alt + r</string>
+    <string>Alt + s</string>
+    <string>Alt + t</string>
+    <string>Alt + u</string>
+    <string>Alt + v</string>
+    <string>Alt + w</string>
+    <string>Alt + x</string>
+    <string>Alt + y</string>
+    <string>Alt + z</string>
+    <string>Alt + 1 !</string>
+    <string>Alt + 2 @</string>
+    <string>Alt + 3 #</string>
+    <string>Alt + 4 $</string>
+    <string>Alt + 5 %</string>
+    <string>Alt + 6 ^</string>
+    <string>Alt + 7 &amp;</string>
+    <string>Alt + 8 *</string>
+    <string>Alt + 9 (</string>
+    <string>Alt + 0 )</string>
+    <string>Alt + Enter</string>
+    <string>Alt + Esc</string>
+    <string>Alt + Backspace</string>
+    <string>Alt + Tab</string>
+    <string>Alt + Space</string>
+    <string>Alt + - _</string>
+    <string>Alt + = +</string>
+    <string>Alt + [ {</string>
+    <string>Alt + ] }</string>
+    <string>Alt + \ |</string>
+    <string>Alt + Non-US # ~</string>
+    <string>Alt + ; :</string>
+    <string>Alt + ' "</string>
+    <string>Alt + ` ~</string>
+    <string>Alt + , &lt;</string>
+    <string>Alt + . &gt;</string>
+    <string>Alt + / ?</string>
+    <string>Alt + Capslock</string>
+    <string>Alt + F1</string>
+    <string>Alt + F2</string>
+    <string>Alt + F3</string>
+    <string>Alt + F4</string>
+    <string>Alt + F5</string>
+    <string>Alt + F6</string>
+    <string>Alt + F7</string>
+    <string>Alt + F8</string>
+    <string>Alt + F9</string>
+    <string>Alt + F10</string>
+    <string>Alt + F11</string>
+    <string>Alt + F12</string>
+    <string>Alt + PrntScn</string>
+    <string>Alt + ScrlLck</string>
+    <string>Alt + Pause</string>
+    <string>Alt + Insert</string>
+    <string>Alt + Home</string>
+    <string>Alt + Page Up</string>
+    <string>Alt + Delete</string>
+    <string>Alt + End</string>
+    <string>Alt + Page Down</string>
+    <string>Alt + Right</string>
+    <string>Alt + Left</string>
+    <string>Alt + Down</string>
+    <string>Alt + Up</string>
+    <string>Alt + NumLock</string>
+    <string>Alt + Num /</string>
+    <string>Alt + Num *</string>
+    <string>Alt + Num -</string>
+    <string>Alt + Num +</string>
+    <string>Alt + Num Enter</string>
+    <string>Alt + Num 1</string>
+    <string>Alt + Num 2</string>
+    <string>Alt + Num 3</string>
+    <string>Alt + Num 4</string>
+    <string>Alt + Num 5</string>
+    <string>Alt + Num 6</string>
+    <string>Alt + Num 7</string>
+    <string>Alt + Num 8</string>
+    <string>Alt + Num 9</string>
+    <string>Alt + Num 0</string>
+    <string>Alt + Num .</string>
+    <string>Alt + Non-US \ |</string>
+    <string>Alt + App</string>
+    <string>Alt + Power Off</string>
+    <string>Alt + Num =</string>
+    <string>Alt + F13</string>
+    <string>Alt + F14</string>
+    <string>Alt + F15</string>
+    <string>Alt + F16</string>
+    <string>Alt + F17</string>
+    <string>Alt + F18</string>
+    <string>Alt + F19</string>
+    <string>Alt + F20</string>
+    <string>Alt + F21</string>
+    <string>Alt + F22</string>
+    <string>Alt + F23</string>
+    <string>Alt + F24</string>
+    <string>-Alt + Scncde 116</string>
+    <string>Alt + KB Help</string>
+    <string>Alt + Menu</string>
+    <string>Alt + KB Select</string>
+    <string>Alt + KB Stop</string>
+    <string>Alt + KB Again</string>
+    <string>Alt + KB Undo</string>
+    <string>Alt + KB Cut</string>
+    <string>Alt + KB Copy</string>
+    <string>Alt + KB Paste</string>
+    <string>Alt + KB Find</string>
+    <string>Alt + KB Mute</string>
+    <string>Alt + KB Vol Up</string>
+    <string>Alt + KB Vol Dn</string>
+    <string>Alt + L Ctrl</string>
+    <string>Alt + L Shift</string>
+    <string>Alt + L Alt</string>
+    <string>Alt + L Win</string>
+    <string>Alt + R Ctrl</string>
+    <string>Alt + R Shift</string>
+    <string>Alt + R Alt</string>
+    <string>Alt + R Win</string>
+    <string>-AltGr + Scncde 0</string>
+    <string>-AltGr + Scncde 1</string>
+    <string>-AltGr + Scncde 2</string>
+    <string>-AltGr + Scncde 3</string>
+    <string>AltGr + a</string>
+    <string>AltGr + b</string>
+    <string>AltGr + c</string>
+    <string>AltGr + d</string>
+    <string>AltGr + e</string>
+    <string>AltGr + f</string>
+    <string>AltGr + g</string>
+    <string>AltGr + h</string>
+    <string>AltGr + i</string>
+    <string>AltGr + j</string>
+    <string>AltGr + k</string>
+    <string>AltGr + l</string>
+    <string>AltGr + m</string>
+    <string>AltGr + n</string>
+    <string>AltGr + o</string>
+    <string>AltGr + p</string>
+    <string>AltGr + q</string>
+    <string>AltGr + r</string>
+    <string>AltGr + s</string>
+    <string>AltGr + t</string>
+    <string>AltGr + u</string>
+    <string>AltGr + v</string>
+    <string>AltGr + w</string>
+    <string>AltGr + x</string>
+    <string>AltGr + y</string>
+    <string>AltGr + z</string>
+    <string>AltGr + 1 !</string>
+    <string>AltGr + 2 @</string>
+    <string>AltGr + 3 #</string>
+    <string>AltGr + 4 $</string>
+    <string>AltGr + 5 %</string>
+    <string>AltGr + 6 ^</string>
+    <string>AltGr + 7 &amp;</string>
+    <string>AltGr + 8 *</string>
+    <string>AltGr + 9 (</string>
+    <string>AltGr + 0 )</string>
+    <string>AltGr + Enter</string>
+    <string>AltGr + Esc</string>
+    <string>AltGr + Backspace</string>
+    <string>AltGr + Tab</string>
+    <string>AltGr + Space</string>
+    <string>AltGr + - _</string>
+    <string>AltGr + = +</string>
+    <string>AltGr + [ {</string>
+    <string>AltGr + ] }</string>
+    <string>AltGr + \ |</string>
+    <string>AltGr + Non-US # ~</string>
+    <string>AltGr + ; :</string>
+    <string>AltGr + ' "</string>
+    <string>AltGr + ` ~</string>
+    <string>AltGr + , &lt;</string>
+    <string>AltGr + . &gt;</string>
+    <string>AltGr + / ?</string>
+    <string>AltGr + Capslock</string>
+    <string>AltGr + F1</string>
+    <string>AltGr + F2</string>
+    <string>AltGr + F3</string>
+    <string>AltGr + F4</string>
+    <string>AltGr + F5</string>
+    <string>AltGr + F6</string>
+    <string>AltGr + F7</string>
+    <string>AltGr + F8</string>
+    <string>AltGr + F9</string>
+    <string>AltGr + F10</string>
+    <string>AltGr + F11</string>
+    <string>AltGr + F12</string>
+    <string>AltGr + PrntScn</string>
+    <string>AltGr + ScrlLck</string>
+    <string>AltGr + Pause</string>
+    <string>AltGr + Insert</string>
+    <string>AltGr + Home</string>
+    <string>AltGr + Page Up</string>
+    <string>AltGr + Delete</string>
+    <string>AltGr + End</string>
+    <string>AltGr + Page Down</string>
+    <string>AltGr + Right</string>
+    <string>AltGr + Left</string>
+    <string>AltGr + Down</string>
+    <string>AltGr + Up</string>
+    <string>AltGr + NumLock</string>
+    <string>AltGr + Num /</string>
+    <string>AltGr + Num *</string>
+    <string>AltGr + Num -</string>
+    <string>AltGr + Num +</string>
+    <string>AltGr + Num Enter</string>
+    <string>AltGr + Num 1</string>
+    <string>AltGr + Num 2</string>
+    <string>AltGr + Num 3</string>
+    <string>AltGr + Num 4</string>
+    <string>AltGr + Num 5</string>
+    <string>AltGr + Num 6</string>
+    <string>AltGr + Num 7</string>
+    <string>AltGr + Num 8</string>
+    <string>AltGr + Num 9</string>
+    <string>AltGr + Num 0</string>
+    <string>AltGr + Num .</string>
+    <string>AltGr + Non-US \ |</string>
+    <string>AltGr + App</string>
+    <string>AltGr + Power Off</string>
+    <string>AltGr + Num =</string>
+    <string>AltGr + F13</string>
+    <string>AltGr + F14</string>
+    <string>AltGr + F15</string>
+    <string>AltGr + F16</string>
+    <string>AltGr + F17</string>
+    <string>AltGr + F18</string>
+    <string>AltGr + F19</string>
+    <string>AltGr + F20</string>
+    <string>AltGr + F21</string>
+    <string>AltGr + F22</string>
+    <string>AltGr + F23</string>
+    <string>AltGr + F24</string>
+    <string>-AltGr + Scncde 116</string>
+    <string>AltGr + KB Help</string>
+    <string>AltGr + Menu</string>
+    <string>AltGr + KB Select</string>
+    <string>AltGr + KB Stop</string>
+    <string>AltGr + KB Again</string>
+    <string>AltGr + KB Undo</string>
+    <string>AltGr + KB Cut</string>
+    <string>AltGr + KB Copy</string>
+    <string>AltGr + KB Paste</string>
+    <string>AltGr + KB Find</string>
+    <string>AltGr + KB Mute</string>
+    <string>AltGr + KB Vol Up</string>
+    <string>AltGr + KB Vol Dn</string>
+    <string>AltGr + L Ctrl</string>
+    <string>AltGr + L Shift</string>
+    <string>AltGr + L Alt</string>
+    <string>AltGr + L Win</string>
+    <string>AltGr + R Ctrl</string>
+    <string>AltGr + R Shift</string>
+    <string>AltGr + R Alt</string>
+    <string>AltGr + R Win</string>
+  </Display>
+  <Index>
+    <int>0</int>
+    <int>1</int>
+    <int>2</int>
+    <int>3</int>
+    <int>4</int>
+    <int>5</int>
+    <int>6</int>
+    <int>7</int>
+    <int>8</int>
+    <int>9</int>
+    <int>10</int>
+    <int>11</int>
+    <int>12</int>
+    <int>13</int>
+    <int>14</int>
+    <int>15</int>
+    <int>16</int>
+    <int>17</int>
+    <int>18</int>
+    <int>19</int>
+    <int>20</int>
+    <int>21</int>
+    <int>22</int>
+    <int>23</int>
+    <int>24</int>
+    <int>25</int>
+    <int>26</int>
+    <int>27</int>
+    <int>28</int>
+    <int>29</int>
+    <int>30</int>
+    <int>31</int>
+    <int>32</int>
+    <int>33</int>
+    <int>34</int>
+    <int>35</int>
+    <int>36</int>
+    <int>37</int>
+    <int>38</int>
+    <int>39</int>
+    <int>40</int>
+    <int>41</int>
+    <int>42</int>
+    <int>43</int>
+    <int>44</int>
+    <int>45</int>
+    <int>46</int>
+    <int>47</int>
+    <int>48</int>
+    <int>49</int>
+    <int>50</int>
+    <int>51</int>
+    <int>52</int>
+    <int>53</int>
+    <int>54</int>
+    <int>55</int>
+    <int>56</int>
+    <int>57</int>
+    <int>58</int>
+    <int>59</int>
+    <int>60</int>
+    <int>61</int>
+    <int>62</int>
+    <int>63</int>
+    <int>64</int>
+    <int>65</int>
+    <int>66</int>
+    <int>67</int>
+    <int>68</int>
+    <int>69</int>
+    <int>70</int>
+    <int>71</int>
+    <int>72</int>
+    <int>73</int>
+    <int>74</int>
+    <int>75</int>
+    <int>76</int>
+    <int>77</int>
+    <int>78</int>
+    <int>79</int>
+    <int>80</int>
+    <int>81</int>
+    <int>82</int>
+    <int>83</int>
+    <int>84</int>
+    <int>85</int>
+    <int>86</int>
+    <int>87</int>
+    <int>88</int>
+    <int>89</int>
+    <int>90</int>
+    <int>91</int>
+    <int>92</int>
+    <int>93</int>
+    <int>94</int>
+    <int>95</int>
+    <int>96</int>
+    <int>97</int>
+    <int>98</int>
+    <int>99</int>
+    <int>100</int>
+    <int>101</int>
+    <int>102</int>
+    <int>103</int>
+    <int>104</int>
+    <int>105</int>
+    <int>106</int>
+    <int>107</int>
+    <int>108</int>
+    <int>109</int>
+    <int>110</int>
+    <int>111</int>
+    <int>112</int>
+    <int>113</int>
+    <int>114</int>
+    <int>115</int>
+    <int>116</int>
+    <int>117</int>
+    <int>118</int>
+    <int>119</int>
+    <int>120</int>
+    <int>121</int>
+    <int>122</int>
+    <int>123</int>
+    <int>124</int>
+    <int>125</int>
+    <int>126</int>
+    <int>127</int>
+    <int>128</int>
+    <int>129</int>
+    <int>224</int>
+    <int>225</int>
+    <int>226</int>
+    <int>227</int>
+    <int>228</int>
+    <int>229</int>
+    <int>230</int>
+    <int>231</int>
+    <int>300</int>
+    <int>301</int>
+    <int>302</int>
+    <int>303</int>
+    <int>304</int>
+    <int>305</int>
+    <int>306</int>
+    <int>307</int>
+    <int>308</int>
+    <int>309</int>
+    <int>310</int>
+    <int>311</int>
+    <int>312</int>
+    <int>313</int>
+    <int>314</int>
+    <int>315</int>
+    <int>316</int>
+    <int>317</int>
+    <int>318</int>
+    <int>319</int>
+    <int>321</int>
+    <int>322</int>
+    <int>323</int>
+    <int>324</int>
+    <int>325</int>
+    <int>326</int>
+    <int>327</int>
+    <int>328</int>
+    <int>329</int>
+    <int>330</int>
+    <int>331</int>
+    <int>332</int>
+    <int>333</int>
+    <int>334</int>
+    <int>335</int>
+    <int>336</int>
+    <int>337</int>
+    <int>338</int>
+    <int>339</int>
+    <int>341</int>
+    <int>342</int>
+    <int>343</int>
+    <int>344</int>
+    <int>345</int>
+    <int>346</int>
+    <int>347</int>
+    <int>348</int>
+    <int>349</int>
+    <int>350</int>
+    <int>351</int>
+    <int>352</int>
+    <int>353</int>
+    <int>354</int>
+    <int>355</int>
+    <int>356</int>
+    <int>357</int>
+    <int>358</int>
+    <int>359</int>
+    <int>360</int>
+    <int>361</int>
+    <int>362</int>
+    <int>363</int>
+    <int>364</int>
+    <int>365</int>
+    <int>366</int>
+    <int>370</int>
+    <int>371</int>
+    <int>372</int>
+    <int>380</int>
+    <int>381</int>
+    <int>382</int>
+    <int>383</int>
+    <int>384</int>
+    <int>390</int>
+    <int>391</int>
+    <int>392</int>
+    <int>393</int>
+    <int>394</int>
+    <int>395</int>
+    <int>396</int>
+    <int>397</int>
+    <int>398</int>
+    <int>399</int>
+    <int>400</int>
+    <int>401</int>
+    <int>500</int>
+    <int>501</int>
+    <int>502</int>
+    <int>503</int>
+    <int>504</int>
+    <int>505</int>
+    <int>506</int>
+    <int>507</int>
+    <int>508</int>
+    <int>509</int>
+    <int>510</int>
+    <int>511</int>
+    <int>512</int>
+    <int>513</int>
+    <int>514</int>
+    <int>515</int>
+    <int>516</int>
+    <int>517</int>
+    <int>518</int>
+    <int>519</int>
+    <int>520</int>
+    <int>521</int>
+    <int>522</int>
+    <int>523</int>
+    <int>524</int>
+    <int>525</int>
+    <int>526</int>
+    <int>527</int>
+    <int>528</int>
+    <int>529</int>
+    <int>530</int>
+    <int>531</int>
+    <int>532</int>
+    <int>533</int>
+    <int>534</int>
+    <int>535</int>
+    <int>536</int>
+    <int>537</int>
+    <int>538</int>
+    <int>539</int>
+    <int>540</int>
+    <int>541</int>
+    <int>542</int>
+    <int>543</int>
+    <int>544</int>
+    <int>545</int>
+    <int>546</int>
+    <int>547</int>
+    <int>548</int>
+    <int>549</int>
+    <int>550</int>
+    <int>551</int>
+    <int>552</int>
+    <int>553</int>
+    <int>554</int>
+    <int>555</int>
+    <int>556</int>
+    <int>557</int>
+    <int>558</int>
+    <int>559</int>
+    <int>560</int>
+    <int>561</int>
+    <int>562</int>
+    <int>563</int>
+    <int>564</int>
+    <int>565</int>
+    <int>566</int>
+    <int>567</int>
+    <int>568</int>
+    <int>569</int>
+    <int>570</int>
+    <int>571</int>
+    <int>572</int>
+    <int>573</int>
+    <int>574</int>
+    <int>575</int>
+    <int>576</int>
+    <int>577</int>
+    <int>578</int>
+    <int>579</int>
+    <int>580</int>
+    <int>581</int>
+    <int>582</int>
+    <int>583</int>
+    <int>584</int>
+    <int>585</int>
+    <int>586</int>
+    <int>587</int>
+    <int>588</int>
+    <int>589</int>
+    <int>590</int>
+    <int>591</int>
+    <int>592</int>
+    <int>593</int>
+    <int>594</int>
+    <int>595</int>
+    <int>596</int>
+    <int>597</int>
+    <int>598</int>
+    <int>599</int>
+    <int>600</int>
+    <int>601</int>
+    <int>602</int>
+    <int>603</int>
+    <int>604</int>
+    <int>605</int>
+    <int>606</int>
+    <int>607</int>
+    <int>608</int>
+    <int>609</int>
+    <int>610</int>
+    <int>611</int>
+    <int>612</int>
+    <int>613</int>
+    <int>614</int>
+    <int>615</int>
+    <int>616</int>
+    <int>617</int>
+    <int>618</int>
+    <int>619</int>
+    <int>620</int>
+    <int>621</int>
+    <int>622</int>
+    <int>623</int>
+    <int>624</int>
+    <int>625</int>
+    <int>626</int>
+    <int>627</int>
+    <int>628</int>
+    <int>629</int>
+    <int>724</int>
+    <int>725</int>
+    <int>726</int>
+    <int>727</int>
+    <int>728</int>
+    <int>729</int>
+    <int>730</int>
+    <int>731</int>
+    <int>800</int>
+    <int>801</int>
+    <int>802</int>
+    <int>803</int>
+    <int>804</int>
+    <int>805</int>
+    <int>806</int>
+    <int>807</int>
+    <int>808</int>
+    <int>809</int>
+    <int>810</int>
+    <int>811</int>
+    <int>812</int>
+    <int>813</int>
+    <int>814</int>
+    <int>815</int>
+    <int>816</int>
+    <int>817</int>
+    <int>818</int>
+    <int>819</int>
+    <int>820</int>
+    <int>821</int>
+    <int>822</int>
+    <int>823</int>
+    <int>824</int>
+    <int>825</int>
+    <int>826</int>
+    <int>827</int>
+    <int>828</int>
+    <int>829</int>
+    <int>830</int>
+    <int>831</int>
+    <int>832</int>
+    <int>833</int>
+    <int>834</int>
+    <int>835</int>
+    <int>836</int>
+    <int>837</int>
+    <int>838</int>
+    <int>839</int>
+    <int>840</int>
+    <int>841</int>
+    <int>842</int>
+    <int>843</int>
+    <int>844</int>
+    <int>845</int>
+    <int>846</int>
+    <int>847</int>
+    <int>848</int>
+    <int>849</int>
+    <int>850</int>
+    <int>851</int>
+    <int>852</int>
+    <int>853</int>
+    <int>854</int>
+    <int>855</int>
+    <int>856</int>
+    <int>857</int>
+    <int>858</int>
+    <int>859</int>
+    <int>860</int>
+    <int>861</int>
+    <int>862</int>
+    <int>863</int>
+    <int>864</int>
+    <int>865</int>
+    <int>866</int>
+    <int>867</int>
+    <int>868</int>
+    <int>869</int>
+    <int>870</int>
+    <int>871</int>
+    <int>872</int>
+    <int>873</int>
+    <int>874</int>
+    <int>875</int>
+    <int>876</int>
+    <int>877</int>
+    <int>878</int>
+    <int>879</int>
+    <int>880</int>
+    <int>881</int>
+    <int>882</int>
+    <int>883</int>
+    <int>884</int>
+    <int>885</int>
+    <int>886</int>
+    <int>887</int>
+    <int>888</int>
+    <int>889</int>
+    <int>890</int>
+    <int>891</int>
+    <int>892</int>
+    <int>893</int>
+    <int>894</int>
+    <int>895</int>
+    <int>896</int>
+    <int>897</int>
+    <int>898</int>
+    <int>899</int>
+    <int>900</int>
+    <int>901</int>
+    <int>902</int>
+    <int>903</int>
+    <int>904</int>
+    <int>905</int>
+    <int>906</int>
+    <int>907</int>
+    <int>908</int>
+    <int>909</int>
+    <int>910</int>
+    <int>911</int>
+    <int>912</int>
+    <int>913</int>
+    <int>914</int>
+    <int>915</int>
+    <int>916</int>
+    <int>917</int>
+    <int>918</int>
+    <int>919</int>
+    <int>920</int>
+    <int>921</int>
+    <int>922</int>
+    <int>923</int>
+    <int>924</int>
+    <int>925</int>
+    <int>926</int>
+    <int>927</int>
+    <int>928</int>
+    <int>929</int>
+    <int>1024</int>
+    <int>1025</int>
+    <int>1026</int>
+    <int>1027</int>
+    <int>1028</int>
+    <int>1029</int>
+    <int>1030</int>
+    <int>1031</int>
+    <int>1100</int>
+    <int>1101</int>
+    <int>1102</int>
+    <int>1103</int>
+    <int>1104</int>
+    <int>1105</int>
+    <int>1106</int>
+    <int>1107</int>
+    <int>1108</int>
+    <int>1109</int>
+    <int>1110</int>
+    <int>1111</int>
+    <int>1112</int>
+    <int>1113</int>
+    <int>1114</int>
+    <int>1115</int>
+    <int>1116</int>
+    <int>1117</int>
+    <int>1118</int>
+    <int>1119</int>
+    <int>1120</int>
+    <int>1121</int>
+    <int>1122</int>
+    <int>1123</int>
+    <int>1124</int>
+    <int>1125</int>
+    <int>1126</int>
+    <int>1127</int>
+    <int>1128</int>
+    <int>1129</int>
+    <int>1130</int>
+    <int>1131</int>
+    <int>1132</int>
+    <int>1133</int>
+    <int>1134</int>
+    <int>1135</int>
+    <int>1136</int>
+    <int>1137</int>
+    <int>1138</int>
+    <int>1139</int>
+    <int>1140</int>
+    <int>1141</int>
+    <int>1142</int>
+    <int>1143</int>
+    <int>1144</int>
+    <int>1145</int>
+    <int>1146</int>
+    <int>1147</int>
+    <int>1148</int>
+    <int>1149</int>
+    <int>1150</int>
+    <int>1151</int>
+    <int>1152</int>
+    <int>1153</int>
+    <int>1154</int>
+    <int>1155</int>
+    <int>1156</int>
+    <int>1157</int>
+    <int>1158</int>
+    <int>1159</int>
+    <int>1160</int>
+    <int>1161</int>
+    <int>1162</int>
+    <int>1163</int>
+    <int>1164</int>
+    <int>1165</int>
+    <int>1166</int>
+    <int>1167</int>
+    <int>1168</int>
+    <int>1169</int>
+    <int>1170</int>
+    <int>1171</int>
+    <int>1172</int>
+    <int>1173</int>
+    <int>1174</int>
+    <int>1175</int>
+    <int>1176</int>
+    <int>1177</int>
+    <int>1178</int>
+    <int>1179</int>
+    <int>1180</int>
+    <int>1181</int>
+    <int>1182</int>
+    <int>1183</int>
+    <int>1184</int>
+    <int>1185</int>
+    <int>1186</int>
+    <int>1187</int>
+    <int>1188</int>
+    <int>1189</int>
+    <int>1190</int>
+    <int>1191</int>
+    <int>1192</int>
+    <int>1193</int>
+    <int>1194</int>
+    <int>1195</int>
+    <int>1196</int>
+    <int>1197</int>
+    <int>1198</int>
+    <int>1199</int>
+    <int>1200</int>
+    <int>1201</int>
+    <int>1202</int>
+    <int>1203</int>
+    <int>1204</int>
+    <int>1205</int>
+    <int>1206</int>
+    <int>1207</int>
+    <int>1208</int>
+    <int>1209</int>
+    <int>1210</int>
+    <int>1211</int>
+    <int>1212</int>
+    <int>1213</int>
+    <int>1214</int>
+    <int>1215</int>
+    <int>1216</int>
+    <int>1217</int>
+    <int>1218</int>
+    <int>1219</int>
+    <int>1220</int>
+    <int>1221</int>
+    <int>1222</int>
+    <int>1223</int>
+    <int>1224</int>
+    <int>1225</int>
+    <int>1226</int>
+    <int>1227</int>
+    <int>1228</int>
+    <int>1229</int>
+    <int>1324</int>
+    <int>1325</int>
+    <int>1326</int>
+    <int>1327</int>
+    <int>1328</int>
+    <int>1329</int>
+    <int>1330</int>
+    <int>1331</int>
+    <int>1400</int>
+    <int>1401</int>
+    <int>1402</int>
+    <int>1403</int>
+    <int>1404</int>
+    <int>1405</int>
+    <int>1406</int>
+    <int>1407</int>
+    <int>1408</int>
+    <int>1409</int>
+    <int>1410</int>
+    <int>1411</int>
+    <int>1412</int>
+    <int>1413</int>
+    <int>1414</int>
+    <int>1415</int>
+    <int>1416</int>
+    <int>1417</int>
+    <int>1418</int>
+    <int>1419</int>
+    <int>1420</int>
+    <int>1421</int>
+    <int>1422</int>
+    <int>1423</int>
+    <int>1424</int>
+    <int>1425</int>
+    <int>1426</int>
+    <int>1427</int>
+    <int>1428</int>
+    <int>1429</int>
+    <int>1430</int>
+    <int>1431</int>
+    <int>1432</int>
+    <int>1433</int>
+    <int>1434</int>
+    <int>1435</int>
+    <int>1436</int>
+    <int>1437</int>
+    <int>1438</int>
+    <int>1439</int>
+    <int>1440</int>
+    <int>1441</int>
+    <int>1442</int>
+    <int>1443</int>
+    <int>1444</int>
+    <int>1445</int>
+    <int>1446</int>
+    <int>1447</int>
+    <int>1448</int>
+    <int>1449</int>
+    <int>1450</int>
+    <int>1451</int>
+    <int>1452</int>
+    <int>1453</int>
+    <int>1454</int>
+    <int>1455</int>
+    <int>1456</int>
+    <int>1457</int>
+    <int>1458</int>
+    <int>1459</int>
+    <int>1460</int>
+    <int>1461</int>
+    <int>1462</int>
+    <int>1463</int>
+    <int>1464</int>
+    <int>1465</int>
+    <int>1466</int>
+    <int>1467</int>
+    <int>1468</int>
+    <int>1469</int>
+    <int>1470</int>
+    <int>1471</int>
+    <int>1472</int>
+    <int>1473</int>
+    <int>1474</int>
+    <int>1475</int>
+    <int>1476</int>
+    <int>1477</int>
+    <int>1478</int>
+    <int>1479</int>
+    <int>1480</int>
+    <int>1481</int>
+    <int>1482</int>
+    <int>1483</int>
+    <int>1484</int>
+    <int>1485</int>
+    <int>1486</int>
+    <int>1487</int>
+    <int>1488</int>
+    <int>1489</int>
+    <int>1490</int>
+    <int>1491</int>
+    <int>1492</int>
+    <int>1493</int>
+    <int>1494</int>
+    <int>1495</int>
+    <int>1496</int>
+    <int>1497</int>
+    <int>1498</int>
+    <int>1499</int>
+    <int>1500</int>
+    <int>1501</int>
+    <int>1502</int>
+    <int>1503</int>
+    <int>1504</int>
+    <int>1505</int>
+    <int>1506</int>
+    <int>1507</int>
+    <int>1508</int>
+    <int>1509</int>
+    <int>1510</int>
+    <int>1511</int>
+    <int>1512</int>
+    <int>1513</int>
+    <int>1514</int>
+    <int>1515</int>
+    <int>1516</int>
+    <int>1517</int>
+    <int>1518</int>
+    <int>1519</int>
+    <int>1520</int>
+    <int>1521</int>
+    <int>1522</int>
+    <int>1523</int>
+    <int>1524</int>
+    <int>1525</int>
+    <int>1526</int>
+    <int>1527</int>
+    <int>1528</int>
+    <int>1529</int>
+    <int>1624</int>
+    <int>1625</int>
+    <int>1626</int>
+    <int>1627</int>
+    <int>1628</int>
+    <int>1629</int>
+    <int>1630</int>
+    <int>1631</int>
+  </Index>
+  <GroupIndex>
+    <int>11</int>
+    <int>11</int>
+    <int>11</int>
+    <int>11</int>
+    <int>1</int>
+    <int>1</int>
+    <int>1</int>
+    <int>1</int>
+    <int>1</int>
+    <int>1</int>
+    <int>1</int>
+    <int>1</int>
+    <int>1</int>
+    <int>1</int>
+    <int>1</int>
+    <int>1</int>
+    <int>1</int>
+    <int>1</int>
+    <int>1</int>
+    <int>1</int>
+    <int>1</int>
+    <int>1</int>
+    <int>1</int>
+    <int>1</int>
+    <int>1</int>
+    <int>1</int>
+    <int>1</int>
+    <int>1</int>
+    <int>1</int>
+    <int>1</int>
+    <int>2</int>
+    <int>2</int>
+    <int>2</int>
+    <int>2</int>
+    <int>2</int>
+    <int>2</int>
+    <int>2</int>
+    <int>2</int>
+    <int>2</int>
+    <int>2</int>
+    <int>5</int>
+    <int>5</int>
+    <int>5</int>
+    <int>5</int>
+    <int>5</int>
+    <int>3</int>
+    <int>3</int>
+    <int>3</int>
+    <int>3</int>
+    <int>3</int>
+    <int>11</int>
+    <int>3</int>
+    <int>3</int>
+    <int>3</int>
+    <int>3</int>
+    <int>3</int>
+    <int>3</int>
+    <int>5</int>
+    <int>5</int>
+    <int>5</int>
+    <int>5</int>
+    <int>5</int>
+    <int>5</int>
+    <int>5</int>
+    <int>5</int>
+    <int>5</int>
+    <int>5</int>
+    <int>5</int>
+    <int>5</int>
+    <int>5</int>
+    <int>5</int>
+    <int>5</int>
+    <int>5</int>
+    <int>5</int>
+    <int>5</int>
+    <int>5</int>
+    <int>5</int>
+    <int>5</int>
+    <int>5</int>
+    <int>5</int>
+    <int>5</int>
+    <int>5</int>
+    <int>5</int>
+    <int>5</int>
+    <int>4</int>
+    <int>4</int>
+    <int>4</int>
+    <int>4</int>
+    <int>4</int>
+    <int>4</int>
+    <int>4</int>
+    <int>4</int>
+    <int>4</int>
+    <int>4</int>
+    <int>4</int>
+    <int>4</int>
+    <int>4</int>
+    <int>4</int>
+    <int>4</int>
+    <int>4</int>
+    <int>11</int>
+    <int>5</int>
+    <int>11</int>
+    <int>11</int>
+    <int>11</int>
+    <int>11</int>
+    <int>11</int>
+    <int>11</int>
+    <int>11</int>
+    <int>11</int>
+    <int>11</int>
+    <int>11</int>
+    <int>11</int>
+    <int>11</int>
+    <int>11</int>
+    <int>11</int>
+    <int>11</int>
+    <int>11</int>
+    <int>5</int>
+    <int>11</int>
+    <int>11</int>
+    <int>11</int>
+    <int>11</int>
+    <int>11</int>
+    <int>11</int>
+    <int>11</int>
+    <int>11</int>
+    <int>11</int>
+    <int>11</int>
+    <int>11</int>
+    <int>5</int>
+    <int>5</int>
+    <int>5</int>
+    <int>5</int>
+    <int>5</int>
+    <int>5</int>
+    <int>5</int>
+    <int>5</int>
+    <int>6</int>
+    <int>6</int>
+    <int>6</int>
+    <int>6</int>
+    <int>6</int>
+    <int>6</int>
+    <int>6</int>
+    <int>6</int>
+    <int>6</int>
+    <int>6</int>
+    <int>6</int>
+    <int>6</int>
+    <int>6</int>
+    <int>6</int>
+    <int>6</int>
+    <int>6</int>
+    <int>6</int>
+    <int>6</int>
+    <int>6</int>
+    <int>6</int>
+    <int>6</int>
+    <int>6</int>
+    <int>6</int>
+    <int>6</int>
+    <int>6</int>
+    <int>6</int>
+    <int>6</int>
+    <int>6</int>
+    <int>6</int>
+    <int>6</int>
+    <int>6</int>
+    <int>6</int>
+    <int>6</int>
+    <int>6</int>
+    <int>6</int>
+    <int>6</int>
+    <int>6</int>
+    <int>6</int>
+    <int>6</int>
+    <int>6</int>
+    <int>6</int>
+    <int>6</int>
+    <int>6</int>
+    <int>6</int>
+    <int>6</int>
+    <int>6</int>
+    <int>6</int>
+    <int>6</int>
+    <int>6</int>
+    <int>6</int>
+    <int>6</int>
+    <int>6</int>
+    <int>6</int>
+    <int>6</int>
+    <int>6</int>
+    <int>6</int>
+    <int>6</int>
+    <int>6</int>
+    <int>6</int>
+    <int>6</int>
+    <int>6</int>
+    <int>6</int>
+    <int>6</int>
+    <int>6</int>
+    <int>6</int>
+    <int>6</int>
+    <int>6</int>
+    <int>6</int>
+    <int>6</int>
+    <int>6</int>
+    <int>6</int>
+    <int>6</int>
+    <int>6</int>
+    <int>6</int>
+    <int>6</int>
+    <int>6</int>
+    <int>6</int>
+    <int>6</int>
+    <int>6</int>
+    <int>6</int>
+    <int>6</int>
+    <int>6</int>
+    <int>6</int>
+    <int>6</int>
+    <int>6</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>7</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>8</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>9</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+    <int>10</int>
+  </GroupIndex>
+  <Groups>
+    <string>All</string>
+    <string>Alphabets</string>
+    <string>Numbers</string>
+    <string>Symbols</string>
+    <string>Numpad</string>
+    <string>Controls</string>
+    <string>Specials</string>
+    <string>Shifted</string>
+    <string>Ctrl'd</string>
+    <string>Alt'd</string>
+    <string>AltGr'd</string>
+    <string>Others</string>
+  </Groups>
+</ClDisplayCharacterContainer>

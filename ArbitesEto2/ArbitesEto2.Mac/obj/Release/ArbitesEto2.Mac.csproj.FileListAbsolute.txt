@@ -8,6 +8,6 @@ E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.Mac\bin\Rel
 E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.Mac\bin\Release\MonoMac.dll
 E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.Mac\bin\Release\ArbitesEto2.pdb
 E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.Mac\bin\Release\Eto.xml
-E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.Mac\obj\Release\ArbitesEto2.Mac.csprojResolveAssemblyReference.cache
 E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.Mac\obj\Release\ArbitesEto2.Mac.exe
 E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.Mac\obj\Release\ArbitesEto2.Mac.pdb
+E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.Mac\obj\Release\ArbitesEto2.Mac.csprojResolveAssemblyReference.cache

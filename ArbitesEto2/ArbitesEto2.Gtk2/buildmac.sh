@@ -1,0 +1,1 @@
+﻿macpack -o:. -w:winforms -r:ArbitesEto2.dll -r:ArbitesEto2.Gtk2.pdb -r:Eto.dll -r:Eto.Gtk2.dll -r:Eto.xml -r:favicon.ico -r:persistent-data.arb2pd  -n:Arbites -a:ArbitesEto2.Gtk2.exe

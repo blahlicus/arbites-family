@@ -42,14 +42,22 @@ namespace ArbitesEto2
             dialog.Filters.Add(new FileDialogFilter(Keyboard.Name+ " layout", "*." + Keyboard.SaveFileExtension));
             dialog.Title = "Load Layout";
             dialog.Directory = new Uri(Environment.CurrentDirectory + MdConstant.psep+ "layouts");
-            dialog.ShowDialog(this);
-            if (!string.IsNullOrEmpty(dialog.FileName))
+            try
             {
-                MdSessionData.CurrentLayout = MdCore.Deserialize<ClLayoutContainer>(dialog.FileName);
-                LoadLayout(MdSessionData.CurrentLayout);
-                SavePath = dialog.FileName;
-                this.LLayoutName.Text = System.IO.Path.GetFileNameWithoutExtension(SavePath);
-                this.BtnSave.Text = "Save Layout";
+
+                dialog.ShowDialog(this);
+                if (!string.IsNullOrEmpty(dialog.FileName))
+                {
+                    MdSessionData.CurrentLayout = MdCore.Deserialize<ClLayoutContainer>(dialog.FileName);
+                    LoadLayout(MdSessionData.CurrentLayout);
+                    SavePath = dialog.FileName;
+                    this.LLayoutName.Text = System.IO.Path.GetFileNameWithoutExtension(SavePath);
+                    this.BtnSave.Text = "Save Layout";
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -72,13 +80,25 @@ namespace ArbitesEto2
             dialog.Filters.Add(new FileDialogFilter(Keyboard.Name + " layout", "*." + Keyboard.SaveFileExtension));
             dialog.Title = "Save Layout As";
             dialog.Directory = new Uri(Environment.CurrentDirectory + MdConstant.psep + "layouts");
-            dialog.ShowDialog(this);
-            if (!string.IsNullOrEmpty(dialog.FileName))
+            try
             {
-                SavePath = dialog.FileName;
-                MdCore.Serialize<ClLayoutContainer>(MdSessionData.CurrentLayout, SavePath);
-                this.BtnSave.Text = "Save Layout";
-                this.LLayoutName.Text = System.IO.Path.GetFileNameWithoutExtension(SavePath);
+
+                dialog.ShowDialog(this);
+                if (!string.IsNullOrEmpty(dialog.FileName))
+                {
+                    SavePath = dialog.FileName;
+
+                    // this line is needed because gtk savefiledialog doesnt work properly with extensions
+                    SavePath = System.IO.Path.ChangeExtension(dialog.FileName, Keyboard.SaveFileExtension);
+
+                    MdCore.Serialize<ClLayoutContainer>(MdSessionData.CurrentLayout, SavePath);
+                    this.BtnSave.Text = "Save Layout";
+                    this.LLayoutName.Text = System.IO.Path.GetFileNameWithoutExtension(SavePath);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
