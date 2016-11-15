@@ -1,58 +1,59 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Eto.Forms;
-using Eto.Drawing;
+
 
 namespace ArbitesEto2
 {
+
     public partial class FmMacroEdit
     {
+
         public List<UCMacroButton> Buttons { get; set; }
         public ClMacroData Data { get; set; }
         public bool SaveOutput { get; set; }
+
         public FmMacroEdit()
         {
             InitializeComponent();
-            Icon = MdSessionData.WindowIcon;
-            Buttons = new List<UCMacroButton>();
-            Data = new ClMacroData();
-            SaveOutput = false;
-            for (int i = 0; i < 8; i++ )
+            this.Icon = MdSessionData.WindowIcon;
+            this.Buttons = new List<UCMacroButton>();
+            this.Data = new ClMacroData();
+            this.SaveOutput = false;
+            for (var i = 0; i < 8; i++)
             {
                 var btn = new UCMacroButton();
                 btn.KeyIndex = i;
-                Buttons.Add(btn);
+                this.Buttons.Add(btn);
                 var tc = new TableCell();
                 tc.Control = btn;
                 btn.Visible = false;
-                TRStack.Cells.Add(tc);
+                this.TRStack.Cells.Add(tc);
 
-                btn.LeftClick += (sender, e) => KeyLeft(sender, e);
-                btn.RightClick += (sender, e) => KeyRight(sender, e);
-                btn.DeleteClick += (sender, e) => KeyDelete(sender, e);
-                btn.ValueChanged += (sender, e) => KeyUpdate(sender, e);
-                btn.IsDownChanged += (sender, e) => KeyIsDownChanged(sender, e);
+                btn.LeftClick += (sender, e) => KeyLeft(sender);
+                btn.RightClick += (sender, e) => KeyRight(sender);
+                btn.DeleteClick += (sender, e) => KeyDelete(sender);
+                btn.ValueChanged += (sender, e) => KeyUpdate(sender);
+                btn.IsDownChanged += (sender, e) => KeyIsDownChanged(sender);
             }
-            TRStack.Cells.Add(null);
+            this.TRStack.Cells.Add(null);
             EventHook();
             RefreshStack();
         }
 
 
-        public FmMacroEdit(ClMacroData Data) : this()
+        public FmMacroEdit(ClMacroData data) : this()
         {
-            this.Data = new ClMacroData(Data);
+            this.Data = new ClMacroData(data);
             RefreshStack();
         }
 
 
         private void EventHook()
         {
-            BtnAddKey.Click += (sender, e) => AddKey();
-            BtnOK.Click += (sender, e) => Save();
-            BtnCancel.Click += (sender, e) => Cancel();
-            this.Closing += (sender, e) => IsClosing();
-
+            this.BtnAddKey.Click += (sender, e) => AddKey();
+            this.BtnOK.Click += (sender, e) => Save();
+            this.BtnCancel.Click += (sender, e) => Cancel();
+            Closing += (sender, e) => IsClosing();
         }
 
 
@@ -63,14 +64,13 @@ namespace ArbitesEto2
 
         private void Save()
         {
-
-            SaveOutput = true;
+            this.SaveOutput = true;
 
 
             var lay = MdSessionData.CurrentLayout;
             var dataCont = new ClMacroDataContainer();
             var hasData = false;
-            foreach (ClAdditionalData ele in lay.AddonDatas)
+            foreach (var ele in lay.AddonDatas)
             {
                 if (ele.GetType() == ClMacroDataContainer.DATA_TYPE)
                 {
@@ -87,113 +87,127 @@ namespace ArbitesEto2
             var data = this.Data;
             hasData = false;
             var oldDataIndex = 0;
-            foreach (ClMacroData ele in dataCont.MacroKeys)
+            if (dataCont != null)
             {
-                if (ele.Index == this.Data.Index)
+                foreach (var ele in dataCont.MacroKeys)
                 {
-                    hasData = true;
-                    break;
+                    if (ele.Index == this.Data.Index)
+                    {
+                        hasData = true;
+                        break;
+                    }
+                    oldDataIndex++;
                 }
-                oldDataIndex++;
-            }
 
-            if (hasData)
-            {
-                dataCont.MacroKeys[oldDataIndex] = data;
-            }
-            else
-            {
-                dataCont.MacroKeys.Add(data);
+                if (hasData)
+                {
+                    dataCont.MacroKeys[oldDataIndex] = data;
+                }
+                else
+                {
+                    dataCont.MacroKeys.Add(data);
+                }
             }
             MdSessionData.CurrentKeyboardUI.DisplayUnsavedChangeSignal();
-            this.Close();
+            Close();
         }
 
         private void Cancel()
         {
-            this.Close();
+            Close();
         }
 
-        private void KeyLeft(object sender, EventArgs e)
+        private void KeyLeft(object sender)
         {
-            var btn = (sender as UCMacroButton);
-            int index = btn.KeyIndex;
-            if (index >0)
+            var btn = sender as UCMacroButton;
+            if (btn != null)
             {
-                var ele = Data.Keys[index];
-                var bele = Data.IsKeyDown[index];
+                var index = btn.KeyIndex;
+                if (index > 0)
+                {
+                    var ele = this.Data.Keys[index];
+                    var bele = this.Data.IsKeyDown[index];
 
-                Data.Keys.RemoveAt(index);
-                Data.IsKeyDown.RemoveAt(index);
+                    this.Data.Keys.RemoveAt(index);
+                    this.Data.IsKeyDown.RemoveAt(index);
 
-                Data.Keys.Insert(index - 1, ele);
-                Data.IsKeyDown.Insert(index - 1, bele);
-                RefreshStack();
-            }
-            else
-            {
-                MessageBox.Show("Error: Already leftmost key.");
-            }
-
-        }
-        private void KeyRight(object sender, EventArgs e)
-        {
-
-            var btn = (sender as UCMacroButton);
-            int index = btn.KeyIndex;
-            if (index < Data.Keys.Count - 1)
-            {
-                var ele = Data.Keys[index];
-                var bele = Data.IsKeyDown[index];
-
-                Data.Keys.RemoveAt(index);
-                Data.IsKeyDown.RemoveAt(index);
-
-                Data.Keys.Insert(index+1, ele);
-                Data.IsKeyDown.Insert(index+1, bele);
-                RefreshStack();
-            }
-            else
-            {
-                MessageBox.Show("Error: Already rightmost key.");
+                    this.Data.Keys.Insert(index - 1, ele);
+                    this.Data.IsKeyDown.Insert(index - 1, bele);
+                    RefreshStack();
+                }
+                else
+                {
+                    MessageBox.Show("Error: Already leftmost key.");
+                }
             }
         }
-        private void KeyDelete(object sender, EventArgs e)
-        {
-            var btn = (sender as UCMacroButton);
-            int index = btn.KeyIndex;
-            var ele = Data.Keys[index];
-            var bele = Data.IsKeyDown[index];
 
-            Data.Keys.RemoveAt(index);
-            Data.IsKeyDown.RemoveAt(index);
+        private void KeyRight(object sender)
+        {
+            var btn = sender as UCMacroButton;
+            if (btn != null)
+            {
+                var index = btn.KeyIndex;
+                if (index < this.Data.Keys.Count - 1)
+                {
+                    var ele = this.Data.Keys[index];
+                    var bele = this.Data.IsKeyDown[index];
+
+                    this.Data.Keys.RemoveAt(index);
+                    this.Data.IsKeyDown.RemoveAt(index);
+
+                    this.Data.Keys.Insert(index + 1, ele);
+                    this.Data.IsKeyDown.Insert(index + 1, bele);
+                    RefreshStack();
+                }
+                else
+                {
+                    MessageBox.Show("Error: Already rightmost key.");
+                }
+            }
+        }
+
+        private void KeyDelete(object sender)
+        {
+            var btn = sender as UCMacroButton;
+            if (btn != null)
+            {
+                var index = btn.KeyIndex;
+
+                this.Data.Keys.RemoveAt(index);
+                this.Data.IsKeyDown.RemoveAt(index);
+            }
             RefreshStack();
         }
-        private void KeyUpdate(object sender, EventArgs e)
-        {
-            var btn = (sender as UCMacroButton);
-            int index = btn.KeyIndex;
 
-            Data.Keys[index] = new ClKey(btn.Key);
-        }
-        private void KeyIsDownChanged(object sender, EventArgs e)
+        private void KeyUpdate(object sender)
         {
+            var btn = sender as UCMacroButton;
+            if (btn != null)
+            {
+                var index = btn.KeyIndex;
 
-            var btn = (sender as UCMacroButton);
-            int index = btn.KeyIndex;
-            Data.IsKeyDown[index] = btn.IsDown;
+                this.Data.Keys[index] = new ClKey(btn.Key);
+            }
         }
 
-
-
+        private void KeyIsDownChanged(object sender)
+        {
+            var btn = sender as UCMacroButton;
+            if (btn != null)
+            {
+                var index = btn.KeyIndex;
+                this.Data.IsKeyDown[index] = btn.IsDown;
+            }
+        }
 
 
         private void AddKey()
         {
-            if (Data.Keys.Count < 8)
+            if (this.Data.Keys.Count < 8)
             {
-                Data.Keys.Add(new ClKey());
-                Data.IsKeyDown.Add(true);
+                this.Data.Keys.Add(new ClKey());
+                this.Data.IsKeyDown.Add(true);
                 RefreshStack();
             }
             else
@@ -204,27 +218,25 @@ namespace ArbitesEto2
 
         private void RefreshStack()
         {
-            for (int i = 0; i < 8; i++)
+            for (var i = 0; i < 8; i++)
             {
-                if (i < Data.Keys.Count)
+                if (i < this.Data.Keys.Count)
                 {
-                    Buttons[i].Key = new ClKey(Data.Keys[i]);
-                    Buttons[i].IsDown = Data.IsKeyDown[i];
-                    Buttons[i].ReloadUI();
-                    Buttons[i].Visible = true;
+                    this.Buttons[i].Key = new ClKey(this.Data.Keys[i]);
+                    this.Buttons[i].IsDown = this.Data.IsKeyDown[i];
+                    this.Buttons[i].ReloadUI();
+                    this.Buttons[i].Visible = true;
                 }
                 else
                 {
-                    Buttons[i].Visible = false;
+                    this.Buttons[i].Visible = false;
                 }
-
-
             }
 
-            LTip.Text = "Currently editing macro key \"macro" + Data.Index.ToString() + "\"";
-            LKeyAmount.Text = "Capacity: " + Data.Keys.Count.ToString() + " out of 8 keys.";
-            
+            this.LTip.Text = "Currently editing macro key \"macro" + this.Data.Index + "\"";
+            this.LKeyAmount.Text = "Capacity: " + this.Data.Keys.Count + " out of 8 keys.";
         }
 
     }
+
 }

@@ -1,13 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Eto.Forms;
-using Eto.Drawing;
+
 
 namespace ArbitesEto2
 {
-    public partial class FmSelectTextDialog
+
+    public sealed partial class FmSelectTextDialog
     {
-        
+
         public List<string> OutputValues { get; set; }
         public List<string> OutputKeys { get; set; }
         public int OutputIndex { get; set; }
@@ -17,33 +17,32 @@ namespace ArbitesEto2
             this.ShowInTaskbar = true;
             InitializeComponent();
 
-            OutputIndex = -1;
-            OutputKeys = new List<string>();
-            OutputValues = new List<string>();
+            this.OutputIndex = -1;
+            this.OutputKeys = new List<string>();
+            this.OutputValues = new List<string>();
 
-            Title = "Select an item below";
-            Icon = MdSessionData.WindowIcon;
+            this.Title = "Select an item below";
+            this.Icon = MdSessionData.WindowIcon;
         }
 
 
-        public FmSelectTextDialog(List<string> values, List<string> keys, string Title) : this()
+        public FmSelectTextDialog(List<string> values, List<string> keys, string title) : this()
         {
-            OutputKeys = keys;
-            OutputValues = values;
-            int i = 0;
-            foreach(string str in OutputKeys)
+            this.OutputKeys = keys;
+            this.OutputValues = values;
+            var i = 0;
+            foreach (var str in this.OutputKeys)
             {
-                addButton(str, i);
+                AddButton(str, i);
                 i++;
             }
-            TLMain.Rows.Add(null);
-            this.Title = Title;
+            this.TLMain.Rows.Add(null);
+            this.Title = title;
             this.Width = 300;
             this.Height = 400;
-
         }
 
-        private void addButton(string input, int index)
+        private void AddButton(string input, int index)
         {
             var btn = new Button();
             btn.Text = input;
@@ -51,14 +50,16 @@ namespace ArbitesEto2
             var tr = new TableRow();
             tr.Cells.Add(btn);
 
-            TLMain.Rows.Add(tr);
-            btn.Click += (sender, e) => pressButton(index);
+            this.TLMain.Rows.Add(tr);
+            btn.Click += (sender, e) => PressButton(index);
         }
 
-        private void pressButton(int input)
+        private void PressButton(int input)
         {
-            OutputIndex = input;
-            this.Close();
+            this.OutputIndex = input;
+            Close();
         }
+
     }
+
 }

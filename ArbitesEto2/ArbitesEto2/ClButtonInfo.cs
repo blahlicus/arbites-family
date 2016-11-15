@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace ArbitesEto2
+﻿namespace ArbitesEto2
 {
+
     public class ClButtonInfo
     {
+
         public int GX { get; set; }
         public int GY { get; set; }
         public int X { get; set; }
@@ -36,5 +33,7 @@ namespace ArbitesEto2
             this.GH = input.GH;
             this.Command = input.Command;
         }
+
     }
+
 }

@@ -1,12 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
+
 
 namespace ArbitesEto2
 {
+
     public class ClLayoutContainer
     {
+
         public List<ClKeyData> KeyDatas { get; set; }
         public List<ClAdditionalData> AddonDatas { get; set; }
 
@@ -19,23 +20,22 @@ namespace ArbitesEto2
         public ClLayoutContainer(ClLayoutContainer input)
         {
             this.KeyDatas = new List<ClKeyData>();
-            foreach(ClKeyData kd in input.KeyDatas)
+            foreach (var kd in input.KeyDatas)
             {
                 this.KeyDatas.Add(new ClKeyData(kd));
             }
 
             this.AddonDatas = new List<ClAdditionalData>();
-            foreach(ClAdditionalData ad in input.AddonDatas)
+            foreach (var ad in input.AddonDatas)
             {
                 this.AddonDatas.Add(ad);
             }
-
         }
 
         public void DeleteLayer(int input)
         {
             this.KeyDatas.RemoveAll(kd => kd.Z == input);
-            foreach (ClKeyData kd in KeyDatas)
+            foreach (var kd in this.KeyDatas)
             {
                 if (kd.Z > input)
                 {
@@ -47,7 +47,7 @@ namespace ArbitesEto2
         public void AddLayer(int input)
         {
             var alist = new List<ClKeyData>();
-            foreach(var kd in KeyDatas)
+            foreach (var kd in this.KeyDatas)
             {
                 if (kd.Z == 0)
                 {
@@ -59,19 +59,19 @@ namespace ArbitesEto2
             this.KeyDatas.AddRange(alist);
         }
 
-        public List<string> GenerateCommand(ClKeyboard board, bool IsScancode = true)
+        public List<string> GenerateCommand(ClKeyboard board, bool isScancode = true)
         {
             var lt = new List<string>();
             var layCount = 0;
-            if (KeyDatas.Count >0)
+            if (this.KeyDatas.Count > 0)
             {
-                layCount = KeyDatas.Max(ele => ele.Z) + 1;
+                layCount = this.KeyDatas.Max(ele => ele.Z) + 1;
             }
-            lt.Add("uniqueksetlay(" + layCount.ToString() + " ");
-            foreach(ClKeyData kd in this.KeyDatas)
+            lt.Add("uniqueksetlay(" + layCount + " ");
+            foreach (var kd in this.KeyDatas)
             {
-                string keyVal = "";
-                if (IsScancode)
+                string keyVal;
+                if (isScancode)
                 {
                     keyVal = kd.Key.ValScan.ToString();
                 }
@@ -79,16 +79,17 @@ namespace ArbitesEto2
                 {
                     keyVal = kd.Key.ValASCII.ToString();
                 }
-                lt.Add(board.Commands[kd.Command] + "(" + kd.X.ToString() + "(" + kd.Y.ToString() + "(" + kd.Z.ToString() + "(" + keyVal + "(" + kd.Key.KeyType.ToString() + " ");
-
+                lt.Add(board.Commands[kd.Command] + "(" + kd.X + "(" + kd.Y + "(" + kd.Z + "(" + keyVal + "(" + kd.Key.KeyType + " ");
             }
 
-            foreach (ClAdditionalData ad in this.AddonDatas)
+            foreach (var ad in this.AddonDatas)
             {
                 lt.AddRange(ad.GetCommands());
             }
 
             return lt;
         }
+
     }
+
 }

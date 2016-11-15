@@ -5,7 +5,8 @@ using Eto.Drawing;
 
 namespace ArbitesEto2
 {
-    partial class FmKeyMenu : Form
+
+    sealed partial class FmKeyMenu : Form
     {
         
         TabControl TCMain;

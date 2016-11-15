@@ -1,16 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using Eto.Forms;
-using Eto.Drawing;
+
 
 namespace ArbitesEto2
 {
+
     public partial class UCKeyboard
     {
+
         public ClKeyboard Keyboard { get; set; }
         public List<UCLayer> Layers { get; set; }
         public string SavePath { get; set; }
-        private bool initalized = false;
+        private readonly bool initalized;
+
         public UCKeyboard()
         {
             InitializeComponent();
@@ -21,8 +25,8 @@ namespace ArbitesEto2
             InitializeComponent();
             this.Keyboard = keyboard;
             this.Layers = new List<UCLayer>();
-            initalized = true;
-            this.LoadLayout(layout);
+            this.initalized = true;
+            LoadLayout(layout);
             this.SavePath = "<UNSAVED LAYOUT>";
             this.LLayoutName.Text = "<UNSAVED LAYOUT>";
             InitHandle();
@@ -30,28 +34,27 @@ namespace ArbitesEto2
 
         private void InitHandle()
         {
-            BtnAddLayer.Click += (sender, e) => AddLayer();
-            BtnSaveAs.Click += (sender, e) => SaveLayoutAs();
-            BtnSave.Click += (sender, e) => SaveLayout();
-            BtnLoad.Click += (sender, e) => LoadLayoutFile();
+            this.BtnAddLayer.Click += (sender, e) => AddLayer();
+            this.BtnSaveAs.Click += (sender, e) => SaveLayoutAs();
+            this.BtnSave.Click += (sender, e) => SaveLayout();
+            this.BtnLoad.Click += (sender, e) => LoadLayoutFile();
         }
 
         public void LoadLayoutFile()
         {
-            OpenFileDialog dialog = new OpenFileDialog();
-            dialog.Filters.Add(new FileDialogFilter(Keyboard.Name+ " layout", "*." + Keyboard.SaveFileExtension));
+            var dialog = new OpenFileDialog();
+            dialog.Filters.Add(new FileDialogFilter(this.Keyboard.Name + " layout", "*." + this.Keyboard.SaveFileExtension));
             dialog.Title = "Load Layout";
-            dialog.Directory = new Uri(Environment.CurrentDirectory + MdConstant.psep+ "layouts");
+            dialog.Directory = new Uri(Environment.CurrentDirectory + MdConstant.psep + "layouts");
             try
             {
-
                 dialog.ShowDialog(this);
                 if (!string.IsNullOrEmpty(dialog.FileName))
                 {
                     MdSessionData.CurrentLayout = MdCore.Deserialize<ClLayoutContainer>(dialog.FileName);
                     LoadLayout(MdSessionData.CurrentLayout);
-                    SavePath = dialog.FileName;
-                    this.LLayoutName.Text = System.IO.Path.GetFileNameWithoutExtension(SavePath);
+                    this.SavePath = dialog.FileName;
+                    this.LLayoutName.Text = Path.GetFileNameWithoutExtension(this.SavePath);
                     this.BtnSave.Text = "Save Layout";
                 }
             }
@@ -63,37 +66,36 @@ namespace ArbitesEto2
 
         public void SaveLayout()
         {
-            if (SavePath == "<UNSAVED LAYOUT>")
+            if (this.SavePath == "<UNSAVED LAYOUT>")
             {
                 SaveLayoutAs();
             }
             else
             {
-                MdCore.Serialize<ClLayoutContainer>(MdSessionData.CurrentLayout, SavePath);
+                MdCore.Serialize(MdSessionData.CurrentLayout, this.SavePath);
                 this.BtnSave.Text = "Save Layout";
             }
         }
 
         public void SaveLayoutAs()
         {
-            SaveFileDialog dialog = new SaveFileDialog();
-            dialog.Filters.Add(new FileDialogFilter(Keyboard.Name + " layout", "*." + Keyboard.SaveFileExtension));
+            var dialog = new SaveFileDialog();
+            dialog.Filters.Add(new FileDialogFilter(this.Keyboard.Name + " layout", "*." + this.Keyboard.SaveFileExtension));
             dialog.Title = "Save Layout As";
             dialog.Directory = new Uri(Environment.CurrentDirectory + MdConstant.psep + "layouts");
             try
             {
-
                 dialog.ShowDialog(this);
                 if (!string.IsNullOrEmpty(dialog.FileName))
                 {
-                    SavePath = dialog.FileName;
+                    this.SavePath = dialog.FileName;
 
                     // this line is needed because gtk savefiledialog doesnt work properly with extensions
-                    SavePath = System.IO.Path.ChangeExtension(dialog.FileName, Keyboard.SaveFileExtension);
+                    this.SavePath = Path.ChangeExtension(dialog.FileName, this.Keyboard.SaveFileExtension);
 
-                    MdCore.Serialize<ClLayoutContainer>(MdSessionData.CurrentLayout, SavePath);
+                    MdCore.Serialize(MdSessionData.CurrentLayout, this.SavePath);
                     this.BtnSave.Text = "Save Layout";
-                    this.LLayoutName.Text = System.IO.Path.GetFileNameWithoutExtension(SavePath);
+                    this.LLayoutName.Text = Path.GetFileNameWithoutExtension(this.SavePath);
                 }
             }
             catch (Exception ex)
@@ -104,10 +106,9 @@ namespace ArbitesEto2
 
         public void AddLayer()
         {
-            if (this.Layers.Count < Keyboard.MaxLayers)
+            if (this.Layers.Count < this.Keyboard.MaxLayers)
             {
-
-                MdSessionData.CurrentLayout.AddLayer(Layers.Count);
+                MdSessionData.CurrentLayout.AddLayer(this.Layers.Count);
                 LoadLayout(MdSessionData.CurrentLayout);
             }
             else
@@ -118,11 +119,10 @@ namespace ArbitesEto2
 
         public void LoadLayout(ClLayoutContainer input)
         {
-            if (initalized)
+            if (this.initalized)
             {
-
-                int cLay = 0;
-                foreach (ClKeyData kd in input.KeyDatas)
+                var cLay = 0;
+                foreach (var kd in input.KeyDatas)
                 {
                     if (kd.Z > cLay)
                     {
@@ -131,7 +131,7 @@ namespace ArbitesEto2
                 }
                 while (this.Layers.Count < cLay + 1)
                 {
-                    var lay = new UCLayer(Keyboard, input, this.Layers.Count);
+                    var lay = new UCLayer(this.Keyboard, input, this.Layers.Count);
                     this.Layers.Add(lay);
                     this.SLMain.Items.Add(lay);
                 }
@@ -140,10 +140,9 @@ namespace ArbitesEto2
                 {
                     this.SLMain.Items.RemoveAt(this.Layers.Count - 1);
                     this.Layers.RemoveAt(this.Layers.Count - 1);
-
                 }
 
-                foreach (UCLayer lay in this.Layers)
+                foreach (var lay in this.Layers)
                 {
                     lay.LoadLayout(input);
                 }
@@ -154,7 +153,8 @@ namespace ArbitesEto2
         public void DisplayUnsavedChangeSignal()
         {
             this.BtnSave.Text = "Save Layout*";
-
         }
+
     }
+
 }

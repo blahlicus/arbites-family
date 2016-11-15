@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace ArbitesEto2
+﻿namespace ArbitesEto2
 {
+
     public class ClKeyData
     {
+
         public int X { get; set; }
         public int Y { get; set; }
         public int Z { get; set; }
@@ -30,5 +27,7 @@ namespace ArbitesEto2
             this.Command = input.Command;
             this.Key = new ClKey(input.Key);
         }
+
     }
+
 }

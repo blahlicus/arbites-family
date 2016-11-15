@@ -9,14 +9,14 @@ namespace ArbitesEto2
     {
         CheckBox CBKeyMenuTopMost, CBDisplayOutput;
         DropDown DDUploadDelay;
-        Button BtnResetDefaults, BtnClose;
+        Button BtnResetDefaults, BtnClose, BtnAddKeyboard, BtnAddLanguage;
 
 
         void InitializeComponent()
         {
             
             Title = "Preferences";
-
+            this.Size = new Size(330, 240);
             var tlMain = new TableLayout();
             tlMain.Padding = 5;
 
@@ -32,7 +32,7 @@ namespace ArbitesEto2
 
             var lKeyMenuTop = new Label();
             lKeyMenuTop.Text = "Key menu is top most";
-            trKeyMenuTop.Cells.Add(lKeyMenuTop);
+            trKeyMenuTop.Cells.Add(new TableCell(lKeyMenuTop, true));
 
             CBKeyMenuTopMost = new CheckBox();
             CBKeyMenuTopMost.Text = "";
@@ -50,6 +50,8 @@ namespace ArbitesEto2
             CBDisplayOutput.Text = "";
             trDisplayOutput.Cells.Add(CBDisplayOutput);
 
+        
+
 
             var trUploadDelay = new TableRow();
             tlTop.Rows.Add(trUploadDelay);
@@ -61,6 +63,36 @@ namespace ArbitesEto2
             DDUploadDelay = new DropDown();
             trUploadDelay.Cells.Add(DDUploadDelay);
 
+            var trAddKeyboard = new TableRow();
+            tlTop.Rows.Add(trAddKeyboard);
+
+            var lAddKeyboard = new Label();
+            lAddKeyboard.Text = "Add Keyboard Type";
+            trAddKeyboard.Cells.Add(lAddKeyboard);
+
+            BtnAddKeyboard = new Button();
+            BtnAddKeyboard.Text = "Browse";
+            BtnAddKeyboard.ToolTip = "Browse an Arbites keyboard file to add a keyboard type.";
+            trAddKeyboard.Cells.Add(BtnAddKeyboard);
+
+
+            var trAddLanguage = new TableRow();
+            tlTop.Rows.Add(trAddLanguage);
+
+            var lAddLanguage = new Label();
+            lAddLanguage.Text = "Add Input Method";
+            trAddLanguage.Cells.Add(lAddLanguage);
+
+            BtnAddLanguage = new Button();
+            BtnAddLanguage.Text = "Browse";
+            BtnAddLanguage.ToolTip = "Browse an Arbites input method file to add an input method.";
+            trAddLanguage.Cells.Add(BtnAddLanguage);
+
+
+
+            var trTopBotSpacer = new TableRow();
+            trTopBotSpacer.ScaleHeight = true;
+            tlMain.Rows.Add(trTopBotSpacer);
 
             var trBot = new TableRow();
             tlMain.Rows.Add(trBot);

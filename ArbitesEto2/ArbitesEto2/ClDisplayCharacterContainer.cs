@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
+
 
 namespace ArbitesEto2
 {
+
     public class ClDisplayCharacterContainer
     {
+
         public string Name { get; set; }
         public List<string> Display { get; set; }
         public List<int> Index { get; set; }
@@ -25,14 +25,14 @@ namespace ArbitesEto2
         public ClDisplayCharacterContainer(ClDisplayCharacterContainer input) : this()
         {
             this.Name = input.Name;
-            for (int i = 0; i < input.Display.Count; i++)
+            for (var i = 0; i < input.Display.Count; i++)
             {
-                this.Display.Add(input.Display[i].ToString());
+                this.Display.Add(input.Display[i]);
                 this.Index.Add(input.Index[i]);
                 this.GroupIndex.Add(input.GroupIndex[i]);
             }
 
-            foreach (string str in input.Groups)
+            foreach (var str in input.Groups)
             {
                 this.Groups.Add(str);
             }
@@ -41,11 +41,11 @@ namespace ArbitesEto2
         public string GetDisplay(int input)
         {
             var output = "Unknown Key";
-            for (int i = 0; i < Display.Count; i++)
+            for (var i = 0; i < this.Display.Count; i++)
             {
-                if (Index[i] == input)
+                if (this.Index[i] == input)
                 {
-                    output = Display[i];
+                    output = this.Display[i];
                 }
             }
             return output;
@@ -54,20 +54,20 @@ namespace ArbitesEto2
         public void AddKey(int key, string value, int groupIndex)
         {
             var keyIsNew = true;
-            for (int i = 0; i < Display.Count; i++)
+            for (var i = 0; i < this.Display.Count; i++)
             {
-                if (Index[i] == key)
+                if (this.Index[i] == key)
                 {
-                    Display[i] = value;
+                    this.Display[i] = value;
                     keyIsNew = false;
                 }
             }
 
             if (keyIsNew)
             {
-                Index.Add(key);
-                Display.Add(value);
-                GroupIndex.Add(groupIndex);
+                this.Index.Add(key);
+                this.Display.Add(value);
+                this.GroupIndex.Add(groupIndex);
             }
         }
 
@@ -83,7 +83,7 @@ namespace ArbitesEto2
 
         public static ClDisplayCharacterContainer GenerateUSASCII()
         {
-            ClDisplayCharacterContainer dcc = new ClDisplayCharacterContainer();
+            var dcc = new ClDisplayCharacterContainer();
 
             dcc.Groups.Add("All");
             dcc.Groups.Add("Alphabets");
@@ -877,5 +877,7 @@ namespace ArbitesEto2
             dcc.AddKey(1631, "AltGr + R Win", 10);
             return dcc;
         }
+
     }
+
 }

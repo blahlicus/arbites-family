@@ -1,13 +1,14 @@
 ﻿using System;
 using System.IO;
-using System.Collections.Generic;
 using Eto.Forms;
-using Eto.Drawing;
+
 
 namespace ArbitesEto2
 {
+
     public partial class FmPreferences
     {
+
         public FmPreferences()
         {
             this.ShowInTaskbar = true;
@@ -24,56 +25,122 @@ namespace ArbitesEto2
             this.DDUploadDelay.Items.Add("20");
 
 
-            foreach(var itm in DDUploadDelay.Items)
+            foreach (var itm in this.DDUploadDelay.Items)
             {
                 if (MdConfig.Main.UploadDelay == Convert.ToInt32(itm.Text))
                 {
-                    DDUploadDelay.SelectedValue = itm;
+                    this.DDUploadDelay.SelectedValue = itm;
                 }
             }
             EventHook();
 
-            Icon = MdSessionData.WindowIcon;
+            this.Icon = MdSessionData.WindowIcon;
         }
 
         public void EventHook()
         {
             this.BtnResetDefaults.Click += (sender, e) => ResetDefaults();
+            this.BtnAddKeyboard.Click += (sender, e) => AddKeyboard();
+            this.BtnAddLanguage.Click += (sender, e) => AddLanguage();
             this.CBKeyMenuTopMost.CheckedChanged += (sender, e) => CheckedKeyMenuTopMost();
             this.CBDisplayOutput.CheckedChanged += (sender, e) => CheckedDisplayOutput();
             this.BtnClose.Click += (sender, e) => CloseForm();
             this.DDUploadDelay.SelectedIndexChanged += (sender, e) => UploadDelayChanged();
-            this.Closing += (sender, e) => FmClosing();
+            Closing += (sender, e) => FmClosing();
         }
 
         private void CloseForm()
         {
-            this.Close();
+            Close();
         }
 
         private void FmClosing()
         {
-            MdCore.Serialize<MdConfig>(MdConfig.Main, Path.Combine(MdPersistentData.ConfigPath, MdConstant.N_CONFIG));
+            MdCore.Serialize(MdConfig.Main, Path.Combine(MdPersistentData.ConfigPath, MdConstant.N_CONFIG));
         }
+
+
+        private void AddKeyboard()
+        {
+            var dialog = new OpenFileDialog();
+            dialog.Filters.Add(new FileDialogFilter("Arbites Keyboard File", MdConstant.E_KEYBOARD));
+            dialog.Title = "Load Keyboard Type";
+            dialog.Directory = new Uri(Environment.CurrentDirectory + MdConstant.psep + "keyboards");
+            try
+            {
+                dialog.ShowDialog(this);
+                if (!string.IsNullOrEmpty(dialog.FileName))
+                {
+                    // this line is needed because gtk savefiledialog doesnt work properly with extensions
+                    var savePath = Path.ChangeExtension(dialog.FileName, MdConstant.E_KEYBOARD.Substring(1));
+
+                    if (File.Exists(savePath))
+                    {
+                        File.Copy(savePath, Path.Combine(MdPersistentData.ConfigPath, MdConstant.D_KEYBOARD, Path.GetFileName(savePath)));
+                        MessageBox.Show("Keyboard type successfully added", MessageBoxType.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Cannot access file: " + savePath, MessageBoxType.Information);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+
+        private void AddLanguage()
+        {
+            var dialog = new OpenFileDialog();
+            dialog.Filters.Add(new FileDialogFilter("Arbites Input Method File", MdConstant.E_INPUT_METHOD));
+            dialog.Title = "Load Input Method";
+            dialog.Directory = new Uri(Environment.CurrentDirectory + MdConstant.psep + "input-method");
+            try
+            {
+                dialog.ShowDialog(this);
+                if (!string.IsNullOrEmpty(dialog.FileName))
+                {
+                    // this line is needed because gtk savefiledialog doesnt work properly with extensions
+                    var savePath = Path.ChangeExtension(dialog.FileName, MdConstant.E_INPUT_METHOD.Substring(1));
+
+                    if (File.Exists(savePath))
+                    {
+                        File.Copy(savePath, Path.Combine(MdPersistentData.ConfigPath, MdConstant.D_INPUT_METHOD, Path.GetFileName(savePath)));
+                        MessageBox.Show("Input method successfully added", MessageBoxType.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Cannot access file: " + savePath, MessageBoxType.Information);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
 
         private void CheckedKeyMenuTopMost()
         {
-            MdConfig.Main.KeyMenuTopmost = CBKeyMenuTopMost.Checked.Value;
+            MdConfig.Main.KeyMenuTopmost = this.CBKeyMenuTopMost.Checked.Value;
             MdSessionData.KeyMenu.ReloadTopmost();
-            MdCore.Serialize<MdConfig>(MdConfig.Main, Path.Combine(MdPersistentData.ConfigPath, MdConstant.N_CONFIG));
+            MdCore.Serialize(MdConfig.Main, Path.Combine(MdPersistentData.ConfigPath, MdConstant.N_CONFIG));
         }
 
         private void CheckedDisplayOutput()
         {
-
-            MdConfig.Main.DisplayOutput = CBDisplayOutput.Checked.Value;
-            MdCore.Serialize<MdConfig>(MdConfig.Main, Path.Combine(MdPersistentData.ConfigPath, MdConstant.N_CONFIG));
+            MdConfig.Main.DisplayOutput = this.CBDisplayOutput.Checked.Value;
+            MdCore.Serialize(MdConfig.Main, Path.Combine(MdPersistentData.ConfigPath, MdConstant.N_CONFIG));
         }
 
         private void UploadDelayChanged()
         {
-            MdConfig.Main.UploadDelay = Convert.ToInt32(DDUploadDelay.SelectedKey);
-            MdCore.Serialize<MdConfig>(MdConfig.Main, Path.Combine(MdPersistentData.ConfigPath, MdConstant.N_CONFIG));
+            MdConfig.Main.UploadDelay = Convert.ToInt32(this.DDUploadDelay.SelectedKey);
+            MdCore.Serialize(MdConfig.Main, Path.Combine(MdPersistentData.ConfigPath, MdConstant.N_CONFIG));
         }
 
         private void ResetDefaults()
@@ -84,7 +151,8 @@ namespace ArbitesEto2
                 MdMetaUtil.ResetDefaults();
                 Application.Instance.Restart();
             }
-            
         }
+
     }
+
 }

@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
+
 
 namespace ArbitesEto2
 {
+
     public class ClKeyGroup
     {
+
         public List<ClKey> Keys { get; set; }
 
         public ClKeyGroup()
@@ -237,7 +237,6 @@ namespace ArbitesEto2
             kg.Keys.Add(new ClKey(384, 20, 20, 10, false, true));
 
 
-            
             kg.Keys.Add(new ClKey(390, 0, 0, 7, false, true));
             kg.Keys.Add(new ClKey(391, 1, 1, 7, false, true));
             kg.Keys.Add(new ClKey(392, 2, 2, 7, false, true));
@@ -807,6 +806,6 @@ namespace ArbitesEto2
             return kg;
         }
 
-        
     }
+
 }

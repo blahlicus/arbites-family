@@ -1,41 +1,41 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
+
 
 namespace ArbitesEto2
 {
+
     public class ClMacroData
     {
+
         public int Index { get; set; }
         public List<bool> IsKeyDown { get; set; }
         public List<ClKey> Keys { get; set; }
+
         public ClMacroData()
         {
-            IsKeyDown = new List<bool>();
-            Keys = new List<ClKey>();
-            Index = -1;
-            
+            this.IsKeyDown = new List<bool>();
+            this.Keys = new List<ClKey>();
+            this.Index = -1;
         }
 
         public ClMacroData(ClMacroData input) : this()
         {
-            IsKeyDown = input.IsKeyDown.Select(ele => ele).ToList();
-            Keys = input.Keys.Select(ele => new ClKey(ele)).ToList();
-            Index = input.Index;
+            this.IsKeyDown = input.IsKeyDown.Select(ele => ele).ToList();
+            this.Keys = input.Keys.Select(ele => new ClKey(ele)).ToList();
+            this.Index = input.Index;
         }
 
         public string GenerateCommand()
         {
-            string output = "uniqueksetmacro(" + Index.ToString() + "(" + Keys.Count.ToString();
+            var output = "uniqueksetmacro(" + this.Index + "(" + this.Keys.Count;
 
-            for (int i = 0; i < 8; i++ )
+            for (var i = 0; i < 8; i++)
             {
-                if (Keys.Count > i)
+                if (this.Keys.Count > i)
                 {
-
-                    var keyDVal = 0;
-                    if (IsKeyDown[i])
+                    int keyDVal;
+                    if (this.IsKeyDown[i])
                     {
                         keyDVal = 0;
                     }
@@ -43,7 +43,7 @@ namespace ArbitesEto2
                     {
                         keyDVal = 1;
                     }
-                    output = output + "(" + Keys[i].ValScan.ToString() + "(" + Keys[i].KeyType.ToString() + "(" + keyDVal.ToString();
+                    output = output + "(" + this.Keys[i].ValScan + "(" + this.Keys[i].KeyType + "(" + keyDVal;
                 }
                 else
                 {
@@ -56,4 +56,5 @@ namespace ArbitesEto2
         }
 
     }
+
 }

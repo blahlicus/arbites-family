@@ -5,7 +5,8 @@ using Eto.Drawing;
 
 namespace ArbitesEto2
 {
-    partial class FmSelectTextDialog : Dialog
+
+    sealed partial class FmSelectTextDialog : Dialog
     {
         TableLayout TLMain;
         void InitializeComponent()

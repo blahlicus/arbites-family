@@ -5,7 +5,8 @@ using Eto.Drawing;
 
 namespace ArbitesEto2
 {
-    partial class UCMacroButton : Panel
+
+    sealed partial class UCMacroButton : Panel
     {
         Button BtnMain, BtnLeft, BtnRight, BtnDelete, BtnKeyMode;
         void InitializeComponent()

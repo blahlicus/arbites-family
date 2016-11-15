@@ -1,16 +1,18 @@
 ﻿using System;
-using System.Linq;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.IO.Ports;
-using System.Diagnostics;
+using System.Linq;
 using Eto.Forms;
-using Eto.Drawing;
+
 
 namespace ArbitesEto2
 {
+
     public partial class FmMain
     {
+
         public FmMain()
         {
             InitializeComponent();
@@ -25,42 +27,39 @@ namespace ArbitesEto2
 
         private void PostInitGUI()
         {
-            DDInputMethod.Items.Clear();
+            this.DDInputMethod.Items.Clear();
             var inputMethods = MdMetaUtil.GetListOfInputMethods();
-            Icon = MdSessionData.WindowIcon;
+            this.Icon = MdSessionData.WindowIcon;
 
-            for (int i = 0; i < inputMethods.Count; i++)
+            for (var i = 0; i < inputMethods.Count; i++)
             {
                 var item = Path.GetFileNameWithoutExtension(inputMethods[i]);
-                DDInputMethod.Items.Add(item);
+                this.DDInputMethod.Items.Add(item);
 
                 if (item + MdConstant.E_INPUT_METHOD == MdConfig.Main.CurrentInputMethod)
                 {
-                    DDInputMethod.SelectedIndex = i;
+                    this.DDInputMethod.SelectedIndex = i;
                 }
             }
             MdSessionData.KeyMenu = new FmKeyMenu();
-
-
         }
 
         private void EventHook()
         {
-            DDInputMethod.SelectedIndexChanged += (sender, e) => ChangeInputMethod();
-            BtnOpenKeyMenu.Click += (sender, e) => OpenKeyMenu();
-            BtnSelectDevice.Click += (sender, e) => SelectDevice();
-            BtnSelectPort.Click += (sender, e) => LoadPortList();
-            BtnApply.Click += (sender, e) => Upload();
-            BtnSettings.Click += (sender, e) => OpenSettings();
-            BtnEditMacro.Click += (sender, e) => OpenMacroMenu();
-
+            this.DDInputMethod.SelectedIndexChanged += (sender, e) => ChangeInputMethod();
+            this.BtnOpenKeyMenu.Click += (sender, e) => OpenKeyMenu();
+            this.BtnSelectDevice.Click += (sender, e) => SelectDevice();
+            this.BtnSelectPort.Click += (sender, e) => LoadPortList();
+            this.BtnApply.Click += (sender, e) => Upload();
+            this.BtnSettings.Click += (sender, e) => OpenSettings();
+            this.BtnEditMacro.Click += (sender, e) => OpenMacroMenu();
         }
 
 
         private void OpenMacroMenu()
         {
-            var lst = new List<string>{ "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11"};
-            var fm = new FmSelectTextDialog(lst, lst.Select(ele => ele = "macro" + ele).ToList(), "Select a macro key to edit");
+            var lst = new List<string> {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11"};
+            var fm = new FmSelectTextDialog(lst, lst.Select(ele => "macro" + ele).ToList(), "Select a macro key to edit");
             fm.ShowModal();
             var outputInd = fm.OutputIndex;
 
@@ -78,7 +77,7 @@ namespace ArbitesEto2
                         var lay = MdSessionData.CurrentLayout;
                         var dataCont = new ClMacroDataContainer();
                         var hasData = false;
-                        foreach(ClAdditionalData ele in lay.AddonDatas)
+                        foreach (var ele in lay.AddonDatas)
                         {
                             if (ele.GetType() == ClMacroDataContainer.DATA_TYPE)
                             {
@@ -89,24 +88,27 @@ namespace ArbitesEto2
 
                         if (!hasData)
                         {
-                            lay.AddonDatas.Add(dataCont); 
+                            lay.AddonDatas.Add(dataCont);
                         }
 
                         var data = new ClMacroData();
                         data.Index = outputInd;
                         hasData = false;
-                        foreach(ClMacroData ele in dataCont.MacroKeys)
+                        if (dataCont != null)
                         {
-                            if (ele.Index == outputInd)
+                            foreach (var ele in dataCont.MacroKeys)
                             {
-                                hasData = true;
-                                data = ele;
+                                if (ele.Index == outputInd)
+                                {
+                                    hasData = true;
+                                    data = ele;
+                                }
                             }
-                        }
 
-                        if (!hasData)
-                        {
-                            dataCont.MacroKeys.Add(data);
+                            if (!hasData)
+                            {
+                                dataCont.MacroKeys.Add(data);
+                            }
                         }
 
 
@@ -130,15 +132,15 @@ namespace ArbitesEto2
         private void Upload()
         {
             MdSessionData.SP = new SerialPort();
-            MdSessionData.SP.PortName = BtnSelectPort.Text.Substring(6);
+            MdSessionData.SP.PortName = this.BtnSelectPort.Text.Substring(6);
 
             try
             {
                 MdSessionData.SP.Open();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                DialogResult dr = MessageBox.Show("Arbites failed to detect the selected port\nAre you sure you wish to upload to this port?", "Port Confirmation", MessageBoxButtons.YesNo);
+                var dr = MessageBox.Show("Arbites failed to detect the selected port\nAre you sure you wish to upload to this port?", "Port Confirmation", MessageBoxButtons.YesNo);
                 if (dr == DialogResult.Yes)
                 {
                     //do nothing
@@ -156,14 +158,13 @@ namespace ArbitesEto2
             {
                 var upl = new FmLayoutUploader(MdSessionData.CurrentLayout.GenerateCommand(MdSessionData.CurrentKeyboardType));
                 upl.ShowModal();
-
             }
         }
 
         private void SelectDevice()
         {
             var lst = Directory.GetFiles(Path.Combine(MdPersistentData.ConfigPath, MdConstant.D_KEYBOARD), "*" + MdConstant.E_KEYBOARD).ToList();
-            var fm = new FmSelectTextDialog(lst, lst.Select(ele => ele = Path.GetFileNameWithoutExtension(ele)).ToList(), "Select a device");
+            var fm = new FmSelectTextDialog(lst, lst.Select(ele => Path.GetFileNameWithoutExtension(ele)).ToList(), "Select a device");
             fm.ShowModal();
             var outputInd = fm.OutputIndex;
 
@@ -174,8 +175,8 @@ namespace ArbitesEto2
                 MdSessionData.CurrentLayout = kb.GenerateLayout();
                 var ucl = new UCKeyboard(MdSessionData.CurrentKeyboardType, MdSessionData.CurrentLayout);
                 MdSessionData.CurrentKeyboardUI = ucl;
-                PnMain.Content = ucl;
-                BtnSelectDevice.Text = "Device: " + kb.Name;
+                this.PnMain.Content = ucl;
+                this.BtnSelectDevice.Text = "Device: " + kb.Name;
             }
         }
 
@@ -195,24 +196,21 @@ namespace ArbitesEto2
 
         private void ChangeInputMethod()
         {
-            MdConfig.Main.CurrentInputMethod = DDInputMethod.SelectedKey + MdConstant.E_INPUT_METHOD;
+            MdConfig.Main.CurrentInputMethod = this.DDInputMethod.SelectedKey + MdConstant.E_INPUT_METHOD;
             MdSessionData.CurrentInputMethod = MdConfig.Main.GetCurrentInputMethod();
             MdMetaUtil.ReloadInputMethodUI();
 
-            MdCore.Serialize<MdConfig>(MdConfig.Main, Path.Combine(MdPersistentData.ConfigPath, MdConstant.N_CONFIG));
+            MdCore.Serialize(MdConfig.Main, Path.Combine(MdPersistentData.ConfigPath, MdConstant.N_CONFIG));
         }
 
         public void LoadPortList()
         {
-
-
             // POSIX specific
-            List<string> ports = new List<string>();
-            if (Environment.OSVersion.Platform == PlatformID.Unix || Environment.OSVersion.Platform == PlatformID.MacOSX)
+            List<string> ports;
+            if ((Environment.OSVersion.Platform == PlatformID.Unix) || (Environment.OSVersion.Platform == PlatformID.MacOSX))
             {
                 try
                 {
-
                     if (Directory.Exists(@"/dev/serial/by-id"))
                     {
                         // probably is unix
@@ -228,8 +226,6 @@ namespace ArbitesEto2
                         psi.WaitForExit();
                         ports = psi.StandardOutput.ReadToEnd().Split('\n').ToList();
                         ports.RemoveAt(ports.Count - 1);
-
-
                     }
                     else
                     {
@@ -247,43 +243,34 @@ namespace ArbitesEto2
                         psi.WaitForExit();
                         ports = psi.StandardOutput.ReadToEnd().Split('\n').ToList();
                         ports.RemoveAt(ports.Count - 1);
-
-
                     }
                 }
-                catch (Exception e)
+                catch (Exception)
                 {
                     ports = SerialPort.GetPortNames().ToList();
                 }
             }
             else
             {
-
                 ports = SerialPort.GetPortNames().ToList();
             }
-            FmSelectTextDialog dialog = new FmSelectTextDialog(ports, ports, "Select your port");
+            var dialog = new FmSelectTextDialog(ports, ports, "Select your port");
             dialog.ShowModal();
             if (dialog.OutputIndex >= 0)
             {
-                BtnSelectPort.Text = "Port: " + dialog.OutputKeys[dialog.OutputIndex];
+                this.BtnSelectPort.Text = "Port: " + dialog.OutputKeys[dialog.OutputIndex];
             }
-
-
         }
 
 
-        public void test()
+        public void Test()
         {
-
-
-            MdCore.Serialize<MdPersistentData>(new MdPersistentData(), MdConstant.N_PERSISTENT_DATA);
-
+            MdCore.Serialize(new MdPersistentData(), MdConstant.N_PERSISTENT_DATA);
 
 
             MdMetaUtil.ResetDefaults();
-
-
-
         }
+
     }
+
 }

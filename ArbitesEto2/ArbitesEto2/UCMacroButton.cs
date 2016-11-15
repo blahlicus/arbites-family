@@ -1,17 +1,23 @@
 ﻿using System;
-using System.Collections.Generic;
-using Eto.Forms;
 using Eto.Drawing;
+using Eto.Forms;
+
 
 namespace ArbitesEto2
 {
-    public partial class UCMacroButton
+
+    public sealed partial class UCMacroButton
     {
+
         public ClKey Key { get; set; }
         public int KeyIndex { get; set; }
         public bool IsDown { get; set; }
 
-        public event EventHandler LeftClick, RightClick, DeleteClick, ValueChanged, IsDownChanged;
+        public event EventHandler LeftClick;
+        public event EventHandler RightClick;
+        public event EventHandler DeleteClick;
+        public event EventHandler ValueChanged;
+        public event EventHandler IsDownChanged;
 
         public UCMacroButton()
         {
@@ -20,7 +26,7 @@ namespace ArbitesEto2
             this.Key = new ClKey();
             this.KeyIndex = -1;
 
-            IsDown = true;
+            this.IsDown = true;
             ReloadUI();
 
             EventHook();
@@ -40,56 +46,56 @@ namespace ArbitesEto2
 
         private void ClickedLeft(object sender, EventArgs e)
         {
-            if (this.LeftClick != null)
+            if (LeftClick != null)
             {
-                this.LeftClick(this, e);
+                LeftClick(this, e);
             }
         }
 
         private void ClickedRight(object sender, EventArgs e)
         {
-            if (this.RightClick != null)
+            if (RightClick != null)
             {
-                this.RightClick(this, e);
+                RightClick(this, e);
             }
         }
 
 
         private void ClickedDelete(object sender, EventArgs e)
         {
-            if (this.DeleteClick != null)
+            if (DeleteClick != null)
             {
-                this.DeleteClick(this, e);
+                DeleteClick(this, e);
             }
         }
 
 
         private void ToggleIsDown()
         {
-            this.IsDown = !IsDown;
+            this.IsDown = !this.IsDown;
 
             if (this.IsDown)
             {
-                BtnKeyMode.Text = "Press";
+                this.BtnKeyMode.Text = "Press";
             }
             else
             {
-                BtnKeyMode.Text = "Release";
+                this.BtnKeyMode.Text = "Release";
             }
             IsDownChanged(this, EventArgs.Empty);
         }
 
         public void ReloadUI()
         {
-            this.BtnMain.Text = MdSessionData.CurrentInputMethod.GetDisplay(Key.DisplayID);
+            this.BtnMain.Text = MdSessionData.CurrentInputMethod.GetDisplay(this.Key.DisplayID);
 
             if (this.IsDown)
             {
-                BtnKeyMode.Text = "Press";
+                this.BtnKeyMode.Text = "Press";
             }
             else
             {
-                BtnKeyMode.Text = "Release";
+                this.BtnKeyMode.Text = "Release";
             }
         }
 
@@ -97,25 +103,22 @@ namespace ArbitesEto2
         {
             if (e.KeyData.ToShortcutString().Length == 1)
             {
-                char input = e.KeyData.ToShortcutString().ToLower()[0];
+                var input = e.KeyData.ToShortcutString().ToLower()[0];
                 SetKeyFromButton(sender as Button, input);
             }
         }
 
         private void SetKeyFromButton(Button sender, char input)
         {
-
-            var btn = sender as Button;
+            var btn = sender;
             btn.Focus();
-            for (int i = 0; i < MdSessionData.CurrentInputMethod.Display.Count; i++)
+            for (var i = 0; i < MdSessionData.CurrentInputMethod.Display.Count; i++)
             {
-                if (MdSessionData.CurrentInputMethod.Display[i][0] == input && MdSessionData.CurrentInputMethod.GroupIndex[i] <3)
+                if ((MdSessionData.CurrentInputMethod.Display[i][0] == input) && (MdSessionData.CurrentInputMethod.GroupIndex[i] < 3))
                 {
-
                     EditKey(MdSessionData.KeyGroup.Keys.Find(ele => ele.DisplayID == MdSessionData.CurrentInputMethod.Index[i]));
                 }
             }
-
         }
 
         private void PressedKey(object sender, EventArgs e)
@@ -126,20 +129,19 @@ namespace ArbitesEto2
                 EditKey(MdSessionData.KeyMenuKey);
                 MdSessionData.SelectedFromKeyMenu = false;
             }
-
-
         }
 
         private void EditKey(ClKey key)
         {
-            BtnMain.Text = MdSessionData.CurrentInputMethod.GetDisplay(key.DisplayID);
+            this.BtnMain.Text = MdSessionData.CurrentInputMethod.GetDisplay(key.DisplayID);
             this.Key = key;
 
-            if (this.ValueChanged != null)
+            if (ValueChanged != null)
             {
-
                 ValueChanged(this, EventArgs.Empty);
             }
         }
+
     }
+
 }

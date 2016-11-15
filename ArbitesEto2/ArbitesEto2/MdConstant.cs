@@ -1,17 +1,20 @@
-﻿using System;
+﻿using System.IO;
+using System.Reflection;
 using Eto.Drawing;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+
 
 namespace ArbitesEto2
 {
+
     public class MdConstant
     {
-        public static Size MenuItemSize = new Size(64, 64);
-        public static char psep = System.IO.Path.DirectorySeparatorChar;
 
-        public static string root = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly().Location);
+        public static Size MenuItemSize = new Size(64, 64);
+        // ReSharper disable once InconsistentNaming
+        public static char psep = Path.DirectorySeparatorChar;
+
+        // ReSharper disable once InconsistentNaming
+        public static string root = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
 
         public static string N_PERSISTENT_DATA = "persistent-data.arb2pd";
         public static string N_CONFIG = "config.arb2cfg";
@@ -26,6 +29,6 @@ namespace ArbitesEto2
         public static string E_KEYBOARD = ".arb2kt";
         public static string E_INPUT_METHOD = ".arb2im";
 
-
     }
+
 }

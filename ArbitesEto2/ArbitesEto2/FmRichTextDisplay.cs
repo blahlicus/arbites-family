@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using Eto.Forms;
-using Eto.Drawing;
+﻿using System.Collections.Generic;
+
 
 namespace ArbitesEto2
 {
+
     public partial class FmRichTextDisplay
     {
+
         public FmRichTextDisplay()
         {
             InitializeComponent();
@@ -15,11 +15,13 @@ namespace ArbitesEto2
         public FmRichTextDisplay(List<string> input)
         {
             InitializeComponent();
-            foreach(string str in input)
+            foreach (var str in input)
             {
-                RTAMain.Text += str + "\n";
+                this.RTAMain.Text += str + "\n";
             }
-            Icon = MdSessionData.WindowIcon;
+            this.Icon = MdSessionData.WindowIcon;
         }
+
     }
+
 }

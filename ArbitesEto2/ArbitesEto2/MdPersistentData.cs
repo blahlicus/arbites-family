@@ -1,40 +1,36 @@
 ﻿using System;
 using System.IO;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+
 
 namespace ArbitesEto2
 {
+
     public class MdPersistentData
     {
+
         public static MdPersistentData Main { get; set; }
         public bool IsPortable { get; set; }
 
 
+        private static string _configPath;
 
-        private static string _ConfigPath;
-
-	    public static string ConfigPath
-	    {
-		    get
+        public static string ConfigPath
+        {
+            get
             {
                 if (Main.IsPortable)
                 {
                     return MdConstant.root;
                 }
-                else
-                {
-                    return _ConfigPath;
-                }
+                return _configPath;
             }
-		    set { _ConfigPath = value;}
-	    }
-	
+            set { _configPath = value; }
+        }
+
 
         public MdPersistentData()
         {
-            IsPortable = true;
+            this.IsPortable = true;
         }
 
         public static void Init()
@@ -45,12 +41,10 @@ namespace ArbitesEto2
 
         public static string GetPath(string input)
         {
-
             var output = Path.Combine(ConfigPath, input);
             return output;
         }
 
-
-
     }
+
 }

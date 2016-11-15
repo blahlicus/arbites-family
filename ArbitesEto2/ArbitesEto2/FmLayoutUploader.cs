@@ -1,73 +1,66 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel;
 using System.Threading;
 using Eto.Forms;
-using Eto.Drawing;
+
 
 namespace ArbitesEto2
 {
-    
+
     public partial class FmLayoutUploader
     {
-        BackgroundWorker bw;
-        List<string> commands;
-        bool inProgress = true;
+
+        private readonly BackgroundWorker bw;
+        private readonly List<string> commands;
+        private bool inProgress = true;
+
         public FmLayoutUploader()
         {
             this.ShowInTaskbar = true;
             InitializeComponent();
-            commands = new List<string>();
-            bw = new BackgroundWorker();
-            bw.WorkerReportsProgress = true;
-            bw.WorkerSupportsCancellation = false;
-            bw.DoWork += (sender, e) => UploadCommand(sender, e);
-            bw.ProgressChanged += (sender, e) => ProgressUpdate(sender, e);
-            bw.RunWorkerCompleted += (sender, e) => UploadCompleted(sender, e);
-            this.Closing += (sender, e) => FmClosing(sender, e);
-            this.Closed += (sender, e) => FmClosed(sender, e);
-            Icon = MdSessionData.WindowIcon;
+            this.commands = new List<string>();
+            this.bw = new BackgroundWorker();
+            this.bw.WorkerReportsProgress = true;
+            this.bw.WorkerSupportsCancellation = false;
+            this.bw.DoWork += (sender, e) => UploadCommand(sender, e);
+            this.bw.ProgressChanged += (sender, e) => ProgressUpdate(sender, e);
+            this.bw.RunWorkerCompleted += (sender, e) => UploadCompleted(sender, e);
+            Closing += (sender, e) => FmClosing(sender, e);
+            Closed += (sender, e) => FmClosed();
+            this.Icon = MdSessionData.WindowIcon;
         }
 
 
         public FmLayoutUploader(List<string> input) : this()
         {
-            foreach(string str in input)
-            {
-                //MessageBox.Show(str);
-            }
             this.commands = input;
-            bw.RunWorkerAsync();
+            this.bw.RunWorkerAsync();
         }
 
         public void FmClosing(object sender, CancelEventArgs e)
         {
-            e.Cancel = inProgress;
+            e.Cancel = this.inProgress;
         }
 
         public void UploadCommand(object sender, DoWorkEventArgs e)
         {
-            int pg = 0;
             //try
             {
-                for (int i = 0; i < commands.Count; i++ )
+                for (var i = 0; i < this.commands.Count; i++)
                 {
-
-                    MdSessionData.SP.Write(commands[i]);
+                    MdSessionData.SP.Write(this.commands[i]);
                     Thread.Sleep(MdConfig.Main.UploadDelay);
-                    pg = (i * 100) / (commands.Count);
+                    var pg = i * 100 / this.commands.Count;
                     if (pg > 100)
                     {
                         pg = 100;
                     }
-                    bw.ReportProgress(pg);
+                    this.bw.ReportProgress(pg);
                 }
             }
             //catch (Exception ex)
             {
                 //bw.ReportProgress(pg);
-                
-
             }
         }
 
@@ -78,28 +71,28 @@ namespace ArbitesEto2
 
         public void UploadCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            inProgress = false;
+            this.inProgress = false;
             MdSessionData.SP.Close();
-            if (PBMain.Value == 0)
+            if (this.PBMain.Value == 0)
             {
                 MessageBox.Show("Error: Failed to upload");
             }
             else
             {
                 MessageBox.Show("Upload Completed", "Upload Completed", MessageBoxType.Information);
-            } 
-            this.Close();
-
+            }
+            Close();
         }
 
-        private void FmClosed(object sender, EventArgs e)
+        private void FmClosed()
         {
             if (MdConfig.Main.DisplayOutput)
             {
-                var fm = new FmRichTextDisplay(commands);
+                var fm = new FmRichTextDisplay(this.commands);
                 fm.Show();
             }
         }
 
     }
+
 }

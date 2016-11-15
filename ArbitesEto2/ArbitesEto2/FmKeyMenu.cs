@@ -1,16 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
-using Eto.Forms;
+using System.Diagnostics.CodeAnalysis;
 using Eto.Drawing;
+using Eto.Forms;
+
 
 namespace ArbitesEto2
 {
-    public partial class FmKeyMenu
+
+    public sealed partial class FmKeyMenu
     {
-        List<StackLayout> slMainList = new List<StackLayout>();
-        List<StackLayout> slList = new List<StackLayout>();
-        List<int> slcList = new List<int>();
-        List<Button> buttons = new List<Button>();
+
+        [SuppressMessage("ReSharper", "FieldCanBeMadeReadOnly.Local")] private List<StackLayout> slMainList = new List<StackLayout>();
+        private readonly List<StackLayout> slList = new List<StackLayout>();
+        private readonly List<int> slcList = new List<int>();
+        private readonly List<Button> buttons = new List<Button>();
 
         public FmKeyMenu()
         {
@@ -19,12 +23,12 @@ namespace ArbitesEto2
             this.Height = 640;
             this.Width = 860;
             this.Topmost = MdConfig.Main.KeyMenuTopmost;
-            Icon = MdSessionData.WindowIcon;
+            this.Icon = MdSessionData.WindowIcon;
         }
 
         public void Init()
         {
-            foreach(string str in MdSessionData.CurrentInputMethod.Groups)
+            foreach (var str in MdSessionData.CurrentInputMethod.Groups)
             {
                 var tp = new TabPage();
                 tp.Text = str;
@@ -33,19 +37,19 @@ namespace ArbitesEto2
                 sc.Border = BorderType.None;
                 tp.Content = sc;
 
-                slcList.Add(999);
+                this.slcList.Add(999);
                 var msl = new StackLayout();
                 msl.Orientation = Orientation.Vertical;
-                slMainList.Add(msl);
+                this.slMainList.Add(msl);
                 sc.Content = msl;
 
-                slList.Add(null);
+                this.slList.Add(null);
 
-                TCMain.Pages.Add(tp);
+                this.TCMain.Pages.Add(tp);
             }
 
-            
-            for (int i = 0; i < MdSessionData.CurrentInputMethod.Display.Count; i++)
+
+            for (var i = 0; i < MdSessionData.CurrentInputMethod.Display.Count; i++)
             {
                 var gi = MdSessionData.CurrentInputMethod.GroupIndex[i];
                 var dt = MdSessionData.CurrentInputMethod.Display[i];
@@ -62,8 +66,8 @@ namespace ArbitesEto2
                 nb2.ToolTip = dt;
                 nb2.Size = new Size(72, 72);
 
-                nb.Click += (sender, e) => SelectKey(sender, e);
-                nb2.Click += (sender, e) => SelectKey(sender, e);
+                nb.Click += (sender, e) => SelectKey(sender);
+                nb2.Click += (sender, e) => SelectKey(sender);
 
                 AddKey(nb, gi);
                 AddKey(nb2, 0);
@@ -72,33 +76,33 @@ namespace ArbitesEto2
 
         private void AddKey(Button btn, int groupIndex)
         {
-
-            if (slcList[groupIndex] > 10)
+            if (this.slcList[groupIndex] > 10)
             {
                 var nsl = new StackLayout();
                 nsl.Orientation = Orientation.Horizontal;
-                slMainList[groupIndex].Items.Add(nsl);
-                slList[groupIndex] = nsl;
-                slcList[groupIndex] = 0;
+                this.slMainList[groupIndex].Items.Add(nsl);
+                this.slList[groupIndex] = nsl;
+                this.slcList[groupIndex] = 0;
             }
-            buttons.Add(btn);
-            slcList[groupIndex]++;
-            slList[groupIndex].Items.Add(btn);
+            this.buttons.Add(btn);
+            this.slcList[groupIndex]++;
+            this.slList[groupIndex].Items.Add(btn);
         }
 
         public void ReloadInputMethod()
         {
-            foreach(Button btn in buttons)
+            foreach (var btn in this.buttons)
             {
                 btn.Text = MdSessionData.CurrentInputMethod.GetDisplay(Convert.ToInt32(btn.Tag.ToString()));
                 btn.ToolTip = btn.Text;
             }
         }
 
-        private void SelectKey(object sender, EventArgs e)
+        private void SelectKey(object sender)
         {
             MdSessionData.SelectedFromKeyMenu = true;
-            MdSessionData.KeyMenuKey = ClKeyGroup.GetKeyFromDisplayId(Convert.ToInt32((sender as Button).Tag.ToString()));
+            var button = sender as Button;
+            if (button != null) MdSessionData.KeyMenuKey = ClKeyGroup.GetKeyFromDisplayId(Convert.ToInt32(button.Tag.ToString()));
         }
 
         public void ReloadTopmost()
@@ -107,4 +111,5 @@ namespace ArbitesEto2
         }
 
     }
+
 }

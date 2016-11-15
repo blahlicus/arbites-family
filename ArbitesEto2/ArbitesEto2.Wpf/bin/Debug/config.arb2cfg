@@ -2,6 +2,6 @@
 <MdConfig xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <KeyMenuTopmost>true</KeyMenuTopmost>
   <DisplayOutput>false</DisplayOutput>
-  <UploadDelay>10</UploadDelay>
+  <UploadDelay>7</UploadDelay>
   <CurrentInputMethod>US-ASCII.arb2im</CurrentInputMethod>
 </MdConfig>

@@ -1,21 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using System.Xml.Serialization;
+
 
 namespace ArbitesEto2
 {
-    [Serializable()]
-    [System.Xml.Serialization.XmlInclude(typeof(ClMacroDataContainer))]
+
+    [Serializable]
+    [XmlInclude(typeof(ClMacroDataContainer))]
     public abstract class ClAdditionalData
     {
-        abstract public string GetType();
 
-        abstract public List<string> GetCommands(); 
+        public new abstract string GetType();
 
-        public ClAdditionalData()
-        {
+        public abstract List<string> GetCommands();
 
-        }
     }
+
 }
