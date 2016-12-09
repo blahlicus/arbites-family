@@ -53,6 +53,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="run-arbites.sh">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="buildmac.sh">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

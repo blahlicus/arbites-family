@@ -30,3 +30,5 @@ E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.Gtk2\bin\De
 E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.Gtk2\obj\Debug\ArbitesEto2.Gtk2.csprojResolveAssemblyReference.cache
 E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.Gtk2\obj\Debug\ArbitesEto2.Gtk2.exe
 E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.Gtk2\obj\Debug\ArbitesEto2.Gtk2.pdb
+E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.Gtk2\bin\Debug\buildmac.sh
+E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.Gtk2\bin\Debug\run-arbites.sh
