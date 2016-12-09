@@ -63,6 +63,10 @@ namespace ArbitesEto2
             MdCore.Serialize(ClKeyboard.GenerateTerminusMini2(), Path.Combine(MdPersistentData.ConfigPath, MdConstant.D_KEYBOARD, "terminus-mini-2" + MdConstant.E_KEYBOARD));
             MdCore.Serialize(ClKeyboard.GenerateFelix(), Path.Combine(MdPersistentData.ConfigPath, MdConstant.D_KEYBOARD, "felix" + MdConstant.E_KEYBOARD));
             MdCore.Serialize(ClKeyboard.GenerateTerminus2(), Path.Combine(MdPersistentData.ConfigPath, MdConstant.D_KEYBOARD, "terminus-2" + MdConstant.E_KEYBOARD));
+            var t2mr = ClKeyboard.GenerateTerminus2();
+            t2mr.Commands[0] = "uniqueksetsubkey";
+            t2mr.Commands[1] = "uniqueksetkey";
+            MdCore.Serialize(t2mr, Path.Combine(MdPersistentData.ConfigPath, MdConstant.D_KEYBOARD, "terminus-2-rightmaster" + MdConstant.E_KEYBOARD));
         }
 
         public static void CreateDefaultKeygroups()

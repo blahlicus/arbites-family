@@ -25,7 +25,7 @@ namespace ArbitesEto2
             this.Topmost = MdConfig.Main.KeyMenuTopmost;
             this.Icon = MdSessionData.WindowIcon;
         }
-
+        
         public void Init()
         {
             foreach (var str in MdSessionData.CurrentInputMethod.Groups)
@@ -45,32 +45,53 @@ namespace ArbitesEto2
 
                 this.slList.Add(null);
 
+                int ind = TCMain.Pages.Count;
                 this.TCMain.Pages.Add(tp);
+                tp.Click += (sender, e) => PressedTab(sender, ind);
             }
 
-
+            
             for (var i = 0; i < MdSessionData.CurrentInputMethod.Display.Count; i++)
             {
-                var gi = MdSessionData.CurrentInputMethod.GroupIndex[i];
-                var dt = MdSessionData.CurrentInputMethod.Display[i];
-                var di = MdSessionData.CurrentInputMethod.Index[i];
-                var nb = new Button();
-                nb.Tag = di;
-                nb.Text = dt;
-                nb.ToolTip = dt;
-                nb.Size = new Size(72, 72);
+                if (MdSessionData.CurrentInputMethod.GroupIndex[i] == 0)
+                {
 
-                var nb2 = new Button();
-                nb2.Tag = di;
-                nb2.Text = dt;
-                nb2.ToolTip = dt;
-                nb2.Size = new Size(72, 72);
+                    var gi = MdSessionData.CurrentInputMethod.GroupIndex[i];
+                    var dt = MdSessionData.CurrentInputMethod.Display[i];
+                    var di = MdSessionData.CurrentInputMethod.Index[i];
+                    var nb = new Button();
+                    nb.Tag = di;
+                    nb.Text = dt;
+                    nb.ToolTip = dt;
+                    nb.Size = new Size(72, 72);
 
-                nb.Click += (sender, e) => SelectKey(sender);
-                nb2.Click += (sender, e) => SelectKey(sender);
+                    nb.Click += (sender, e) => SelectKey(sender);
 
-                AddKey(nb, gi);
-                AddKey(nb2, 0);
+                    AddKey(nb, gi);
+                }
+            }
+        }
+
+        private void PressedTab(object sndr, int index)
+        {
+            for (var i = 0; i < MdSessionData.CurrentInputMethod.Display.Count; i++)
+            {
+                if (MdSessionData.CurrentInputMethod.GroupIndex[i] == index)
+                {
+
+                    var gi = MdSessionData.CurrentInputMethod.GroupIndex[i];
+                    var dt = MdSessionData.CurrentInputMethod.Display[i];
+                    var di = MdSessionData.CurrentInputMethod.Index[i];
+                    var nb = new Button();
+                    nb.Tag = di;
+                    nb.Text = dt;
+                    nb.ToolTip = dt;
+                    nb.Size = new Size(72, 72);
+
+                    nb.Click += (sender, e) => SelectKey(sender);
+
+                    AddKey(nb, gi);
+                }
             }
         }
 
