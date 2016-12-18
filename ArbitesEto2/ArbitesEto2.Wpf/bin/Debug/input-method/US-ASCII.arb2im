@@ -223,7 +223,26 @@
     <string>macro7</string>
     <string>macro8</string>
     <string>macro9</string>
-    <string>macro10</string>
+    <string>tapDance0</string>
+    <string>tapDance1</string>
+    <string>tapDance2</string>
+    <string>tapDance3</string>
+    <string>tapDance4</string>
+    <string>tapDance5</string>
+    <string>tapDance6</string>
+    <string>tapDance7</string>
+    <string>tapDance8</string>
+    <string>tapDance9</string>
+    <string>tapDance10</string>
+    <string>tapDance11</string>
+    <string>tapDance12</string>
+    <string>tapDance13</string>
+    <string>tapDance14</string>
+    <string>tapDance15</string>
+    <string>tapDance16</string>
+    <string>tapDance17</string>
+    <string>tapDance18</string>
+    <string>tapDance19</string>
     <string>Shift + -Scncde 0</string>
     <string>Shift + -Scncde 1</string>
     <string>Shift + -Scncde 2</string>
@@ -2394,6 +2413,25 @@
     <int>398</int>
     <int>399</int>
     <int>400</int>
+    <int>401</int>
+    <int>402</int>
+    <int>403</int>
+    <int>404</int>
+    <int>405</int>
+    <int>406</int>
+    <int>407</int>
+    <int>408</int>
+    <int>409</int>
+    <int>410</int>
+    <int>411</int>
+    <int>412</int>
+    <int>413</int>
+    <int>414</int>
+    <int>415</int>
+    <int>416</int>
+    <int>417</int>
+    <int>418</int>
+    <int>419</int>
     <int>500</int>
     <int>501</int>
     <int>502</int>
@@ -4480,6 +4518,25 @@
     <int>4</int>
     <int>4</int>
     <int>4</int>
+    <int>5</int>
+    <int>5</int>
+    <int>5</int>
+    <int>5</int>
+    <int>5</int>
+    <int>5</int>
+    <int>5</int>
+    <int>5</int>
+    <int>5</int>
+    <int>5</int>
+    <int>5</int>
+    <int>5</int>
+    <int>5</int>
+    <int>5</int>
+    <int>5</int>
+    <int>5</int>
+    <int>5</int>
+    <int>5</int>
+    <int>5</int>
     <int>5</int>
     <int>5</int>
     <int>5</int>

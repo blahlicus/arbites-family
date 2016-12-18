@@ -351,7 +351,29 @@ namespace ArbitesEto2
             dcc.AddKey(397, "macro7", 5);
             dcc.AddKey(398, "macro8", 5);
             dcc.AddKey(399, "macro9", 5);
-            dcc.AddKey(400, "macro10", 5);
+
+
+            dcc.AddKey(400, "tapDance0", 5);
+            dcc.AddKey(401, "tapDance1", 5);
+            dcc.AddKey(402, "tapDance2", 5);
+            dcc.AddKey(403, "tapDance3", 5);
+            dcc.AddKey(404, "tapDance4", 5);
+            dcc.AddKey(405, "tapDance5", 5);
+            dcc.AddKey(406, "tapDance6", 5);
+            dcc.AddKey(407, "tapDance7", 5);
+            dcc.AddKey(408, "tapDance8", 5);
+            dcc.AddKey(409, "tapDance9", 5);
+
+            dcc.AddKey(410, "tapDance10", 5);
+            dcc.AddKey(411, "tapDance11", 5);
+            dcc.AddKey(412, "tapDance12", 5);
+            dcc.AddKey(413, "tapDance13", 5);
+            dcc.AddKey(414, "tapDance14", 5);
+            dcc.AddKey(415, "tapDance15", 5);
+            dcc.AddKey(416, "tapDance16", 5);
+            dcc.AddKey(417, "tapDance17", 5);
+            dcc.AddKey(418, "tapDance18", 5);
+            dcc.AddKey(419, "tapDance19", 5);
 
             AddHIDSubGroup(dcc, 5, 6, "Shift + ", "");
             AddHIDSubGroup(dcc, 8, 7, "Ctrl + ", "");

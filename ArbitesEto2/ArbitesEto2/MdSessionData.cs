@@ -15,6 +15,7 @@ namespace ArbitesEto2
         public static ClDisplayCharacterContainer CurrentInputMethod;
         public static bool SelectedFromKeyMenu = false;
         public static bool OpenedMacroEdit = false;
+        public static bool OpenedTapDanceEdit = false;
         public static ClKey KeyMenuKey;
         public static ClKeyGroup KeyGroup;
         public static SerialPort SP;

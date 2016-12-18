@@ -6,13 +6,13 @@ namespace ArbitesEto2
 {
     partial class FmMain : Form
     {
-        Button BtnSelectDevice, BtnOpenKeyMenu, BtnSettings, BtnEditMacro, BtnEditDualRoles, BtnEditMouse, BtnEditLED, BtnSelectPort, BtnApply;
+        Button BtnSelectDevice, BtnOpenKeyMenu, BtnSettings, BtnEditMacro, BtnEditTapDance, BtnEditMouse, BtnEditLED, BtnSelectPort, BtnApply;
         DropDown DDInputMethod;
         Panel PnMain;
         void InitializeComponent()
         {
 
-            Title = "Arbites Innova - 2 0002";
+            Title = "Arbites Innova - 2.3 0005";
             ClientSize = new Size(1000, 600);
 
             
@@ -74,10 +74,10 @@ namespace ArbitesEto2
             BtnEditMacro.ToolTip = "Edit Macros";
             slTopMid.Items.Add(BtnEditMacro);
 
-            BtnEditDualRoles = new Button();
-            BtnEditDualRoles.Text = "Edit Dual-Roles";
-            BtnEditDualRoles.ToolTip = "Edit Dual-Roles";
-            //slTopMid.Items.Add(BtnEditDualRoles);
+            BtnEditTapDance = new Button();
+            BtnEditTapDance.Text = "Edit Tap-Dance";
+            BtnEditTapDance.ToolTip = "Edit Tap-Dance";
+            slTopMid.Items.Add(BtnEditTapDance);
 
             BtnEditMouse = new Button();
             BtnEditMouse.Text = "Edit Mouse Keys";

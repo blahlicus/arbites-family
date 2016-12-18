@@ -12,6 +12,7 @@ namespace ArbitesEto2
         public ClKey Key { get; set; }
         public int KeyIndex { get; set; }
         public bool IsDown { get; set; }
+        public bool ShowIsDown { get; set; }
 
         public event EventHandler LeftClick;
         public event EventHandler RightClick;
@@ -25,7 +26,7 @@ namespace ArbitesEto2
             this.Size = new Size(128, 128);
             this.Key = new ClKey();
             this.KeyIndex = -1;
-
+            this.ShowIsDown = true;
             this.IsDown = true;
             ReloadUI();
 
@@ -74,14 +75,7 @@ namespace ArbitesEto2
         {
             this.IsDown = !this.IsDown;
 
-            if (this.IsDown)
-            {
-                this.BtnKeyMode.Text = "Press";
-            }
-            else
-            {
-                this.BtnKeyMode.Text = "Release";
-            }
+            ReloadUI();
             IsDownChanged(this, EventArgs.Empty);
         }
 
@@ -89,13 +83,23 @@ namespace ArbitesEto2
         {
             this.BtnMain.Text = MdSessionData.CurrentInputMethod.GetDisplay(this.Key.DisplayID);
 
-            if (this.IsDown)
+            if (ShowIsDown)
             {
-                this.BtnKeyMode.Text = "Press";
+
+                if (this.IsDown)
+                {
+                    this.BtnKeyMode.Text = "Press";
+                }
+                else
+                {
+                    this.BtnKeyMode.Text = "Release";
+                }
             }
             else
             {
-                this.BtnKeyMode.Text = "Release";
+                {
+                    this.BtnKeyMode.Text = "";
+                }
             }
         }
 

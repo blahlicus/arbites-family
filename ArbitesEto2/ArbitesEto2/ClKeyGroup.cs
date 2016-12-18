@@ -265,10 +265,29 @@ namespace ArbitesEto2
             kg.Keys.Add(new ClKey(397, 7, 7, 7, false, true));
             kg.Keys.Add(new ClKey(398, 8, 8, 7, false, true));
             kg.Keys.Add(new ClKey(399, 9, 9, 7, false, true));
-            kg.Keys.Add(new ClKey(400, 10, 10, 7, false, true));
-            kg.Keys.Add(new ClKey(401, 11, 11, 7, false, true));
 
 
+
+            kg.Keys.Add(new ClKey(400, 0, 0, 19, false, true));
+            kg.Keys.Add(new ClKey(401, 1, 1, 19, false, true));
+            kg.Keys.Add(new ClKey(402, 2, 2, 19, false, true));
+            kg.Keys.Add(new ClKey(403, 3, 3, 19, false, true));
+            kg.Keys.Add(new ClKey(404, 4, 4, 19, false, true));
+            kg.Keys.Add(new ClKey(405, 5, 5, 19, false, true));
+            kg.Keys.Add(new ClKey(406, 6, 6, 19, false, true));
+            kg.Keys.Add(new ClKey(407, 7, 7, 19, false, true));
+            kg.Keys.Add(new ClKey(408, 8, 8, 19, false, true));
+            kg.Keys.Add(new ClKey(409, 9, 9, 19, false, true));
+            kg.Keys.Add(new ClKey(410, 10, 10, 19, false, true));
+            kg.Keys.Add(new ClKey(411, 11, 11, 19, false, true));
+            kg.Keys.Add(new ClKey(412, 12, 12, 19, false, true));
+            kg.Keys.Add(new ClKey(413, 13, 13, 19, false, true));
+            kg.Keys.Add(new ClKey(414, 14, 14, 19, false, true));
+            kg.Keys.Add(new ClKey(415, 15, 15, 19, false, true));
+            kg.Keys.Add(new ClKey(416, 16, 16, 19, false, true));
+            kg.Keys.Add(new ClKey(417, 17, 17, 19, false, true));
+            kg.Keys.Add(new ClKey(418, 18, 18, 19, false, true));
+            kg.Keys.Add(new ClKey(419, 19, 19, 19, false, true)); 
 
             // pressed shift ctrl alt altgr
             kg.Keys.AddRange(ClKeyGroup.GenereateSubHIDSet(kg, 5, 11));
@@ -309,7 +328,7 @@ namespace ArbitesEto2
             for (int i = 4704; i < 4714; i++)
             {
 
-                kg.Keys.Add(new ClKey(i, 0, ctr, 30, false, false));
+                kg.Keys.Add(new ClKey(i, 0, ctr, 30, true, false));
                 ctr++;
             }
 

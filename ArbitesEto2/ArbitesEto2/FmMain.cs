@@ -53,12 +53,13 @@ namespace ArbitesEto2
             this.BtnApply.Click += (sender, e) => Upload();
             this.BtnSettings.Click += (sender, e) => OpenSettings();
             this.BtnEditMacro.Click += (sender, e) => OpenMacroMenu();
+            this.BtnEditTapDance.Click += (sender, e) => OpenTapDanceMenu();
         }
 
 
         private void OpenMacroMenu()
         {
-            var lst = new List<string> {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11"};
+            var lst = new List<string> {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9"};
             var fm = new FmSelectTextDialog(lst, lst.Select(ele => "macro" + ele).ToList(), "Select a macro key to edit");
             fm.ShowModal();
             var outputInd = fm.OutputIndex;
@@ -122,6 +123,75 @@ namespace ArbitesEto2
                 }
             }
         }
+
+
+        private void OpenTapDanceMenu()
+        {
+            var lst = new List<string> { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19" };
+            var fm = new FmSelectTextDialog(lst, lst.Select(ele => "TapDance" + ele).ToList(), "Select a tap dance key to edit");
+            fm.ShowModal();
+            var outputInd = fm.OutputIndex;
+
+            if (outputInd >= 0)
+            {
+                if (!MdSessionData.OpenedTapDanceEdit)
+                {
+                    if (MdSessionData.CurrentLayout.KeyDatas.Count == 0)
+                    {
+                        MessageBox.Show("Error: You must first select a device");
+                    }
+                    else
+                    {
+                        MdSessionData.OpenedTapDanceEdit = true;
+                        var lay = MdSessionData.CurrentLayout;
+                        var dataCont = new ClTapDanceDataContainer();
+                        var hasData = false;
+                        foreach (var ele in lay.AddonDatas)
+                        {
+                            if (ele.GetType() == ClTapDanceDataContainer.DATA_TYPE)
+                            {
+                                hasData = true;
+                                dataCont = ele as ClTapDanceDataContainer;
+                            }
+                        }
+
+                        if (!hasData)
+                        {
+                            lay.AddonDatas.Add(dataCont);
+                        }
+
+                        var data = new ClTapDanceData();
+                        data.Index = outputInd;
+                        hasData = false;
+                        if (dataCont != null)
+                        {
+                            foreach (var ele in dataCont.TapDanceKeys)
+                            {
+                                if (ele.Index == outputInd)
+                                {
+                                    hasData = true;
+                                    data = ele;
+                                }
+                            }
+
+                            if (!hasData)
+                            {
+                                dataCont.TapDanceKeys.Add(data);
+                            }
+                        }
+
+
+                        var mdialog = new FmTapDanceEdit(new ClTapDanceData(data));
+                        mdialog.Show();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Error: Tap dance editor already opened");
+                }
+            }
+        }
+
 
         private void OpenSettings()
         {

@@ -49,6 +49,8 @@
     <Compile Include="ClKeyGroup.cs" />
     <Compile Include="ClMacroData.cs" />
     <Compile Include="ClMacroDataContainer.cs" />
+    <Compile Include="ClTapDanceData.cs" />
+    <Compile Include="ClTapDanceDataContainer.cs" />
     <Compile Include="FmKeyMenu.cs">
       <SubType>Eto.Forms</SubType>
     </Compile>
@@ -89,6 +91,13 @@
     </Compile>
     <Compile Include="FmSelectTextDialog.eto.cs">
       <DependentUpon>FmSelectTextDialog.cs</DependentUpon>
+      <SubType>Eto.Forms</SubType>
+    </Compile>
+    <Compile Include="FmTapDanceEdit.cs">
+      <SubType>Eto.Forms</SubType>
+    </Compile>
+    <Compile Include="FmTapDanceEdit.eto.cs">
+      <DependentUpon>FmTapDanceEdit.cs</DependentUpon>
       <SubType>Eto.Forms</SubType>
     </Compile>
     <Compile Include="MdConfig.cs" />
