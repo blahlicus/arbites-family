@@ -7,3 +7,5 @@ Arbites is designed to work together with Animus by providing an easy to use int
 ![Arbites Screenshot](https://github.com/blahlicus/arbites-family/wiki/arbites-full-screenshot.PNG)
 
 Check out the Wiki pages on how to use Arbites.
+
+For downloadable compiled binaries, visit the [Getting Started Page](https://github.com/blahlicus/arbites-family/wiki/Getting-Started).
