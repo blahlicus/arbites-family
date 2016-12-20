@@ -8,6 +8,7 @@ namespace ArbitesEto2
 
     [Serializable]
     [XmlInclude(typeof(ClMacroDataContainer))]
+    [XmlInclude(typeof(ClTapDanceDataContainer))]
     public abstract class ClAdditionalData
     {
 

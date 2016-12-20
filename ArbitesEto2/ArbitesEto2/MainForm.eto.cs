@@ -12,7 +12,7 @@ namespace ArbitesEto2
         void InitializeComponent()
         {
 
-            Title = "Arbites Innova - 2.3 0005";
+            Title = "Arbites Innova - 2.3 0006";
             ClientSize = new Size(1000, 600);
 
             
