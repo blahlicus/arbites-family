@@ -42,6 +42,7 @@ namespace ArbitesEto2
             this.BtnResetDefaults.Click += (sender, e) => ResetDefaults();
             this.BtnAddKeyboard.Click += (sender, e) => AddKeyboard();
             this.BtnAddLanguage.Click += (sender, e) => AddLanguage();
+            this.BtnAddKeyGroup.Click += (sender, e) => AddKeyGroup();
             this.CBKeyMenuTopMost.CheckedChanged += (sender, e) => CheckedKeyMenuTopMost();
             this.CBDisplayOutput.CheckedChanged += (sender, e) => CheckedDisplayOutput();
             this.BtnClose.Click += (sender, e) => CloseForm();
@@ -60,6 +61,36 @@ namespace ArbitesEto2
         }
 
 
+        private void AddKeyGroup()
+        {
+            var dialog = new OpenFileDialog();
+            dialog.Filters.Add(new FileDialogFilter("Arbites Keygroup File", MdConstant.E_KEYGROUP));
+            dialog.Title = "Load Keygroup";
+            try
+            {
+                dialog.ShowDialog(this);
+                if (!string.IsNullOrEmpty(dialog.FileName))
+                {
+                    // this line is needed because gtk savefiledialog doesnt work properly with extensions
+                    var savePath = Path.ChangeExtension(dialog.FileName, MdConstant.E_KEYGROUP.Substring(1));
+
+                    if (File.Exists(savePath))
+                    {
+                        File.Copy(savePath, Path.Combine(MdPersistentData.ConfigPath, MdConstant.D_KEYGROUP, "Core" + MdConstant.E_KEYGROUP), true);
+                        MessageBox.Show("Key definitions successfully updated.", MessageBoxType.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Cannot access file: " + savePath, MessageBoxType.Information);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
         private void AddKeyboard()
         {
             var dialog = new OpenFileDialog();
@@ -76,7 +107,7 @@ namespace ArbitesEto2
 
                     if (File.Exists(savePath))
                     {
-                        File.Copy(savePath, Path.Combine(MdPersistentData.ConfigPath, MdConstant.D_KEYBOARD, Path.GetFileName(savePath)));
+                        File.Copy(savePath, Path.Combine(MdPersistentData.ConfigPath, MdConstant.D_KEYBOARD, Path.GetFileName(savePath)), true);
                         MessageBox.Show("Keyboard type successfully added", MessageBoxType.Information);
                     }
                     else
@@ -108,7 +139,7 @@ namespace ArbitesEto2
 
                     if (File.Exists(savePath))
                     {
-                        File.Copy(savePath, Path.Combine(MdPersistentData.ConfigPath, MdConstant.D_INPUT_METHOD, Path.GetFileName(savePath)));
+                        File.Copy(savePath, Path.Combine(MdPersistentData.ConfigPath, MdConstant.D_INPUT_METHOD, Path.GetFileName(savePath)), true);
                         MessageBox.Show("Input method successfully added", MessageBoxType.Information);
                     }
                     else

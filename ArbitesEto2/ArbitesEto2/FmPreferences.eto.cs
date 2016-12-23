@@ -9,7 +9,7 @@ namespace ArbitesEto2
     {
         CheckBox CBKeyMenuTopMost, CBDisplayOutput;
         DropDown DDUploadDelay;
-        Button BtnResetDefaults, BtnClose, BtnAddKeyboard, BtnAddLanguage;
+        Button BtnResetDefaults, BtnClose, BtnAddKeyboard, BtnAddLanguage, BtnAddKeyGroup;
 
 
         void InitializeComponent()
@@ -89,6 +89,17 @@ namespace ArbitesEto2
             trAddLanguage.Cells.Add(BtnAddLanguage);
 
 
+            var trAddKeyGroup = new TableRow();
+            tlTop.Rows.Add(trAddKeyGroup);
+
+            var lAddKeyGroup = new Label();
+            lAddKeyGroup.Text = "Update Keygroup Definition";
+            trAddKeyGroup.Cells.Add(lAddKeyGroup);
+
+            BtnAddKeyGroup = new Button();
+            BtnAddKeyGroup.Text = "Browse";
+            BtnAddKeyGroup.ToolTip = "Browse an Arbites keygroup file to update your key definitions.";
+            trAddKeyGroup.Cells.Add(BtnAddKeyGroup);
 
             var trTopBotSpacer = new TableRow();
             trTopBotSpacer.ScaleHeight = true;

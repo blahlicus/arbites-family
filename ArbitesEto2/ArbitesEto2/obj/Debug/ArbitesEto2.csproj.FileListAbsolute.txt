@@ -33,3 +33,4 @@ E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2\bin\Debug\E
 E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2\bin\Debug\Eto.xml
 E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2\obj\Debug\ArbitesEto2.dll
 E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2\obj\Debug\ArbitesEto2.pdb
+E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2\obj\Debug\ArbitesEto2.csprojResolveAssemblyReference.cache

@@ -115,6 +115,10 @@ namespace ArbitesEto2
             dcc.Groups.Add("Ctrl'd");
             dcc.Groups.Add("Alt'd");
             dcc.Groups.Add("AltGr'd");
+            dcc.Groups.Add("Ctrl Shift'd");
+            dcc.Groups.Add("Ctrl Shift Alt'd");
+            dcc.Groups.Add("Ctrl Alt'd");
+            dcc.Groups.Add("Shift Alt'd");
             dcc.Groups.Add("2Role Ctrl"); //11
             dcc.Groups.Add("2Role Shift"); //12
             dcc.Groups.Add("2Role Alt"); //13
@@ -375,20 +379,26 @@ namespace ArbitesEto2
             dcc.AddKey(418, "tapDance18", 5);
             dcc.AddKey(419, "tapDance19", 5);
 
-            AddHIDSubGroup(dcc, 5, 6, "Shift + ", "");
-            AddHIDSubGroup(dcc, 8, 7, "Ctrl + ", "");
-            AddHIDSubGroup(dcc, 11, 8, "Alt + ", "");
-            AddHIDSubGroup(dcc, 14, 9, "AltGr + ", "");
-            AddHIDSubGroup(dcc, 17, 10, "", " / Ctrl");
-            AddHIDSubGroup(dcc, 20, 11, "", " / Shift");
-            AddHIDSubGroup(dcc, 23, 12, "", " / Alt");
-            AddHIDSubGroup(dcc, 26, 13, "", " / AltGr");
-            AddHIDSubGroup(dcc, 29, 14, "", " / FN");
-            AddHIDSubGroup(dcc, 32, 15, "", " / FN2");
-            AddHIDSubGroup(dcc, 35, 16, "", " / FN3");
-            AddHIDSubGroup(dcc, 38, 17, "", " / FN4");
-            AddHIDSubGroup(dcc, 41, 18, "", " / FN5");
-            AddHIDSubGroup(dcc, 44, 19, "", " / FN6");
+            AddHIDSubGroup(dcc, 5, 6, "", " + Shift");
+            AddHIDSubGroup(dcc, 8, 7, "", " + Ctrl");
+            AddHIDSubGroup(dcc, 11, 8, "", " + Alt");
+            AddHIDSubGroup(dcc, 14, 9, "", " + AltGr");
+
+            AddHIDSubGroup(dcc, 47, 10, "", " + Ctrl + Shift");
+            AddHIDSubGroup(dcc, 50, 11, "", " + Ctrl + Shift + Alt");
+            AddHIDSubGroup(dcc, 53, 12, "", " + Ctrl + Alt");
+            AddHIDSubGroup(dcc, 56, 13, "", " + Shift + Alt");
+
+            AddHIDSubGroup(dcc, 17, 14, "", " || Ctrl");
+            AddHIDSubGroup(dcc, 20, 15, "", " || Shift");
+            AddHIDSubGroup(dcc, 23, 16, "", " || Alt");
+            AddHIDSubGroup(dcc, 26, 17, "", " || AltGr");
+            AddHIDSubGroup(dcc, 29, 18, "", " || FN");
+            AddHIDSubGroup(dcc, 32, 19, "", " || FN2");
+            AddHIDSubGroup(dcc, 35, 20, "", " || FN3");
+            AddHIDSubGroup(dcc, 38, 21, "", " || FN4");
+            AddHIDSubGroup(dcc, 41, 22, "", " || FN5");
+            AddHIDSubGroup(dcc, 44, 23, "", " || FN6");
 
 
             // stickyctrl

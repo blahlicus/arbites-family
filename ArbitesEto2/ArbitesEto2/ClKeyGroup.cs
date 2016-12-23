@@ -296,7 +296,7 @@ namespace ArbitesEto2
             kg.Keys.AddRange(ClKeyGroup.GenereateSubHIDSet(kg, 14, 14));
 
             // dual roles ctrl shift alt altgr
-            kg.Keys.AddRange(ClKeyGroup.GenereateSubHIDSet(kg, 17, 21));
+            kg.Keys.AddRange(ClKeyGroup.GenereateSubHIDSet(kg, 17, 20));
             kg.Keys.AddRange(ClKeyGroup.GenereateSubHIDSet(kg, 20, 21));
             kg.Keys.AddRange(ClKeyGroup.GenereateSubHIDSet(kg, 23, 22));
             kg.Keys.AddRange(ClKeyGroup.GenereateSubHIDSet(kg, 26, 23));
@@ -313,6 +313,10 @@ namespace ArbitesEto2
             // dual roles fn6
             kg.Keys.AddRange(ClKeyGroup.GenereateSubHIDSet(kg, 44, 29));
 
+            kg.Keys.AddRange(ClKeyGroup.GenereateSubHIDSet(kg, 47, 15));
+            kg.Keys.AddRange(ClKeyGroup.GenereateSubHIDSet(kg, 50, 16));
+            kg.Keys.AddRange(ClKeyGroup.GenereateSubHIDSet(kg, 53, 17));
+            kg.Keys.AddRange(ClKeyGroup.GenereateSubHIDSet(kg, 56, 18));
 
 
             // stickyctrl
