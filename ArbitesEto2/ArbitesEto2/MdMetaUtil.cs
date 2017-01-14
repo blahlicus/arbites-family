@@ -1,6 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using Eto.Forms;
 
 
 namespace ArbitesEto2
@@ -16,7 +18,22 @@ namespace ArbitesEto2
 
         public static void FirstRunCheck()
         {
-            if (!File.Exists(Path.Combine(MdPersistentData.ConfigPath, MdConstant.N_CONFIG)))
+            bool needsRestore = false;
+            try
+            {
+
+                var cfg = MdCore.Deserialize<MdConfig>(Path.Combine(MdPersistentData.ConfigPath, MdConstant.N_CONFIG));
+                if (cfg.ConfigVersion != MdConfig.SoftwareVersion)
+                {
+                    needsRestore = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                needsRestore = true;
+            }
+
+            if (needsRestore)
             {
                 ResetDefaults();
             }

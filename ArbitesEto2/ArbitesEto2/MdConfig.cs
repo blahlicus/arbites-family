@@ -9,6 +9,9 @@ namespace ArbitesEto2
 
         public static MdConfig Main { get; set; }
 
+        public static int SoftwareVersion = 2;
+        public int ConfigVersion { get; set; }
+
         public bool KeyMenuTopmost { get; set; }
 
         public bool DisplayOutput { get; set; }
@@ -19,6 +22,7 @@ namespace ArbitesEto2
 
         public static void Init()
         {
+
             Main = MdCore.Deserialize<MdConfig>(Path.Combine(MdPersistentData.ConfigPath, MdConstant.N_CONFIG));
         }
 
@@ -28,6 +32,7 @@ namespace ArbitesEto2
             this.KeyMenuTopmost = true;
             this.DisplayOutput = false;
             this.UploadDelay = 10;
+            this.ConfigVersion = 2;
         }
 
         public ClDisplayCharacterContainer GetCurrentInputMethod()
