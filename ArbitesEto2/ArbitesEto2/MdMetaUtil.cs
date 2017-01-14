@@ -108,7 +108,21 @@ namespace ArbitesEto2
                              , Path.Combine(
                                  MdPersistentData.ConfigPath
                                  , MdConstant.D_INPUT_METHOD,
-                                 "US-ASCII" + MdConstant.E_INPUT_METHOD));
+                                 "US-QWERTY-ANSI" + MdConstant.E_INPUT_METHOD));
+
+            MdCore.Serialize(ClDisplayCharacterContainer.GenerateUKISO()
+                             , Path.Combine(
+                                 MdPersistentData.ConfigPath
+                                 , MdConstant.D_INPUT_METHOD,
+                                 "UK-QWERTY-BS4822" + MdConstant.E_INPUT_METHOD));
+
+
+            //Deutsch-QWERTZ-T1
+            MdCore.Serialize(ClDisplayCharacterContainer.GenerateDeuQWERTZ()
+                             , Path.Combine(
+                                 MdPersistentData.ConfigPath
+                                 , MdConstant.D_INPUT_METHOD,
+                                 "Deutsch-QWERTZ-T1" + MdConstant.E_INPUT_METHOD));
         }
 
 

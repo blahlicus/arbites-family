@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ClDisplayCharacterContainer xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <Name>US ANSI</Name>
+  <Name>Deutsch-QWERTZ-T1</Name>
   <Display>
     <string>-Scncde 0</string>
     <string>-Scncde 1</string>
@@ -10,7 +10,7 @@
     <string>b</string>
     <string>c</string>
     <string>d</string>
-    <string>e</string>
+    <string>e €</string>
     <string>f</string>
     <string>g</string>
     <string>h</string>
@@ -18,7 +18,7 @@
     <string>j</string>
     <string>k</string>
     <string>l</string>
-    <string>m</string>
+    <string>m µ</string>
     <string>n</string>
     <string>o</string>
     <string>p</string>
@@ -33,32 +33,32 @@
     <string>y</string>
     <string>z</string>
     <string>1 !</string>
-    <string>2 @</string>
-    <string>3 #</string>
+    <string>2 " ²</string>
+    <string>3 £ ²</string>
     <string>4 $</string>
     <string>5 %</string>
-    <string>6 ^</string>
-    <string>7 &amp;</string>
-    <string>8 *</string>
-    <string>9 (</string>
-    <string>0 )</string>
+    <string>6 &amp;</string>
+    <string>7 / {</string>
+    <string>8 ( [</string>
+    <string>9 ) ]</string>
+    <string>0 = }</string>
     <string>Enter</string>
     <string>Esc</string>
     <string>Backspace</string>
     <string>Tab</string>
     <string>Space</string>
-    <string>- _</string>
-    <string>= +</string>
-    <string>[ {</string>
-    <string>] }</string>
-    <string>\ |</string>
+    <string>ß ? \</string>
+    <string>´ `</string>
+    <string>ü</string>
+    <string>+ * ~</string>
+    <string># '</string>
     <string>Non-US # ~</string>
-    <string>; :</string>
-    <string>' "</string>
-    <string>` ~</string>
-    <string>, &lt;</string>
-    <string>. &gt;</string>
-    <string>/ ?</string>
+    <string>ö</string>
+    <string>ä</string>
+    <string>^ °</string>
+    <string>, ;</string>
+    <string>. :</string>
+    <string>- _</string>
     <string>Capslock</string>
     <string>F1</string>
     <string>F2</string>
@@ -102,7 +102,7 @@
     <string>Num 9</string>
     <string>Num 0</string>
     <string>Num .</string>
-    <string>Non-US \ |</string>
+    <string>\ |</string>
     <string>App</string>
     <string>Power Off</string>
     <string>Num =</string>
@@ -138,7 +138,7 @@
     <string>L Win</string>
     <string>R Ctrl</string>
     <string>R Shift</string>
-    <string>R Alt</string>
+    <string>R AltGr</string>
     <string>R Win</string>
     <string>Null</string>
     <string>Fn</string>
@@ -251,7 +251,7 @@
     <string>b + Shift</string>
     <string>c + Shift</string>
     <string>d + Shift</string>
-    <string>e + Shift</string>
+    <string>e € + Shift</string>
     <string>f + Shift</string>
     <string>g + Shift</string>
     <string>h + Shift</string>
@@ -259,7 +259,7 @@
     <string>j + Shift</string>
     <string>k + Shift</string>
     <string>l + Shift</string>
-    <string>m + Shift</string>
+    <string>m µ + Shift</string>
     <string>n + Shift</string>
     <string>o + Shift</string>
     <string>p + Shift</string>
@@ -274,32 +274,32 @@
     <string>y + Shift</string>
     <string>z + Shift</string>
     <string>1 ! + Shift</string>
-    <string>2 @ + Shift</string>
-    <string>3 # + Shift</string>
+    <string>2 " ² + Shift</string>
+    <string>3 £ ² + Shift</string>
     <string>4 $ + Shift</string>
     <string>5 % + Shift</string>
-    <string>6 ^ + Shift</string>
-    <string>7 &amp; + Shift</string>
-    <string>8 * + Shift</string>
-    <string>9 ( + Shift</string>
-    <string>0 ) + Shift</string>
+    <string>6 &amp; + Shift</string>
+    <string>7 / { + Shift</string>
+    <string>8 ( [ + Shift</string>
+    <string>9 ) ] + Shift</string>
+    <string>0 = } + Shift</string>
     <string>Enter + Shift</string>
     <string>Esc + Shift</string>
     <string>Backspace + Shift</string>
     <string>Tab + Shift</string>
     <string>Space + Shift</string>
-    <string>- _ + Shift</string>
-    <string>= + + Shift</string>
-    <string>[ { + Shift</string>
-    <string>] } + Shift</string>
-    <string>\ | + Shift</string>
+    <string>ß ? \ + Shift</string>
+    <string>´ ` + Shift</string>
+    <string>ü + Shift</string>
+    <string>+ * ~ + Shift</string>
+    <string># ' + Shift</string>
     <string>Non-US # ~ + Shift</string>
-    <string>; : + Shift</string>
-    <string>' " + Shift</string>
-    <string>` ~ + Shift</string>
-    <string>, &lt; + Shift</string>
-    <string>. &gt; + Shift</string>
-    <string>/ ? + Shift</string>
+    <string>ö + Shift</string>
+    <string>ä + Shift</string>
+    <string>^ ° + Shift</string>
+    <string>, ; + Shift</string>
+    <string>. : + Shift</string>
+    <string>- _ + Shift</string>
     <string>Capslock + Shift</string>
     <string>F1 + Shift</string>
     <string>F2 + Shift</string>
@@ -343,7 +343,7 @@
     <string>Num 9 + Shift</string>
     <string>Num 0 + Shift</string>
     <string>Num . + Shift</string>
-    <string>Non-US \ | + Shift</string>
+    <string>\ | + Shift</string>
     <string>App + Shift</string>
     <string>Power Off + Shift</string>
     <string>Num = + Shift</string>
@@ -379,7 +379,7 @@
     <string>L Win + Shift</string>
     <string>R Ctrl + Shift</string>
     <string>R Shift + Shift</string>
-    <string>R Alt + Shift</string>
+    <string>R AltGr + Shift</string>
     <string>R Win + Shift</string>
     <string>-Scncde 0 + Ctrl</string>
     <string>-Scncde 1 + Ctrl</string>
@@ -389,7 +389,7 @@
     <string>b + Ctrl</string>
     <string>c + Ctrl</string>
     <string>d + Ctrl</string>
-    <string>e + Ctrl</string>
+    <string>e € + Ctrl</string>
     <string>f + Ctrl</string>
     <string>g + Ctrl</string>
     <string>h + Ctrl</string>
@@ -397,7 +397,7 @@
     <string>j + Ctrl</string>
     <string>k + Ctrl</string>
     <string>l + Ctrl</string>
-    <string>m + Ctrl</string>
+    <string>m µ + Ctrl</string>
     <string>n + Ctrl</string>
     <string>o + Ctrl</string>
     <string>p + Ctrl</string>
@@ -412,32 +412,32 @@
     <string>y + Ctrl</string>
     <string>z + Ctrl</string>
     <string>1 ! + Ctrl</string>
-    <string>2 @ + Ctrl</string>
-    <string>3 # + Ctrl</string>
+    <string>2 " ² + Ctrl</string>
+    <string>3 £ ² + Ctrl</string>
     <string>4 $ + Ctrl</string>
     <string>5 % + Ctrl</string>
-    <string>6 ^ + Ctrl</string>
-    <string>7 &amp; + Ctrl</string>
-    <string>8 * + Ctrl</string>
-    <string>9 ( + Ctrl</string>
-    <string>0 ) + Ctrl</string>
+    <string>6 &amp; + Ctrl</string>
+    <string>7 / { + Ctrl</string>
+    <string>8 ( [ + Ctrl</string>
+    <string>9 ) ] + Ctrl</string>
+    <string>0 = } + Ctrl</string>
     <string>Enter + Ctrl</string>
     <string>Esc + Ctrl</string>
     <string>Backspace + Ctrl</string>
     <string>Tab + Ctrl</string>
     <string>Space + Ctrl</string>
-    <string>- _ + Ctrl</string>
-    <string>= + + Ctrl</string>
-    <string>[ { + Ctrl</string>
-    <string>] } + Ctrl</string>
-    <string>\ | + Ctrl</string>
+    <string>ß ? \ + Ctrl</string>
+    <string>´ ` + Ctrl</string>
+    <string>ü + Ctrl</string>
+    <string>+ * ~ + Ctrl</string>
+    <string># ' + Ctrl</string>
     <string>Non-US # ~ + Ctrl</string>
-    <string>; : + Ctrl</string>
-    <string>' " + Ctrl</string>
-    <string>` ~ + Ctrl</string>
-    <string>, &lt; + Ctrl</string>
-    <string>. &gt; + Ctrl</string>
-    <string>/ ? + Ctrl</string>
+    <string>ö + Ctrl</string>
+    <string>ä + Ctrl</string>
+    <string>^ ° + Ctrl</string>
+    <string>, ; + Ctrl</string>
+    <string>. : + Ctrl</string>
+    <string>- _ + Ctrl</string>
     <string>Capslock + Ctrl</string>
     <string>F1 + Ctrl</string>
     <string>F2 + Ctrl</string>
@@ -481,7 +481,7 @@
     <string>Num 9 + Ctrl</string>
     <string>Num 0 + Ctrl</string>
     <string>Num . + Ctrl</string>
-    <string>Non-US \ | + Ctrl</string>
+    <string>\ | + Ctrl</string>
     <string>App + Ctrl</string>
     <string>Power Off + Ctrl</string>
     <string>Num = + Ctrl</string>
@@ -517,7 +517,7 @@
     <string>L Win + Ctrl</string>
     <string>R Ctrl + Ctrl</string>
     <string>R Shift + Ctrl</string>
-    <string>R Alt + Ctrl</string>
+    <string>R AltGr + Ctrl</string>
     <string>R Win + Ctrl</string>
     <string>-Scncde 0 + Alt</string>
     <string>-Scncde 1 + Alt</string>
@@ -527,7 +527,7 @@
     <string>b + Alt</string>
     <string>c + Alt</string>
     <string>d + Alt</string>
-    <string>e + Alt</string>
+    <string>e € + Alt</string>
     <string>f + Alt</string>
     <string>g + Alt</string>
     <string>h + Alt</string>
@@ -535,7 +535,7 @@
     <string>j + Alt</string>
     <string>k + Alt</string>
     <string>l + Alt</string>
-    <string>m + Alt</string>
+    <string>m µ + Alt</string>
     <string>n + Alt</string>
     <string>o + Alt</string>
     <string>p + Alt</string>
@@ -550,32 +550,32 @@
     <string>y + Alt</string>
     <string>z + Alt</string>
     <string>1 ! + Alt</string>
-    <string>2 @ + Alt</string>
-    <string>3 # + Alt</string>
+    <string>2 " ² + Alt</string>
+    <string>3 £ ² + Alt</string>
     <string>4 $ + Alt</string>
     <string>5 % + Alt</string>
-    <string>6 ^ + Alt</string>
-    <string>7 &amp; + Alt</string>
-    <string>8 * + Alt</string>
-    <string>9 ( + Alt</string>
-    <string>0 ) + Alt</string>
+    <string>6 &amp; + Alt</string>
+    <string>7 / { + Alt</string>
+    <string>8 ( [ + Alt</string>
+    <string>9 ) ] + Alt</string>
+    <string>0 = } + Alt</string>
     <string>Enter + Alt</string>
     <string>Esc + Alt</string>
     <string>Backspace + Alt</string>
     <string>Tab + Alt</string>
     <string>Space + Alt</string>
-    <string>- _ + Alt</string>
-    <string>= + + Alt</string>
-    <string>[ { + Alt</string>
-    <string>] } + Alt</string>
-    <string>\ | + Alt</string>
+    <string>ß ? \ + Alt</string>
+    <string>´ ` + Alt</string>
+    <string>ü + Alt</string>
+    <string>+ * ~ + Alt</string>
+    <string># ' + Alt</string>
     <string>Non-US # ~ + Alt</string>
-    <string>; : + Alt</string>
-    <string>' " + Alt</string>
-    <string>` ~ + Alt</string>
-    <string>, &lt; + Alt</string>
-    <string>. &gt; + Alt</string>
-    <string>/ ? + Alt</string>
+    <string>ö + Alt</string>
+    <string>ä + Alt</string>
+    <string>^ ° + Alt</string>
+    <string>, ; + Alt</string>
+    <string>. : + Alt</string>
+    <string>- _ + Alt</string>
     <string>Capslock + Alt</string>
     <string>F1 + Alt</string>
     <string>F2 + Alt</string>
@@ -619,7 +619,7 @@
     <string>Num 9 + Alt</string>
     <string>Num 0 + Alt</string>
     <string>Num . + Alt</string>
-    <string>Non-US \ | + Alt</string>
+    <string>\ | + Alt</string>
     <string>App + Alt</string>
     <string>Power Off + Alt</string>
     <string>Num = + Alt</string>
@@ -655,7 +655,7 @@
     <string>L Win + Alt</string>
     <string>R Ctrl + Alt</string>
     <string>R Shift + Alt</string>
-    <string>R Alt + Alt</string>
+    <string>R AltGr + Alt</string>
     <string>R Win + Alt</string>
     <string>-Scncde 0 + AltGr</string>
     <string>-Scncde 1 + AltGr</string>
@@ -665,7 +665,7 @@
     <string>b + AltGr</string>
     <string>c + AltGr</string>
     <string>d + AltGr</string>
-    <string>e + AltGr</string>
+    <string>e € + AltGr</string>
     <string>f + AltGr</string>
     <string>g + AltGr</string>
     <string>h + AltGr</string>
@@ -673,7 +673,7 @@
     <string>j + AltGr</string>
     <string>k + AltGr</string>
     <string>l + AltGr</string>
-    <string>m + AltGr</string>
+    <string>m µ + AltGr</string>
     <string>n + AltGr</string>
     <string>o + AltGr</string>
     <string>p + AltGr</string>
@@ -688,32 +688,32 @@
     <string>y + AltGr</string>
     <string>z + AltGr</string>
     <string>1 ! + AltGr</string>
-    <string>2 @ + AltGr</string>
-    <string>3 # + AltGr</string>
+    <string>2 " ² + AltGr</string>
+    <string>3 £ ² + AltGr</string>
     <string>4 $ + AltGr</string>
     <string>5 % + AltGr</string>
-    <string>6 ^ + AltGr</string>
-    <string>7 &amp; + AltGr</string>
-    <string>8 * + AltGr</string>
-    <string>9 ( + AltGr</string>
-    <string>0 ) + AltGr</string>
+    <string>6 &amp; + AltGr</string>
+    <string>7 / { + AltGr</string>
+    <string>8 ( [ + AltGr</string>
+    <string>9 ) ] + AltGr</string>
+    <string>0 = } + AltGr</string>
     <string>Enter + AltGr</string>
     <string>Esc + AltGr</string>
     <string>Backspace + AltGr</string>
     <string>Tab + AltGr</string>
     <string>Space + AltGr</string>
-    <string>- _ + AltGr</string>
-    <string>= + + AltGr</string>
-    <string>[ { + AltGr</string>
-    <string>] } + AltGr</string>
-    <string>\ | + AltGr</string>
+    <string>ß ? \ + AltGr</string>
+    <string>´ ` + AltGr</string>
+    <string>ü + AltGr</string>
+    <string>+ * ~ + AltGr</string>
+    <string># ' + AltGr</string>
     <string>Non-US # ~ + AltGr</string>
-    <string>; : + AltGr</string>
-    <string>' " + AltGr</string>
-    <string>` ~ + AltGr</string>
-    <string>, &lt; + AltGr</string>
-    <string>. &gt; + AltGr</string>
-    <string>/ ? + AltGr</string>
+    <string>ö + AltGr</string>
+    <string>ä + AltGr</string>
+    <string>^ ° + AltGr</string>
+    <string>, ; + AltGr</string>
+    <string>. : + AltGr</string>
+    <string>- _ + AltGr</string>
     <string>Capslock + AltGr</string>
     <string>F1 + AltGr</string>
     <string>F2 + AltGr</string>
@@ -757,7 +757,7 @@
     <string>Num 9 + AltGr</string>
     <string>Num 0 + AltGr</string>
     <string>Num . + AltGr</string>
-    <string>Non-US \ | + AltGr</string>
+    <string>\ | + AltGr</string>
     <string>App + AltGr</string>
     <string>Power Off + AltGr</string>
     <string>Num = + AltGr</string>
@@ -793,7 +793,7 @@
     <string>L Win + AltGr</string>
     <string>R Ctrl + AltGr</string>
     <string>R Shift + AltGr</string>
-    <string>R Alt + AltGr</string>
+    <string>R AltGr + AltGr</string>
     <string>R Win + AltGr</string>
     <string>-Scncde 0 || Ctrl</string>
     <string>-Scncde 1 || Ctrl</string>
@@ -803,7 +803,7 @@
     <string>b || Ctrl</string>
     <string>c || Ctrl</string>
     <string>d || Ctrl</string>
-    <string>e || Ctrl</string>
+    <string>e € || Ctrl</string>
     <string>f || Ctrl</string>
     <string>g || Ctrl</string>
     <string>h || Ctrl</string>
@@ -811,7 +811,7 @@
     <string>j || Ctrl</string>
     <string>k || Ctrl</string>
     <string>l || Ctrl</string>
-    <string>m || Ctrl</string>
+    <string>m µ || Ctrl</string>
     <string>n || Ctrl</string>
     <string>o || Ctrl</string>
     <string>p || Ctrl</string>
@@ -826,32 +826,32 @@
     <string>y || Ctrl</string>
     <string>z || Ctrl</string>
     <string>1 ! || Ctrl</string>
-    <string>2 @ || Ctrl</string>
-    <string>3 # || Ctrl</string>
+    <string>2 " ² || Ctrl</string>
+    <string>3 £ ² || Ctrl</string>
     <string>4 $ || Ctrl</string>
     <string>5 % || Ctrl</string>
-    <string>6 ^ || Ctrl</string>
-    <string>7 &amp; || Ctrl</string>
-    <string>8 * || Ctrl</string>
-    <string>9 ( || Ctrl</string>
-    <string>0 ) || Ctrl</string>
+    <string>6 &amp; || Ctrl</string>
+    <string>7 / { || Ctrl</string>
+    <string>8 ( [ || Ctrl</string>
+    <string>9 ) ] || Ctrl</string>
+    <string>0 = } || Ctrl</string>
     <string>Enter || Ctrl</string>
     <string>Esc || Ctrl</string>
     <string>Backspace || Ctrl</string>
     <string>Tab || Ctrl</string>
     <string>Space || Ctrl</string>
-    <string>- _ || Ctrl</string>
-    <string>= + || Ctrl</string>
-    <string>[ { || Ctrl</string>
-    <string>] } || Ctrl</string>
-    <string>\ | || Ctrl</string>
+    <string>ß ? \ || Ctrl</string>
+    <string>´ ` || Ctrl</string>
+    <string>ü || Ctrl</string>
+    <string>+ * ~ || Ctrl</string>
+    <string># ' || Ctrl</string>
     <string>Non-US # ~ || Ctrl</string>
-    <string>; : || Ctrl</string>
-    <string>' " || Ctrl</string>
-    <string>` ~ || Ctrl</string>
-    <string>, &lt; || Ctrl</string>
-    <string>. &gt; || Ctrl</string>
-    <string>/ ? || Ctrl</string>
+    <string>ö || Ctrl</string>
+    <string>ä || Ctrl</string>
+    <string>^ ° || Ctrl</string>
+    <string>, ; || Ctrl</string>
+    <string>. : || Ctrl</string>
+    <string>- _ || Ctrl</string>
     <string>Capslock || Ctrl</string>
     <string>F1 || Ctrl</string>
     <string>F2 || Ctrl</string>
@@ -895,7 +895,7 @@
     <string>Num 9 || Ctrl</string>
     <string>Num 0 || Ctrl</string>
     <string>Num . || Ctrl</string>
-    <string>Non-US \ | || Ctrl</string>
+    <string>\ | || Ctrl</string>
     <string>App || Ctrl</string>
     <string>Power Off || Ctrl</string>
     <string>Num = || Ctrl</string>
@@ -931,7 +931,7 @@
     <string>L Win || Ctrl</string>
     <string>R Ctrl || Ctrl</string>
     <string>R Shift || Ctrl</string>
-    <string>R Alt || Ctrl</string>
+    <string>R AltGr || Ctrl</string>
     <string>R Win || Ctrl</string>
     <string>-Scncde 0 || Shift</string>
     <string>-Scncde 1 || Shift</string>
@@ -941,7 +941,7 @@
     <string>b || Shift</string>
     <string>c || Shift</string>
     <string>d || Shift</string>
-    <string>e || Shift</string>
+    <string>e € || Shift</string>
     <string>f || Shift</string>
     <string>g || Shift</string>
     <string>h || Shift</string>
@@ -949,7 +949,7 @@
     <string>j || Shift</string>
     <string>k || Shift</string>
     <string>l || Shift</string>
-    <string>m || Shift</string>
+    <string>m µ || Shift</string>
     <string>n || Shift</string>
     <string>o || Shift</string>
     <string>p || Shift</string>
@@ -964,32 +964,32 @@
     <string>y || Shift</string>
     <string>z || Shift</string>
     <string>1 ! || Shift</string>
-    <string>2 @ || Shift</string>
-    <string>3 # || Shift</string>
+    <string>2 " ² || Shift</string>
+    <string>3 £ ² || Shift</string>
     <string>4 $ || Shift</string>
     <string>5 % || Shift</string>
-    <string>6 ^ || Shift</string>
-    <string>7 &amp; || Shift</string>
-    <string>8 * || Shift</string>
-    <string>9 ( || Shift</string>
-    <string>0 ) || Shift</string>
+    <string>6 &amp; || Shift</string>
+    <string>7 / { || Shift</string>
+    <string>8 ( [ || Shift</string>
+    <string>9 ) ] || Shift</string>
+    <string>0 = } || Shift</string>
     <string>Enter || Shift</string>
     <string>Esc || Shift</string>
     <string>Backspace || Shift</string>
     <string>Tab || Shift</string>
     <string>Space || Shift</string>
-    <string>- _ || Shift</string>
-    <string>= + || Shift</string>
-    <string>[ { || Shift</string>
-    <string>] } || Shift</string>
-    <string>\ | || Shift</string>
+    <string>ß ? \ || Shift</string>
+    <string>´ ` || Shift</string>
+    <string>ü || Shift</string>
+    <string>+ * ~ || Shift</string>
+    <string># ' || Shift</string>
     <string>Non-US # ~ || Shift</string>
-    <string>; : || Shift</string>
-    <string>' " || Shift</string>
-    <string>` ~ || Shift</string>
-    <string>, &lt; || Shift</string>
-    <string>. &gt; || Shift</string>
-    <string>/ ? || Shift</string>
+    <string>ö || Shift</string>
+    <string>ä || Shift</string>
+    <string>^ ° || Shift</string>
+    <string>, ; || Shift</string>
+    <string>. : || Shift</string>
+    <string>- _ || Shift</string>
     <string>Capslock || Shift</string>
     <string>F1 || Shift</string>
     <string>F2 || Shift</string>
@@ -1033,7 +1033,7 @@
     <string>Num 9 || Shift</string>
     <string>Num 0 || Shift</string>
     <string>Num . || Shift</string>
-    <string>Non-US \ | || Shift</string>
+    <string>\ | || Shift</string>
     <string>App || Shift</string>
     <string>Power Off || Shift</string>
     <string>Num = || Shift</string>
@@ -1069,7 +1069,7 @@
     <string>L Win || Shift</string>
     <string>R Ctrl || Shift</string>
     <string>R Shift || Shift</string>
-    <string>R Alt || Shift</string>
+    <string>R AltGr || Shift</string>
     <string>R Win || Shift</string>
     <string>-Scncde 0 || Alt</string>
     <string>-Scncde 1 || Alt</string>
@@ -1079,7 +1079,7 @@
     <string>b || Alt</string>
     <string>c || Alt</string>
     <string>d || Alt</string>
-    <string>e || Alt</string>
+    <string>e € || Alt</string>
     <string>f || Alt</string>
     <string>g || Alt</string>
     <string>h || Alt</string>
@@ -1087,7 +1087,7 @@
     <string>j || Alt</string>
     <string>k || Alt</string>
     <string>l || Alt</string>
-    <string>m || Alt</string>
+    <string>m µ || Alt</string>
     <string>n || Alt</string>
     <string>o || Alt</string>
     <string>p || Alt</string>
@@ -1102,32 +1102,32 @@
     <string>y || Alt</string>
     <string>z || Alt</string>
     <string>1 ! || Alt</string>
-    <string>2 @ || Alt</string>
-    <string>3 # || Alt</string>
+    <string>2 " ² || Alt</string>
+    <string>3 £ ² || Alt</string>
     <string>4 $ || Alt</string>
     <string>5 % || Alt</string>
-    <string>6 ^ || Alt</string>
-    <string>7 &amp; || Alt</string>
-    <string>8 * || Alt</string>
-    <string>9 ( || Alt</string>
-    <string>0 ) || Alt</string>
+    <string>6 &amp; || Alt</string>
+    <string>7 / { || Alt</string>
+    <string>8 ( [ || Alt</string>
+    <string>9 ) ] || Alt</string>
+    <string>0 = } || Alt</string>
     <string>Enter || Alt</string>
     <string>Esc || Alt</string>
     <string>Backspace || Alt</string>
     <string>Tab || Alt</string>
     <string>Space || Alt</string>
-    <string>- _ || Alt</string>
-    <string>= + || Alt</string>
-    <string>[ { || Alt</string>
-    <string>] } || Alt</string>
-    <string>\ | || Alt</string>
+    <string>ß ? \ || Alt</string>
+    <string>´ ` || Alt</string>
+    <string>ü || Alt</string>
+    <string>+ * ~ || Alt</string>
+    <string># ' || Alt</string>
     <string>Non-US # ~ || Alt</string>
-    <string>; : || Alt</string>
-    <string>' " || Alt</string>
-    <string>` ~ || Alt</string>
-    <string>, &lt; || Alt</string>
-    <string>. &gt; || Alt</string>
-    <string>/ ? || Alt</string>
+    <string>ö || Alt</string>
+    <string>ä || Alt</string>
+    <string>^ ° || Alt</string>
+    <string>, ; || Alt</string>
+    <string>. : || Alt</string>
+    <string>- _ || Alt</string>
     <string>Capslock || Alt</string>
     <string>F1 || Alt</string>
     <string>F2 || Alt</string>
@@ -1171,7 +1171,7 @@
     <string>Num 9 || Alt</string>
     <string>Num 0 || Alt</string>
     <string>Num . || Alt</string>
-    <string>Non-US \ | || Alt</string>
+    <string>\ | || Alt</string>
     <string>App || Alt</string>
     <string>Power Off || Alt</string>
     <string>Num = || Alt</string>
@@ -1207,7 +1207,7 @@
     <string>L Win || Alt</string>
     <string>R Ctrl || Alt</string>
     <string>R Shift || Alt</string>
-    <string>R Alt || Alt</string>
+    <string>R AltGr || Alt</string>
     <string>R Win || Alt</string>
     <string>-Scncde 0 || AltGr</string>
     <string>-Scncde 1 || AltGr</string>
@@ -1217,7 +1217,7 @@
     <string>b || AltGr</string>
     <string>c || AltGr</string>
     <string>d || AltGr</string>
-    <string>e || AltGr</string>
+    <string>e € || AltGr</string>
     <string>f || AltGr</string>
     <string>g || AltGr</string>
     <string>h || AltGr</string>
@@ -1225,7 +1225,7 @@
     <string>j || AltGr</string>
     <string>k || AltGr</string>
     <string>l || AltGr</string>
-    <string>m || AltGr</string>
+    <string>m µ || AltGr</string>
     <string>n || AltGr</string>
     <string>o || AltGr</string>
     <string>p || AltGr</string>
@@ -1240,32 +1240,32 @@
     <string>y || AltGr</string>
     <string>z || AltGr</string>
     <string>1 ! || AltGr</string>
-    <string>2 @ || AltGr</string>
-    <string>3 # || AltGr</string>
+    <string>2 " ² || AltGr</string>
+    <string>3 £ ² || AltGr</string>
     <string>4 $ || AltGr</string>
     <string>5 % || AltGr</string>
-    <string>6 ^ || AltGr</string>
-    <string>7 &amp; || AltGr</string>
-    <string>8 * || AltGr</string>
-    <string>9 ( || AltGr</string>
-    <string>0 ) || AltGr</string>
+    <string>6 &amp; || AltGr</string>
+    <string>7 / { || AltGr</string>
+    <string>8 ( [ || AltGr</string>
+    <string>9 ) ] || AltGr</string>
+    <string>0 = } || AltGr</string>
     <string>Enter || AltGr</string>
     <string>Esc || AltGr</string>
     <string>Backspace || AltGr</string>
     <string>Tab || AltGr</string>
     <string>Space || AltGr</string>
-    <string>- _ || AltGr</string>
-    <string>= + || AltGr</string>
-    <string>[ { || AltGr</string>
-    <string>] } || AltGr</string>
-    <string>\ | || AltGr</string>
+    <string>ß ? \ || AltGr</string>
+    <string>´ ` || AltGr</string>
+    <string>ü || AltGr</string>
+    <string>+ * ~ || AltGr</string>
+    <string># ' || AltGr</string>
     <string>Non-US # ~ || AltGr</string>
-    <string>; : || AltGr</string>
-    <string>' " || AltGr</string>
-    <string>` ~ || AltGr</string>
-    <string>, &lt; || AltGr</string>
-    <string>. &gt; || AltGr</string>
-    <string>/ ? || AltGr</string>
+    <string>ö || AltGr</string>
+    <string>ä || AltGr</string>
+    <string>^ ° || AltGr</string>
+    <string>, ; || AltGr</string>
+    <string>. : || AltGr</string>
+    <string>- _ || AltGr</string>
     <string>Capslock || AltGr</string>
     <string>F1 || AltGr</string>
     <string>F2 || AltGr</string>
@@ -1309,7 +1309,7 @@
     <string>Num 9 || AltGr</string>
     <string>Num 0 || AltGr</string>
     <string>Num . || AltGr</string>
-    <string>Non-US \ | || AltGr</string>
+    <string>\ | || AltGr</string>
     <string>App || AltGr</string>
     <string>Power Off || AltGr</string>
     <string>Num = || AltGr</string>
@@ -1345,7 +1345,7 @@
     <string>L Win || AltGr</string>
     <string>R Ctrl || AltGr</string>
     <string>R Shift || AltGr</string>
-    <string>R Alt || AltGr</string>
+    <string>R AltGr || AltGr</string>
     <string>R Win || AltGr</string>
     <string>-Scncde 0 || FN</string>
     <string>-Scncde 1 || FN</string>
@@ -1355,7 +1355,7 @@
     <string>b || FN</string>
     <string>c || FN</string>
     <string>d || FN</string>
-    <string>e || FN</string>
+    <string>e € || FN</string>
     <string>f || FN</string>
     <string>g || FN</string>
     <string>h || FN</string>
@@ -1363,7 +1363,7 @@
     <string>j || FN</string>
     <string>k || FN</string>
     <string>l || FN</string>
-    <string>m || FN</string>
+    <string>m µ || FN</string>
     <string>n || FN</string>
     <string>o || FN</string>
     <string>p || FN</string>
@@ -1378,32 +1378,32 @@
     <string>y || FN</string>
     <string>z || FN</string>
     <string>1 ! || FN</string>
-    <string>2 @ || FN</string>
-    <string>3 # || FN</string>
+    <string>2 " ² || FN</string>
+    <string>3 £ ² || FN</string>
     <string>4 $ || FN</string>
     <string>5 % || FN</string>
-    <string>6 ^ || FN</string>
-    <string>7 &amp; || FN</string>
-    <string>8 * || FN</string>
-    <string>9 ( || FN</string>
-    <string>0 ) || FN</string>
+    <string>6 &amp; || FN</string>
+    <string>7 / { || FN</string>
+    <string>8 ( [ || FN</string>
+    <string>9 ) ] || FN</string>
+    <string>0 = } || FN</string>
     <string>Enter || FN</string>
     <string>Esc || FN</string>
     <string>Backspace || FN</string>
     <string>Tab || FN</string>
     <string>Space || FN</string>
-    <string>- _ || FN</string>
-    <string>= + || FN</string>
-    <string>[ { || FN</string>
-    <string>] } || FN</string>
-    <string>\ | || FN</string>
+    <string>ß ? \ || FN</string>
+    <string>´ ` || FN</string>
+    <string>ü || FN</string>
+    <string>+ * ~ || FN</string>
+    <string># ' || FN</string>
     <string>Non-US # ~ || FN</string>
-    <string>; : || FN</string>
-    <string>' " || FN</string>
-    <string>` ~ || FN</string>
-    <string>, &lt; || FN</string>
-    <string>. &gt; || FN</string>
-    <string>/ ? || FN</string>
+    <string>ö || FN</string>
+    <string>ä || FN</string>
+    <string>^ ° || FN</string>
+    <string>, ; || FN</string>
+    <string>. : || FN</string>
+    <string>- _ || FN</string>
     <string>Capslock || FN</string>
     <string>F1 || FN</string>
     <string>F2 || FN</string>
@@ -1447,7 +1447,7 @@
     <string>Num 9 || FN</string>
     <string>Num 0 || FN</string>
     <string>Num . || FN</string>
-    <string>Non-US \ | || FN</string>
+    <string>\ | || FN</string>
     <string>App || FN</string>
     <string>Power Off || FN</string>
     <string>Num = || FN</string>
@@ -1483,7 +1483,7 @@
     <string>L Win || FN</string>
     <string>R Ctrl || FN</string>
     <string>R Shift || FN</string>
-    <string>R Alt || FN</string>
+    <string>R AltGr || FN</string>
     <string>R Win || FN</string>
     <string>-Scncde 0 || FN2</string>
     <string>-Scncde 1 || FN2</string>
@@ -1493,7 +1493,7 @@
     <string>b || FN2</string>
     <string>c || FN2</string>
     <string>d || FN2</string>
-    <string>e || FN2</string>
+    <string>e € || FN2</string>
     <string>f || FN2</string>
     <string>g || FN2</string>
     <string>h || FN2</string>
@@ -1501,7 +1501,7 @@
     <string>j || FN2</string>
     <string>k || FN2</string>
     <string>l || FN2</string>
-    <string>m || FN2</string>
+    <string>m µ || FN2</string>
     <string>n || FN2</string>
     <string>o || FN2</string>
     <string>p || FN2</string>
@@ -1516,32 +1516,32 @@
     <string>y || FN2</string>
     <string>z || FN2</string>
     <string>1 ! || FN2</string>
-    <string>2 @ || FN2</string>
-    <string>3 # || FN2</string>
+    <string>2 " ² || FN2</string>
+    <string>3 £ ² || FN2</string>
     <string>4 $ || FN2</string>
     <string>5 % || FN2</string>
-    <string>6 ^ || FN2</string>
-    <string>7 &amp; || FN2</string>
-    <string>8 * || FN2</string>
-    <string>9 ( || FN2</string>
-    <string>0 ) || FN2</string>
+    <string>6 &amp; || FN2</string>
+    <string>7 / { || FN2</string>
+    <string>8 ( [ || FN2</string>
+    <string>9 ) ] || FN2</string>
+    <string>0 = } || FN2</string>
     <string>Enter || FN2</string>
     <string>Esc || FN2</string>
     <string>Backspace || FN2</string>
     <string>Tab || FN2</string>
     <string>Space || FN2</string>
-    <string>- _ || FN2</string>
-    <string>= + || FN2</string>
-    <string>[ { || FN2</string>
-    <string>] } || FN2</string>
-    <string>\ | || FN2</string>
+    <string>ß ? \ || FN2</string>
+    <string>´ ` || FN2</string>
+    <string>ü || FN2</string>
+    <string>+ * ~ || FN2</string>
+    <string># ' || FN2</string>
     <string>Non-US # ~ || FN2</string>
-    <string>; : || FN2</string>
-    <string>' " || FN2</string>
-    <string>` ~ || FN2</string>
-    <string>, &lt; || FN2</string>
-    <string>. &gt; || FN2</string>
-    <string>/ ? || FN2</string>
+    <string>ö || FN2</string>
+    <string>ä || FN2</string>
+    <string>^ ° || FN2</string>
+    <string>, ; || FN2</string>
+    <string>. : || FN2</string>
+    <string>- _ || FN2</string>
     <string>Capslock || FN2</string>
     <string>F1 || FN2</string>
     <string>F2 || FN2</string>
@@ -1585,7 +1585,7 @@
     <string>Num 9 || FN2</string>
     <string>Num 0 || FN2</string>
     <string>Num . || FN2</string>
-    <string>Non-US \ | || FN2</string>
+    <string>\ | || FN2</string>
     <string>App || FN2</string>
     <string>Power Off || FN2</string>
     <string>Num = || FN2</string>
@@ -1621,7 +1621,7 @@
     <string>L Win || FN2</string>
     <string>R Ctrl || FN2</string>
     <string>R Shift || FN2</string>
-    <string>R Alt || FN2</string>
+    <string>R AltGr || FN2</string>
     <string>R Win || FN2</string>
     <string>-Scncde 0 || FN3</string>
     <string>-Scncde 1 || FN3</string>
@@ -1631,7 +1631,7 @@
     <string>b || FN3</string>
     <string>c || FN3</string>
     <string>d || FN3</string>
-    <string>e || FN3</string>
+    <string>e € || FN3</string>
     <string>f || FN3</string>
     <string>g || FN3</string>
     <string>h || FN3</string>
@@ -1639,7 +1639,7 @@
     <string>j || FN3</string>
     <string>k || FN3</string>
     <string>l || FN3</string>
-    <string>m || FN3</string>
+    <string>m µ || FN3</string>
     <string>n || FN3</string>
     <string>o || FN3</string>
     <string>p || FN3</string>
@@ -1654,32 +1654,32 @@
     <string>y || FN3</string>
     <string>z || FN3</string>
     <string>1 ! || FN3</string>
-    <string>2 @ || FN3</string>
-    <string>3 # || FN3</string>
+    <string>2 " ² || FN3</string>
+    <string>3 £ ² || FN3</string>
     <string>4 $ || FN3</string>
     <string>5 % || FN3</string>
-    <string>6 ^ || FN3</string>
-    <string>7 &amp; || FN3</string>
-    <string>8 * || FN3</string>
-    <string>9 ( || FN3</string>
-    <string>0 ) || FN3</string>
+    <string>6 &amp; || FN3</string>
+    <string>7 / { || FN3</string>
+    <string>8 ( [ || FN3</string>
+    <string>9 ) ] || FN3</string>
+    <string>0 = } || FN3</string>
     <string>Enter || FN3</string>
     <string>Esc || FN3</string>
     <string>Backspace || FN3</string>
     <string>Tab || FN3</string>
     <string>Space || FN3</string>
-    <string>- _ || FN3</string>
-    <string>= + || FN3</string>
-    <string>[ { || FN3</string>
-    <string>] } || FN3</string>
-    <string>\ | || FN3</string>
+    <string>ß ? \ || FN3</string>
+    <string>´ ` || FN3</string>
+    <string>ü || FN3</string>
+    <string>+ * ~ || FN3</string>
+    <string># ' || FN3</string>
     <string>Non-US # ~ || FN3</string>
-    <string>; : || FN3</string>
-    <string>' " || FN3</string>
-    <string>` ~ || FN3</string>
-    <string>, &lt; || FN3</string>
-    <string>. &gt; || FN3</string>
-    <string>/ ? || FN3</string>
+    <string>ö || FN3</string>
+    <string>ä || FN3</string>
+    <string>^ ° || FN3</string>
+    <string>, ; || FN3</string>
+    <string>. : || FN3</string>
+    <string>- _ || FN3</string>
     <string>Capslock || FN3</string>
     <string>F1 || FN3</string>
     <string>F2 || FN3</string>
@@ -1723,7 +1723,7 @@
     <string>Num 9 || FN3</string>
     <string>Num 0 || FN3</string>
     <string>Num . || FN3</string>
-    <string>Non-US \ | || FN3</string>
+    <string>\ | || FN3</string>
     <string>App || FN3</string>
     <string>Power Off || FN3</string>
     <string>Num = || FN3</string>
@@ -1759,7 +1759,7 @@
     <string>L Win || FN3</string>
     <string>R Ctrl || FN3</string>
     <string>R Shift || FN3</string>
-    <string>R Alt || FN3</string>
+    <string>R AltGr || FN3</string>
     <string>R Win || FN3</string>
     <string>-Scncde 0 || FN4</string>
     <string>-Scncde 1 || FN4</string>
@@ -1769,7 +1769,7 @@
     <string>b || FN4</string>
     <string>c || FN4</string>
     <string>d || FN4</string>
-    <string>e || FN4</string>
+    <string>e € || FN4</string>
     <string>f || FN4</string>
     <string>g || FN4</string>
     <string>h || FN4</string>
@@ -1777,7 +1777,7 @@
     <string>j || FN4</string>
     <string>k || FN4</string>
     <string>l || FN4</string>
-    <string>m || FN4</string>
+    <string>m µ || FN4</string>
     <string>n || FN4</string>
     <string>o || FN4</string>
     <string>p || FN4</string>
@@ -1792,32 +1792,32 @@
     <string>y || FN4</string>
     <string>z || FN4</string>
     <string>1 ! || FN4</string>
-    <string>2 @ || FN4</string>
-    <string>3 # || FN4</string>
+    <string>2 " ² || FN4</string>
+    <string>3 £ ² || FN4</string>
     <string>4 $ || FN4</string>
     <string>5 % || FN4</string>
-    <string>6 ^ || FN4</string>
-    <string>7 &amp; || FN4</string>
-    <string>8 * || FN4</string>
-    <string>9 ( || FN4</string>
-    <string>0 ) || FN4</string>
+    <string>6 &amp; || FN4</string>
+    <string>7 / { || FN4</string>
+    <string>8 ( [ || FN4</string>
+    <string>9 ) ] || FN4</string>
+    <string>0 = } || FN4</string>
     <string>Enter || FN4</string>
     <string>Esc || FN4</string>
     <string>Backspace || FN4</string>
     <string>Tab || FN4</string>
     <string>Space || FN4</string>
-    <string>- _ || FN4</string>
-    <string>= + || FN4</string>
-    <string>[ { || FN4</string>
-    <string>] } || FN4</string>
-    <string>\ | || FN4</string>
+    <string>ß ? \ || FN4</string>
+    <string>´ ` || FN4</string>
+    <string>ü || FN4</string>
+    <string>+ * ~ || FN4</string>
+    <string># ' || FN4</string>
     <string>Non-US # ~ || FN4</string>
-    <string>; : || FN4</string>
-    <string>' " || FN4</string>
-    <string>` ~ || FN4</string>
-    <string>, &lt; || FN4</string>
-    <string>. &gt; || FN4</string>
-    <string>/ ? || FN4</string>
+    <string>ö || FN4</string>
+    <string>ä || FN4</string>
+    <string>^ ° || FN4</string>
+    <string>, ; || FN4</string>
+    <string>. : || FN4</string>
+    <string>- _ || FN4</string>
     <string>Capslock || FN4</string>
     <string>F1 || FN4</string>
     <string>F2 || FN4</string>
@@ -1861,7 +1861,7 @@
     <string>Num 9 || FN4</string>
     <string>Num 0 || FN4</string>
     <string>Num . || FN4</string>
-    <string>Non-US \ | || FN4</string>
+    <string>\ | || FN4</string>
     <string>App || FN4</string>
     <string>Power Off || FN4</string>
     <string>Num = || FN4</string>
@@ -1897,7 +1897,7 @@
     <string>L Win || FN4</string>
     <string>R Ctrl || FN4</string>
     <string>R Shift || FN4</string>
-    <string>R Alt || FN4</string>
+    <string>R AltGr || FN4</string>
     <string>R Win || FN4</string>
     <string>-Scncde 0 || FN5</string>
     <string>-Scncde 1 || FN5</string>
@@ -1907,7 +1907,7 @@
     <string>b || FN5</string>
     <string>c || FN5</string>
     <string>d || FN5</string>
-    <string>e || FN5</string>
+    <string>e € || FN5</string>
     <string>f || FN5</string>
     <string>g || FN5</string>
     <string>h || FN5</string>
@@ -1915,7 +1915,7 @@
     <string>j || FN5</string>
     <string>k || FN5</string>
     <string>l || FN5</string>
-    <string>m || FN5</string>
+    <string>m µ || FN5</string>
     <string>n || FN5</string>
     <string>o || FN5</string>
     <string>p || FN5</string>
@@ -1930,32 +1930,32 @@
     <string>y || FN5</string>
     <string>z || FN5</string>
     <string>1 ! || FN5</string>
-    <string>2 @ || FN5</string>
-    <string>3 # || FN5</string>
+    <string>2 " ² || FN5</string>
+    <string>3 £ ² || FN5</string>
     <string>4 $ || FN5</string>
     <string>5 % || FN5</string>
-    <string>6 ^ || FN5</string>
-    <string>7 &amp; || FN5</string>
-    <string>8 * || FN5</string>
-    <string>9 ( || FN5</string>
-    <string>0 ) || FN5</string>
+    <string>6 &amp; || FN5</string>
+    <string>7 / { || FN5</string>
+    <string>8 ( [ || FN5</string>
+    <string>9 ) ] || FN5</string>
+    <string>0 = } || FN5</string>
     <string>Enter || FN5</string>
     <string>Esc || FN5</string>
     <string>Backspace || FN5</string>
     <string>Tab || FN5</string>
     <string>Space || FN5</string>
-    <string>- _ || FN5</string>
-    <string>= + || FN5</string>
-    <string>[ { || FN5</string>
-    <string>] } || FN5</string>
-    <string>\ | || FN5</string>
+    <string>ß ? \ || FN5</string>
+    <string>´ ` || FN5</string>
+    <string>ü || FN5</string>
+    <string>+ * ~ || FN5</string>
+    <string># ' || FN5</string>
     <string>Non-US # ~ || FN5</string>
-    <string>; : || FN5</string>
-    <string>' " || FN5</string>
-    <string>` ~ || FN5</string>
-    <string>, &lt; || FN5</string>
-    <string>. &gt; || FN5</string>
-    <string>/ ? || FN5</string>
+    <string>ö || FN5</string>
+    <string>ä || FN5</string>
+    <string>^ ° || FN5</string>
+    <string>, ; || FN5</string>
+    <string>. : || FN5</string>
+    <string>- _ || FN5</string>
     <string>Capslock || FN5</string>
     <string>F1 || FN5</string>
     <string>F2 || FN5</string>
@@ -1999,7 +1999,7 @@
     <string>Num 9 || FN5</string>
     <string>Num 0 || FN5</string>
     <string>Num . || FN5</string>
-    <string>Non-US \ | || FN5</string>
+    <string>\ | || FN5</string>
     <string>App || FN5</string>
     <string>Power Off || FN5</string>
     <string>Num = || FN5</string>
@@ -2035,7 +2035,7 @@
     <string>L Win || FN5</string>
     <string>R Ctrl || FN5</string>
     <string>R Shift || FN5</string>
-    <string>R Alt || FN5</string>
+    <string>R AltGr || FN5</string>
     <string>R Win || FN5</string>
     <string>-Scncde 0 || FN6</string>
     <string>-Scncde 1 || FN6</string>
@@ -2045,7 +2045,7 @@
     <string>b || FN6</string>
     <string>c || FN6</string>
     <string>d || FN6</string>
-    <string>e || FN6</string>
+    <string>e € || FN6</string>
     <string>f || FN6</string>
     <string>g || FN6</string>
     <string>h || FN6</string>
@@ -2053,7 +2053,7 @@
     <string>j || FN6</string>
     <string>k || FN6</string>
     <string>l || FN6</string>
-    <string>m || FN6</string>
+    <string>m µ || FN6</string>
     <string>n || FN6</string>
     <string>o || FN6</string>
     <string>p || FN6</string>
@@ -2068,32 +2068,32 @@
     <string>y || FN6</string>
     <string>z || FN6</string>
     <string>1 ! || FN6</string>
-    <string>2 @ || FN6</string>
-    <string>3 # || FN6</string>
+    <string>2 " ² || FN6</string>
+    <string>3 £ ² || FN6</string>
     <string>4 $ || FN6</string>
     <string>5 % || FN6</string>
-    <string>6 ^ || FN6</string>
-    <string>7 &amp; || FN6</string>
-    <string>8 * || FN6</string>
-    <string>9 ( || FN6</string>
-    <string>0 ) || FN6</string>
+    <string>6 &amp; || FN6</string>
+    <string>7 / { || FN6</string>
+    <string>8 ( [ || FN6</string>
+    <string>9 ) ] || FN6</string>
+    <string>0 = } || FN6</string>
     <string>Enter || FN6</string>
     <string>Esc || FN6</string>
     <string>Backspace || FN6</string>
     <string>Tab || FN6</string>
     <string>Space || FN6</string>
-    <string>- _ || FN6</string>
-    <string>= + || FN6</string>
-    <string>[ { || FN6</string>
-    <string>] } || FN6</string>
-    <string>\ | || FN6</string>
+    <string>ß ? \ || FN6</string>
+    <string>´ ` || FN6</string>
+    <string>ü || FN6</string>
+    <string>+ * ~ || FN6</string>
+    <string># ' || FN6</string>
     <string>Non-US # ~ || FN6</string>
-    <string>; : || FN6</string>
-    <string>' " || FN6</string>
-    <string>` ~ || FN6</string>
-    <string>, &lt; || FN6</string>
-    <string>. &gt; || FN6</string>
-    <string>/ ? || FN6</string>
+    <string>ö || FN6</string>
+    <string>ä || FN6</string>
+    <string>^ ° || FN6</string>
+    <string>, ; || FN6</string>
+    <string>. : || FN6</string>
+    <string>- _ || FN6</string>
     <string>Capslock || FN6</string>
     <string>F1 || FN6</string>
     <string>F2 || FN6</string>
@@ -2137,7 +2137,7 @@
     <string>Num 9 || FN6</string>
     <string>Num 0 || FN6</string>
     <string>Num . || FN6</string>
-    <string>Non-US \ | || FN6</string>
+    <string>\ | || FN6</string>
     <string>App || FN6</string>
     <string>Power Off || FN6</string>
     <string>Num = || FN6</string>
@@ -2173,7 +2173,7 @@
     <string>L Win || FN6</string>
     <string>R Ctrl || FN6</string>
     <string>R Shift || FN6</string>
-    <string>R Alt || FN6</string>
+    <string>R AltGr || FN6</string>
     <string>R Win || FN6</string>
     <string>-Scncde 0 + Ctrl + Shift</string>
     <string>-Scncde 1 + Ctrl + Shift</string>
@@ -2183,7 +2183,7 @@
     <string>b + Ctrl + Shift</string>
     <string>c + Ctrl + Shift</string>
     <string>d + Ctrl + Shift</string>
-    <string>e + Ctrl + Shift</string>
+    <string>e € + Ctrl + Shift</string>
     <string>f + Ctrl + Shift</string>
     <string>g + Ctrl + Shift</string>
     <string>h + Ctrl + Shift</string>
@@ -2191,7 +2191,7 @@
     <string>j + Ctrl + Shift</string>
     <string>k + Ctrl + Shift</string>
     <string>l + Ctrl + Shift</string>
-    <string>m + Ctrl + Shift</string>
+    <string>m µ + Ctrl + Shift</string>
     <string>n + Ctrl + Shift</string>
     <string>o + Ctrl + Shift</string>
     <string>p + Ctrl + Shift</string>
@@ -2206,32 +2206,32 @@
     <string>y + Ctrl + Shift</string>
     <string>z + Ctrl + Shift</string>
     <string>1 ! + Ctrl + Shift</string>
-    <string>2 @ + Ctrl + Shift</string>
-    <string>3 # + Ctrl + Shift</string>
+    <string>2 " ² + Ctrl + Shift</string>
+    <string>3 £ ² + Ctrl + Shift</string>
     <string>4 $ + Ctrl + Shift</string>
     <string>5 % + Ctrl + Shift</string>
-    <string>6 ^ + Ctrl + Shift</string>
-    <string>7 &amp; + Ctrl + Shift</string>
-    <string>8 * + Ctrl + Shift</string>
-    <string>9 ( + Ctrl + Shift</string>
-    <string>0 ) + Ctrl + Shift</string>
+    <string>6 &amp; + Ctrl + Shift</string>
+    <string>7 / { + Ctrl + Shift</string>
+    <string>8 ( [ + Ctrl + Shift</string>
+    <string>9 ) ] + Ctrl + Shift</string>
+    <string>0 = } + Ctrl + Shift</string>
     <string>Enter + Ctrl + Shift</string>
     <string>Esc + Ctrl + Shift</string>
     <string>Backspace + Ctrl + Shift</string>
     <string>Tab + Ctrl + Shift</string>
     <string>Space + Ctrl + Shift</string>
-    <string>- _ + Ctrl + Shift</string>
-    <string>= + + Ctrl + Shift</string>
-    <string>[ { + Ctrl + Shift</string>
-    <string>] } + Ctrl + Shift</string>
-    <string>\ | + Ctrl + Shift</string>
+    <string>ß ? \ + Ctrl + Shift</string>
+    <string>´ ` + Ctrl + Shift</string>
+    <string>ü + Ctrl + Shift</string>
+    <string>+ * ~ + Ctrl + Shift</string>
+    <string># ' + Ctrl + Shift</string>
     <string>Non-US # ~ + Ctrl + Shift</string>
-    <string>; : + Ctrl + Shift</string>
-    <string>' " + Ctrl + Shift</string>
-    <string>` ~ + Ctrl + Shift</string>
-    <string>, &lt; + Ctrl + Shift</string>
-    <string>. &gt; + Ctrl + Shift</string>
-    <string>/ ? + Ctrl + Shift</string>
+    <string>ö + Ctrl + Shift</string>
+    <string>ä + Ctrl + Shift</string>
+    <string>^ ° + Ctrl + Shift</string>
+    <string>, ; + Ctrl + Shift</string>
+    <string>. : + Ctrl + Shift</string>
+    <string>- _ + Ctrl + Shift</string>
     <string>Capslock + Ctrl + Shift</string>
     <string>F1 + Ctrl + Shift</string>
     <string>F2 + Ctrl + Shift</string>
@@ -2275,7 +2275,7 @@
     <string>Num 9 + Ctrl + Shift</string>
     <string>Num 0 + Ctrl + Shift</string>
     <string>Num . + Ctrl + Shift</string>
-    <string>Non-US \ | + Ctrl + Shift</string>
+    <string>\ | + Ctrl + Shift</string>
     <string>App + Ctrl + Shift</string>
     <string>Power Off + Ctrl + Shift</string>
     <string>Num = + Ctrl + Shift</string>
@@ -2311,7 +2311,7 @@
     <string>L Win + Ctrl + Shift</string>
     <string>R Ctrl + Ctrl + Shift</string>
     <string>R Shift + Ctrl + Shift</string>
-    <string>R Alt + Ctrl + Shift</string>
+    <string>R AltGr + Ctrl + Shift</string>
     <string>R Win + Ctrl + Shift</string>
     <string>-Scncde 0 + Ctrl + Shift + Alt</string>
     <string>-Scncde 1 + Ctrl + Shift + Alt</string>
@@ -2321,7 +2321,7 @@
     <string>b + Ctrl + Shift + Alt</string>
     <string>c + Ctrl + Shift + Alt</string>
     <string>d + Ctrl + Shift + Alt</string>
-    <string>e + Ctrl + Shift + Alt</string>
+    <string>e € + Ctrl + Shift + Alt</string>
     <string>f + Ctrl + Shift + Alt</string>
     <string>g + Ctrl + Shift + Alt</string>
     <string>h + Ctrl + Shift + Alt</string>
@@ -2329,7 +2329,7 @@
     <string>j + Ctrl + Shift + Alt</string>
     <string>k + Ctrl + Shift + Alt</string>
     <string>l + Ctrl + Shift + Alt</string>
-    <string>m + Ctrl + Shift + Alt</string>
+    <string>m µ + Ctrl + Shift + Alt</string>
     <string>n + Ctrl + Shift + Alt</string>
     <string>o + Ctrl + Shift + Alt</string>
     <string>p + Ctrl + Shift + Alt</string>
@@ -2344,32 +2344,32 @@
     <string>y + Ctrl + Shift + Alt</string>
     <string>z + Ctrl + Shift + Alt</string>
     <string>1 ! + Ctrl + Shift + Alt</string>
-    <string>2 @ + Ctrl + Shift + Alt</string>
-    <string>3 # + Ctrl + Shift + Alt</string>
+    <string>2 " ² + Ctrl + Shift + Alt</string>
+    <string>3 £ ² + Ctrl + Shift + Alt</string>
     <string>4 $ + Ctrl + Shift + Alt</string>
     <string>5 % + Ctrl + Shift + Alt</string>
-    <string>6 ^ + Ctrl + Shift + Alt</string>
-    <string>7 &amp; + Ctrl + Shift + Alt</string>
-    <string>8 * + Ctrl + Shift + Alt</string>
-    <string>9 ( + Ctrl + Shift + Alt</string>
-    <string>0 ) + Ctrl + Shift + Alt</string>
+    <string>6 &amp; + Ctrl + Shift + Alt</string>
+    <string>7 / { + Ctrl + Shift + Alt</string>
+    <string>8 ( [ + Ctrl + Shift + Alt</string>
+    <string>9 ) ] + Ctrl + Shift + Alt</string>
+    <string>0 = } + Ctrl + Shift + Alt</string>
     <string>Enter + Ctrl + Shift + Alt</string>
     <string>Esc + Ctrl + Shift + Alt</string>
     <string>Backspace + Ctrl + Shift + Alt</string>
     <string>Tab + Ctrl + Shift + Alt</string>
     <string>Space + Ctrl + Shift + Alt</string>
-    <string>- _ + Ctrl + Shift + Alt</string>
-    <string>= + + Ctrl + Shift + Alt</string>
-    <string>[ { + Ctrl + Shift + Alt</string>
-    <string>] } + Ctrl + Shift + Alt</string>
-    <string>\ | + Ctrl + Shift + Alt</string>
+    <string>ß ? \ + Ctrl + Shift + Alt</string>
+    <string>´ ` + Ctrl + Shift + Alt</string>
+    <string>ü + Ctrl + Shift + Alt</string>
+    <string>+ * ~ + Ctrl + Shift + Alt</string>
+    <string># ' + Ctrl + Shift + Alt</string>
     <string>Non-US # ~ + Ctrl + Shift + Alt</string>
-    <string>; : + Ctrl + Shift + Alt</string>
-    <string>' " + Ctrl + Shift + Alt</string>
-    <string>` ~ + Ctrl + Shift + Alt</string>
-    <string>, &lt; + Ctrl + Shift + Alt</string>
-    <string>. &gt; + Ctrl + Shift + Alt</string>
-    <string>/ ? + Ctrl + Shift + Alt</string>
+    <string>ö + Ctrl + Shift + Alt</string>
+    <string>ä + Ctrl + Shift + Alt</string>
+    <string>^ ° + Ctrl + Shift + Alt</string>
+    <string>, ; + Ctrl + Shift + Alt</string>
+    <string>. : + Ctrl + Shift + Alt</string>
+    <string>- _ + Ctrl + Shift + Alt</string>
     <string>Capslock + Ctrl + Shift + Alt</string>
     <string>F1 + Ctrl + Shift + Alt</string>
     <string>F2 + Ctrl + Shift + Alt</string>
@@ -2413,7 +2413,7 @@
     <string>Num 9 + Ctrl + Shift + Alt</string>
     <string>Num 0 + Ctrl + Shift + Alt</string>
     <string>Num . + Ctrl + Shift + Alt</string>
-    <string>Non-US \ | + Ctrl + Shift + Alt</string>
+    <string>\ | + Ctrl + Shift + Alt</string>
     <string>App + Ctrl + Shift + Alt</string>
     <string>Power Off + Ctrl + Shift + Alt</string>
     <string>Num = + Ctrl + Shift + Alt</string>
@@ -2449,7 +2449,7 @@
     <string>L Win + Ctrl + Shift + Alt</string>
     <string>R Ctrl + Ctrl + Shift + Alt</string>
     <string>R Shift + Ctrl + Shift + Alt</string>
-    <string>R Alt + Ctrl + Shift + Alt</string>
+    <string>R AltGr + Ctrl + Shift + Alt</string>
     <string>R Win + Ctrl + Shift + Alt</string>
     <string>-Scncde 0 + Ctrl + Alt</string>
     <string>-Scncde 1 + Ctrl + Alt</string>
@@ -2459,7 +2459,7 @@
     <string>b + Ctrl + Alt</string>
     <string>c + Ctrl + Alt</string>
     <string>d + Ctrl + Alt</string>
-    <string>e + Ctrl + Alt</string>
+    <string>e € + Ctrl + Alt</string>
     <string>f + Ctrl + Alt</string>
     <string>g + Ctrl + Alt</string>
     <string>h + Ctrl + Alt</string>
@@ -2467,7 +2467,7 @@
     <string>j + Ctrl + Alt</string>
     <string>k + Ctrl + Alt</string>
     <string>l + Ctrl + Alt</string>
-    <string>m + Ctrl + Alt</string>
+    <string>m µ + Ctrl + Alt</string>
     <string>n + Ctrl + Alt</string>
     <string>o + Ctrl + Alt</string>
     <string>p + Ctrl + Alt</string>
@@ -2482,32 +2482,32 @@
     <string>y + Ctrl + Alt</string>
     <string>z + Ctrl + Alt</string>
     <string>1 ! + Ctrl + Alt</string>
-    <string>2 @ + Ctrl + Alt</string>
-    <string>3 # + Ctrl + Alt</string>
+    <string>2 " ² + Ctrl + Alt</string>
+    <string>3 £ ² + Ctrl + Alt</string>
     <string>4 $ + Ctrl + Alt</string>
     <string>5 % + Ctrl + Alt</string>
-    <string>6 ^ + Ctrl + Alt</string>
-    <string>7 &amp; + Ctrl + Alt</string>
-    <string>8 * + Ctrl + Alt</string>
-    <string>9 ( + Ctrl + Alt</string>
-    <string>0 ) + Ctrl + Alt</string>
+    <string>6 &amp; + Ctrl + Alt</string>
+    <string>7 / { + Ctrl + Alt</string>
+    <string>8 ( [ + Ctrl + Alt</string>
+    <string>9 ) ] + Ctrl + Alt</string>
+    <string>0 = } + Ctrl + Alt</string>
     <string>Enter + Ctrl + Alt</string>
     <string>Esc + Ctrl + Alt</string>
     <string>Backspace + Ctrl + Alt</string>
     <string>Tab + Ctrl + Alt</string>
     <string>Space + Ctrl + Alt</string>
-    <string>- _ + Ctrl + Alt</string>
-    <string>= + + Ctrl + Alt</string>
-    <string>[ { + Ctrl + Alt</string>
-    <string>] } + Ctrl + Alt</string>
-    <string>\ | + Ctrl + Alt</string>
+    <string>ß ? \ + Ctrl + Alt</string>
+    <string>´ ` + Ctrl + Alt</string>
+    <string>ü + Ctrl + Alt</string>
+    <string>+ * ~ + Ctrl + Alt</string>
+    <string># ' + Ctrl + Alt</string>
     <string>Non-US # ~ + Ctrl + Alt</string>
-    <string>; : + Ctrl + Alt</string>
-    <string>' " + Ctrl + Alt</string>
-    <string>` ~ + Ctrl + Alt</string>
-    <string>, &lt; + Ctrl + Alt</string>
-    <string>. &gt; + Ctrl + Alt</string>
-    <string>/ ? + Ctrl + Alt</string>
+    <string>ö + Ctrl + Alt</string>
+    <string>ä + Ctrl + Alt</string>
+    <string>^ ° + Ctrl + Alt</string>
+    <string>, ; + Ctrl + Alt</string>
+    <string>. : + Ctrl + Alt</string>
+    <string>- _ + Ctrl + Alt</string>
     <string>Capslock + Ctrl + Alt</string>
     <string>F1 + Ctrl + Alt</string>
     <string>F2 + Ctrl + Alt</string>
@@ -2551,7 +2551,7 @@
     <string>Num 9 + Ctrl + Alt</string>
     <string>Num 0 + Ctrl + Alt</string>
     <string>Num . + Ctrl + Alt</string>
-    <string>Non-US \ | + Ctrl + Alt</string>
+    <string>\ | + Ctrl + Alt</string>
     <string>App + Ctrl + Alt</string>
     <string>Power Off + Ctrl + Alt</string>
     <string>Num = + Ctrl + Alt</string>
@@ -2587,7 +2587,7 @@
     <string>L Win + Ctrl + Alt</string>
     <string>R Ctrl + Ctrl + Alt</string>
     <string>R Shift + Ctrl + Alt</string>
-    <string>R Alt + Ctrl + Alt</string>
+    <string>R AltGr + Ctrl + Alt</string>
     <string>R Win + Ctrl + Alt</string>
     <string>-Scncde 0 + Shift + Alt</string>
     <string>-Scncde 1 + Shift + Alt</string>
@@ -2597,7 +2597,7 @@
     <string>b + Shift + Alt</string>
     <string>c + Shift + Alt</string>
     <string>d + Shift + Alt</string>
-    <string>e + Shift + Alt</string>
+    <string>e € + Shift + Alt</string>
     <string>f + Shift + Alt</string>
     <string>g + Shift + Alt</string>
     <string>h + Shift + Alt</string>
@@ -2605,7 +2605,7 @@
     <string>j + Shift + Alt</string>
     <string>k + Shift + Alt</string>
     <string>l + Shift + Alt</string>
-    <string>m + Shift + Alt</string>
+    <string>m µ + Shift + Alt</string>
     <string>n + Shift + Alt</string>
     <string>o + Shift + Alt</string>
     <string>p + Shift + Alt</string>
@@ -2620,32 +2620,32 @@
     <string>y + Shift + Alt</string>
     <string>z + Shift + Alt</string>
     <string>1 ! + Shift + Alt</string>
-    <string>2 @ + Shift + Alt</string>
-    <string>3 # + Shift + Alt</string>
+    <string>2 " ² + Shift + Alt</string>
+    <string>3 £ ² + Shift + Alt</string>
     <string>4 $ + Shift + Alt</string>
     <string>5 % + Shift + Alt</string>
-    <string>6 ^ + Shift + Alt</string>
-    <string>7 &amp; + Shift + Alt</string>
-    <string>8 * + Shift + Alt</string>
-    <string>9 ( + Shift + Alt</string>
-    <string>0 ) + Shift + Alt</string>
+    <string>6 &amp; + Shift + Alt</string>
+    <string>7 / { + Shift + Alt</string>
+    <string>8 ( [ + Shift + Alt</string>
+    <string>9 ) ] + Shift + Alt</string>
+    <string>0 = } + Shift + Alt</string>
     <string>Enter + Shift + Alt</string>
     <string>Esc + Shift + Alt</string>
     <string>Backspace + Shift + Alt</string>
     <string>Tab + Shift + Alt</string>
     <string>Space + Shift + Alt</string>
-    <string>- _ + Shift + Alt</string>
-    <string>= + + Shift + Alt</string>
-    <string>[ { + Shift + Alt</string>
-    <string>] } + Shift + Alt</string>
-    <string>\ | + Shift + Alt</string>
+    <string>ß ? \ + Shift + Alt</string>
+    <string>´ ` + Shift + Alt</string>
+    <string>ü + Shift + Alt</string>
+    <string>+ * ~ + Shift + Alt</string>
+    <string># ' + Shift + Alt</string>
     <string>Non-US # ~ + Shift + Alt</string>
-    <string>; : + Shift + Alt</string>
-    <string>' " + Shift + Alt</string>
-    <string>` ~ + Shift + Alt</string>
-    <string>, &lt; + Shift + Alt</string>
-    <string>. &gt; + Shift + Alt</string>
-    <string>/ ? + Shift + Alt</string>
+    <string>ö + Shift + Alt</string>
+    <string>ä + Shift + Alt</string>
+    <string>^ ° + Shift + Alt</string>
+    <string>, ; + Shift + Alt</string>
+    <string>. : + Shift + Alt</string>
+    <string>- _ + Shift + Alt</string>
     <string>Capslock + Shift + Alt</string>
     <string>F1 + Shift + Alt</string>
     <string>F2 + Shift + Alt</string>
@@ -2689,7 +2689,7 @@
     <string>Num 9 + Shift + Alt</string>
     <string>Num 0 + Shift + Alt</string>
     <string>Num . + Shift + Alt</string>
-    <string>Non-US \ | + Shift + Alt</string>
+    <string>\ | + Shift + Alt</string>
     <string>App + Shift + Alt</string>
     <string>Power Off + Shift + Alt</string>
     <string>Num = + Shift + Alt</string>
@@ -2725,7 +2725,7 @@
     <string>L Win + Shift + Alt</string>
     <string>R Ctrl + Shift + Alt</string>
     <string>R Shift + Shift + Alt</string>
-    <string>R Alt + Shift + Alt</string>
+    <string>R AltGr + Shift + Alt</string>
     <string>R Win + Shift + Alt</string>
     <string>StickyCtrl</string>
     <string>StickyShift</string>
@@ -5529,62 +5529,62 @@
     <int>4</int>
     <int>4</int>
     <int>4</int>
+    <int>0</int>
     <int>2</int>
-    <int>2</int>
-    <int>2</int>
+    <int>0</int>
     <int>2</int>
     <int>2</int>
     <int>25</int>
+    <int>0</int>
+    <int>0</int>
     <int>2</int>
     <int>2</int>
     <int>2</int>
     <int>2</int>
+    <int>4</int>
+    <int>4</int>
+    <int>4</int>
+    <int>4</int>
+    <int>4</int>
+    <int>4</int>
+    <int>4</int>
+    <int>4</int>
+    <int>4</int>
+    <int>4</int>
+    <int>4</int>
+    <int>4</int>
+    <int>4</int>
+    <int>4</int>
+    <int>4</int>
+    <int>4</int>
+    <int>4</int>
+    <int>4</int>
+    <int>4</int>
+    <int>4</int>
+    <int>4</int>
+    <int>4</int>
+    <int>4</int>
+    <int>4</int>
+    <int>4</int>
+    <int>4</int>
+    <int>4</int>
+    <int>3</int>
+    <int>3</int>
+    <int>3</int>
+    <int>3</int>
+    <int>3</int>
+    <int>3</int>
+    <int>3</int>
+    <int>3</int>
+    <int>3</int>
+    <int>3</int>
+    <int>3</int>
+    <int>3</int>
+    <int>3</int>
+    <int>3</int>
+    <int>3</int>
+    <int>3</int>
     <int>2</int>
-    <int>2</int>
-    <int>4</int>
-    <int>4</int>
-    <int>4</int>
-    <int>4</int>
-    <int>4</int>
-    <int>4</int>
-    <int>4</int>
-    <int>4</int>
-    <int>4</int>
-    <int>4</int>
-    <int>4</int>
-    <int>4</int>
-    <int>4</int>
-    <int>4</int>
-    <int>4</int>
-    <int>4</int>
-    <int>4</int>
-    <int>4</int>
-    <int>4</int>
-    <int>4</int>
-    <int>4</int>
-    <int>4</int>
-    <int>4</int>
-    <int>4</int>
-    <int>4</int>
-    <int>4</int>
-    <int>4</int>
-    <int>3</int>
-    <int>3</int>
-    <int>3</int>
-    <int>3</int>
-    <int>3</int>
-    <int>3</int>
-    <int>3</int>
-    <int>3</int>
-    <int>3</int>
-    <int>3</int>
-    <int>3</int>
-    <int>3</int>
-    <int>3</int>
-    <int>3</int>
-    <int>3</int>
-    <int>3</int>
-    <int>25</int>
     <int>4</int>
     <int>25</int>
     <int>25</int>

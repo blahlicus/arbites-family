@@ -30,10 +30,13 @@ namespace ArbitesEto2
         
         public void Init()
         {
+            int gIndex = 0;
             foreach (var str in MdSessionData.CurrentInputMethod.Groups)
             {
                 var tp = new TabPage();
                 tp.Text = str;
+                tp.Tag = gIndex;
+                gIndex++;
 
                 var sc = new Scrollable();
                 sc.Border = BorderType.None;
@@ -103,11 +106,15 @@ namespace ArbitesEto2
 
         public void ReloadInputMethod()
         {
+            // key menu needs to be reloaded
+            /*
             foreach (var btn in this.buttons)
             {
                 btn.Text = MdSessionData.CurrentInputMethod.GetDisplay(Convert.ToInt32(btn.Tag.ToString()));
                 btn.ToolTip = btn.Text;
             }
+            //*/
+            this.Close();
         }
 
         private void SelectKey(object sender)
