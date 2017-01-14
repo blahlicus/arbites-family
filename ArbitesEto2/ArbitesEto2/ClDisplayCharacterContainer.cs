@@ -105,39 +105,39 @@ namespace ArbitesEto2
         {
             var dcc = new ClDisplayCharacterContainer();
 
-            dcc.Groups.Add("Alphabets");
-            dcc.Groups.Add("Numbers");
-            dcc.Groups.Add("Symbols");
-            dcc.Groups.Add("Numpad");
-            dcc.Groups.Add("Controls");
-            dcc.Groups.Add("Specials");
-            dcc.Groups.Add("Shifted");
-            dcc.Groups.Add("Ctrl'd");
-            dcc.Groups.Add("Alt'd");
-            dcc.Groups.Add("AltGr'd");
-            dcc.Groups.Add("Ctrl Shift'd");
-            dcc.Groups.Add("Ctrl Shift Alt'd");
-            dcc.Groups.Add("Ctrl Alt'd");
-            dcc.Groups.Add("Shift Alt'd");
-            dcc.Groups.Add("2Role Ctrl"); //11
-            dcc.Groups.Add("2Role Shift"); //12
-            dcc.Groups.Add("2Role Alt"); //13
-            dcc.Groups.Add("2Role AltGr"); //14
-            dcc.Groups.Add("2Role FN"); //15
-            dcc.Groups.Add("2Role FN2"); //16
-            dcc.Groups.Add("2Role FN3"); //17
-            dcc.Groups.Add("2Role FN4"); //18
-            dcc.Groups.Add("2Role FN5"); //19
-            dcc.Groups.Add("2Role FN6"); //20
-            dcc.Groups.Add("Sticky"); //21
-            dcc.Groups.Add("Others"); //22
+            dcc.Groups.Add("Alphabets"); //0
+            dcc.Groups.Add("Numbers"); //1
+            dcc.Groups.Add("Symbols"); //2
+            dcc.Groups.Add("Numpad"); //3
+            dcc.Groups.Add("Controls"); //4
+            dcc.Groups.Add("Specials"); //5
+            dcc.Groups.Add("Shifted"); //6
+            dcc.Groups.Add("Ctrl'd"); //7
+            dcc.Groups.Add("Alt'd"); //8
+            dcc.Groups.Add("AltGr'd"); //9
+            dcc.Groups.Add("Ctrl Shift'd"); //10
+            dcc.Groups.Add("Ctrl Shift Alt'd"); //11
+            dcc.Groups.Add("Ctrl Alt'd"); //12
+            dcc.Groups.Add("Shift Alt'd"); //13
+            dcc.Groups.Add("2Role Ctrl"); //14
+            dcc.Groups.Add("2Role Shift"); //15
+            dcc.Groups.Add("2Role Alt"); //16
+            dcc.Groups.Add("2Role AltGr"); //17
+            dcc.Groups.Add("2Role FN"); //18
+            dcc.Groups.Add("2Role FN2"); //19
+            dcc.Groups.Add("2Role FN3"); //20
+            dcc.Groups.Add("2Role FN4"); //21
+            dcc.Groups.Add("2Role FN5"); //22
+            dcc.Groups.Add("2Role FN6"); //23
+            dcc.Groups.Add("Sticky"); //24
+            dcc.Groups.Add("Others"); //25
 
             // keyboard HID codes
             dcc.Name = "US ANSI";
-            dcc.AddKey(0, "-Scncde 0", 21);
-            dcc.AddKey(1, "-Scncde 1", 21);
-            dcc.AddKey(2, "-Scncde 2", 21);
-            dcc.AddKey(3, "-Scncde 3", 21);
+            dcc.AddKey(0, "-Scncde 0", 25);
+            dcc.AddKey(1, "-Scncde 1", 25);
+            dcc.AddKey(2, "-Scncde 2", 25);
+            dcc.AddKey(3, "-Scncde 3", 25);
             dcc.AddKey(4, "a", 0);
             dcc.AddKey(5, "b", 0);
             dcc.AddKey(6, "c", 0);
@@ -184,7 +184,7 @@ namespace ArbitesEto2
             dcc.AddKey(47, "[ {", 2);
             dcc.AddKey(48, "] }", 2);
             dcc.AddKey(49, @"\ |", 2);
-            dcc.AddKey(50, "Non-US # ~", 21);
+            dcc.AddKey(50, "Non-US # ~", 25);
             dcc.AddKey(51, "; :", 2);
             dcc.AddKey(52, @"' """, 2);
             dcc.AddKey(53, "` ~", 2);
@@ -234,36 +234,36 @@ namespace ArbitesEto2
             dcc.AddKey(97, "Num 9", 3);
             dcc.AddKey(98, "Num 0", 3);
             dcc.AddKey(99, "Num .", 3);
-            dcc.AddKey(100, @"Non-US \ |", 21);
+            dcc.AddKey(100, @"Non-US \ |", 25);
             dcc.AddKey(101, "App", 4);
-            dcc.AddKey(102, "Power Off", 21);
-            dcc.AddKey(103, "Num =", 21);
-            dcc.AddKey(104, "F13", 21);
-            dcc.AddKey(105, "F14", 21);
-            dcc.AddKey(106, "F15", 21);
-            dcc.AddKey(107, "F16", 21);
-            dcc.AddKey(108, "F17", 21);
-            dcc.AddKey(109, "F18", 21);
-            dcc.AddKey(110, "F19", 21);
-            dcc.AddKey(111, "F20", 21);
-            dcc.AddKey(112, "F21", 21);
-            dcc.AddKey(113, "F22", 21);
-            dcc.AddKey(114, "F23", 21);
-            dcc.AddKey(115, "F24", 21);
-            dcc.AddKey(116, "-Scncde 116", 21);
-            dcc.AddKey(117, "KB Help", 21);
+            dcc.AddKey(102, "Power Off", 25);
+            dcc.AddKey(103, "Num =", 25);
+            dcc.AddKey(104, "F13", 25);
+            dcc.AddKey(105, "F14", 25);
+            dcc.AddKey(106, "F15", 25);
+            dcc.AddKey(107, "F16", 25);
+            dcc.AddKey(108, "F17", 25);
+            dcc.AddKey(109, "F18", 25);
+            dcc.AddKey(110, "F19", 25);
+            dcc.AddKey(111, "F20", 25);
+            dcc.AddKey(112, "F21", 25);
+            dcc.AddKey(113, "F22", 25);
+            dcc.AddKey(114, "F23", 25);
+            dcc.AddKey(115, "F24", 25);
+            dcc.AddKey(116, "-Scncde 116", 25);
+            dcc.AddKey(117, "KB Help", 25);
             dcc.AddKey(118, "Menu", 4);
-            dcc.AddKey(119, "KB Select", 21);
-            dcc.AddKey(120, "KB Stop", 21);
-            dcc.AddKey(121, "KB Again", 21);
-            dcc.AddKey(122, "KB Undo", 21);
-            dcc.AddKey(123, "KB Cut", 21);
-            dcc.AddKey(124, "KB Copy", 21);
-            dcc.AddKey(125, "KB Paste", 21);
-            dcc.AddKey(126, "KB Find", 21);
-            dcc.AddKey(127, "KB Mute", 21);
-            dcc.AddKey(128, "KB Vol Up", 21);
-            dcc.AddKey(129, "KB Vol Dn", 21);
+            dcc.AddKey(119, "KB Select", 25);
+            dcc.AddKey(120, "KB Stop", 25);
+            dcc.AddKey(121, "KB Again", 25);
+            dcc.AddKey(122, "KB Undo", 25);
+            dcc.AddKey(123, "KB Cut", 25);
+            dcc.AddKey(124, "KB Copy", 25);
+            dcc.AddKey(125, "KB Paste", 25);
+            dcc.AddKey(126, "KB Find", 25);
+            dcc.AddKey(127, "KB Mute", 25);
+            dcc.AddKey(128, "KB Vol Up", 25);
+            dcc.AddKey(129, "KB Vol Dn", 25);
             dcc.AddKey(224, "L Ctrl", 4);
             dcc.AddKey(225, "L Shift", 4);
             dcc.AddKey(226, "L Alt", 4);
@@ -384,11 +384,6 @@ namespace ArbitesEto2
             AddHIDSubGroup(dcc, 11, 8, "", " + Alt");
             AddHIDSubGroup(dcc, 14, 9, "", " + AltGr");
 
-            AddHIDSubGroup(dcc, 47, 10, "", " + Ctrl + Shift");
-            AddHIDSubGroup(dcc, 50, 11, "", " + Ctrl + Shift + Alt");
-            AddHIDSubGroup(dcc, 53, 12, "", " + Ctrl + Alt");
-            AddHIDSubGroup(dcc, 56, 13, "", " + Shift + Alt");
-
             AddHIDSubGroup(dcc, 17, 14, "", " || Ctrl");
             AddHIDSubGroup(dcc, 20, 15, "", " || Shift");
             AddHIDSubGroup(dcc, 23, 16, "", " || Alt");
@@ -401,18 +396,24 @@ namespace ArbitesEto2
             AddHIDSubGroup(dcc, 44, 23, "", " || FN6");
 
 
+            AddHIDSubGroup(dcc, 47, 10, "", " + Ctrl + Shift");
+            AddHIDSubGroup(dcc, 50, 11, "", " + Ctrl + Shift + Alt");
+            AddHIDSubGroup(dcc, 53, 12, "", " + Ctrl + Alt");
+            AddHIDSubGroup(dcc, 56, 13, "", " + Shift + Alt");
+
+
+            MessageBox.Show("lala1");
             // stickyctrl
-            dcc.AddKey(4700, "StickyCtrl", 20);
-            dcc.AddKey(4701, "StickyShift", 20);
-            dcc.AddKey(4702, "StickyAlt", 20);
-            dcc.AddKey(4703, "StickyAltGr", 20);
-            dcc.AddKey(4704, "StickyCtrl", 20);
+            dcc.AddKey(5900, "StickyCtrl", 24);
+            dcc.AddKey(5901, "StickyShift", 24);
+            dcc.AddKey(5902, "StickyAlt", 24);
+            dcc.AddKey(5903, "StickyAltGr", 24);
 
 
             int ctr = 1;
-            for (int i = 4704; i < 4714; i++)
+            for (int i = 5904; i < 5914; i++)
             {
-                dcc.AddKey(i, "StickyFN" + Convert.ToString(ctr), 20);
+                dcc.AddKey(i, "StickyFN" + Convert.ToString(ctr), 24);
                 ctr++;
             }
 

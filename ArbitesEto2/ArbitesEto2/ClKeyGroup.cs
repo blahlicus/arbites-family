@@ -22,7 +22,7 @@ namespace ArbitesEto2
         }
 
 
-        public static List<ClKey> GenereateSubHIDSet(ClKeyGroup kg, int first2Digits, byte keyType)
+        public static List<ClKey> GenereateSubHIDSet(ClKeyGroup kg, int first2Digits, byte keyType, bool overrideAllLayers = false)
         {
             var dat = kg.Keys.Where(ele => ele.DisplayID >= 0 && ele.DisplayID < 300).ToList();
             var output = new List<ClKey>();
@@ -32,6 +32,10 @@ namespace ArbitesEto2
                 var key = new ClKey(ele);
                 key.DisplayID = sid;
                 key.KeyType = keyType;
+                if (overrideAllLayers)
+                {
+                    key.AllLayers = overrideAllLayers;
+                }
                 output.Add(key);
             }
             return output;
@@ -301,17 +305,17 @@ namespace ArbitesEto2
             kg.Keys.AddRange(ClKeyGroup.GenereateSubHIDSet(kg, 23, 22));
             kg.Keys.AddRange(ClKeyGroup.GenereateSubHIDSet(kg, 26, 23));
             // dual roles fn1
-            kg.Keys.AddRange(ClKeyGroup.GenereateSubHIDSet(kg, 29, 24));
+            kg.Keys.AddRange(ClKeyGroup.GenereateSubHIDSet(kg, 29, 24, true));
             // dual roles fn2
-            kg.Keys.AddRange(ClKeyGroup.GenereateSubHIDSet(kg, 32, 25));
+            kg.Keys.AddRange(ClKeyGroup.GenereateSubHIDSet(kg, 32, 25, true));
             // dual roles fn3
-            kg.Keys.AddRange(ClKeyGroup.GenereateSubHIDSet(kg, 35, 26));
+            kg.Keys.AddRange(ClKeyGroup.GenereateSubHIDSet(kg, 35, 26, true));
             // dual roles fn4
-            kg.Keys.AddRange(ClKeyGroup.GenereateSubHIDSet(kg, 38, 27));
+            kg.Keys.AddRange(ClKeyGroup.GenereateSubHIDSet(kg, 38, 27, true));
             // dual roles fn5
-            kg.Keys.AddRange(ClKeyGroup.GenereateSubHIDSet(kg, 41, 28));
+            kg.Keys.AddRange(ClKeyGroup.GenereateSubHIDSet(kg, 41, 28, true));
             // dual roles fn6
-            kg.Keys.AddRange(ClKeyGroup.GenereateSubHIDSet(kg, 44, 29));
+            kg.Keys.AddRange(ClKeyGroup.GenereateSubHIDSet(kg, 44, 29, true));
 
             kg.Keys.AddRange(ClKeyGroup.GenereateSubHIDSet(kg, 47, 15));
             kg.Keys.AddRange(ClKeyGroup.GenereateSubHIDSet(kg, 50, 16));
@@ -320,16 +324,16 @@ namespace ArbitesEto2
 
 
             // stickyctrl
-            kg.Keys.Add(new ClKey(4700, 0, 0, 30, false, false));
+            kg.Keys.Add(new ClKey(5900, 0, 0, 30, false, false));
             // stickyctrl
-            kg.Keys.Add(new ClKey(4701, 0, 1, 30, false, false));
+            kg.Keys.Add(new ClKey(5901, 0, 1, 30, false, false));
             // stickyctrl
-            kg.Keys.Add(new ClKey(4702, 0, 2, 30, false, false));
+            kg.Keys.Add(new ClKey(5902, 0, 2, 30, false, false));
             // stickyctrl
-            kg.Keys.Add(new ClKey(4703, 0, 3, 30, false, false));
+            kg.Keys.Add(new ClKey(5903, 0, 3, 30, false, false));
 
             byte ctr = 4;
-            for (int i = 4704; i < 4714; i++)
+            for (int i = 5904; i < 5914; i++)
             {
 
                 kg.Keys.Add(new ClKey(i, 0, ctr, 30, true, false));
