@@ -235,6 +235,14 @@ namespace ArbitesEto2
                 }
             }
 
+            foreach (var item in this.DDDelay.Items)
+            {
+                if (Convert.ToInt32(item.ToString()) == Data.Delay)
+                {
+                    this.DDDelay.SelectedValue = item;
+                }
+            }
+
             this.LTip.Text = "Currently editing tap dance key \"tapdance" + this.Data.Index + "\"";
             this.LKeyAmount.Text = "Capacity: " + this.Data.Keys.Count + " out of 3 keys.";
         }

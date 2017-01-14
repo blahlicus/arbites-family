@@ -402,7 +402,6 @@ namespace ArbitesEto2
             AddHIDSubGroup(dcc, 56, 13, "", " + Shift + Alt");
 
 
-            MessageBox.Show("lala1");
             // stickyctrl
             dcc.AddKey(5900, "StickyCtrl", 24);
             dcc.AddKey(5901, "StickyShift", 24);
