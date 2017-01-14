@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ClDisplayCharacterContainer xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <Name>US-QWERTY-ANSI</Name>
+  <Name>US-ANSI</Name>
   <Display>
     <string>-Scncde 0</string>
     <string>-Scncde 1</string>

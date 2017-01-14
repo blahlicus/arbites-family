@@ -39,6 +39,7 @@ F:\ArbitesEto2\ArbitesEto2.Wpf\bin\Debug\ArbitesEto2.pdb
 F:\ArbitesEto2\ArbitesEto2.Wpf\bin\Debug\Eto.xml
 F:\ArbitesEto2\ArbitesEto2.Wpf\obj\Debug\ArbitesEto2.Wpf.csprojResolveAssemblyReference.cache
 E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.Wpf\bin\Debug\favicon.ico
+E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.Wpf\bin\Debug\drivers.zip
 E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.Wpf\bin\Debug\persistent-data.arb2pd
 E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.Wpf\bin\Debug\ArbitesEto2.Wpf.exe
 E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.Wpf\bin\Debug\ArbitesEto2.Wpf.pdb
@@ -50,4 +51,3 @@ E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.Wpf\bin\Deb
 E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.Wpf\obj\Debug\ArbitesEto2.Wpf.csprojResolveAssemblyReference.cache
 E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.Wpf\obj\Debug\ArbitesEto2.Wpf.exe
 E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.Wpf\obj\Debug\ArbitesEto2.Wpf.pdb
-E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.Wpf\bin\Debug\drivers.zip

@@ -28,7 +28,7 @@ namespace ArbitesEto2
 
         public MdConfig()
         {
-            this.CurrentInputMethod = "US-QWERTY-ANSI" + MdConstant.E_INPUT_METHOD;
+            this.CurrentInputMethod = "US-ANSI" + MdConstant.E_INPUT_METHOD;
             this.KeyMenuTopmost = true;
             this.DisplayOutput = false;
             this.UploadDelay = 10;

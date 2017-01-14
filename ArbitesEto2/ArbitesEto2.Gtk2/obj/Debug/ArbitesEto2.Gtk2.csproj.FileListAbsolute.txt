@@ -19,6 +19,8 @@ F:\ArbitesEto2\ArbitesEto2.Gtk2\obj\Debug\ArbitesEto2.Gtk2.csprojResolveAssembly
 F:\ArbitesEto2\ArbitesEto2.Gtk2\obj\Debug\ArbitesEto2.Gtk2.exe
 F:\ArbitesEto2\ArbitesEto2.Gtk2\obj\Debug\ArbitesEto2.Gtk2.pdb
 E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.Gtk2\bin\Debug\favicon.ico
+E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.Gtk2\bin\Debug\run-arbites.sh
+E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.Gtk2\bin\Debug\buildmac.sh
 E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.Gtk2\bin\Debug\persistent-data.arb2pd
 E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.Gtk2\bin\Debug\ArbitesEto2.Gtk2.exe
 E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.Gtk2\bin\Debug\ArbitesEto2.Gtk2.pdb
@@ -30,5 +32,3 @@ E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.Gtk2\bin\De
 E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.Gtk2\obj\Debug\ArbitesEto2.Gtk2.csprojResolveAssemblyReference.cache
 E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.Gtk2\obj\Debug\ArbitesEto2.Gtk2.exe
 E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.Gtk2\obj\Debug\ArbitesEto2.Gtk2.pdb
-E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.Gtk2\bin\Debug\buildmac.sh
-E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.Gtk2\bin\Debug\run-arbites.sh

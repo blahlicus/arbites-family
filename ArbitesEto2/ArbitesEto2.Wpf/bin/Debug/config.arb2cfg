@@ -4,5 +4,5 @@
   <KeyMenuTopmost>true</KeyMenuTopmost>
   <DisplayOutput>false</DisplayOutput>
   <UploadDelay>10</UploadDelay>
-  <CurrentInputMethod>US-QWERTY-ANSI.arb2im</CurrentInputMethod>
+  <CurrentInputMethod>US-ANSI.arb2im</CurrentInputMethod>
 </MdConfig>

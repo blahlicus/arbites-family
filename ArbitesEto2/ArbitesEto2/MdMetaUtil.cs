@@ -108,7 +108,7 @@ namespace ArbitesEto2
                              , Path.Combine(
                                  MdPersistentData.ConfigPath
                                  , MdConstant.D_INPUT_METHOD,
-                                 "US-QWERTY-ANSI" + MdConstant.E_INPUT_METHOD));
+                                 "US-ANSI" + MdConstant.E_INPUT_METHOD));
 
             MdCore.Serialize(ClDisplayCharacterContainer.GenerateUKISO()
                              , Path.Combine(
@@ -123,6 +123,13 @@ namespace ArbitesEto2
                                  MdPersistentData.ConfigPath
                                  , MdConstant.D_INPUT_METHOD,
                                  "Deutsch-QWERTZ-T1" + MdConstant.E_INPUT_METHOD));
+
+            //GenerateSEDKQWERTY
+            MdCore.Serialize(ClDisplayCharacterContainer.GenerateSEDKQWERTY()
+                             , Path.Combine(
+                                 MdPersistentData.ConfigPath
+                                 , MdConstant.D_INPUT_METHOD,
+                                 "Swedish-Danish-QWERTY" + MdConstant.E_INPUT_METHOD));
         }
 
 
