@@ -68,6 +68,7 @@ namespace ArbitesEto2
                 layCount = this.KeyDatas.Max(ele => ele.Z) + 1;
             }
             lt.Add("uniqueksetlay(" + layCount + " ");
+            lt.Add("uniqueksetsublay(" + layCount + " ");
             foreach (var kd in this.KeyDatas)
             {
                 string keyVal;
