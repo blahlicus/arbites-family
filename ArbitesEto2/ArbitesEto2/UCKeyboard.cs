@@ -55,7 +55,7 @@ namespace ArbitesEto2
                     LoadLayout(MdSessionData.CurrentLayout);
                     this.SavePath = dialog.FileName;
                     this.LLayoutName.Text = Path.GetFileNameWithoutExtension(this.SavePath);
-                    this.BtnSave.Text = "Save Layout";
+                    this.DisplaySavedChangedSignal();
                 }
             }
             catch (Exception ex)
@@ -73,7 +73,7 @@ namespace ArbitesEto2
             else
             {
                 MdCore.Serialize(MdSessionData.CurrentLayout, this.SavePath);
-                this.BtnSave.Text = "Save Layout";
+                this.DisplaySavedChangedSignal();
             }
         }
 
@@ -94,7 +94,7 @@ namespace ArbitesEto2
                     this.SavePath = Path.ChangeExtension(dialog.FileName, this.Keyboard.SaveFileExtension);
 
                     MdCore.Serialize(MdSessionData.CurrentLayout, this.SavePath);
-                    this.BtnSave.Text = "Save Layout";
+                    this.DisplaySavedChangedSignal();
                     this.LLayoutName.Text = Path.GetFileNameWithoutExtension(this.SavePath);
                 }
             }
@@ -146,15 +146,23 @@ namespace ArbitesEto2
                 {
                     lay.LoadLayout(input);
                 }
-                this.BtnSave.Text = "Save Layout*";
+                this.DisplayUnsavedChangeSignal();
             }
         }
+
+        public bool Saved { get; private set; } = true;
 
         public void DisplayUnsavedChangeSignal()
         {
             this.BtnSave.Text = "Save Layout*";
+            this.Saved = false;
         }
 
+        public void DisplaySavedChangedSignal()
+        {
+            this.BtnSave.Text = "Save Layout";
+            this.Saved = true;
+        }
     }
 
 }
