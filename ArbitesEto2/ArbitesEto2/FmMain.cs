@@ -54,6 +54,7 @@ namespace ArbitesEto2
             this.BtnSettings.Click += (sender, e) => OpenSettings();
             this.BtnEditMacro.Click += (sender, e) => OpenMacroMenu();
             this.BtnEditTapDance.Click += (sender, e) => OpenTapDanceMenu();
+            this.Closing += ConfirmClose;
         }
 
 

@@ -1,6 +1,9 @@
 ﻿using System;
+using System.ComponentModel;
+using System.Linq;
 using Eto.Forms;
-using Eto.Drawing;
+using Size = Eto.Drawing.Size;
+using VerticalAlignment = Eto.Forms.VerticalAlignment;
 
 namespace ArbitesEto2
 {
@@ -152,6 +155,19 @@ namespace ArbitesEto2
             this.Size = new Size(1200, 480);
 
             this.Content = tlMain;
+        }
+
+        private void ConfirmClose(object sender, CancelEventArgs e)
+        {
+            if (!MdSessionData.CurrentLayout.KeyDatas.Any() || MdSessionData.CurrentKeyboardUI.Saved)
+            {
+                return;
+            }
+            var confirmBox = MessageBox.Show("You haven't saved your layout. Really exit?", MessageBoxButtons.YesNo);
+            if (confirmBox == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
         }
     }
 }
