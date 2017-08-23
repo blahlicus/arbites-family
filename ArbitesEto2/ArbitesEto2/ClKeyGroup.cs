@@ -291,7 +291,30 @@ namespace ArbitesEto2
             kg.Keys.Add(new ClKey(416, 16, 16, 19, false, true));
             kg.Keys.Add(new ClKey(417, 17, 17, 19, false, true));
             kg.Keys.Add(new ClKey(418, 18, 18, 19, false, true));
-            kg.Keys.Add(new ClKey(419, 19, 19, 19, false, true)); 
+            kg.Keys.Add(new ClKey(419, 19, 19, 19, false, true));
+
+
+            // mouse options
+
+            kg.Keys.Add(new ClKey(450, 127, 127, 31, false, true));
+            kg.Keys.Add(new ClKey(451, 126, 126, 31, false, true));
+            kg.Keys.Add(new ClKey(452, 125, 125, 31, false, true));
+            kg.Keys.Add(new ClKey(453, 129, 129, 31, false, true));
+            kg.Keys.Add(new ClKey(454, 130, 130, 31, false, true));
+            kg.Keys.Add(new ClKey(455, 131, 131, 31, false, true));
+            kg.Keys.Add(new ClKey(456, 127, 127, 32, false, true));
+            kg.Keys.Add(new ClKey(457, 126, 126, 32, false, true));
+            kg.Keys.Add(new ClKey(458, 125, 125, 32, false, true));
+            kg.Keys.Add(new ClKey(459, 129, 129, 32, false, true));
+            kg.Keys.Add(new ClKey(460, 130, 130, 32, false, true));
+            kg.Keys.Add(new ClKey(461, 131, 131, 32, false, true));
+            kg.Keys.Add(new ClKey(462, 129, 129, 33, false, true));
+            kg.Keys.Add(new ClKey(463, 127, 127, 33, false, true));
+            kg.Keys.Add(new ClKey(464, 1, 1, 34, false, true));
+            kg.Keys.Add(new ClKey(465, 2, 2, 34, false, true));
+            kg.Keys.Add(new ClKey(466, 3, 3, 34, false, true));
+            kg.Keys.Add(new ClKey(467, 4, 4, 34, false, true));
+            kg.Keys.Add(new ClKey(468, 5, 5, 34, false, true));
 
             // pressed shift ctrl alt altgr
             kg.Keys.AddRange(ClKeyGroup.GenereateSubHIDSet(kg, 5, 11));

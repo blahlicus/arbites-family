@@ -352,8 +352,8 @@ namespace ArbitesEto2
             dcc.AddKey(365, "M Next", 5);
             dcc.AddKey(366, "M Back", 5);
             dcc.AddKey(370, "Set 6KRO", 5);
-            dcc.AddKey(371, "Win NKRO", 5);
-            dcc.AddKey(372, "UNIX NKRO", 5);
+            dcc.AddKey(371, "Set NKRO", 5);
+            dcc.AddKey(372, "Deprecated", 5);
             dcc.AddKey(380, "LED Off", 5);
             dcc.AddKey(381, "LED--", 5);
             dcc.AddKey(382, "LED-", 5);
@@ -392,6 +392,26 @@ namespace ArbitesEto2
             dcc.AddKey(417, "tapDance17", 5);
             dcc.AddKey(418, "tapDance18", 5);
             dcc.AddKey(419, "tapDance19", 5);
+
+            dcc.AddKey(450, "Mouse Left", 5);
+            dcc.AddKey(451, "Mouse Left+", 5);
+            dcc.AddKey(452, "Mouse Left++", 5);
+            dcc.AddKey(453, "Mouse Right", 5);
+            dcc.AddKey(454, "Mouse Right+", 5);
+            dcc.AddKey(455, "Mouse Right++", 5);
+            dcc.AddKey(456, "Mouse Up", 5);
+            dcc.AddKey(457, "Mouse Up+", 5);
+            dcc.AddKey(458, "Mouse Up++", 5);
+            dcc.AddKey(459, "Mouse Down", 5);
+            dcc.AddKey(460, "Mouse Down+", 5);
+            dcc.AddKey(461, "Mouse Down++", 5);
+            dcc.AddKey(462, "Mouse Wheel-", 5);
+            dcc.AddKey(463, "Mouse Wheel+", 5);
+            dcc.AddKey(464, "Mouse LClick", 5);
+            dcc.AddKey(465, "Mouse RClick", 5);
+            dcc.AddKey(466, "Mouse MClick", 5);
+            dcc.AddKey(467, "Mouse Previous", 5);
+            dcc.AddKey(468, "Mouse Next", 5);
 
             AddHIDSubGroup(dcc, 5, 6, "", " + Shift");
             AddHIDSubGroup(dcc, 8, 7, "", " + Ctrl");

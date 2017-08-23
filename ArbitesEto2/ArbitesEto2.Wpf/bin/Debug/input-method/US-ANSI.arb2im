@@ -206,8 +206,8 @@
     <string>M Next</string>
     <string>M Back</string>
     <string>Set 6KRO</string>
-    <string>Win NKRO</string>
-    <string>UNIX NKRO</string>
+    <string>Set NKRO</string>
+    <string>Deprecated</string>
     <string>LED Off</string>
     <string>LED--</string>
     <string>LED-</string>
@@ -243,6 +243,25 @@
     <string>tapDance17</string>
     <string>tapDance18</string>
     <string>tapDance19</string>
+    <string>Mouse Left</string>
+    <string>Mouse Left+</string>
+    <string>Mouse Left++</string>
+    <string>Mouse Right</string>
+    <string>Mouse Right+</string>
+    <string>Mouse Right++</string>
+    <string>Mouse Up</string>
+    <string>Mouse Up+</string>
+    <string>Mouse Up++</string>
+    <string>Mouse Down</string>
+    <string>Mouse Down+</string>
+    <string>Mouse Down++</string>
+    <string>Mouse Wheel-</string>
+    <string>Mouse Wheel+</string>
+    <string>Mouse LClick</string>
+    <string>Mouse RClick</string>
+    <string>Mouse MClick</string>
+    <string>Mouse Previous</string>
+    <string>Mouse Next</string>
     <string>-Scncde 0 + Shift</string>
     <string>-Scncde 1 + Shift</string>
     <string>-Scncde 2 + Shift</string>
@@ -2984,6 +3003,25 @@
     <int>417</int>
     <int>418</int>
     <int>419</int>
+    <int>450</int>
+    <int>451</int>
+    <int>452</int>
+    <int>453</int>
+    <int>454</int>
+    <int>455</int>
+    <int>456</int>
+    <int>457</int>
+    <int>458</int>
+    <int>459</int>
+    <int>460</int>
+    <int>461</int>
+    <int>462</int>
+    <int>463</int>
+    <int>464</int>
+    <int>465</int>
+    <int>466</int>
+    <int>467</int>
+    <int>468</int>
     <int>500</int>
     <int>501</int>
     <int>502</int>
@@ -5622,6 +5660,25 @@
     <int>4</int>
     <int>4</int>
     <int>4</int>
+    <int>5</int>
+    <int>5</int>
+    <int>5</int>
+    <int>5</int>
+    <int>5</int>
+    <int>5</int>
+    <int>5</int>
+    <int>5</int>
+    <int>5</int>
+    <int>5</int>
+    <int>5</int>
+    <int>5</int>
+    <int>5</int>
+    <int>5</int>
+    <int>5</int>
+    <int>5</int>
+    <int>5</int>
+    <int>5</int>
+    <int>5</int>
     <int>5</int>
     <int>5</int>
     <int>5</int>
