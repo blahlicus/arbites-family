@@ -9,13 +9,13 @@ namespace ArbitesEto2
 {
     partial class FmMain : Form
     {
-        Button BtnSelectDevice, BtnOpenKeyMenu, BtnSettings, BtnEditMacro, BtnEditTapDance, BtnEditMouse, BtnEditLED, BtnSelectPort, BtnApply;
+        Button BtnSelectDevice, BtnOpenKeyMenu, BtnSettings, BtnFirmwareUpdate, BtnEditMacro, BtnEditTapDance, BtnEditMouse, BtnEditLED, BtnSelectPort, BtnApply;
         DropDown DDInputMethod;
         Panel PnMain;
         void InitializeComponent()
         {
 
-            Title = "Arbites Innova - 2.3 5000";
+            Title = "Arbites Innova - 2.5 0003";
             ClientSize = new Size(1000, 600);
 
             
@@ -61,6 +61,11 @@ namespace ArbitesEto2
             BtnSettings.ToolTip = "Preferences";
             slTopLeft.Items.Add(BtnSettings);
 
+            BtnFirmwareUpdate = new Button();
+            BtnFirmwareUpdate.Text = "Firmware Uploader";
+            BtnFirmwareUpdate.ToolTip = "Firmware Uploader:\nThis Allows users to update the firmware on their hardware devices.";
+            slTopLeft.Items.Add(BtnFirmwareUpdate);
+
             var tcTopMid = new TableCell();
             tcTopMid.ScaleWidth = true;
             trContext.Cells.Add(tcTopMid);
@@ -97,6 +102,7 @@ namespace ArbitesEto2
             trContext.Cells.Add(tcTopRight);
 
             var tlTopRight = new TableLayout();
+            tlTopRight.Spacing = new Size(5,5);
             tcTopRight.Control = tlTopRight;
 
             var trTopRight = new TableRow();
@@ -139,8 +145,8 @@ namespace ArbitesEto2
             slTopRight.Items.Add(BtnSelectPort);
 
             BtnApply = new Button();
-            BtnApply.Text = "Apply";
-            BtnApply.ToolTip = "Apply";
+            BtnApply.Text = "Apply Layout";
+            BtnApply.ToolTip = "Apply Layout";
             slTopRight.Items.Add(BtnApply);
 
             var trMain = new TableRow();

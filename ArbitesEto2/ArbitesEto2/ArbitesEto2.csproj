@@ -51,6 +51,13 @@
     <Compile Include="ClMacroDataContainer.cs" />
     <Compile Include="ClTapDanceData.cs" />
     <Compile Include="ClTapDanceDataContainer.cs" />
+    <Compile Include="FmFirmwareUpdater.cs">
+      <SubType>Eto.Forms</SubType>
+    </Compile>
+    <Compile Include="FmFirmwareUpdater.eto.cs">
+      <DependentUpon>FmFirmwareUpdater.cs</DependentUpon>
+      <SubType>Eto.Forms</SubType>
+    </Compile>
     <Compile Include="FmKeyMenu.cs">
       <SubType>Eto.Forms</SubType>
     </Compile>
