@@ -31,3 +31,5 @@ E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.WinForms\bi
 E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.WinForms\obj\Debug\ArbitesEto2.WinForms.csprojResolveAssemblyReference.cache
 E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.WinForms\obj\Debug\ArbitesEto2.WinForms.exe
 E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.WinForms\obj\Debug\ArbitesEto2.WinForms.pdb
+E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.WinForms\bin\Debug\avrdude\avrdude.exe
+E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.WinForms\bin\Debug\avrdude\avrdude.conf

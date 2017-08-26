@@ -54,10 +54,15 @@ namespace ArbitesEto2
             this.BtnSettings.Click += (sender, e) => OpenSettings();
             this.BtnEditMacro.Click += (sender, e) => OpenMacroMenu();
             this.BtnEditTapDance.Click += (sender, e) => OpenTapDanceMenu();
+            this.BtnFirmwareUpdate.Click += (sender, e) => OpenFirmwareUploader();
             this.Closing += ConfirmClose;
         }
 
-
+        private void OpenFirmwareUploader()
+        {
+            var fm = new FmFirmwareUpdater();
+            fm.Show();
+        }
         private void OpenMacroMenu()
         {
             var lst = new List<string> {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9"};

@@ -51,3 +51,5 @@ E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.Wpf\bin\Deb
 E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.Wpf\obj\Debug\ArbitesEto2.Wpf.csprojResolveAssemblyReference.cache
 E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.Wpf\obj\Debug\ArbitesEto2.Wpf.exe
 E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.Wpf\obj\Debug\ArbitesEto2.Wpf.pdb
+E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.Wpf\bin\Debug\avrdude\avrdude.exe
+E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.Wpf\bin\Debug\avrdude\avrdude.conf

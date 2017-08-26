@@ -16,6 +16,10 @@ namespace ArbitesEto2
         // ReSharper disable once InconsistentNaming
         public static string root = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
 
+        // AVRDUDE location, does not require write access
+        public static string windowsAvrdudeLocation = Path.Combine(root, "avrdude");
+
+
         public static string N_PERSISTENT_DATA = "persistent-data.arb2pd";
         public static string N_CONFIG = "config.arb2cfg";
         public static string N_ICON = "favicon.ico";
