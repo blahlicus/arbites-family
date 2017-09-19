@@ -75,8 +75,6 @@ namespace ArbitesEto2
 
         private void UploadHex(string port) //TODO add platform specific code for linxu and mac
         {
-
-
             if ((Environment.OSVersion.Platform == PlatformID.Unix) || (Environment.OSVersion.Platform == PlatformID.MacOSX))
             {
                 try
@@ -117,18 +115,49 @@ namespace ArbitesEto2
                 // probably is windows
                 Process process = new Process();
                 ProcessStartInfo startInfo = new ProcessStartInfo();
-                startInfo.WindowStyle = ProcessWindowStyle.Normal;
+                startInfo.WindowStyle = ProcessWindowStyle.Hidden;
                 startInfo.FileName = Path.Combine(MdConstant.windowsAvrdudeLocation, "avrdude");
                 startInfo.WorkingDirectory = MdConstant.windowsAvrdudeLocation;
+                startInfo.CreateNoWindow = true;
+                startInfo.RedirectStandardOutput = true;
+                startInfo.RedirectStandardError = true;
+                startInfo.UseShellExecute = false;
                 startInfo.Arguments = @"-v -patmega32u4 -cavr109 -P" + port + " -b57600 -D -Uflash:w:" + SelectedFile + ":i";
+                process.EnableRaisingEvents = true;
+                process.Exited += (sender, e) => UploadFinished(sender ,e);
+                process.OutputDataReceived += (sender, e) => CLIOutputReceived(sender, e);
+                process.ErrorDataReceived += (sender, e) => CLIErrorReceived(sender, e);
+
+                Counter.Elapsed += (sender, e) => TimerElapsed();
+
                 process.StartInfo = startInfo;
                 process.Start();
-                MessageBox.Show("\nAVRDUDE started with argument: " + startInfo.Arguments + "\n\nYou may close this window once AVRDUDE completes uploading");
-
+                process.BeginOutputReadLine();
+                process.BeginErrorReadLine();
+                //process.BeginOutputReadLine();
+                //process.WaitForExit(30000);
+                //MessageBox.Show("\nAVRDUDE started with argument: " + startInfo.Arguments + "\n\nYou may close this window once AVRDUDE completes uploading");
+                //MessageBox.Show(process.StandardOutput.ReadToEnd());
             }
 
         }
+        private void CLIOutputReceived(object sender, DataReceivedEventArgs e)
+        {
+            //Application.Instance.Invoke(new Action(() => LStatus.Text += "\n" + e.Data));
+            Console.WriteLine("output: " +e.Data);
 
+        }
+
+        private void CLIErrorReceived(object sender, DataReceivedEventArgs e)
+        {
+            Application.Instance.Invoke(new Action(() => LStatus.Text += "\n" + e.Data));
+            Console.WriteLine("error: " + e.Data);
+
+        }
+        private void UploadFinished(object sender, EventArgs e)
+        {
+            MessageBox.Show("Upload Finished");
+        }
 
         private void BtnPortsClicked()
         {

@@ -32,3 +32,4 @@ E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.Mac\bin\Deb
 E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.Mac\bin\Debug\Eto.xml
 E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.Mac\obj\Debug\ArbitesEto2.Mac.exe
 E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.Mac\obj\Debug\ArbitesEto2.Mac.pdb
+E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.Mac\obj\Debug\ArbitesEto2.Mac.csprojResolveAssemblyReference.cache
