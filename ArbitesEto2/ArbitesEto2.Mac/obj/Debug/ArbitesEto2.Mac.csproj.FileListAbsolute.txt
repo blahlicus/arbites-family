@@ -22,6 +22,7 @@ F:\ArbitesEto2\ArbitesEto2.Mac\obj\Debug\ArbitesEto2.Mac.exe
 F:\ArbitesEto2\ArbitesEto2.Mac\obj\Debug\ArbitesEto2.Mac.pdb
 E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.Mac\bin\Debug\favicon.ico
 E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.Mac\bin\Debug\persistent-data.arb2pd
+E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.Mac\bin\Debug\ArbitesEto2.Mac.exe.config
 E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.Mac\bin\Debug\ArbitesEto2.Mac.exe
 E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.Mac\bin\Debug\ArbitesEto2.Mac.pdb
 E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.Mac\bin\Debug\ArbitesEto2.dll
@@ -30,6 +31,6 @@ E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.Mac\bin\Deb
 E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.Mac\bin\Debug\MonoMac.dll
 E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.Mac\bin\Debug\ArbitesEto2.pdb
 E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.Mac\bin\Debug\Eto.xml
+E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.Mac\obj\Debug\ArbitesEto2.Mac.csprojResolveAssemblyReference.cache
 E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.Mac\obj\Debug\ArbitesEto2.Mac.exe
 E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.Mac\obj\Debug\ArbitesEto2.Mac.pdb
-E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.Mac\obj\Debug\ArbitesEto2.Mac.csprojResolveAssemblyReference.cache

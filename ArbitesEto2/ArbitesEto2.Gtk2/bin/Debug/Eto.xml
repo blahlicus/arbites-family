@@ -646,7 +646,7 @@
             <returns><c>true</c> if the fileName is an icon; otherwise, <c>false</c>.</returns>
             <param name="fileName">File name.</param>
         </member>
-        <member name="M:Eto.Drawing.ImageConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+        <member name="M:Eto.Drawing.ImageConverter.CanConvertFrom(Eto.ITypeDescriptorContext,System.Type)">
             <summary>
             Gets a value indicating that this converter can convert from the source type to an image
             </summary>
@@ -654,7 +654,7 @@
             <param name="sourceType">Type to convert from</param>
             <returns>True if this converter can handle converting from the specified <paramref name="sourceType"/> to an image</returns>
         </member>
-        <member name="M:Eto.Drawing.ImageConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+        <member name="M:Eto.Drawing.ImageConverter.CanConvertTo(Eto.ITypeDescriptorContext,System.Type)">
             <summary>
             Gets a value indicating that this converter can convert to the specified type.
             </summary>
@@ -662,7 +662,7 @@
             <param name="destinationType">Type to convert to</param>
             <returns>True if this converter can convert to the specified <paramref name="destinationType"/>, otherwise false.</returns>
         </member>
-        <member name="M:Eto.Drawing.ImageConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)">
+        <member name="M:Eto.Drawing.ImageConverter.ConvertFrom(Eto.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)">
             <summary>
             Performs the conversion from the given <paramref name="value"/> to an <see cref="T:Eto.Drawing.Image"/> object
             </summary>
@@ -703,6 +703,95 @@
             <summary>
             Highest interpolation quality - slowest but best quality
             </summary>
+        </member>
+        <member name="T:Eto.Drawing.RadialGradientBrush">
+            <summary>
+            Brush with an elliptical radial gradient from a specified origin.
+            </summary>
+            <remarks>
+            The gradient origin must fall within the ellipse, otherwise the behavior is undefined.
+            </remarks>
+            <copyright>(c) 2012-2015 by Curtis Wensley</copyright>
+            <license type="BSD-3">See LICENSE for full terms</license>
+        </member>
+        <member name="P:Eto.Drawing.RadialGradientBrush.Handler">
+            <summary>
+            Gets the platform handler object for the widget
+            </summary>
+            <value>The handler for the widget</value>
+        </member>
+        <member name="P:Eto.Drawing.RadialGradientBrush.Instantiator">
+            <summary>
+            Gets a delegate to instantiate <see cref="T:Eto.Drawing.RadialGradientBrush"/> objects
+            </summary>
+            <remarks>
+            Use this to instantiate many objects of this type
+            </remarks>
+        </member>
+        <member name="M:Eto.Drawing.RadialGradientBrush.#ctor(Eto.Drawing.Color,Eto.Drawing.Color,Eto.Drawing.PointF,Eto.Drawing.PointF,Eto.Drawing.SizeF)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Eto.Drawing.RadialGradientBrush"/>.
+            </summary>
+            <param name="startColor">Start color from the <paramref name="gradientOrigin"/></param>
+            <param name="endColor">End color at the outer edge of the ellipse</param>
+            <param name="center">Center of the ellipse</param>
+            <param name="gradientOrigin">Origin of the gradient.</param>
+            <param name="radius">Radius of the ellipse.</param>
+        </member>
+        <member name="P:Eto.Drawing.RadialGradientBrush.Transform">
+            <summary>
+            Gets or sets the transform to apply to the gradient
+            </summary>
+            <value>The transform to apply to the gradient</value>
+        </member>
+        <member name="P:Eto.Drawing.RadialGradientBrush.Wrap">
+            <summary>
+            Gets or sets the wrap mode for the gradient
+            </summary>
+            <value>The wrap mode for the gradient</value>
+        </member>
+        <member name="T:Eto.Drawing.RadialGradientBrush.IHandler">
+            <summary>
+            Handler interface for the <see cref="T:Eto.Drawing.RadialGradientBrush"/>
+            </summary>
+        </member>
+        <member name="M:Eto.Drawing.RadialGradientBrush.IHandler.Create(Eto.Drawing.Color,Eto.Drawing.Color,Eto.Drawing.PointF,Eto.Drawing.PointF,Eto.Drawing.SizeF)">
+            <summary>
+            Creates a new radial gradient brush object.
+            </summary>
+            <param name="startColor">Start color from the <paramref name="gradientOrigin"/></param>
+            <param name="endColor">End color at the outer edge of the ellipse</param>
+            <param name="center">Center of the ellipse</param>
+            <param name="gradientOrigin">Origin of the gradient.</param>
+            <param name="radius">Radius of the ellipse.</param>
+        </member>
+        <member name="M:Eto.Drawing.RadialGradientBrush.IHandler.GetTransform(Eto.Drawing.RadialGradientBrush)">
+            <summary>
+            Gets the transform for the specified brush
+            </summary>
+            <returns>The current transform for the specified brush</returns>
+            <param name="widget">Brush to get the transform</param>
+        </member>
+        <member name="M:Eto.Drawing.RadialGradientBrush.IHandler.SetTransform(Eto.Drawing.RadialGradientBrush,Eto.Drawing.IMatrix)">
+            <summary>
+            Sets the transform for the specified brush
+            </summary>
+            <param name="widget">Brush to set the transform</param>
+            <param name="transform">Transform to set to the brush</param>
+        </member>
+        <member name="M:Eto.Drawing.RadialGradientBrush.IHandler.GetGradientWrap(Eto.Drawing.RadialGradientBrush)">
+            <summary>
+            Gets the gradient wrap mode
+            </summary>
+            <returns>The gradient wrap mode for the brush</returns>
+            <param name="widget">Brush to get the gradient wrap mode</param>
+        </member>
+        <member name="M:Eto.Drawing.RadialGradientBrush.IHandler.SetGradientWrap(Eto.Drawing.RadialGradientBrush,Eto.Drawing.GradientWrapMode)">
+            <summary>
+            Sets the gradient wrap mode
+            </summary>
+            <param name="widget">Brush to set the wrap mode</param>
+            <param name="gradientWrap">Gradient wrap mode to set</param>
         </member>
         <member name="T:Eto.Drawing.PenLineJoin">
             <summary>
@@ -3760,12 +3849,6 @@
             <returns>True if the specified obj is a Palette and contains the same colors as this instance, false otherwise</returns>
         </member>
         <member name="M:Eto.Drawing.Palette.Clone">
-            <summary>
-            Creates a clone of this palette
-            </summary>
-            <returns>A new instance of a palette with the same color entries as this instance</returns>
-        </member>
-        <member name="M:Eto.Drawing.Palette.System#ICloneable#Clone">
             <summary>
             Creates a clone of this palette
             </summary>
@@ -7372,7 +7455,7 @@
             <copyright>(c) 2014 by Curtis Wensley</copyright>
             <license type="BSD-3">See LICENSE for full terms</license>
         </member>
-        <member name="M:Eto.Drawing.ColorConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+        <member name="M:Eto.Drawing.ColorConverter.CanConvertTo(Eto.ITypeDescriptorContext,System.Type)">
             <summary>
             Determines if this can convert a <see cref="T:Eto.Drawing.Color"/> to the <paramref name="destinationType"/>
             </summary>
@@ -7380,7 +7463,7 @@
             <param name="destinationType">Type to convert to</param>
             <returns>True if this converter supports the <paramref name="destinationType"/>, false otherwise</returns>
         </member>
-        <member name="M:Eto.Drawing.ColorConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+        <member name="M:Eto.Drawing.ColorConverter.CanConvertFrom(Eto.ITypeDescriptorContext,System.Type)">
             <summary>
             Determines if this can convert a value with the type of <paramref name="sourceType"/> to a <see cref="T:Eto.Drawing.Color"/>
             </summary>
@@ -7388,7 +7471,7 @@
             <param name="sourceType">Type to convert from</param>
             <returns>True if this can convert to the <paramref name="sourceType"/>, false otherwise</returns>
         </member>
-        <member name="M:Eto.Drawing.ColorConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)">
+        <member name="M:Eto.Drawing.ColorConverter.ConvertFrom(Eto.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)">
             <summary>
             Converts the <paramref name="value"/> to an instance of a <see cref="T:Eto.Drawing.Color"/>
             </summary>
@@ -7397,7 +7480,7 @@
             <param name="value">Value to convert</param>
             <returns>A <see cref="T:Eto.Drawing.Color"/> instance with the converted value</returns>
         </member>
-        <member name="M:Eto.Drawing.ColorConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)">
+        <member name="M:Eto.Drawing.ColorConverter.ConvertTo(Eto.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)">
             <summary>
             Converts a <see cref="T:Eto.Drawing.Color"/> instance to the specified <paramref name="destinationType"/>
             </summary>
@@ -7422,7 +7505,7 @@
             The character to split up the string which will be converted
             </summary>
         </member>
-        <member name="M:Eto.Drawing.SizeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+        <member name="M:Eto.Drawing.SizeConverter.CanConvertFrom(Eto.ITypeDescriptorContext,System.Type)">
             <summary>
             Determines if this converter can convert from the specified <paramref name="sourceType"/>
             </summary>
@@ -7430,7 +7513,7 @@
             <param name="sourceType">Type to convert from</param>
             <returns>True if this converter can convert from the specified type, false otherwise</returns>
         </member>
-        <member name="M:Eto.Drawing.SizeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)">
+        <member name="M:Eto.Drawing.SizeConverter.ConvertFrom(Eto.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)">
             <summary>
             Converts the specified value to a <see cref="T:Eto.Drawing.Size"/>
             </summary>
@@ -7454,7 +7537,7 @@
             The character to split up the string which will be converted
             </summary>
         </member>
-        <member name="M:Eto.Drawing.SizeFConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+        <member name="M:Eto.Drawing.SizeFConverter.CanConvertFrom(Eto.ITypeDescriptorContext,System.Type)">
             <summary>
             Determines if this converter can convert from the specified <paramref name="sourceType"/>
             </summary>
@@ -7462,7 +7545,7 @@
             <param name="sourceType">Type to convert from</param>
             <returns>True if this converter can convert from the specified type, false otherwise</returns>
         </member>
-        <member name="M:Eto.Drawing.SizeFConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)">
+        <member name="M:Eto.Drawing.SizeFConverter.ConvertFrom(Eto.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)">
             <summary>
             Converts the specified value to a <see cref="T:Eto.Drawing.SizeF"/>
             </summary>
@@ -7486,7 +7569,7 @@
             The character to split up the string which will be converted
             </summary>
         </member>
-        <member name="M:Eto.Drawing.RectangleConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+        <member name="M:Eto.Drawing.RectangleConverter.CanConvertFrom(Eto.ITypeDescriptorContext,System.Type)">
             <summary>
             Determines if this converter can convert from the specified <paramref name="sourceType"/>
             </summary>
@@ -7494,7 +7577,7 @@
             <param name="sourceType">Type to convert from</param>
             <returns>True if this converter can convert from the specified type, false otherwise</returns>
         </member>
-        <member name="M:Eto.Drawing.RectangleConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)">
+        <member name="M:Eto.Drawing.RectangleConverter.ConvertFrom(Eto.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)">
             <summary>
             Converts the specified value to a <see cref="T:Eto.Drawing.Rectangle"/>
             </summary>
@@ -7518,7 +7601,7 @@
             The character to split up the string which will be converted
             </summary>
         </member>
-        <member name="M:Eto.Drawing.RectangleFConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+        <member name="M:Eto.Drawing.RectangleFConverter.CanConvertFrom(Eto.ITypeDescriptorContext,System.Type)">
             <summary>
             Determines if this converter can convert from the specified <paramref name="sourceType"/>
             </summary>
@@ -7526,7 +7609,7 @@
             <param name="sourceType">Type to convert from</param>
             <returns>True if this converter can convert from the specified type, false otherwise</returns>
         </member>
-        <member name="M:Eto.Drawing.RectangleFConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)">
+        <member name="M:Eto.Drawing.RectangleFConverter.ConvertFrom(Eto.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)">
             <summary>
             Converts the specified value to a <see cref="T:Eto.Drawing.RectangleF"/>
             </summary>
@@ -7550,7 +7633,7 @@
             The character to split up the string which will be converted
             </summary>
         </member>
-        <member name="M:Eto.Drawing.PointConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+        <member name="M:Eto.Drawing.PointConverter.CanConvertFrom(Eto.ITypeDescriptorContext,System.Type)">
             <summary>
             Determines if this converter can convert from the specified <paramref name="sourceType"/>
             </summary>
@@ -7558,7 +7641,7 @@
             <param name="sourceType">Type to convert from</param>
             <returns>True if this converter can convert from the specified type, false otherwise</returns>
         </member>
-        <member name="M:Eto.Drawing.PointConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)">
+        <member name="M:Eto.Drawing.PointConverter.ConvertFrom(Eto.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)">
             <summary>
             Converts the specified value to a <see cref="T:Eto.Drawing.Point"/>
             </summary>
@@ -7582,7 +7665,7 @@
             The character to split up the string which will be converted
             </summary>
         </member>
-        <member name="M:Eto.Drawing.PointFConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+        <member name="M:Eto.Drawing.PointFConverter.CanConvertFrom(Eto.ITypeDescriptorContext,System.Type)">
             <summary>
             Determines if this converter can convert from the specified <paramref name="sourceType"/>
             </summary>
@@ -7590,7 +7673,7 @@
             <param name="sourceType">Type to convert from</param>
             <returns>True if this converter can convert from the specified type, false otherwise</returns>
         </member>
-        <member name="M:Eto.Drawing.PointFConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)">
+        <member name="M:Eto.Drawing.PointFConverter.ConvertFrom(Eto.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)">
             <summary>
             Converts the specified value to a <see cref="T:Eto.Drawing.PointF"/>
             </summary>
@@ -7611,7 +7694,7 @@
             The character to split up the string which will be converted
             </summary>
         </member>
-        <member name="M:Eto.Drawing.PaddingConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+        <member name="M:Eto.Drawing.PaddingConverter.CanConvertFrom(Eto.ITypeDescriptorContext,System.Type)">
             <summary>
             Determines if the specified <paramref name="sourceType"/> can be converted to a <see cref="T:Eto.Drawing.Padding"/> object
             </summary>
@@ -7619,7 +7702,7 @@
             <param name="sourceType">Type to convert from</param>
             <returns>True if this converter can convert from the specified type, false otherwise</returns>
         </member>
-        <member name="M:Eto.Drawing.PaddingConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)">
+        <member name="M:Eto.Drawing.PaddingConverter.ConvertFrom(Eto.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)">
             <summary>
             Converts the specified value to a <see cref="T:Eto.Drawing.Padding"/> object
             </summary>
@@ -9547,95 +9630,6 @@
             <param name="size">Size for the font, or null for the default system font size.</param>
             <param name="decoration">Decorations to add to the font.</param>
         </member>
-        <member name="T:Eto.Drawing.RadialGradientBrush">
-            <summary>
-            Brush with an elliptical radial gradient from a specified origin.
-            </summary>
-            <remarks>
-            The gradient origin must fall within the ellipse, otherwise the behavior is undefined.
-            </remarks>
-            <copyright>(c) 2012-2015 by Curtis Wensley</copyright>
-            <license type="BSD-3">See LICENSE for full terms</license>
-        </member>
-        <member name="P:Eto.Drawing.RadialGradientBrush.Handler">
-            <summary>
-            Gets the platform handler object for the widget
-            </summary>
-            <value>The handler for the widget</value>
-        </member>
-        <member name="P:Eto.Drawing.RadialGradientBrush.Instantiator">
-            <summary>
-            Gets a delegate to instantiate <see cref="T:Eto.Drawing.RadialGradientBrush"/> objects
-            </summary>
-            <remarks>
-            Use this to instantiate many objects of this type
-            </remarks>
-        </member>
-        <member name="M:Eto.Drawing.RadialGradientBrush.#ctor(Eto.Drawing.Color,Eto.Drawing.Color,Eto.Drawing.PointF,Eto.Drawing.PointF,Eto.Drawing.SizeF)">
-            <summary>
-            Initializes a new instance of the <see cref="T:Eto.Drawing.RadialGradientBrush"/>.
-            </summary>
-            <param name="startColor">Start color from the <paramref name="gradientOrigin"/></param>
-            <param name="endColor">End color at the outer edge of the ellipse</param>
-            <param name="center">Center of the ellipse</param>
-            <param name="gradientOrigin">Origin of the gradient.</param>
-            <param name="radius">Radius of the ellipse.</param>
-        </member>
-        <member name="P:Eto.Drawing.RadialGradientBrush.Transform">
-            <summary>
-            Gets or sets the transform to apply to the gradient
-            </summary>
-            <value>The transform to apply to the gradient</value>
-        </member>
-        <member name="P:Eto.Drawing.RadialGradientBrush.Wrap">
-            <summary>
-            Gets or sets the wrap mode for the gradient
-            </summary>
-            <value>The wrap mode for the gradient</value>
-        </member>
-        <member name="T:Eto.Drawing.RadialGradientBrush.IHandler">
-            <summary>
-            Handler interface for the <see cref="T:Eto.Drawing.RadialGradientBrush"/>
-            </summary>
-        </member>
-        <member name="M:Eto.Drawing.RadialGradientBrush.IHandler.Create(Eto.Drawing.Color,Eto.Drawing.Color,Eto.Drawing.PointF,Eto.Drawing.PointF,Eto.Drawing.SizeF)">
-            <summary>
-            Creates a new radial gradient brush object.
-            </summary>
-            <param name="startColor">Start color from the <paramref name="gradientOrigin"/></param>
-            <param name="endColor">End color at the outer edge of the ellipse</param>
-            <param name="center">Center of the ellipse</param>
-            <param name="gradientOrigin">Origin of the gradient.</param>
-            <param name="radius">Radius of the ellipse.</param>
-        </member>
-        <member name="M:Eto.Drawing.RadialGradientBrush.IHandler.GetTransform(Eto.Drawing.RadialGradientBrush)">
-            <summary>
-            Gets the transform for the specified brush
-            </summary>
-            <returns>The current transform for the specified brush</returns>
-            <param name="widget">Brush to get the transform</param>
-        </member>
-        <member name="M:Eto.Drawing.RadialGradientBrush.IHandler.SetTransform(Eto.Drawing.RadialGradientBrush,Eto.Drawing.IMatrix)">
-            <summary>
-            Sets the transform for the specified brush
-            </summary>
-            <param name="widget">Brush to set the transform</param>
-            <param name="transform">Transform to set to the brush</param>
-        </member>
-        <member name="M:Eto.Drawing.RadialGradientBrush.IHandler.GetGradientWrap(Eto.Drawing.RadialGradientBrush)">
-            <summary>
-            Gets the gradient wrap mode
-            </summary>
-            <returns>The gradient wrap mode for the brush</returns>
-            <param name="widget">Brush to get the gradient wrap mode</param>
-        </member>
-        <member name="M:Eto.Drawing.RadialGradientBrush.IHandler.SetGradientWrap(Eto.Drawing.RadialGradientBrush,Eto.Drawing.GradientWrapMode)">
-            <summary>
-            Sets the gradient wrap mode
-            </summary>
-            <param name="widget">Brush to set the wrap mode</param>
-            <param name="gradientWrap">Gradient wrap mode to set</param>
-        </member>
         <member name="T:Eto.Drawing.SystemColors">
             <summary>
             Methods to get colors of system elements
@@ -9739,7 +9733,7 @@
             <copyright>(c) 2015 by Curtis Wensley</copyright>
             <license type="BSD-3">See LICENSE for full terms</license>
         </member>
-        <member name="M:Eto.Drawing.FontConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+        <member name="M:Eto.Drawing.FontConverter.CanConvertFrom(Eto.ITypeDescriptorContext,System.Type)">
             <summary>
             Gets a value indicating that this converter can convert from the source type to a Font
             </summary>
@@ -9747,7 +9741,7 @@
             <param name="sourceType">Type to convert from</param>
             <returns>True if this converter can handle converting from the specified <paramref name="sourceType"/> to an font</returns>
         </member>
-        <member name="M:Eto.Drawing.FontConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+        <member name="M:Eto.Drawing.FontConverter.CanConvertTo(Eto.ITypeDescriptorContext,System.Type)">
             <summary>
             Gets a value indicating that this converter can convert to the specified type.
             </summary>
@@ -9755,7 +9749,7 @@
             <param name="destinationType">Type to convert to</param>
             <returns>True if this converter can convert to the specified <paramref name="destinationType"/>, otherwise false.</returns>
         </member>
-        <member name="M:Eto.Drawing.FontConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)">
+        <member name="M:Eto.Drawing.FontConverter.ConvertFrom(Eto.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)">
             <summary>
             Performs the conversion from the given <paramref name="value"/> to an <see cref="T:Eto.Drawing.Image"/> object
             </summary>
@@ -9957,479 +9951,108 @@
             <param name="folder">Special folder to retrieve the path for</param>
             <returns>Path of the specified folder</returns>
         </member>
-        <member name="T:Eto.Forms.ComboBox">
+        <member name="T:Eto.Forms.DropDown">
             <summary>
-            Presents a combination of an editable text box and drop down to select from a list of items and enter text.
+            Presents a drop down to select from a list of items
             </summary>
         </member>
-        <member name="F:Eto.Forms.ComboBox.TextChangedEvent">
+        <member name="P:Eto.Forms.DropDown.ShowBorder">
             <summary>
-            Event identifier for handlers when attaching the <see cref="E:Eto.Forms.ComboBox.TextChanged"/> event.
-            </summary>
-        </member>
-        <member name="E:Eto.Forms.ComboBox.TextChanged">
-            <summary>
-            Occurs when the Text property is changed either by the user or programatically.
-            </summary>
-        </member>
-        <member name="M:Eto.Forms.ComboBox.OnTextChanged(System.EventArgs)">
-            <summary>
-            Raises the <see cref="E:Eto.Forms.ComboBox.TextChanged"/> event.
-            </summary>
-            <param name="e">Event arguments</param>
-        </member>
-        <member name="M:Eto.Forms.ComboBox.#ctor">
-            <summary>
-            Initializes a new instance of the <see cref="T:Eto.Forms.ComboBox"/> class.
-            </summary>
-        </member>
-        <member name="P:Eto.Forms.ComboBox.Text">
-            <summary>
-            Gets or sets the text of the ComboBox.
-            </summary>
-            <value>The text content.</value>
-        </member>
-        <member name="P:Eto.Forms.ComboBox.ReadOnly">
-            <summary>
-            Gets or sets whether the user can change the text in the combo box.
+            Gets or sets a value indicating whether to show the control's border.
             </summary>
             <remarks>
-            When <c>true</c>, the user will still be able to select/copy the text, select items from the drop down, etc.
-            To disable the control, use the <see cref="P:Eto.Forms.Control.Enabled"/> property.
-            </remarks>
-        </member>
-        <member name="P:Eto.Forms.ComboBox.AutoComplete">
-            <summary>
-            Gets or sets a value indicating that the text should autocomplete when the user types in a value.
-            </summary>
-            <remarks>
-            The autocomplete will be based off of the items in the combo box.
-            </remarks>
-            <value><c>true</c> to auto complete the text; otherwise, <c>false</c>.</value>
-        </member>
-        <member name="M:Eto.Forms.ComboBox.GetCallback">
-            <summary>
-            Gets an instance of an object used to perform callbacks to the widget from handler implementations
-            </summary>
-            <returns>The callback instance to use for this widget</returns>
-        </member>
-        <member name="T:Eto.Forms.ComboBox.ICallback">
-            <summary>
-            Callback interface for the <see cref="T:Eto.Forms.ComboBox"/>
-            </summary>
-        </member>
-        <member name="M:Eto.Forms.ComboBox.ICallback.OnTextChanged(Eto.Forms.ComboBox,System.EventArgs)">
-            <summary>
-            Raises the text changed event.
-            </summary>
-        </member>
-        <member name="T:Eto.Forms.ComboBox.Callback">
-            <summary>
-            Callback implementation for handlers of <see cref="T:Eto.Forms.ListControl"/>
-            </summary>
-        </member>
-        <member name="M:Eto.Forms.ComboBox.Callback.OnTextChanged(Eto.Forms.ComboBox,System.EventArgs)">
-            <summary>
-            Raises the text changed event.
-            </summary>
-        </member>
-        <member name="T:Eto.Forms.ComboBox.IHandler">
-            <summary>
-            Handler interface for the <see cref="T:Eto.Forms.ComboBox"/>
-            </summary>
-        </member>
-        <member name="P:Eto.Forms.ComboBox.IHandler.Text">
-            <summary>
-            Gets or sets the text of the ComboBox.
-            </summary>
-            <value>The text content.</value>
-        </member>
-        <member name="P:Eto.Forms.ComboBox.IHandler.ReadOnly">
-            <summary>
-            Gets or sets the editable of ComboBox.
-            </summary>
-        </member>
-        <member name="P:Eto.Forms.ComboBox.IHandler.AutoComplete">
-            <summary>
-            Gets or sets a value indicating that the text should autocomplete when the user types in a value.
-            </summary>
-            <remarks>
-            The autocomplete will be based off of the items in the combo box.
-            </remarks>
-            <value><c>true</c> to auto complete the text; otherwise, <c>false</c>.</value>
-        </member>
-        <member name="T:Eto.Forms.Expander">
-            <summary>
-            A control with a panel that can be expanded or collapsed with a header and button.
-            </summary>
-        </member>
-        <member name="F:Eto.Forms.Expander.ExpandedChangedEvent">
-            <summary>
-            Identifier for the <see cref="E:Eto.Forms.Expander.ExpandedChanged"/> event.
-            </summary>
-        </member>
-        <member name="E:Eto.Forms.Expander.ExpandedChanged">
-            <summary>
-            Occurs when the <see cref="P:Eto.Forms.Expander.Expanded"/> property changes.
-            </summary>
-        </member>
-        <member name="M:Eto.Forms.Expander.OnExpandedChanged(System.EventArgs)">
-            <summary>
-            Raises the <see cref="E:Eto.Forms.Expander.ExpandedChanged"/> event.
-            </summary>
-            <param name="e">Event arguments</param>
-        </member>
-        <member name="P:Eto.Forms.Expander.Controls">
-            <summary>
-            Gets an enumeration of controls that are directly contained by this container
-            </summary>
-            <value>The contained controls.</value>
-        </member>
-        <member name="M:Eto.Forms.Expander.GetCallback">
-            <summary>
-            Gets an instance of an object used to perform callbacks to the widget from handler implementations
-            </summary>
-            <returns>The callback.</returns>
-        </member>
-        <member name="P:Eto.Forms.Expander.Expanded">
-            <summary>
-            Gets or sets a value indicating whether the <see cref="P:Eto.Forms.Panel.Content"/> is expanded/visible.
-            </summary>
-            <value><c>true</c> if expanded; otherwise, <c>false</c>.</value>
-        </member>
-        <member name="P:Eto.Forms.Expander.Header">
-            <summary>
-            Gets or sets the header control.
-            </summary>
-            <value>The header control.</value>
-        </member>
-        <member name="T:Eto.Forms.Expander.ICallback">
-            <summary>
-            Callback interface for the <see cref="T:Eto.Forms.Expander"/>
-            </summary>
-        </member>
-        <member name="M:Eto.Forms.Expander.ICallback.OnExpandedChanged(Eto.Forms.Expander,System.EventArgs)">
-            <summary>
-            Raises the expanded changed event.
-            </summary>
-            <param name="widget">Widget to raise the event.</param>
-            <param name="e">Event arguments.</param>
-        </member>
-        <member name="T:Eto.Forms.Expander.Callback">
-            <summary>
-            Callback implementation for the <see cref="T:Eto.Forms.Expander"/>
-            </summary>
-        </member>
-        <member name="M:Eto.Forms.Expander.Callback.OnExpandedChanged(Eto.Forms.Expander,System.EventArgs)">
-            <summary>
-            Raises the expanded changed event.
-            </summary>
-            <param name="widget">Widget to raise the event.</param>
-            <param name="e">Event arguments.</param>
-        </member>
-        <member name="T:Eto.Forms.Expander.IHandler">
-            <summary>
-            Handler interface for platform implementations of the <see cref="T:Eto.Forms.Expander"/>.
-            </summary>
-        </member>
-        <member name="P:Eto.Forms.Expander.IHandler.Expanded">
-            <summary>
-            Gets or sets a value indicating whether the <see cref="P:Eto.Forms.Panel.IHandler.Content"/> is expanded/visible.
-            </summary>
-            <value><c>true</c> if expanded; otherwise, <c>false</c>.</value>
-        </member>
-        <member name="P:Eto.Forms.Expander.IHandler.Header">
-            <summary>
-            Gets or sets the header control.
-            </summary>
-            <value>The header control.</value>
-        </member>
-        <member name="T:Eto.Forms.CellStates">
-            <summary>
-            State for a <see cref="T:Eto.Forms.Cell"/>
-            </summary>
-        </member>
-        <member name="F:Eto.Forms.CellStates.None">
-            <summary>
-            Normal state
-            </summary>
-        </member>
-        <member name="F:Eto.Forms.CellStates.Selected">
-            <summary>
-            Row is selected
-            </summary>
-        </member>
-        <member name="F:Eto.Forms.CellStates.Editing">
-            <summary>
-            Cell is in edit mode
-            </summary>
-        </member>
-        <member name="T:Eto.Forms.CellEventArgs">
-            <summary>
-            Event arguments for events that refer to a <see cref="T:Eto.Forms.Cell"/>.
-            </summary>
-        </member>
-        <member name="P:Eto.Forms.CellEventArgs.CellState">
-            <summary>
-            Gets the state of the cell.
-            </summary>
-            <value>The state of the cell.</value>
-        </member>
-        <member name="P:Eto.Forms.CellEventArgs.Item">
-            <summary>
-            Gets or sets the item for the cell.
-            </summary>
-            <value>The cell's item.</value>
-        </member>
-        <member name="P:Eto.Forms.CellEventArgs.Row">
-            <summary>
-            Gets or sets the row for the cell.
-            </summary>
-            <value>The cell's row.</value>
-        </member>
-        <member name="P:Eto.Forms.CellEventArgs.CellTextColor">
-            <summary>
-            Gets or sets the preferred color of the cell text given its state.
-            </summary>
-            <value>The preferred color of cell text.</value>
-        </member>
-        <member name="M:Eto.Forms.CellEventArgs.#ctor(System.Int32,System.Object,Eto.Forms.CellStates)">
-            <summary>
-            Initializes a new instance of the <see cref="T:Eto.Forms.CellEventArgs"/> class.
-            </summary>
-            <param name="row">Row for the cell.</param>
-            <param name="item">Item the cell is displaying.</param>
-            <param name="cellState">State of the cell.</param>
-        </member>
-        <member name="P:Eto.Forms.CellEventArgs.IsEditing">
-            <summary>
-            Gets or sets a value indicating whether the cell is in edit mode.
-            </summary>
-            <value><c>true</c> if the cell is in edit mode; otherwise, <c>false</c>.</value>
-        </member>
-        <member name="P:Eto.Forms.CellEventArgs.IsSelected">
-            <summary>
-            Gets or sets a value indicating whether the cell is selected.
-            </summary>
-            <value><c>true</c> if the cell is selected; otherwise, <c>false</c>.</value>
-        </member>
-        <member name="E:Eto.Forms.CellEventArgs.PropertyChanged">
-            <summary>
-            Occurs when a property is changed.
-            </summary>
-        </member>
-        <member name="M:Eto.Forms.CellEventArgs.OnPropertyChanged(System.ComponentModel.PropertyChangedEventArgs)">
-            <summary>
-            Raises the <see cref="E:Eto.Forms.CellEventArgs.PropertyChanged"/> event
-            </summary>
-            <param name="e">Event arguments</param>
-        </member>
-        <member name="T:Eto.Forms.CustomCell">
-            <summary>
-            Cell for <see cref="T:Eto.Forms.Grid"/> controls to create custom content for the cell.
-            </summary>
-            <remarks>
-            The CustomCell is useful when you want to provide a fully custom implementation of a cell, including editable
-            controls.
+            This is a hint to omit the border of the control and show it as plainly as possible.
             
-            Note that some platforms bahave differently with a CustomCell, depending on the value of <see cref="P:Eto.Forms.CustomCell.SupportsControlView"/>.
+            Typically used when you want to show the control within a cell of the <see cref="T:Eto.Forms.GridView"/>.
+            </remarks>
+            <value><c>true</c> to show the control border; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="T:Eto.Forms.DropDown.IHandler">
+            <summary>
+            Handler interface for the <see cref="T:Eto.Forms.DropDown"/>
+            </summary>
+        </member>
+        <member name="P:Eto.Forms.DropDown.IHandler.ShowBorder">
+            <summary>
+            Gets or sets a value indicating whether to show the control's border.
+            </summary>
+            <remarks>
+            This is a hint to omit the border of the control and show it as plainly as possible.
             
-            When <c>false</c>, the grid will use the <see cref="E:Eto.Forms.CustomCell.Paint"/> event to paint the contents of each cell, and
-            only use <see cref="P:Eto.Forms.CustomCell.CreateCell"/> and <see cref="P:Eto.Forms.CustomCell.ConfigureCell"/> when the cell is in edit mode.
-            
-            When <c>true</c>, the <see cref="P:Eto.Forms.CustomCell.CreateCell"/> and <see cref="P:Eto.Forms.CustomCell.ConfigureCell"/> methods will be used
-            for all cells, even when not in edit mode.
-            
+            Typically used when you want to show the control within a cell of the <see cref="T:Eto.Forms.GridView"/>.
             </remarks>
+            <value><c>true</c> to show the control border; otherwise, <c>false</c>.</value>
         </member>
-        <member name="P:Eto.Forms.CustomCell.SupportsControlView">
+        <member name="T:Eto.Forms.AddValueEventArgs`1">
             <summary>
-            Gets a value indicating that the CustomCell on the current platform supports using a Control for its view mode.
-            Gtk and WinForms only support custom controls when editing a cell.
+            Arguments for controlling whether values should be added to a list or control
+            </summary>
+        </member>
+        <member name="P:Eto.Forms.AddValueEventArgs`1.Value">
+            <summary>
+            Value being added to the combo box
+            </summary>
+        </member>
+        <member name="P:Eto.Forms.AddValueEventArgs`1.ShouldAdd">
+            <summary>
+            True if the value should be added, false otherwise
+            </summary>
+        </member>
+        <member name="M:Eto.Forms.AddValueEventArgs`1.#ctor(`0,System.Boolean)">
+            <summary>
+            Initializes a new instance of the AddValueEventArgs class
+            </summary>
+            <param name="value">value to be added</param>
+            <param name="shouldAdd">true if by default the item will be added, false otherwise</param>
+        </member>
+        <member name="T:Eto.Forms.EnumDropDown`1">
+            <summary>
+            Combo box for an enumeration
+            </summary>
+            <typeparam name="T">Enumeration type to fill the values with</typeparam>
+        </member>
+        <member name="E:Eto.Forms.EnumDropDown`1.AddValue">
+            <summary>
+            Event to handle when a value of the enumeration is added to the combo box
+            </summary>
+        </member>
+        <member name="M:Eto.Forms.EnumDropDown`1.OnAddValue(Eto.Forms.AddValueEventArgs{`0})">
+            <summary>
+            Handles the <see cref="E:Eto.Forms.EnumDropDown`1.AddValue"/> event
+            </summary>
+        </member>
+        <member name="P:Eto.Forms.EnumDropDown`1.SelectedValue">
+            <summary>
+            Gets or sets the currently selected enumeration value
+            </summary>
+        </member>
+        <member name="P:Eto.Forms.EnumDropDown`1.GetText">
+            <summary>
+            Gets or sets a delegate used to get the text value for each item.
             </summary>
             <remarks>
-            When <c>false</c>, you must handle the <see cref="E:Eto.Forms.CustomCell.Paint"/> event (or override <see cref="M:Eto.Forms.CustomCell.OnPaint(Eto.Forms.CellPaintEventArgs)"/>) to provide
-            a view mode for the cell contents.
+            You can use this delegate to provide translated or custom text for each enumeration.
+            Otherwise, the name of the enum is used.
             </remarks>
-            <value><c>true</c> if supports control view; otherwise, <c>false</c>.</value>
         </member>
-        <member name="M:Eto.Forms.CustomCell.Create``1">
+        <member name="P:Eto.Forms.EnumDropDown`1.SortAlphabetically">
             <summary>
-            Creates a new CustomCell with instances of the specified <typeparamref name="TControl"/> type.
-            </summary>
-            <typeparam name="TControl">The type of control to instantiate for the cell, which must have a default constructor.</typeparam>
-        </member>
-        <member name="P:Eto.Forms.CustomCell.CreateCell">
-            <summary>
-            Gets or sets a delegate to create the contents of the cell.
-            </summary>
-            <remarks>
-            You can also override the <see cref="M:Eto.Forms.CustomCell.OnCreateCell(Eto.Forms.CellEventArgs)"/> method in subclasses.
-            </remarks>
-            <value>The delegate to create the cell content.</value>
-        </member>
-        <member name="P:Eto.Forms.CustomCell.GetIdentifier">
-            <summary>
-            Gets or sets a delegate to get the identifier of the cell based on its content.
-            </summary>
-            <remarks>
-            When you have different controls on a per-row level, each variation must have an identifier string
-            to allow the framework to cache the different types of cells to provide good performance.
-            
-            This hooks into standard cell caching mechanisms in certain platforms, such as on the Mac.
-            </remarks>
-            <value>The delegate to get the identifier for the cell.</value>
-        </member>
-        <member name="P:Eto.Forms.CustomCell.GetPreferredWidth">
-            <summary>
-            Gets or sets a delegate to get the preferred width of the cell based on its content.
-            </summary>
-            <remarks>
-            This may only be used when <see cref="P:Eto.Forms.CustomCell.SupportsControlView"/> is false.
-            </remarks>
-            <value>The delegate to get the preferred width of the cell.</value>
-        </member>
-        <member name="P:Eto.Forms.CustomCell.ConfigureCell">
-            <summary>
-            Gets or sets a delegate to configure an cell when it is reused for a different row or the data changes.
-            </summary>
-            <remarks>
-            This should set up your control your cell content to be reused.  If null, the DataContext of your control will be set to the row model instance.
-            
-            Typically if you use MVVM data binding, you do not need to override the standard behaviour.
-            </remarks>
-            <value>The delegate to configure an existing cell's control for a new row/model instance.</value>
-        </member>
-        <member name="M:Eto.Forms.CustomCell.OnCreateCell(Eto.Forms.CellEventArgs)">
-            <summary>
-            Creates an instance of the control for a cell.
-            </summary>
-            <remarks>
-            This is called multiple times usually for the number of visible and/or cached cells that are displayed.
-            
-            If you intend on creating a different type of cell control based on the item, you should also override
-            <see cref="P:Eto.Forms.CustomCell.GetIdentifier"/>
-            </remarks>
-            <param name="args">Arguments when creating the cell to get the row, item and state.</param>
-            <returns>The control to display in the cell.</returns>
-        </member>
-        <member name="M:Eto.Forms.CustomCell.OnGetIdentifier(Eto.Forms.CellEventArgs)">
-            <summary>
-            Gets the identifier of the cell based on its content.
-            </summary>
-            <remarks>
-            When you have different controls on a per-row level, each variation must have an identifier string
-            to allow the framework to cache the different types of cells to provide good performance.
-            
-            This hooks into standard cell caching mechanisms in certain platforms, such as on the Mac.
-            </remarks>
-            <seealso cref="P:Eto.Forms.CustomCell.GetIdentifier"/>
-            <param name="args">Arguments for the cell</param>
-            <value>The identifier for the cell.</value>
-        </member>
-        <member name="M:Eto.Forms.CustomCell.OnGetPreferredWidth(Eto.Forms.CellEventArgs)">
-            <summary>
-            Gets the preferred width of the cell based on its content.
-            </summary>
-            <remarks>
-            This may only be used when <see cref="P:Eto.Forms.CustomCell.SupportsControlView"/> is false.
-            </remarks>
-            <param name="args">Arguments for the cell</param>
-            <value>The preferred width of the cell.</value>
-        </member>
-        <member name="M:Eto.Forms.CustomCell.OnConfigureCell(Eto.Forms.CellEventArgs,Eto.Forms.Control)">
-            <summary>
-            Configures an existing cell when it is reused for a different row or the data changes.
-            </summary>
-            <remarks>
-            This should set up your control your cell content to be reused.  If null, the DataContext of your control will be set to the row model instance.
-            
-            Typically if you use MVVM data binding, you do not need to override the standard behaviour.
-            </remarks>
-            <param name="args">Arguments for the cell</param>
-            <param name="control">Existing control to configure for the new cell and/or data</param>
-        </member>
-        <member name="E:Eto.Forms.CustomCell.Paint">
-            <summary>
-            Event to handle painting the content of the cell when <see cref="P:Eto.Forms.CustomCell.SupportsControlView"/> is false.
+            Gets or sets a value indicating that the items in the list are sorted alphabetically, instead of by numerical value of the enumeration
             </summary>
         </member>
-        <member name="M:Eto.Forms.CustomCell.OnPaint(Eto.Forms.CellPaintEventArgs)">
+        <member name="M:Eto.Forms.EnumDropDown`1.CreateDefaultDataStore">
             <summary>
-            Raises the <see cref="E:Eto.Forms.CustomCell.Paint"/> event.
+            Creates the default data store for the list.
             </summary>
-            <param name="args">Cell paint arguments.</param>
+            <remarks>This is used to create a data store if one is not specified by the user.
+            This can be used by subclasses to provide default items to populate the list.</remarks>
+            <returns>The default data store.</returns>
         </member>
-        <member name="T:Eto.Forms.CustomCell.IHandler">
+        <member name="P:Eto.Forms.EnumDropDown`1.SelectedValueBinding">
             <summary>
-            Handler interface for the <see cref="T:Eto.Forms.CustomCell"/>.
+            Gets a new binding for the <see cref="P:Eto.Forms.EnumDropDown`1.SelectedValue"/> property.
             </summary>
-        </member>
-        <member name="T:Eto.Forms.CustomCell.ICallback">
-            <summary>
-            Callback interface for the <see cref="T:Eto.Forms.CustomCell"/>
-            </summary>
-        </member>
-        <member name="M:Eto.Forms.CustomCell.ICallback.OnGetPreferredWidth(Eto.Forms.CustomCell,Eto.Forms.CellEventArgs)">
-            <summary>
-            Gets the preferred width of the cell based on its content.
-            </summary>
-        </member>
-        <member name="M:Eto.Forms.CustomCell.ICallback.OnGetIdentifier(Eto.Forms.CustomCell,Eto.Forms.CellEventArgs)">
-            <summary>
-            Raises the get identifier event.
-            </summary>
-        </member>
-        <member name="M:Eto.Forms.CustomCell.ICallback.OnConfigureCell(Eto.Forms.CustomCell,Eto.Forms.CellEventArgs,Eto.Forms.Control)">
-            <summary>
-            Raises the configure cell event.
-            </summary>
-        </member>
-        <member name="M:Eto.Forms.CustomCell.ICallback.OnCreateCell(Eto.Forms.CustomCell,Eto.Forms.CellEventArgs)">
-            <summary>
-            Raises the create cell event.
-            </summary>
-        </member>
-        <member name="M:Eto.Forms.CustomCell.ICallback.OnPaint(Eto.Forms.CustomCell,Eto.Forms.CellPaintEventArgs)">
-            <summary>
-            Raises the paint event.
-            </summary>
-        </member>
-        <member name="T:Eto.Forms.CustomCell.Callback">
-            <summary>
-            Callback implementation for the <see cref="T:Eto.Forms.CustomCell"/>
-            </summary>
-        </member>
-        <member name="M:Eto.Forms.CustomCell.Callback.OnGetPreferredWidth(Eto.Forms.CustomCell,Eto.Forms.CellEventArgs)">
-            <summary>
-            Gets the preferred width of the cell based on its content.
-            </summary>
-        </member>
-        <member name="M:Eto.Forms.CustomCell.Callback.OnGetIdentifier(Eto.Forms.CustomCell,Eto.Forms.CellEventArgs)">
-            <summary>
-            Raises the get identifier event.
-            </summary>
-        </member>
-        <member name="M:Eto.Forms.CustomCell.Callback.OnConfigureCell(Eto.Forms.CustomCell,Eto.Forms.CellEventArgs,Eto.Forms.Control)">
-            <summary>
-            Raises the configure cell event.
-            </summary>
-        </member>
-        <member name="M:Eto.Forms.CustomCell.Callback.OnCreateCell(Eto.Forms.CustomCell,Eto.Forms.CellEventArgs)">
-            <summary>
-            Raises the create cell event.
-            </summary>
-        </member>
-        <member name="M:Eto.Forms.CustomCell.Callback.OnPaint(Eto.Forms.CustomCell,Eto.Forms.CellPaintEventArgs)">
-            <summary>
-            Raises the paint event.
-            </summary>
-        </member>
-        <member name="M:Eto.Forms.CustomCell.GetCallback">
-            <summary>
-            Gets an instance of an object used to perform callbacks to the widget from handler implementations
-            </summary>
-            <returns>The callback.</returns>
+            <value>A new selected value binding.</value>
         </member>
         <member name="T:Eto.Forms.GridColumnEventArgs">
             <summary>
@@ -10984,6 +10607,73 @@
             Some platforms may not support changing the password display character
             </remarks>
             <value>The password character</value>
+        </member>
+        <member name="T:Eto.Forms.ProgressBar">
+            <summary>
+            Control to show progress of a long running task
+            </summary>
+            <seealso cref="T:Eto.Forms.Spinner"/>
+        </member>
+        <member name="P:Eto.Forms.ProgressBar.MaxValue">
+            <summary>
+            Gets or sets the value of the progress bar that represents 100% complete. The default is 100.
+            </summary>
+            <value>The maximum value.</value>
+        </member>
+        <member name="P:Eto.Forms.ProgressBar.MinValue">
+            <summary>
+            Gets or sets the minimum value of the progress that represents 0% complete. The default is 0.
+            </summary>
+            <value>The minimum value.</value>
+        </member>
+        <member name="P:Eto.Forms.ProgressBar.Value">
+            <summary>
+            Gets or sets the current progress that falls between <see cref="P:Eto.Forms.ProgressBar.MinValue"/> and <see cref="P:Eto.Forms.ProgressBar.MaxValue"/>
+            </summary>
+            <value>The value.</value>
+        </member>
+        <member name="P:Eto.Forms.ProgressBar.Indeterminate">
+            <summary>
+            Gets or sets a value indicating whether the progress is indeterminate
+            </summary>
+            <remarks>
+            When indeterminate is true, the <see cref="P:Eto.Forms.ProgressBar.MaxValue"/>/<see cref="P:Eto.Forms.ProgressBar.MinValue"/>/<see cref="P:Eto.Forms.ProgressBar.Value"/> are ignored
+            and will typically show in a continuous style.
+            </remarks>
+            <value><c>true</c> if indeterminate; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="T:Eto.Forms.ProgressBar.IHandler">
+            <summary>
+            Handler interface for the <see cref="T:Eto.Forms.ProgressBar"/> control
+            </summary>
+        </member>
+        <member name="P:Eto.Forms.ProgressBar.IHandler.MaxValue">
+            <summary>
+            Gets or sets the value of the progress bar that represents 100% complete. The default is 100.
+            </summary>
+            <value>The maximum value.</value>
+        </member>
+        <member name="P:Eto.Forms.ProgressBar.IHandler.MinValue">
+            <summary>
+            Gets or sets the minimum value of the progress that represents 0% complete. The default is 0.
+            </summary>
+            <value>The minimum value.</value>
+        </member>
+        <member name="P:Eto.Forms.ProgressBar.IHandler.Value">
+            <summary>
+            Gets or sets the current progress that falls between <see cref="P:Eto.Forms.ProgressBar.IHandler.MinValue"/> and <see cref="P:Eto.Forms.ProgressBar.IHandler.MaxValue"/>
+            </summary>
+            <value>The value.</value>
+        </member>
+        <member name="P:Eto.Forms.ProgressBar.IHandler.Indeterminate">
+            <summary>
+            Gets or sets a value indicating whether the progress is indeterminate
+            </summary>
+            <remarks>
+            When indeterminate is true, the <see cref="P:Eto.Forms.ProgressBar.IHandler.MaxValue"/>/<see cref="P:Eto.Forms.ProgressBar.IHandler.MinValue"/>/<see cref="P:Eto.Forms.ProgressBar.IHandler.Value"/> are ignored
+            and will typically show in a continuous style.
+            </remarks>
+            <value><c>true</c> if indeterminate; otherwise, <c>false</c>.</value>
         </member>
         <member name="T:Eto.Forms.SearchBox">
             <summary>
@@ -12803,6 +12493,53 @@
             </summary>
             <value><c>true</c> if enabled; otherwise, <c>false</c>.</value>
         </member>
+        <member name="T:Eto.Forms.RadioToolItem">
+            <summary>
+            Tool item that can be toggled on or off.
+            </summary>
+            <remarks>
+            Note that there is only a single group of radio buttons allowed on a toolbar.
+            </remarks>
+        </member>
+        <member name="E:Eto.Forms.RadioToolItem.CheckedChanged">
+            <summary>
+            Occurs when the <see cref="P:Eto.Forms.RadioToolItem.Checked"/> property is changed.
+            </summary>
+        </member>
+        <member name="M:Eto.Forms.RadioToolItem.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Eto.Forms.RadioToolItem"/> class.
+            </summary>
+        </member>
+        <member name="M:Eto.Forms.RadioToolItem.#ctor(Eto.Forms.CheckCommand)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Eto.Forms.RadioToolItem"/> class with the specified <paramref name="command"/>.
+            </summary>
+            <param name="command">Command for the tool item.</param>
+        </member>
+        <member name="P:Eto.Forms.RadioToolItem.Checked">
+            <summary>
+            Gets or sets a value indicating whether this item is checked.
+            </summary>
+            <value><c>true</c> if checked; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="M:Eto.Forms.RadioToolItem.OnCheckedChanged(System.EventArgs)">
+            <summary>
+            Raises the <see cref="E:Eto.Forms.RadioToolItem.CheckedChanged"/> event.
+            </summary>
+            <param name="e">Event arguments.</param>
+        </member>
+        <member name="T:Eto.Forms.RadioToolItem.IHandler">
+            <summary>
+            Handler for the <see cref="T:Eto.Forms.RadioToolItem"/>.
+            </summary>
+        </member>
+        <member name="P:Eto.Forms.RadioToolItem.IHandler.Checked">
+            <summary>
+            Gets or sets a value indicating whether this item is checked.
+            </summary>
+            <value><c>true</c> if checked; otherwise, <c>false</c>.</value>
+        </member>
         <member name="T:Eto.Forms.Application">
             <summary>
             Starting point for any UI application
@@ -12864,7 +12601,7 @@
             Occurs when an unhandled exception occcurs.
             </summary>
         </member>
-        <member name="M:Eto.Forms.Application.OnUnhandledException(System.UnhandledExceptionEventArgs)">
+        <member name="M:Eto.Forms.Application.OnUnhandledException(Eto.UnhandledExceptionEventArgs)">
             <summary>
             Raises the unhandled exception event.
             </summary>
@@ -13058,7 +12795,7 @@
             Raises the terminating event.
             </summary>
         </member>
-        <member name="M:Eto.Forms.Application.ICallback.OnUnhandledException(Eto.Forms.Application,System.UnhandledExceptionEventArgs)">
+        <member name="M:Eto.Forms.Application.ICallback.OnUnhandledException(Eto.Forms.Application,Eto.UnhandledExceptionEventArgs)">
             <summary>
             Raises the unhandled exception event.
             </summary>
@@ -13078,7 +12815,7 @@
             Raises the terminating event.
             </summary>
         </member>
-        <member name="M:Eto.Forms.Application.Callback.OnUnhandledException(Eto.Forms.Application,System.UnhandledExceptionEventArgs)">
+        <member name="M:Eto.Forms.Application.Callback.OnUnhandledException(Eto.Forms.Application,Eto.UnhandledExceptionEventArgs)">
             <summary>
             Raises the unhandled exception event.
             </summary>
@@ -15645,7 +15382,7 @@
             </summary>
             <remarks>
             This will invoke the specified command when the button is pressed.
-            The <see cref="M:Eto.Forms.ICommand.CanExecute(System.Object)"/> will also used to set the enabled/disabled state of the button.
+            The <see cref="M:System.Windows.Input.ICommand.CanExecute(System.Object)"/> will also used to set the enabled/disabled state of the button.
             </remarks>
             <value>The command to invoke.</value>
         </member>
@@ -15847,37 +15584,106 @@
             </summary>
             <value><c>true</c> if three state; otherwise, <c>false</c>.</value>
         </member>
-        <member name="T:Eto.Forms.DropDown">
+        <member name="T:Eto.Forms.ComboBox">
             <summary>
-            Presents a drop down to select from a list of items
+            Presents a combination of an editable text box and drop down to select from a list of items and enter text.
             </summary>
         </member>
-        <member name="P:Eto.Forms.DropDown.ShowBorder">
+        <member name="F:Eto.Forms.ComboBox.TextChangedEvent">
             <summary>
-            Gets or sets a value indicating whether to show the control's border.
+            Event identifier for handlers when attaching the <see cref="E:Eto.Forms.ComboBox.TextChanged"/> event.
+            </summary>
+        </member>
+        <member name="E:Eto.Forms.ComboBox.TextChanged">
+            <summary>
+            Occurs when the Text property is changed either by the user or programatically.
+            </summary>
+        </member>
+        <member name="M:Eto.Forms.ComboBox.OnTextChanged(System.EventArgs)">
+            <summary>
+            Raises the <see cref="E:Eto.Forms.ComboBox.TextChanged"/> event.
+            </summary>
+            <param name="e">Event arguments</param>
+        </member>
+        <member name="M:Eto.Forms.ComboBox.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Eto.Forms.ComboBox"/> class.
+            </summary>
+        </member>
+        <member name="P:Eto.Forms.ComboBox.Text">
+            <summary>
+            Gets or sets the text of the ComboBox.
+            </summary>
+            <value>The text content.</value>
+        </member>
+        <member name="P:Eto.Forms.ComboBox.ReadOnly">
+            <summary>
+            Gets or sets whether the user can change the text in the combo box.
             </summary>
             <remarks>
-            This is a hint to omit the border of the control and show it as plainly as possible.
-            
-            Typically used when you want to show the control within a cell of the <see cref="T:Eto.Forms.GridView"/>.
+            When <c>true</c>, the user will still be able to select/copy the text, select items from the drop down, etc.
+            To disable the control, use the <see cref="P:Eto.Forms.Control.Enabled"/> property.
             </remarks>
-            <value><c>true</c> to show the control border; otherwise, <c>false</c>.</value>
         </member>
-        <member name="T:Eto.Forms.DropDown.IHandler">
+        <member name="P:Eto.Forms.ComboBox.AutoComplete">
             <summary>
-            Handler interface for the <see cref="T:Eto.Forms.DropDown"/>
-            </summary>
-        </member>
-        <member name="P:Eto.Forms.DropDown.IHandler.ShowBorder">
-            <summary>
-            Gets or sets a value indicating whether to show the control's border.
+            Gets or sets a value indicating that the text should autocomplete when the user types in a value.
             </summary>
             <remarks>
-            This is a hint to omit the border of the control and show it as plainly as possible.
-            
-            Typically used when you want to show the control within a cell of the <see cref="T:Eto.Forms.GridView"/>.
+            The autocomplete will be based off of the items in the combo box.
             </remarks>
-            <value><c>true</c> to show the control border; otherwise, <c>false</c>.</value>
+            <value><c>true</c> to auto complete the text; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="M:Eto.Forms.ComboBox.GetCallback">
+            <summary>
+            Gets an instance of an object used to perform callbacks to the widget from handler implementations
+            </summary>
+            <returns>The callback instance to use for this widget</returns>
+        </member>
+        <member name="T:Eto.Forms.ComboBox.ICallback">
+            <summary>
+            Callback interface for the <see cref="T:Eto.Forms.ComboBox"/>
+            </summary>
+        </member>
+        <member name="M:Eto.Forms.ComboBox.ICallback.OnTextChanged(Eto.Forms.ComboBox,System.EventArgs)">
+            <summary>
+            Raises the text changed event.
+            </summary>
+        </member>
+        <member name="T:Eto.Forms.ComboBox.Callback">
+            <summary>
+            Callback implementation for handlers of <see cref="T:Eto.Forms.ListControl"/>
+            </summary>
+        </member>
+        <member name="M:Eto.Forms.ComboBox.Callback.OnTextChanged(Eto.Forms.ComboBox,System.EventArgs)">
+            <summary>
+            Raises the text changed event.
+            </summary>
+        </member>
+        <member name="T:Eto.Forms.ComboBox.IHandler">
+            <summary>
+            Handler interface for the <see cref="T:Eto.Forms.ComboBox"/>
+            </summary>
+        </member>
+        <member name="P:Eto.Forms.ComboBox.IHandler.Text">
+            <summary>
+            Gets or sets the text of the ComboBox.
+            </summary>
+            <value>The text content.</value>
+        </member>
+        <member name="P:Eto.Forms.ComboBox.IHandler.ReadOnly">
+            <summary>
+            Gets or sets the editable of ComboBox.
+            </summary>
+        </member>
+        <member name="P:Eto.Forms.ComboBox.IHandler.AutoComplete">
+            <summary>
+            Gets or sets a value indicating that the text should autocomplete when the user types in a value.
+            </summary>
+            <remarks>
+            The autocomplete will be based off of the items in the combo box.
+            </remarks>
+            <value><c>true</c> to auto complete the text; otherwise, <c>false</c>.</value>
         </member>
         <member name="T:Eto.Forms.Control">
             <summary>
@@ -17845,73 +17651,6 @@
             </summary>
             <value>The scroll wheel delta.</value>
         </member>
-        <member name="T:Eto.Forms.ProgressBar">
-            <summary>
-            Control to show progress of a long running task
-            </summary>
-            <seealso cref="T:Eto.Forms.Spinner"/>
-        </member>
-        <member name="P:Eto.Forms.ProgressBar.MaxValue">
-            <summary>
-            Gets or sets the value of the progress bar that represents 100% complete. The default is 100.
-            </summary>
-            <value>The maximum value.</value>
-        </member>
-        <member name="P:Eto.Forms.ProgressBar.MinValue">
-            <summary>
-            Gets or sets the minimum value of the progress that represents 0% complete. The default is 0.
-            </summary>
-            <value>The minimum value.</value>
-        </member>
-        <member name="P:Eto.Forms.ProgressBar.Value">
-            <summary>
-            Gets or sets the current progress that falls between <see cref="P:Eto.Forms.ProgressBar.MinValue"/> and <see cref="P:Eto.Forms.ProgressBar.MaxValue"/>
-            </summary>
-            <value>The value.</value>
-        </member>
-        <member name="P:Eto.Forms.ProgressBar.Indeterminate">
-            <summary>
-            Gets or sets a value indicating whether the progress is indeterminate
-            </summary>
-            <remarks>
-            When indeterminate is true, the <see cref="P:Eto.Forms.ProgressBar.MaxValue"/>/<see cref="P:Eto.Forms.ProgressBar.MinValue"/>/<see cref="P:Eto.Forms.ProgressBar.Value"/> are ignored
-            and will typically show in a continuous style.
-            </remarks>
-            <value><c>true</c> if indeterminate; otherwise, <c>false</c>.</value>
-        </member>
-        <member name="T:Eto.Forms.ProgressBar.IHandler">
-            <summary>
-            Handler interface for the <see cref="T:Eto.Forms.ProgressBar"/> control
-            </summary>
-        </member>
-        <member name="P:Eto.Forms.ProgressBar.IHandler.MaxValue">
-            <summary>
-            Gets or sets the value of the progress bar that represents 100% complete. The default is 100.
-            </summary>
-            <value>The maximum value.</value>
-        </member>
-        <member name="P:Eto.Forms.ProgressBar.IHandler.MinValue">
-            <summary>
-            Gets or sets the minimum value of the progress that represents 0% complete. The default is 0.
-            </summary>
-            <value>The minimum value.</value>
-        </member>
-        <member name="P:Eto.Forms.ProgressBar.IHandler.Value">
-            <summary>
-            Gets or sets the current progress that falls between <see cref="P:Eto.Forms.ProgressBar.IHandler.MinValue"/> and <see cref="P:Eto.Forms.ProgressBar.IHandler.MaxValue"/>
-            </summary>
-            <value>The value.</value>
-        </member>
-        <member name="P:Eto.Forms.ProgressBar.IHandler.Indeterminate">
-            <summary>
-            Gets or sets a value indicating whether the progress is indeterminate
-            </summary>
-            <remarks>
-            When indeterminate is true, the <see cref="P:Eto.Forms.ProgressBar.IHandler.MaxValue"/>/<see cref="P:Eto.Forms.ProgressBar.IHandler.MinValue"/>/<see cref="P:Eto.Forms.ProgressBar.IHandler.Value"/> are ignored
-            and will typically show in a continuous style.
-            </remarks>
-            <value><c>true</c> if indeterminate; otherwise, <c>false</c>.</value>
-        </member>
         <member name="T:Eto.Forms.NumericUpDown">
             <summary>
             Control for the user to enter a numeric value
@@ -18266,7 +18005,7 @@
             </summary>
             <remarks>
             This will invoke the specified command when the radio button is pressed.
-            The <see cref="M:Eto.Forms.ICommand.CanExecute(System.Object)"/> will also used to set the enabled/disabled state of the button.
+            The <see cref="M:System.Windows.Input.ICommand.CanExecute(System.Object)"/> will also used to set the enabled/disabled state of the button.
             </remarks>
             <value>The command to invoke.</value>
         </member>
@@ -20391,7 +20130,7 @@
             </summary>
             <remarks>
             This will invoke the specified command when the menu item is pressed.
-            The <see cref="M:Eto.Forms.ICommand.CanExecute(System.Object)"/> will also used to set the enabled/disabled state of the menu item.
+            The <see cref="M:System.Windows.Input.ICommand.CanExecute(System.Object)"/> will also used to set the enabled/disabled state of the menu item.
             </remarks>
             <value>The command to invoke.</value>
         </member>
@@ -23566,77 +23305,6 @@
             Handler interface for the <see cref="T:Eto.Forms.CheckBoxCell"/>.
             </summary>
         </member>
-        <member name="T:Eto.Forms.AddValueEventArgs`1">
-            <summary>
-            Arguments for controlling whether values should be added to a list or control
-            </summary>
-        </member>
-        <member name="P:Eto.Forms.AddValueEventArgs`1.Value">
-            <summary>
-            Value being added to the combo box
-            </summary>
-        </member>
-        <member name="P:Eto.Forms.AddValueEventArgs`1.ShouldAdd">
-            <summary>
-            True if the value should be added, false otherwise
-            </summary>
-        </member>
-        <member name="M:Eto.Forms.AddValueEventArgs`1.#ctor(`0,System.Boolean)">
-            <summary>
-            Initializes a new instance of the AddValueEventArgs class
-            </summary>
-            <param name="value">value to be added</param>
-            <param name="shouldAdd">true if by default the item will be added, false otherwise</param>
-        </member>
-        <member name="T:Eto.Forms.EnumDropDown`1">
-            <summary>
-            Combo box for an enumeration
-            </summary>
-            <typeparam name="T">Enumeration type to fill the values with</typeparam>
-        </member>
-        <member name="E:Eto.Forms.EnumDropDown`1.AddValue">
-            <summary>
-            Event to handle when a value of the enumeration is added to the combo box
-            </summary>
-        </member>
-        <member name="M:Eto.Forms.EnumDropDown`1.OnAddValue(Eto.Forms.AddValueEventArgs{`0})">
-            <summary>
-            Handles the <see cref="E:Eto.Forms.EnumDropDown`1.AddValue"/> event
-            </summary>
-        </member>
-        <member name="P:Eto.Forms.EnumDropDown`1.SelectedValue">
-            <summary>
-            Gets or sets the currently selected enumeration value
-            </summary>
-        </member>
-        <member name="P:Eto.Forms.EnumDropDown`1.GetText">
-            <summary>
-            Gets or sets a delegate used to get the text value for each item.
-            </summary>
-            <remarks>
-            You can use this delegate to provide translated or custom text for each enumeration.
-            Otherwise, the name of the enum is used.
-            </remarks>
-        </member>
-        <member name="P:Eto.Forms.EnumDropDown`1.SortAlphabetically">
-            <summary>
-            Gets or sets a value indicating that the items in the list are sorted alphabetically, instead of by numerical value of the enumeration
-            </summary>
-        </member>
-        <member name="M:Eto.Forms.EnumDropDown`1.CreateDefaultDataStore">
-            <summary>
-            Creates the default data store for the list.
-            </summary>
-            <remarks>This is used to create a data store if one is not specified by the user.
-            This can be used by subclasses to provide default items to populate the list.</remarks>
-            <returns>The default data store.</returns>
-        </member>
-        <member name="P:Eto.Forms.EnumDropDown`1.SelectedValueBinding">
-            <summary>
-            Gets a new binding for the <see cref="P:Eto.Forms.EnumDropDown`1.SelectedValue"/> property.
-            </summary>
-            <value>A new selected value binding.</value>
-        </member>
         <member name="T:Eto.Forms.PrintDialog">
             <summary>
             Dialog to show when printing a document or adjusting print settings
@@ -25178,7 +24846,7 @@
             
             myForm.DataContext = new MyModel { MyModelCommand = ... };
             </code>
-            The <see cref="M:Eto.Forms.ICommand.CanExecute(System.Object)"/> will also used to set the enabled/disabled state of the current command.
+            The <see cref="M:System.Windows.Input.ICommand.CanExecute(System.Object)"/> will also used to set the enabled/disabled state of the current command.
             </remarks>
             <value>The command to invoke.</value>
         </member>
@@ -25350,7 +25018,7 @@
             </summary>
             <remarks>
             This will invoke the specified command when the tool item is pressed.
-            The <see cref="M:Eto.Forms.ICommand.CanExecute(System.Object)"/> will also used to set the enabled/disabled state of the tool item.
+            The <see cref="M:System.Windows.Input.ICommand.CanExecute(System.Object)"/> will also used to set the enabled/disabled state of the tool item.
             </remarks>
             <value>The command to invoke.</value>
         </member>
@@ -26379,7 +26047,7 @@
             </summary>
             <remarks>
             This will invoke the specified command when the link button is pressed.
-            The <see cref="M:Eto.Forms.ICommand.CanExecute(System.Object)"/> will also used to set the enabled/disabled state of the link button.
+            The <see cref="M:System.Windows.Input.ICommand.CanExecute(System.Object)"/> will also used to set the enabled/disabled state of the link button.
             </remarks>
             <value>The command to invoke.</value>
         </member>
@@ -26478,6 +26146,80 @@
             <param name="dataItem">Control the binding is attached to.</param>
             <param name="innerBinding">Inner binding.</param>
         </member>
+        <member name="T:Eto.Forms.TableCell">
+            <summary>
+            Represents a cell in a <see cref="T:Eto.Forms.TableRow"/>
+            </summary>
+        </member>
+        <member name="P:Eto.Forms.TableCell.ScaleWidth">
+            <summary>
+            Gets or sets a value indicating whether this <see cref="T:Eto.Forms.TableCell"/> will scale its width
+            </summary>
+            <remarks>
+            All controls in the same column of this cell will get the same scaling value.
+            Scaling will make the column expand to fit the rest of the width of the container, minus the preferred
+            width of any non-scaled columns.
+            
+            If there are no columns with width scaling, the last column will automatically get scaled.
+            
+            With scaling turned off, cells in the column will fit the preferred size of the widest control.
+            </remarks>
+            <value><c>true</c> if scale width; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Eto.Forms.TableCell.Control">
+            <summary>
+            Gets or sets the control in this cell, or null for an empty space
+            </summary>
+            <value>The control.</value>
+        </member>
+        <member name="M:Eto.Forms.TableCell.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Eto.Forms.TableCell"/> class.
+            </summary>
+        </member>
+        <member name="M:Eto.Forms.TableCell.#ctor(Eto.Forms.Control,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Eto.Forms.TableCell"/> class.
+            </summary>
+            <param name="control">Control for this cell</param>
+            <param name="scaleWidth">Scale the width of the control if <c>true</c>, otherwise scale to the preferred size of the control.</param>
+        </member>
+        <member name="M:Eto.Forms.TableCell.op_Implicit(Eto.Forms.Control)~Eto.Forms.TableCell">
+            <summary>
+            Converts a control to a table cell
+            </summary>
+            <param name="control">Control to convert to a cell.</param>
+        </member>
+        <member name="M:Eto.Forms.TableCell.op_Implicit(Eto.Forms.TableCell[])~Eto.Forms.TableCell">
+            <summary>
+            Converts an array of cells to a new cell with a table of vertical cells in a new child TableLayout
+            </summary>
+            <param name="items">Items to convert.</param>
+        </member>
+        <member name="M:Eto.Forms.TableCell.op_Implicit(Eto.Forms.TableRow[])~Eto.Forms.TableCell">
+            <summary>
+            Converts an array of rows to a new cell with vertical rows in a new child TableLayout
+            </summary>
+            <param name="rows">Rows to convert.</param>
+        </member>
+        <member name="M:Eto.Forms.TableCell.op_Implicit(System.String)~Eto.Forms.TableCell">
+            <summary>
+            Converts a string to a TableCell with a label control implicitly.
+            </summary>
+            <remarks>
+            This provides an easy way to add labels to your layout through code, without having to create <see cref="T:Eto.Forms.Label"/> instances.
+            </remarks>
+            <param name="labelText">Text to convert to a Label control.</param>
+        </member>
+        <member name="M:Eto.Forms.TableCell.op_Implicit(Eto.Drawing.Image)~Eto.Forms.TableCell">
+            <summary>
+            Converts an <see cref="T:Eto.Drawing.Image"/> to a TableCell with an <see cref="T:Eto.Forms.ImageView"/> control implicitly.
+            </summary>
+            <remarks>
+            This provides an easy way to add images to your layout through code, without having to create <see cref="T:Eto.Forms.ImageView"/> instances manually.
+            </remarks>
+            <param name="image">Image to convert to a TableCell with an ImageView control.</param>
+        </member>
         <member name="T:Eto.Forms.TableRow">
             <summary>
             Represents the contents of a row in a <see cref="T:Eto.Forms.TableLayout"/> 
@@ -26572,127 +26314,6 @@
             without having to create a table layout and cell manually.
             </remarks>
             <param name="row">Row to convert.</param>
-        </member>
-        <member name="T:Eto.Forms.TableCell">
-            <summary>
-            Represents a cell in a <see cref="T:Eto.Forms.TableRow"/>
-            </summary>
-        </member>
-        <member name="P:Eto.Forms.TableCell.ScaleWidth">
-            <summary>
-            Gets or sets a value indicating whether this <see cref="T:Eto.Forms.TableCell"/> will scale its width
-            </summary>
-            <remarks>
-            All controls in the same column of this cell will get the same scaling value.
-            Scaling will make the column expand to fit the rest of the width of the container, minus the preferred
-            width of any non-scaled columns.
-            
-            If there are no columns with width scaling, the last column will automatically get scaled.
-            
-            With scaling turned off, cells in the column will fit the preferred size of the widest control.
-            </remarks>
-            <value><c>true</c> if scale width; otherwise, <c>false</c>.</value>
-        </member>
-        <member name="P:Eto.Forms.TableCell.Control">
-            <summary>
-            Gets or sets the control in this cell, or null for an empty space
-            </summary>
-            <value>The control.</value>
-        </member>
-        <member name="M:Eto.Forms.TableCell.#ctor">
-            <summary>
-            Initializes a new instance of the <see cref="T:Eto.Forms.TableCell"/> class.
-            </summary>
-        </member>
-        <member name="M:Eto.Forms.TableCell.#ctor(Eto.Forms.Control,System.Boolean)">
-            <summary>
-            Initializes a new instance of the <see cref="T:Eto.Forms.TableCell"/> class.
-            </summary>
-            <param name="control">Control for this cell</param>
-            <param name="scaleWidth">Scale the width of the control if <c>true</c>, otherwise scale to the preferred size of the control.</param>
-        </member>
-        <member name="M:Eto.Forms.TableCell.op_Implicit(Eto.Forms.Control)~Eto.Forms.TableCell">
-            <summary>
-            Converts a control to a table cell
-            </summary>
-            <param name="control">Control to convert to a cell.</param>
-        </member>
-        <member name="M:Eto.Forms.TableCell.op_Implicit(Eto.Forms.TableCell[])~Eto.Forms.TableCell">
-            <summary>
-            Converts an array of cells to a new cell with a table of vertical cells in a new child TableLayout
-            </summary>
-            <param name="items">Items to convert.</param>
-        </member>
-        <member name="M:Eto.Forms.TableCell.op_Implicit(Eto.Forms.TableRow[])~Eto.Forms.TableCell">
-            <summary>
-            Converts an array of rows to a new cell with vertical rows in a new child TableLayout
-            </summary>
-            <param name="rows">Rows to convert.</param>
-        </member>
-        <member name="M:Eto.Forms.TableCell.op_Implicit(System.String)~Eto.Forms.TableCell">
-            <summary>
-            Converts a string to a TableCell with a label control implicitly.
-            </summary>
-            <remarks>
-            This provides an easy way to add labels to your layout through code, without having to create <see cref="T:Eto.Forms.Label"/> instances.
-            </remarks>
-            <param name="labelText">Text to convert to a Label control.</param>
-        </member>
-        <member name="M:Eto.Forms.TableCell.op_Implicit(Eto.Drawing.Image)~Eto.Forms.TableCell">
-            <summary>
-            Converts an <see cref="T:Eto.Drawing.Image"/> to a TableCell with an <see cref="T:Eto.Forms.ImageView"/> control implicitly.
-            </summary>
-            <remarks>
-            This provides an easy way to add images to your layout through code, without having to create <see cref="T:Eto.Forms.ImageView"/> instances manually.
-            </remarks>
-            <param name="image">Image to convert to a TableCell with an ImageView control.</param>
-        </member>
-        <member name="T:Eto.Forms.RadioToolItem">
-            <summary>
-            Tool item that can be toggled on or off.
-            </summary>
-            <remarks>
-            Note that there is only a single group of radio buttons allowed on a toolbar.
-            </remarks>
-        </member>
-        <member name="E:Eto.Forms.RadioToolItem.CheckedChanged">
-            <summary>
-            Occurs when the <see cref="P:Eto.Forms.RadioToolItem.Checked"/> property is changed.
-            </summary>
-        </member>
-        <member name="M:Eto.Forms.RadioToolItem.#ctor">
-            <summary>
-            Initializes a new instance of the <see cref="T:Eto.Forms.RadioToolItem"/> class.
-            </summary>
-        </member>
-        <member name="M:Eto.Forms.RadioToolItem.#ctor(Eto.Forms.CheckCommand)">
-            <summary>
-            Initializes a new instance of the <see cref="T:Eto.Forms.RadioToolItem"/> class with the specified <paramref name="command"/>.
-            </summary>
-            <param name="command">Command for the tool item.</param>
-        </member>
-        <member name="P:Eto.Forms.RadioToolItem.Checked">
-            <summary>
-            Gets or sets a value indicating whether this item is checked.
-            </summary>
-            <value><c>true</c> if checked; otherwise, <c>false</c>.</value>
-        </member>
-        <member name="M:Eto.Forms.RadioToolItem.OnCheckedChanged(System.EventArgs)">
-            <summary>
-            Raises the <see cref="E:Eto.Forms.RadioToolItem.CheckedChanged"/> event.
-            </summary>
-            <param name="e">Event arguments.</param>
-        </member>
-        <member name="T:Eto.Forms.RadioToolItem.IHandler">
-            <summary>
-            Handler for the <see cref="T:Eto.Forms.RadioToolItem"/>.
-            </summary>
-        </member>
-        <member name="P:Eto.Forms.RadioToolItem.IHandler.Checked">
-            <summary>
-            Gets or sets a value indicating whether this item is checked.
-            </summary>
-            <value><c>true</c> if checked; otherwise, <c>false</c>.</value>
         </member>
         <member name="T:Eto.Forms.WidgetExtensions">
             <summary>
@@ -28070,6 +27691,293 @@
             Handler interface for the <see cref="T:Eto.Forms.ProgressCell"/>.
             </summary>
         </member>
+        <member name="T:Eto.Forms.CellStates">
+            <summary>
+            State for a <see cref="T:Eto.Forms.Cell"/>
+            </summary>
+        </member>
+        <member name="F:Eto.Forms.CellStates.None">
+            <summary>
+            Normal state
+            </summary>
+        </member>
+        <member name="F:Eto.Forms.CellStates.Selected">
+            <summary>
+            Row is selected
+            </summary>
+        </member>
+        <member name="F:Eto.Forms.CellStates.Editing">
+            <summary>
+            Cell is in edit mode
+            </summary>
+        </member>
+        <member name="T:Eto.Forms.CellEventArgs">
+            <summary>
+            Event arguments for events that refer to a <see cref="T:Eto.Forms.Cell"/>.
+            </summary>
+        </member>
+        <member name="P:Eto.Forms.CellEventArgs.CellState">
+            <summary>
+            Gets the state of the cell.
+            </summary>
+            <value>The state of the cell.</value>
+        </member>
+        <member name="P:Eto.Forms.CellEventArgs.Item">
+            <summary>
+            Gets or sets the item for the cell.
+            </summary>
+            <value>The cell's item.</value>
+        </member>
+        <member name="P:Eto.Forms.CellEventArgs.Row">
+            <summary>
+            Gets or sets the row for the cell.
+            </summary>
+            <value>The cell's row.</value>
+        </member>
+        <member name="P:Eto.Forms.CellEventArgs.CellTextColor">
+            <summary>
+            Gets or sets the preferred color of the cell text given its state.
+            </summary>
+            <value>The preferred color of cell text.</value>
+        </member>
+        <member name="M:Eto.Forms.CellEventArgs.#ctor(System.Int32,System.Object,Eto.Forms.CellStates)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Eto.Forms.CellEventArgs"/> class.
+            </summary>
+            <param name="row">Row for the cell.</param>
+            <param name="item">Item the cell is displaying.</param>
+            <param name="cellState">State of the cell.</param>
+        </member>
+        <member name="P:Eto.Forms.CellEventArgs.IsEditing">
+            <summary>
+            Gets or sets a value indicating whether the cell is in edit mode.
+            </summary>
+            <value><c>true</c> if the cell is in edit mode; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Eto.Forms.CellEventArgs.IsSelected">
+            <summary>
+            Gets or sets a value indicating whether the cell is selected.
+            </summary>
+            <value><c>true</c> if the cell is selected; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="E:Eto.Forms.CellEventArgs.PropertyChanged">
+            <summary>
+            Occurs when a property is changed.
+            </summary>
+        </member>
+        <member name="M:Eto.Forms.CellEventArgs.OnPropertyChanged(System.ComponentModel.PropertyChangedEventArgs)">
+            <summary>
+            Raises the <see cref="E:Eto.Forms.CellEventArgs.PropertyChanged"/> event
+            </summary>
+            <param name="e">Event arguments</param>
+        </member>
+        <member name="T:Eto.Forms.CustomCell">
+            <summary>
+            Cell for <see cref="T:Eto.Forms.Grid"/> controls to create custom content for the cell.
+            </summary>
+            <remarks>
+            The CustomCell is useful when you want to provide a fully custom implementation of a cell, including editable
+            controls.
+            
+            Note that some platforms bahave differently with a CustomCell, depending on the value of <see cref="P:Eto.Forms.CustomCell.SupportsControlView"/>.
+            
+            When <c>false</c>, the grid will use the <see cref="E:Eto.Forms.CustomCell.Paint"/> event to paint the contents of each cell, and
+            only use <see cref="P:Eto.Forms.CustomCell.CreateCell"/> and <see cref="P:Eto.Forms.CustomCell.ConfigureCell"/> when the cell is in edit mode.
+            
+            When <c>true</c>, the <see cref="P:Eto.Forms.CustomCell.CreateCell"/> and <see cref="P:Eto.Forms.CustomCell.ConfigureCell"/> methods will be used
+            for all cells, even when not in edit mode.
+            
+            </remarks>
+        </member>
+        <member name="P:Eto.Forms.CustomCell.SupportsControlView">
+            <summary>
+            Gets a value indicating that the CustomCell on the current platform supports using a Control for its view mode.
+            Gtk and WinForms only support custom controls when editing a cell.
+            </summary>
+            <remarks>
+            When <c>false</c>, you must handle the <see cref="E:Eto.Forms.CustomCell.Paint"/> event (or override <see cref="M:Eto.Forms.CustomCell.OnPaint(Eto.Forms.CellPaintEventArgs)"/>) to provide
+            a view mode for the cell contents.
+            </remarks>
+            <value><c>true</c> if supports control view; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="M:Eto.Forms.CustomCell.Create``1">
+            <summary>
+            Creates a new CustomCell with instances of the specified <typeparamref name="TControl"/> type.
+            </summary>
+            <typeparam name="TControl">The type of control to instantiate for the cell, which must have a default constructor.</typeparam>
+        </member>
+        <member name="P:Eto.Forms.CustomCell.CreateCell">
+            <summary>
+            Gets or sets a delegate to create the contents of the cell.
+            </summary>
+            <remarks>
+            You can also override the <see cref="M:Eto.Forms.CustomCell.OnCreateCell(Eto.Forms.CellEventArgs)"/> method in subclasses.
+            </remarks>
+            <value>The delegate to create the cell content.</value>
+        </member>
+        <member name="P:Eto.Forms.CustomCell.GetIdentifier">
+            <summary>
+            Gets or sets a delegate to get the identifier of the cell based on its content.
+            </summary>
+            <remarks>
+            When you have different controls on a per-row level, each variation must have an identifier string
+            to allow the framework to cache the different types of cells to provide good performance.
+            
+            This hooks into standard cell caching mechanisms in certain platforms, such as on the Mac.
+            </remarks>
+            <value>The delegate to get the identifier for the cell.</value>
+        </member>
+        <member name="P:Eto.Forms.CustomCell.GetPreferredWidth">
+            <summary>
+            Gets or sets a delegate to get the preferred width of the cell based on its content.
+            </summary>
+            <remarks>
+            This may only be used when <see cref="P:Eto.Forms.CustomCell.SupportsControlView"/> is false.
+            </remarks>
+            <value>The delegate to get the preferred width of the cell.</value>
+        </member>
+        <member name="P:Eto.Forms.CustomCell.ConfigureCell">
+            <summary>
+            Gets or sets a delegate to configure an cell when it is reused for a different row or the data changes.
+            </summary>
+            <remarks>
+            This should set up your control your cell content to be reused.  If null, the DataContext of your control will be set to the row model instance.
+            
+            Typically if you use MVVM data binding, you do not need to override the standard behaviour.
+            </remarks>
+            <value>The delegate to configure an existing cell's control for a new row/model instance.</value>
+        </member>
+        <member name="M:Eto.Forms.CustomCell.OnCreateCell(Eto.Forms.CellEventArgs)">
+            <summary>
+            Creates an instance of the control for a cell.
+            </summary>
+            <remarks>
+            This is called multiple times usually for the number of visible and/or cached cells that are displayed.
+            
+            If you intend on creating a different type of cell control based on the item, you should also override
+            <see cref="P:Eto.Forms.CustomCell.GetIdentifier"/>
+            </remarks>
+            <param name="args">Arguments when creating the cell to get the row, item and state.</param>
+            <returns>The control to display in the cell.</returns>
+        </member>
+        <member name="M:Eto.Forms.CustomCell.OnGetIdentifier(Eto.Forms.CellEventArgs)">
+            <summary>
+            Gets the identifier of the cell based on its content.
+            </summary>
+            <remarks>
+            When you have different controls on a per-row level, each variation must have an identifier string
+            to allow the framework to cache the different types of cells to provide good performance.
+            
+            This hooks into standard cell caching mechanisms in certain platforms, such as on the Mac.
+            </remarks>
+            <seealso cref="P:Eto.Forms.CustomCell.GetIdentifier"/>
+            <param name="args">Arguments for the cell</param>
+            <value>The identifier for the cell.</value>
+        </member>
+        <member name="M:Eto.Forms.CustomCell.OnGetPreferredWidth(Eto.Forms.CellEventArgs)">
+            <summary>
+            Gets the preferred width of the cell based on its content.
+            </summary>
+            <remarks>
+            This may only be used when <see cref="P:Eto.Forms.CustomCell.SupportsControlView"/> is false.
+            </remarks>
+            <param name="args">Arguments for the cell</param>
+            <value>The preferred width of the cell.</value>
+        </member>
+        <member name="M:Eto.Forms.CustomCell.OnConfigureCell(Eto.Forms.CellEventArgs,Eto.Forms.Control)">
+            <summary>
+            Configures an existing cell when it is reused for a different row or the data changes.
+            </summary>
+            <remarks>
+            This should set up your control your cell content to be reused.  If null, the DataContext of your control will be set to the row model instance.
+            
+            Typically if you use MVVM data binding, you do not need to override the standard behaviour.
+            </remarks>
+            <param name="args">Arguments for the cell</param>
+            <param name="control">Existing control to configure for the new cell and/or data</param>
+        </member>
+        <member name="E:Eto.Forms.CustomCell.Paint">
+            <summary>
+            Event to handle painting the content of the cell when <see cref="P:Eto.Forms.CustomCell.SupportsControlView"/> is false.
+            </summary>
+        </member>
+        <member name="M:Eto.Forms.CustomCell.OnPaint(Eto.Forms.CellPaintEventArgs)">
+            <summary>
+            Raises the <see cref="E:Eto.Forms.CustomCell.Paint"/> event.
+            </summary>
+            <param name="args">Cell paint arguments.</param>
+        </member>
+        <member name="T:Eto.Forms.CustomCell.IHandler">
+            <summary>
+            Handler interface for the <see cref="T:Eto.Forms.CustomCell"/>.
+            </summary>
+        </member>
+        <member name="T:Eto.Forms.CustomCell.ICallback">
+            <summary>
+            Callback interface for the <see cref="T:Eto.Forms.CustomCell"/>
+            </summary>
+        </member>
+        <member name="M:Eto.Forms.CustomCell.ICallback.OnGetPreferredWidth(Eto.Forms.CustomCell,Eto.Forms.CellEventArgs)">
+            <summary>
+            Gets the preferred width of the cell based on its content.
+            </summary>
+        </member>
+        <member name="M:Eto.Forms.CustomCell.ICallback.OnGetIdentifier(Eto.Forms.CustomCell,Eto.Forms.CellEventArgs)">
+            <summary>
+            Raises the get identifier event.
+            </summary>
+        </member>
+        <member name="M:Eto.Forms.CustomCell.ICallback.OnConfigureCell(Eto.Forms.CustomCell,Eto.Forms.CellEventArgs,Eto.Forms.Control)">
+            <summary>
+            Raises the configure cell event.
+            </summary>
+        </member>
+        <member name="M:Eto.Forms.CustomCell.ICallback.OnCreateCell(Eto.Forms.CustomCell,Eto.Forms.CellEventArgs)">
+            <summary>
+            Raises the create cell event.
+            </summary>
+        </member>
+        <member name="M:Eto.Forms.CustomCell.ICallback.OnPaint(Eto.Forms.CustomCell,Eto.Forms.CellPaintEventArgs)">
+            <summary>
+            Raises the paint event.
+            </summary>
+        </member>
+        <member name="T:Eto.Forms.CustomCell.Callback">
+            <summary>
+            Callback implementation for the <see cref="T:Eto.Forms.CustomCell"/>
+            </summary>
+        </member>
+        <member name="M:Eto.Forms.CustomCell.Callback.OnGetPreferredWidth(Eto.Forms.CustomCell,Eto.Forms.CellEventArgs)">
+            <summary>
+            Gets the preferred width of the cell based on its content.
+            </summary>
+        </member>
+        <member name="M:Eto.Forms.CustomCell.Callback.OnGetIdentifier(Eto.Forms.CustomCell,Eto.Forms.CellEventArgs)">
+            <summary>
+            Raises the get identifier event.
+            </summary>
+        </member>
+        <member name="M:Eto.Forms.CustomCell.Callback.OnConfigureCell(Eto.Forms.CustomCell,Eto.Forms.CellEventArgs,Eto.Forms.Control)">
+            <summary>
+            Raises the configure cell event.
+            </summary>
+        </member>
+        <member name="M:Eto.Forms.CustomCell.Callback.OnCreateCell(Eto.Forms.CustomCell,Eto.Forms.CellEventArgs)">
+            <summary>
+            Raises the create cell event.
+            </summary>
+        </member>
+        <member name="M:Eto.Forms.CustomCell.Callback.OnPaint(Eto.Forms.CustomCell,Eto.Forms.CellPaintEventArgs)">
+            <summary>
+            Raises the paint event.
+            </summary>
+        </member>
+        <member name="M:Eto.Forms.CustomCell.GetCallback">
+            <summary>
+            Gets an instance of an object used to perform callbacks to the widget from handler implementations
+            </summary>
+            <returns>The callback.</returns>
+        </member>
         <member name="T:Eto.Forms.Tool">
             <summary>
             Base class for tool items on a <see cref="T:Eto.Forms.ToolBar"/>
@@ -28657,13 +28565,13 @@
             <param name="eh">Event handler delegate to remove</param>
             <seealso cref="M:Eto.Forms.Binding.AddPropertyEvent(System.Object,System.String,System.EventHandler{System.EventArgs})"/>
         </member>
-        <member name="M:Eto.Forms.Binding.ExecuteCommand(System.Object,Eto.Forms.IndirectBinding{Eto.Forms.ICommand},System.Object)">
+        <member name="M:Eto.Forms.Binding.ExecuteCommand(System.Object,Eto.Forms.IndirectBinding{System.Windows.Input.ICommand},System.Object)">
             <summary>
             Executes a command retrieved using the specified <paramref name="commandBinding"/> from the <paramref name="dataContext"/>.
             </summary>
             <remarks>
-            This helper method is useful for binding general events to fire an <see cref="T:Eto.Forms.ICommand"/> that is in your view model.
-            The command will only be executed if its <see cref="M:Eto.Forms.ICommand.CanExecute(System.Object)"/> returns <c>true</c>.
+            This helper method is useful for binding general events to fire an <see cref="T:System.Windows.Input.ICommand"/> that is in your view model.
+            The command will only be executed if its <see cref="M:System.Windows.Input.ICommand.CanExecute(System.Object)"/> returns <c>true</c>.
             
             Most controls (e.g. <see cref="T:Eto.Forms.Button"/>) have a special Command parameter that can be set instead, 
             which takes into account the enabled state of the command and will enable/disable the control automatically.
@@ -28680,13 +28588,13 @@
             <param name="commandBinding">Binding to get the ICommand from the data context</param>
             <param name="parameter">Parameter to pass to the command when executing or checking if it can execute.</param>
         </member>
-        <member name="M:Eto.Forms.Binding.ExecuteCommand``1(System.Object,System.Linq.Expressions.Expression{System.Func{``0,Eto.Forms.ICommand}},System.Object)">
+        <member name="M:Eto.Forms.Binding.ExecuteCommand``1(System.Object,System.Linq.Expressions.Expression{System.Func{``0,System.Windows.Input.ICommand}},System.Object)">
             <summary>
             Executes a command retrieved using a property <paramref name="commandExpression"/> from the  <paramref name="dataContext"/>.
             </summary>
             <remarks>
-            This helper method is useful for binding general events to fire an <see cref="T:Eto.Forms.ICommand"/> that is in your view model.
-            The command will only be executed if its <see cref="M:Eto.Forms.ICommand.CanExecute(System.Object)"/> returns <c>true</c>.
+            This helper method is useful for binding general events to fire an <see cref="T:System.Windows.Input.ICommand"/> that is in your view model.
+            The command will only be executed if its <see cref="M:System.Windows.Input.ICommand.CanExecute(System.Object)"/> returns <c>true</c>.
             
             Most controls (e.g. <see cref="T:Eto.Forms.Button"/>) have a special Command parameter that can be set instead, 
             which takes into account the enabled state of the command and will enable/disable the control automatically.
@@ -29237,33 +29145,6 @@
             Gets the collection of bindings that are attached to this widget
             </summary>
         </member>
-        <member name="T:Eto.Forms.ICommand">
-            <summary>
-            Interface to define a command to execute.
-            </summary>
-            <remarks>
-            This interface is provided only for .NET 4.0 to mimic the System.Windows.Input.ICommand provided in .NET 4.5 and PCL.
-            It is useful for MVVM scenarios to bind object events to a command in the model.
-            </remarks>
-        </member>
-        <member name="M:Eto.Forms.ICommand.CanExecute(System.Object)">
-            <summary>
-            Determines whether this command can be executed.
-            </summary>
-            <returns><c>true</c> if the command can be executed; otherwise, <c>false</c>.</returns>
-            <param name="parameter">Optional data to pass to the command, or null if not required by the command.</param>
-        </member>
-        <member name="M:Eto.Forms.ICommand.Execute(System.Object)">
-            <summary>
-            Executes the command
-            </summary>
-            <param name="parameter">Optional data to pass to the command, or null if not required by the command.</param>
-        </member>
-        <member name="E:Eto.Forms.ICommand.CanExecuteChanged">
-            <summary>
-            Event to handle when the state of the <see cref="M:Eto.Forms.ICommand.CanExecute(System.Object)"/> method changes.
-            </summary>
-        </member>
         <member name="T:Eto.Forms.IIndirectBinding`1">
             <summary>
             Base interface for an indirect binding.
@@ -29746,6 +29627,92 @@
             Use <see cref="M:Eto.Forms.Binding.AddPropertyEvent(System.Object,System.String,System.EventHandler{System.EventArgs})"/> and <see cref="M:Eto.Forms.Binding.RemovePropertyEvent(System.Object,System.EventHandler{System.EventArgs})"/> to access
             this functionality.
             </remarks>
+        </member>
+        <member name="T:Eto.Forms.Expander">
+            <summary>
+            A control with a panel that can be expanded or collapsed with a header and button.
+            </summary>
+        </member>
+        <member name="F:Eto.Forms.Expander.ExpandedChangedEvent">
+            <summary>
+            Identifier for the <see cref="E:Eto.Forms.Expander.ExpandedChanged"/> event.
+            </summary>
+        </member>
+        <member name="E:Eto.Forms.Expander.ExpandedChanged">
+            <summary>
+            Occurs when the <see cref="P:Eto.Forms.Expander.Expanded"/> property changes.
+            </summary>
+        </member>
+        <member name="M:Eto.Forms.Expander.OnExpandedChanged(System.EventArgs)">
+            <summary>
+            Raises the <see cref="E:Eto.Forms.Expander.ExpandedChanged"/> event.
+            </summary>
+            <param name="e">Event arguments</param>
+        </member>
+        <member name="P:Eto.Forms.Expander.Controls">
+            <summary>
+            Gets an enumeration of controls that are directly contained by this container
+            </summary>
+            <value>The contained controls.</value>
+        </member>
+        <member name="M:Eto.Forms.Expander.GetCallback">
+            <summary>
+            Gets an instance of an object used to perform callbacks to the widget from handler implementations
+            </summary>
+            <returns>The callback.</returns>
+        </member>
+        <member name="P:Eto.Forms.Expander.Expanded">
+            <summary>
+            Gets or sets a value indicating whether the <see cref="P:Eto.Forms.Panel.Content"/> is expanded/visible.
+            </summary>
+            <value><c>true</c> if expanded; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Eto.Forms.Expander.Header">
+            <summary>
+            Gets or sets the header control.
+            </summary>
+            <value>The header control.</value>
+        </member>
+        <member name="T:Eto.Forms.Expander.ICallback">
+            <summary>
+            Callback interface for the <see cref="T:Eto.Forms.Expander"/>
+            </summary>
+        </member>
+        <member name="M:Eto.Forms.Expander.ICallback.OnExpandedChanged(Eto.Forms.Expander,System.EventArgs)">
+            <summary>
+            Raises the expanded changed event.
+            </summary>
+            <param name="widget">Widget to raise the event.</param>
+            <param name="e">Event arguments.</param>
+        </member>
+        <member name="T:Eto.Forms.Expander.Callback">
+            <summary>
+            Callback implementation for the <see cref="T:Eto.Forms.Expander"/>
+            </summary>
+        </member>
+        <member name="M:Eto.Forms.Expander.Callback.OnExpandedChanged(Eto.Forms.Expander,System.EventArgs)">
+            <summary>
+            Raises the expanded changed event.
+            </summary>
+            <param name="widget">Widget to raise the event.</param>
+            <param name="e">Event arguments.</param>
+        </member>
+        <member name="T:Eto.Forms.Expander.IHandler">
+            <summary>
+            Handler interface for platform implementations of the <see cref="T:Eto.Forms.Expander"/>.
+            </summary>
+        </member>
+        <member name="P:Eto.Forms.Expander.IHandler.Expanded">
+            <summary>
+            Gets or sets a value indicating whether the <see cref="P:Eto.Forms.Panel.IHandler.Content"/> is expanded/visible.
+            </summary>
+            <value><c>true</c> if expanded; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Eto.Forms.Expander.IHandler.Header">
+            <summary>
+            Gets or sets the header control.
+            </summary>
+            <value>The header control.</value>
         </member>
         <member name="T:Eto.Forms.DockPosition">
             <summary>
@@ -30542,9 +30509,9 @@
             <typeparam name="T">The type of the property to set.</typeparam>
             <returns>true if the property was changed, false if not</returns>
         </member>
-        <member name="M:Eto.PropertyStore.SetCommand(System.Object,Eto.Forms.ICommand,System.Action{System.Boolean},System.Action{System.EventHandler{System.EventArgs}},System.Action{System.EventHandler{System.EventArgs}},System.Func{System.Object})">
+        <member name="M:Eto.PropertyStore.SetCommand(System.Object,System.Windows.Input.ICommand,System.Action{System.Boolean},System.Action{System.EventHandler{System.EventArgs}},System.Action{System.EventHandler{System.EventArgs}},System.Func{System.Object})">
             <summary>
-            Sets an <see cref="T:Eto.Forms.ICommand"/> value for the specified property <paramref name="key"/>.
+            Sets an <see cref="T:System.Windows.Input.ICommand"/> value for the specified property <paramref name="key"/>.
             </summary>
             <param name="key">Key of the property to set</param>
             <param name="value">Command instance</param>
@@ -30566,7 +30533,7 @@
             </summary>
             <returns>The command instance, or null if it is not set.</returns>
             <param name="key">Key of the property to get.</param>
-            <seealso cref="M:Eto.PropertyStore.SetCommand(System.Object,Eto.Forms.ICommand,System.Action{System.Boolean},System.Action{System.EventHandler{System.EventArgs}},System.Action{System.EventHandler{System.EventArgs}},System.Func{System.Object})"/>
+            <seealso cref="M:Eto.PropertyStore.SetCommand(System.Object,System.Windows.Input.ICommand,System.Action{System.Boolean},System.Action{System.EventHandler{System.EventArgs}},System.Action{System.EventHandler{System.EventArgs}},System.Func{System.Object})"/>
         </member>
         <member name="T:Eto.Threading.Thread">
             <summary>
@@ -30705,12 +30672,17 @@
             Some of these are from https://gist.github.com/jeffwilcox/2432351 (no attribution requested.)
             </summary>
         </member>
-        <member name="M:Eto.TypeHelper.GetRuntimeProperty(System.Type,System.String)">
+        <member name="M:Eto.TypeHelper.IsInstanceOfType(System.Type,System.Object)">
             <summary>
-            Returns a PropertyInfo for the specified property of the current type.
-            The property may be declared on the current type or an ancestor type.
+            Determines whether the specified object is an instance of the current Type.
             </summary>
-            <returns></returns>
+            <param name="type">The type.</param>
+            <param name="o">The object to compare with the current type.</param>
+            <returns>true if the current Type is in the inheritance hierarchy of the 
+            object represented by o, or if the current Type is an interface that o 
+            supports. false if neither of these conditions is the case, or if o is 
+            null, or if the current Type is an open generic type (that is, 
+            ContainsGenericParameters returns true).</returns>
         </member>
         <member name="T:Eto.IControlObjectSource">
             <summary>
@@ -31911,6 +31883,238 @@
             Constant to convert degrees to radians for angle parameters
             </summary>
         </member>
+        <member name="T:Eto.ISupportInitialize">
+            <summary>
+            Interface for objects that support initialization.
+            </summary>
+        </member>
+        <member name="M:Eto.ISupportInitialize.BeginInit">
+            <summary>
+            Called before initialization from serialization.
+            </summary>
+        </member>
+        <member name="M:Eto.ISupportInitialize.EndInit">
+            <summary>
+            Called after initialization from serialization.
+            </summary>
+        </member>
+        <member name="T:Eto.ITypeDescriptorContext">
+            <summary>
+            Interface for a type descriptor context, for type converter compatibility in portable class libraries.
+            </summary>
+        </member>
+        <member name="T:Eto.TypeConverterAttribute">
+            <summary>
+            Type converter attribute, for type converter compatibility in portable class libraries.
+            </summary>
+        </member>
+        <member name="P:Eto.TypeConverterAttribute.ConverterTypeName">
+            <summary>
+            Gets the name of the type for the type converter of the associated type.
+            </summary>
+            <value>The name of the type.</value>
+        </member>
+        <member name="M:Eto.TypeConverterAttribute.#ctor(System.Type)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Eto.TypeConverterAttribute"/> class.
+            </summary>
+            <param name="type">Type of the type converter.</param>
+        </member>
+        <member name="M:Eto.TypeConverterAttribute.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Eto.TypeConverterAttribute"/> class.
+            </summary>
+            <param name="typeName">Type name of the type converter.</param>
+        </member>
+        <member name="T:Eto.TypeDescriptor">
+            <summary>
+            Type descriptor for conversion compatibility.
+            </summary>
+        </member>
+        <member name="M:Eto.TypeDescriptor.GetConverter(System.Type)">
+            <summary>
+            Gets the type converter for the specified type.
+            </summary>
+            <returns>The type converter, or null if the type has no defined converter.</returns>
+            <param name="type">Type to get the converter for.</param>
+        </member>
+        <member name="T:Eto.TypeConverter">
+            <summary>
+            Type converter implementation, for type converter compatibility in portable class libraries.
+            </summary>
+        </member>
+        <member name="M:Eto.TypeConverter.CanConvertFrom(System.Type)">
+            <summary>
+            Determines whether this instance can convert from the specified sourceType.
+            </summary>
+            <returns><c>true</c> if this instance can convert from the specified sourceType; otherwise, <c>false</c>.</returns>
+            <param name="sourceType">Source type to convert from.</param>
+        </member>
+        <member name="M:Eto.TypeConverter.CanConvertFrom(Eto.ITypeDescriptorContext,System.Type)">
+            <summary>
+            Determines whether this instance can convert from the specified context sourceType.
+            </summary>
+            <returns><c>true</c> if this instance can convert from the specified context sourceType; otherwise, <c>false</c>.</returns>
+            <param name="context">Context.</param>
+            <param name="sourceType">Source type.</param>
+        </member>
+        <member name="M:Eto.TypeConverter.CanConvertTo(System.Type)">
+            <summary>
+            Determines whether this instance can convert to the specified destinationType.
+            </summary>
+            <returns><c>true</c> if this instance can convert to the specified destinationType; otherwise, <c>false</c>.</returns>
+            <param name="destinationType">Destination type.</param>
+        </member>
+        <member name="M:Eto.TypeConverter.CanConvertTo(Eto.ITypeDescriptorContext,System.Type)">
+            <summary>
+            Determines whether this instance can convert to the specified context destinationType.
+            </summary>
+            <returns><c>true</c> if this instance can convert to the specified context destinationType; otherwise, <c>false</c>.</returns>
+            <param name="context">Context.</param>
+            <param name="destinationType">Destination type.</param>
+        </member>
+        <member name="M:Eto.TypeConverter.ConvertFrom(System.Object)">
+            <summary>
+            Converts from the specified object.
+            </summary>
+            <returns>The converted object.</returns>
+            <param name="o">Object to convert.</param>
+        </member>
+        <member name="M:Eto.TypeConverter.ConvertFrom(Eto.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)">
+            <summary>
+            Converts the specified <paramref name="value"/>.
+            </summary>
+            <returns>The converted value.</returns>
+            <param name="context">Context.</param>
+            <param name="culture">Culture.</param>
+            <param name="value">Value to convert.</param>
+        </member>
+        <member name="M:Eto.TypeConverter.ConvertFromInvariantString(System.String)">
+            <summary>
+            Converts from an invariant string.
+            </summary>
+            <returns>The from invariant string.</returns>
+            <param name="text">Text to convert.</param>
+        </member>
+        <member name="M:Eto.TypeConverter.ConvertFromInvariantString(Eto.ITypeDescriptorContext,System.String)">
+            <summary>
+            Converts from an invariant string.
+            </summary>
+            <returns>The from invariant string.</returns>
+            <param name="context">Context.</param>
+            <param name="text">Text to convert.</param>
+        </member>
+        <member name="M:Eto.TypeConverter.ConvertFromString(System.String)">
+            <summary>
+            Converts from string.
+            </summary>
+            <returns>The converted object.</returns>
+            <param name="text">Text to convert.</param>
+        </member>
+        <member name="M:Eto.TypeConverter.ConvertFromString(Eto.ITypeDescriptorContext,System.String)">
+            <summary>
+            Converts from string.
+            </summary>
+            <returns>The converted object.</returns>
+            <param name="context">Context.</param>
+            <param name="text">Text to convert.</param>
+        </member>
+        <member name="M:Eto.TypeConverter.ConvertFromString(Eto.ITypeDescriptorContext,System.Globalization.CultureInfo,System.String)">
+            <summary>
+            Converts from string.
+            </summary>
+            <returns>The converted object.</returns>
+            <param name="context">Context.</param>
+            <param name="culture">Culture.</param>
+            <param name="text">Text to convert.</param>
+        </member>
+        <member name="M:Eto.TypeConverter.ConvertTo(System.Object,System.Type)">
+            <summary>
+            Converts to the specified type.
+            </summary>
+            <returns>The converted object.</returns>
+            <param name="value">Value to convert.</param>
+            <param name="destinationType">Destination type to convert to.</param>
+        </member>
+        <member name="M:Eto.TypeConverter.ConvertTo(Eto.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)">
+            <summary>
+            Converts to the specified type.
+            </summary>
+            <returns>The converted object.</returns>
+            <param name="context">Context.</param>
+            <param name="culture">Culture.</param>
+            <param name="value">Value to convert.</param>
+            <param name="destinationType">Destination type to convert to.</param>
+        </member>
+        <member name="M:Eto.TypeConverter.ConvertToInvariantString(System.Object)">
+            <summary>
+            Converts to an invariant string.
+            </summary>
+            <returns>The converted string.</returns>
+            <param name="value">Value to convert.</param>
+        </member>
+        <member name="M:Eto.TypeConverter.ConvertToInvariantString(Eto.ITypeDescriptorContext,System.Object)">
+            <summary>
+            Converts to invariant string.
+            </summary>
+            <returns>The converted string.</returns>
+            <param name="context">Context.</param>
+            <param name="value">Value to convert.</param>
+        </member>
+        <member name="M:Eto.TypeConverter.ConvertToString(System.Object)">
+            <summary>
+            Converts to a string.
+            </summary>
+            <returns>The converted string.</returns>
+            <param name="value">Value to convert.</param>
+        </member>
+        <member name="M:Eto.TypeConverter.ConvertToString(Eto.ITypeDescriptorContext,System.Object)">
+            <summary>
+            Converts to a string.
+            </summary>
+            <returns>The converted string.</returns>
+            <param name="context">Context.</param>
+            <param name="value">Value to convert.</param>
+        </member>
+        <member name="M:Eto.TypeConverter.ConvertToString(Eto.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)">
+            <summary>
+            Converts to a string.
+            </summary>
+            <returns>The converted string.</returns>
+            <param name="context">Context.</param>
+            <param name="culture">Culture.</param>
+            <param name="value">Value to convert.</param>
+        </member>
+        <member name="M:Eto.TypeConverter.GetConvertFromException(System.Object)">
+            <summary>
+            Gets the exception when converting from a value.
+            </summary>
+            <returns>The convert from exception.</returns>
+            <param name="value">Value converted from.</param>
+        </member>
+        <member name="M:Eto.TypeConverter.GetConvertToException(System.Object,System.Type)">
+            <summary>
+            Gets the exception when converting to a value.
+            </summary>
+            <returns>The convert to exception.</returns>
+            <param name="value">Value converting to.</param>
+            <param name="destinationType">Destination type.</param>
+        </member>
+        <member name="M:Eto.TypeConverter.IsValid(System.Object)">
+            <summary>
+            Determines whether this instance is valid the specified value.
+            </summary>
+            <returns><c>true</c> if this instance is valid the specified value; otherwise, <c>false</c>.</returns>
+            <param name="value">Value.</param>
+        </member>
+        <member name="M:Eto.TypeConverter.IsValid(Eto.ITypeDescriptorContext,System.Object)">
+            <summary>
+            Determines whether this instance is valid the specified context value.
+            </summary>
+            <returns><c>true</c> if this instance is valid the specified context value; otherwise, <c>false</c>.</returns>
+            <param name="context">Context.</param>
+            <param name="value">Value.</param>
+        </member>
         <member name="T:Eto.RuntimeNamePropertyAttribute">
             <summary>
             Attribute to specify the name property of a control for serialization
@@ -31932,6 +32136,66 @@
             Initializes a new instance of the <see cref="T:Eto.RuntimeNamePropertyAttribute"/> class.
             </summary>
             <param name="name">Name of the property</param>
+        </member>
+        <member name="T:Eto.Platforms">
+            <summary>
+            Constants for the standard Generator generators
+            </summary>
+        </member>
+        <member name="F:Eto.Platforms.Direct2D">
+            <summary>
+            Type of the Direct2D platform
+            </summary>
+        </member>
+        <member name="F:Eto.Platforms.Ios">
+            <summary>
+            Type of the iOS platform
+            </summary>
+        </member>
+        <member name="F:Eto.Platforms.Gtk2">
+            <summary>
+            Type of the GTK 2 platform
+            </summary>
+        </member>
+        <member name="F:Eto.Platforms.Gtk3">
+            <summary>
+            Type of the GTK 3 platform
+            </summary>
+        </member>
+        <member name="F:Eto.Platforms.Mac">
+            <summary>
+            Type of the Mac OS X platform
+            </summary>
+        </member>
+        <member name="F:Eto.Platforms.Mac64">
+            <summary>
+            Type of the Mac OS X platform on 64-bit mono
+            </summary>
+        </member>
+        <member name="F:Eto.Platforms.XamMac">
+            <summary>
+            Type of the Xamarin.Mac v1 OS X platform
+            </summary>
+        </member>
+        <member name="F:Eto.Platforms.XamMac2">
+            <summary>
+            Type of the Xamarin.Mac v2 OS X platform
+            </summary>
+        </member>
+        <member name="F:Eto.Platforms.WinForms">
+            <summary>
+            Type of the Windows forms platform
+            </summary>
+        </member>
+        <member name="F:Eto.Platforms.Wpf">
+            <summary>
+            ID of the WPF platform
+            </summary>
+        </member>
+        <member name="F:Eto.Platforms.Android">
+            <summary>
+            ID of the Android platform
+            </summary>
         </member>
         <member name="T:Eto.WidgetCreatedEventArgs">
             <summary>
@@ -32302,66 +32566,6 @@
             Sets the current generator for a block of code
             </summary>
         </member>
-        <member name="T:Eto.Platforms">
-            <summary>
-            Constants for the standard Generator generators
-            </summary>
-        </member>
-        <member name="F:Eto.Platforms.Direct2D">
-            <summary>
-            Type of the Direct2D platform
-            </summary>
-        </member>
-        <member name="F:Eto.Platforms.Ios">
-            <summary>
-            Type of the iOS platform
-            </summary>
-        </member>
-        <member name="F:Eto.Platforms.Gtk2">
-            <summary>
-            Type of the GTK 2 platform
-            </summary>
-        </member>
-        <member name="F:Eto.Platforms.Gtk3">
-            <summary>
-            Type of the GTK 3 platform
-            </summary>
-        </member>
-        <member name="F:Eto.Platforms.Mac">
-            <summary>
-            Type of the Mac OS X platform
-            </summary>
-        </member>
-        <member name="F:Eto.Platforms.Mac64">
-            <summary>
-            Type of the Mac OS X platform on 64-bit mono
-            </summary>
-        </member>
-        <member name="F:Eto.Platforms.XamMac">
-            <summary>
-            Type of the Xamarin.Mac v1 OS X platform
-            </summary>
-        </member>
-        <member name="F:Eto.Platforms.XamMac2">
-            <summary>
-            Type of the Xamarin.Mac v2 OS X platform
-            </summary>
-        </member>
-        <member name="F:Eto.Platforms.WinForms">
-            <summary>
-            Type of the Windows forms platform
-            </summary>
-        </member>
-        <member name="F:Eto.Platforms.Wpf">
-            <summary>
-            ID of the WPF platform
-            </summary>
-        </member>
-        <member name="F:Eto.Platforms.Android">
-            <summary>
-            ID of the Android platform
-            </summary>
-        </member>
         <member name="T:Eto.HandlerAttribute">
             <summary>
             Attribute to specify the interface type to use for the handler of a <see cref="T:Eto.Widget"/>
@@ -32465,6 +32669,30 @@
             Adds the specified <paramref name="items"/> to the collection.
             </summary>
             <param name="items">Items to add to the collection.</param>
+        </member>
+        <member name="T:Eto.UnhandledExceptionEventArgs">
+            <summary>
+            Provides data for the event that is raised when there is an exception that is not handled otherwise
+            </summary>
+            <remarks>There is a System.UnhandledExceptionEventArgs class, but that doesn't seem to be available in
+            the Core CLR, therefore we redefine it here.</remarks>
+        </member>
+        <member name="M:Eto.UnhandledExceptionEventArgs.#ctor(System.Object,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Eto.UnhandledExceptionEventArgs"/> class.
+            </summary>
+            <param name="exception">The exception object.</param>
+            <param name="isTerminating"><c>true</c> if the application will terminate, otherwise <c>false</c>.</param>
+        </member>
+        <member name="P:Eto.UnhandledExceptionEventArgs.ExceptionObject">
+            <summary>
+            Gets the unhandled exception object.
+            </summary>
+        </member>
+        <member name="P:Eto.UnhandledExceptionEventArgs.IsTerminating">
+            <summary>
+            Indicates whether the application is terminating.
+            </summary>
         </member>
     </members>
 </doc>

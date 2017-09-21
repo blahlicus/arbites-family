@@ -20,6 +20,7 @@ F:\ArbitesEto2\ArbitesEto2.Gtk3\obj\Debug\ArbitesEto2.Gtk3.exe
 F:\ArbitesEto2\ArbitesEto2.Gtk3\obj\Debug\ArbitesEto2.Gtk3.pdb
 E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.Gtk3\bin\Debug\favicon.ico
 E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.Gtk3\bin\Debug\persistent-data.arb2pd
+E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.Gtk3\bin\Debug\ArbitesEto2.Gtk3.exe.config
 E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.Gtk3\bin\Debug\ArbitesEto2.Gtk3.exe
 E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.Gtk3\bin\Debug\ArbitesEto2.Gtk3.pdb
 E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.Gtk3\bin\Debug\ArbitesEto2.dll
