@@ -19,8 +19,6 @@ F:\ArbitesEto2\ArbitesEto2.WinForms\obj\Debug\ArbitesEto2.WinForms.csprojResolve
 F:\ArbitesEto2\ArbitesEto2.WinForms\obj\Debug\ArbitesEto2.WinForms.exe
 F:\ArbitesEto2\ArbitesEto2.WinForms\obj\Debug\ArbitesEto2.WinForms.pdb
 E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.WinForms\bin\Debug\favicon.ico
-E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.WinForms\bin\Debug\avrdude\avrdude.exe
-E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.WinForms\bin\Debug\avrdude\avrdude.conf
 E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.WinForms\bin\Debug\drivers.zip
 E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.WinForms\bin\Debug\persistent-data.arb2pd
 E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.WinForms\bin\Debug\ArbitesEto2.WinForms.exe.config
@@ -29,8 +27,13 @@ E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.WinForms\bi
 E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.WinForms\bin\Debug\ArbitesEto2.dll
 E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.WinForms\bin\Debug\Eto.dll
 E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.WinForms\bin\Debug\Eto.WinForms.dll
+E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.WinForms\bin\Debug\ArduinoUploader.dll
+E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.WinForms\bin\Debug\IntelHexFormatReader.dll
+E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.WinForms\bin\Debug\RJCP.SerialPortStream.dll
 E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.WinForms\bin\Debug\ArbitesEto2.pdb
 E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.WinForms\bin\Debug\Eto.xml
+E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.WinForms\bin\Debug\RJCP.SerialPortStream.pdb
+E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.WinForms\bin\Debug\RJCP.SerialPortStream.xml
 E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.WinForms\obj\Debug\ArbitesEto2.WinForms.csprojResolveAssemblyReference.cache
 E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.WinForms\obj\Debug\ArbitesEto2.WinForms.exe
 E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2.WinForms\obj\Debug\ArbitesEto2.WinForms.pdb

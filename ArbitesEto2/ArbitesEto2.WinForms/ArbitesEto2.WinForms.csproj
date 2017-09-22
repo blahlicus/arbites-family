@@ -55,9 +55,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="avrdude\avrdude.conf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Include="drivers.zip">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -67,9 +64,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="avrdude\avrdude.exe">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="favicon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

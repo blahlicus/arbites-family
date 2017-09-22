@@ -9,26 +9,28 @@ namespace ArbitesEto2
     {
         Button BtnSelectFile, BtnUpload, BtnPorts;
         Label LSelectedFile, LSelectedPort;
-        Label LStatus;
+        ProgressBar PBMain;
+        RichTextArea RTAStatus;
+
         void InitializeComponent()
         {
             Title = "Firmware Uploader";
             ClientSize = new Size(400, 300);
 
-            var slMain = new StackLayout();
-            slMain.Spacing = 5;
-            Content = slMain;
+            var tlMain = new TableLayout();
+            tlMain.Spacing = new Size(5,5);
+            Content = tlMain;
 
             var l1 = new Label();
             l1.Wrap = WrapMode.Word;
             l1.Text = "This is the firmware uploader, it is used to upload firmware to your hardware device, allowing you to update the firmware in your device, follow the steps below to upload your firmware:\n\n1. Download the compiled *.hex firmware file for your device\n2. Press browse and select your *.hex file\n3. Press select port to select the port of your device\n4. Press upload, then wait around 30 seconds for the firmware to be uploaded to your hardware, a command line window will pop up during the upload\n";
-            slMain.Items.Add(l1);
+            tlMain.Rows.Add(l1);
 
             var slFile = new StackLayout();
             slFile.Spacing = 5;
             slFile.Orientation = Orientation.Horizontal;
             slFile.VerticalContentAlignment = VerticalAlignment.Center;
-            slMain.Items.Add(slFile);
+            tlMain.Rows.Add(slFile);
 
             LSelectedFile = new Label();
             LSelectedFile.Text = "No file seelcted";
@@ -43,7 +45,7 @@ namespace ArbitesEto2
             slPort.Spacing = 5;
             slPort.Orientation = Orientation.Horizontal;
             slPort.VerticalContentAlignment = VerticalAlignment.Center;
-            slMain.Items.Add(slPort);
+            tlMain.Rows.Add(slPort);
 
             LSelectedPort = new Label();
             LSelectedPort.Text = "No Ports Selected";
@@ -59,10 +61,13 @@ namespace ArbitesEto2
             BtnUpload.ToolTip = "Upload";
             slPort.Items.Add(BtnUpload);
 
-            LStatus = new Label();
-            LStatus.Wrap = WrapMode.Word;
-            LStatus.Text = "Awaiting upload to begin";
-            slMain.Items.Add(LStatus);
+            PBMain = new ProgressBar();
+            tlMain.Rows.Add(PBMain);
+
+            RTAStatus = new RichTextArea();
+            RTAStatus.ReadOnly = true;
+            tlMain.Rows.Add(RTAStatus);
+            
         }
     }
 }

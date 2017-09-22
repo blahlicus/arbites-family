@@ -7,25 +7,67 @@ using System.IO;
 using System.Diagnostics;
 using System.Linq;
 using System.IO.Ports;
+using ArduinoUploader;
+using System.Threading;
+using System.ComponentModel;
 
 namespace ArbitesEto2
 {
     public partial class FmFirmwareUpdater
     {
-        Timer Counter;
         string SelectedPort = "none";
         string SelectedFile = "none";
-        int timerElapsedCount = 0;
         List<string> Ports;
-        bool hasUploaded = false;
+
+        BackgroundWorker bw;
+
+        private class SketchUploaderLogReceiver : IArduinoUploaderLogger
+        {
+            public void Error(string message, Exception exception)
+            {
+                //Logger.Error(exception, message);
+                //Console.WriteLine("e: " + message);
+
+            }
+
+            public void Warn(string message)
+            {
+                //Console.WriteLine("w: " + message);
+
+                //Logger.Warn(message);
+            }
+
+            public void Info(string message)
+            {
+                //Console.WriteLine("i: " + message);
+                //Application.Instance.Invoke(new Action(() => RTA.Append(message)));
+                //RTA.Append(message);
+
+            }
+
+            public void Debug(string message)
+            {
+                //Console.WriteLine("d: " + message);
+
+
+                //Logger.Debug(message);
+            }
+
+            public void Trace(string message)
+            {
+                //RTA.Append(message);
+                //Console.WriteLine(message);
+
+            }
+        }
+
+
         public FmFirmwareUpdater()
         {
             InitializeComponent();
-            Counter = new Timer(250);
-            Counter.Enabled = false;
-            Counter.AutoReset = false;
+            bw = new BackgroundWorker();
+            bw.WorkerReportsProgress = true;
             EventHook();
-
         }
 
         private void EventHook()
@@ -33,130 +75,54 @@ namespace ArbitesEto2
             BtnPorts.Click += (sender, e) => BtnPortsClicked();
             BtnSelectFile.Click += (sender, e) => BtnSelectFileClicked();
             BtnUpload.Click += (sender, e) => BtnUploadClicked();
-            Counter.Elapsed += (sender, e) => TimerElapsed();
+            bw.RunWorkerCompleted += (sender, e) => BWCompleted(sender, e);
+            bw.DoWork += (sender, e) => BWDoWork(sender, e);
+            bw.ProgressChanged += (sender, e) => BWReportProgress(sender, e);
         }
+        
 
-        private void TimerElapsed()
+        private void BWCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            timerElapsedCount++;
-            var tempPorts = GetPorts();
-            var ls = tempPorts.Except(Ports).ToList();
-
-            if (timerElapsedCount > 19)
+            PBMain.Value = 0;
+            if (e.Error != null)
             {
-                // timeout after 5 seconds
-                if (!hasUploaded)
-                {
-                    hasUploaded = true;
-                    MessageBox.Show("Unable to find device, please make sure the device is plugged in and the correct device is selected");
-                }
-                Counter.Stop();
+                RTAStatus.Append(e.Error.ToString(),true);
             }
             else
             {
-                // check again
-                if (ls.Count == 1)
-                {
-                    if (!hasUploaded)
-                    {
-                        hasUploaded = true;
-                        UploadHex(ls[0]);
-                        hasUploaded = false;
-                    }
-                    Counter.Stop();
-                }
-                else
-                {
-                    Counter.Enabled = true;
-                }
+                RTAStatus.Append("Successful upload to port " + SelectedPort + " with file " + SelectedFile, true);
             }
-
         }
 
-        private void UploadHex(string port) //TODO add platform specific code for linxu and mac
+        private void BWDoWork(object sender, DoWorkEventArgs e)
         {
-            if ((Environment.OSVersion.Platform == PlatformID.Unix) || (Environment.OSVersion.Platform == PlatformID.MacOSX))
-            {
-                try
-                {
-                    if (Directory.Exists(@"/dev/serial/by-id"))
-                    {
-                        // probably is unix
-                        var psi = new Process();
-                        psi.StartInfo.WindowStyle = ProcessWindowStyle.Normal;
-                        psi.EnableRaisingEvents = false;
-                        psi.StartInfo.UseShellExecute = false;
-                        psi.StartInfo.FileName = @"sh";
-                        psi.StartInfo.Arguments = "\"avrdude -v -patmega32u4 -cavr109 -P" + port + " -b57600 -D -Uflash:w:" + SelectedFile + ":i\"";
 
-                        psi.Start();
-                    }
-                    else
-                    {
-                        // probably is mac
+            var asuo = new ArduinoSketchUploaderOptions();
+            asuo.FileName = SelectedFile;
+            asuo.PortName = SelectedPort;
+            asuo.ArduinoModel = ArduinoUploader.Hardware.ArduinoModel.Leonardo;
+            var logger = new SketchUploaderLogReceiver();
 
-                        var psi = new Process();
-                        psi.StartInfo.WindowStyle = ProcessWindowStyle.Normal;
-                        psi.EnableRaisingEvents = false;
-                        psi.StartInfo.UseShellExecute = false;
-                        psi.StartInfo.FileName = @"sh";
-                        psi.StartInfo.Arguments = "\"avrdude -v -patmega32u4 -cavr109 -P" + port + " -b57600 -D -Uflash:w:" + SelectedFile + ":i\"";
+            var progress = new Progress<double>(
+                p => logger.Info($"Programming progress: {p * 100:F1}% ..."));
+            progress.ProgressChanged += (isender, ie) => UploadProgressChanged(isender, ie);
 
-                        psi.Start();
-                    }
-                }
-                catch (Exception)
-                {
-                    MessageBox.Show("Unable to detect OS version, please retry.");
-                }
-            }
-            else
-            {
-                // probably is windows
-                Process process = new Process();
-                ProcessStartInfo startInfo = new ProcessStartInfo();
-                startInfo.WindowStyle = ProcessWindowStyle.Hidden;
-                startInfo.FileName = Path.Combine(MdConstant.windowsAvrdudeLocation, "avrdude");
-                startInfo.WorkingDirectory = MdConstant.windowsAvrdudeLocation;
-                startInfo.CreateNoWindow = true;
-                startInfo.RedirectStandardOutput = true;
-                startInfo.RedirectStandardError = true;
-                startInfo.UseShellExecute = false;
-                startInfo.Arguments = @"-v -patmega32u4 -cavr109 -P" + port + " -b57600 -D -Uflash:w:" + SelectedFile + ":i";
-                process.EnableRaisingEvents = true;
-                process.Exited += (sender, e) => UploadFinished(sender ,e);
-                process.OutputDataReceived += (sender, e) => CLIOutputReceived(sender, e);
-                process.ErrorDataReceived += (sender, e) => CLIErrorReceived(sender, e);
 
-                Counter.Elapsed += (sender, e) => TimerElapsed();
+            var uploader = new ArduinoSketchUploader(asuo, logger, progress);
 
-                process.StartInfo = startInfo;
-                process.Start();
-                process.BeginOutputReadLine();
-                process.BeginErrorReadLine();
-                //process.BeginOutputReadLine();
-                //process.WaitForExit(30000);
-                //MessageBox.Show("\nAVRDUDE started with argument: " + startInfo.Arguments + "\n\nYou may close this window once AVRDUDE completes uploading");
-                //MessageBox.Show(process.StandardOutput.ReadToEnd());
-            }
-
-        }
-        private void CLIOutputReceived(object sender, DataReceivedEventArgs e)
-        {
-            //Application.Instance.Invoke(new Action(() => LStatus.Text += "\n" + e.Data));
-            Console.WriteLine("output: " +e.Data);
-
+            uploader.UploadSketch();
         }
 
-        private void CLIErrorReceived(object sender, DataReceivedEventArgs e)
+        private void BWReportProgress(object sender, ProgressChangedEventArgs e)
         {
-            Application.Instance.Invoke(new Action(() => LStatus.Text += "\n" + e.Data));
-            Console.WriteLine("error: " + e.Data);
-
+            PBMain.Value = e.ProgressPercentage;
         }
-        private void UploadFinished(object sender, EventArgs e)
+        
+        
+        private void UploadProgressChanged(object sender, double e)
         {
-            MessageBox.Show("Upload Finished");
+            int prog = Convert.ToInt32(e * 100);
+            bw.ReportProgress(prog);
         }
 
         private void BtnPortsClicked()
@@ -196,31 +162,8 @@ namespace ArbitesEto2
         {
             if (File.Exists(SelectedFile))
             {
-
-                var sp = new SerialPort();
-                sp.PortName = SelectedPort;
-                sp.BaudRate = 1200;
-
-                try
-                {
-                    sp.Open();
-                }
-                catch (Exception)
-                {
-                    var dr = MessageBox.Show("Arbites failed to detect the selected port\nAre you sure you wish to upload to this port?", "Port Confirmation", MessageBoxButtons.YesNo);
-                    if (dr == DialogResult.Yes)
-                    {
-                        //do nothing
-                    }
-                    else
-                    {
-                        return;
-                    }
-                }
-                LStatus.Text += "\nPulsing " + SelectedPort + " to enter boot mode";
-                sp.Close();
-                timerElapsedCount = 0;
-                Counter.Enabled = true;
+                RTAStatus.Append("Upload Started to port " + SelectedFile + " with file " + SelectedFile);
+                bw.RunWorkerAsync();
             }
             else
             {
