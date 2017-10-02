@@ -130,6 +130,21 @@ namespace ArbitesEto2
                                  MdPersistentData.ConfigPath
                                  , MdConstant.D_INPUT_METHOD,
                                  "Swedish-Danish-QWERTY" + MdConstant.E_INPUT_METHOD));
+
+            //GenerateSwissGerman
+            MdCore.Serialize(ClDisplayCharacterContainer.GenerateSwissQWERTZDE()
+                             , Path.Combine(
+                                 MdPersistentData.ConfigPath
+                                 , MdConstant.D_INPUT_METHOD,
+                                 "Deutsch-QWERTZ-Schweizer" + MdConstant.E_INPUT_METHOD));
+
+            //GenerateSwissFrench
+            MdCore.Serialize(ClDisplayCharacterContainer.GenerateSwissQWERTZFR()
+                             , Path.Combine(
+                                 MdPersistentData.ConfigPath
+                                 , MdConstant.D_INPUT_METHOD,
+                                 "Français-QWERTZ-Suisse" + MdConstant.E_INPUT_METHOD));
+
         }
 
 

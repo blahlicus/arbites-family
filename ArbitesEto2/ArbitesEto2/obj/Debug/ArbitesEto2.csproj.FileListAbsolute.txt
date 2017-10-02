@@ -38,3 +38,4 @@ E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2\bin\Debug\R
 E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2\bin\Debug\RJCP.SerialPortStream.xml
 E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2\obj\Debug\ArbitesEto2.dll
 E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2\obj\Debug\ArbitesEto2.pdb
+E:\blahlicus\Documents\GitHub\arbites-family\ArbitesEto2\ArbitesEto2\obj\Debug\ArbitesEto2.csprojResolveAssemblyReference.cache
