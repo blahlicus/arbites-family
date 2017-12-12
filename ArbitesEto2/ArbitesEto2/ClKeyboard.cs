@@ -66,6 +66,10 @@ namespace ArbitesEto2
             kb.Commands.Add("uniqueksetkey");
             kb.Commands.Add("uniqueksetsubkey");
 
+            var basexl = 5;
+            var basexr = 1237;
+            var basey = 5;
+
             // buttons
             for (var i = 0; i < 8; i++)
             {
@@ -81,15 +85,33 @@ namespace ArbitesEto2
                             bi.Command = s;
                             bi.GW = 72;
                             bi.GH = 72;
+
+                            bi.GX = i * 77;
+                            bi.GY = basey + j * 77;
+
+                            if (i == 1)
+                                bi.GY += 55;
+                            else if (i == 2 || i == 5)
+                                bi.GY += 20;
+                            else if (i == 6)
+                                bi.GY += 30;
+
+                            if (j == 4 && i >= 5)
+                            {
+                                bi.GX += 20;
+                                if (i == 5)
+                                    bi.GY += 20;
+                                else if (i == 6)
+                                    bi.GY += 30;
+                                else if (i == 7)
+                                    bi.GY += 90;
+                            }
+
                             if (s == 0)
-                            {
-                                bi.GX = 5 + i * 77;
-                            }
+                                bi.GX = basexl + bi.GX;
                             else
-                            {
-                                bi.GX = s * 1242 - (5 + i * 77);
-                            }
-                            bi.GY = 5 + j * 77;
+                                bi.GX = basexr - bi.GX;
+
                             kb.Buttons.Add(bi);
                         }
                     }
