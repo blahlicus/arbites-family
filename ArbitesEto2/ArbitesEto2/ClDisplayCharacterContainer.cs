@@ -137,6 +137,7 @@ namespace ArbitesEto2
             dcc.Groups.Add("2Role Shift"); //15
             dcc.Groups.Add("2Role Alt"); //16
             dcc.Groups.Add("2Role AltGr"); //17
+            dcc.Groups.Add("2Role Win"); //26
             dcc.Groups.Add("2Role FN"); //18
             dcc.Groups.Add("2Role FN2"); //19
             dcc.Groups.Add("2Role FN3"); //20
@@ -422,12 +423,13 @@ namespace ArbitesEto2
             AddHIDSubGroup(dcc, 20, 15, "", " || Shift");
             AddHIDSubGroup(dcc, 23, 16, "", " || Alt");
             AddHIDSubGroup(dcc, 26, 17, "", " || AltGr");
-            AddHIDSubGroup(dcc, 29, 18, "", " || FN");
-            AddHIDSubGroup(dcc, 32, 19, "", " || FN2");
-            AddHIDSubGroup(dcc, 35, 20, "", " || FN3");
-            AddHIDSubGroup(dcc, 38, 21, "", " || FN4");
-            AddHIDSubGroup(dcc, 41, 22, "", " || FN5");
-            AddHIDSubGroup(dcc, 44, 23, "", " || FN6");
+            AddHIDSubGroup(dcc, 60, 18, "", " || Win");
+            AddHIDSubGroup(dcc, 29, 19, "", " || FN");
+            AddHIDSubGroup(dcc, 32, 20, "", " || FN2");
+            AddHIDSubGroup(dcc, 35, 21, "", " || FN3");
+            AddHIDSubGroup(dcc, 38, 22, "", " || FN4");
+            AddHIDSubGroup(dcc, 41, 23, "", " || FN5");
+            AddHIDSubGroup(dcc, 44, 24, "", " || FN6");
 
 
             AddHIDSubGroup(dcc, 47, 10, "", " + Ctrl + Shift");
@@ -437,16 +439,16 @@ namespace ArbitesEto2
 
 
             // stickyctrl
-            dcc.AddKey(5900, "StickyCtrl", 24);
-            dcc.AddKey(5901, "StickyShift", 24);
-            dcc.AddKey(5902, "StickyAlt", 24);
-            dcc.AddKey(5903, "StickyAltGr", 24);
+            dcc.AddKey(5900, "StickyCtrl", 25);
+            dcc.AddKey(5901, "StickyShift", 25);
+            dcc.AddKey(5902, "StickyAlt", 25);
+            dcc.AddKey(5903, "StickyAltGr", 25);
 
 
             int ctr = 1;
             for (int i = 5904; i < 5914; i++)
             {
-                dcc.AddKey(i, "StickyFN" + Convert.ToString(ctr), 24);
+                dcc.AddKey(i, "StickyFN" + Convert.ToString(ctr), 25);
                 ctr++;
             }
 

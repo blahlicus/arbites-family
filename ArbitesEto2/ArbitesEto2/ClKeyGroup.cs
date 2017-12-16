@@ -322,11 +322,12 @@ namespace ArbitesEto2
             kg.Keys.AddRange(ClKeyGroup.GenereateSubHIDSet(kg, 11, 13));
             kg.Keys.AddRange(ClKeyGroup.GenereateSubHIDSet(kg, 14, 14));
 
-            // dual roles ctrl shift alt altgr
+            // dual roles ctrl shift alt altgr win
             kg.Keys.AddRange(ClKeyGroup.GenereateSubHIDSet(kg, 17, 20));
             kg.Keys.AddRange(ClKeyGroup.GenereateSubHIDSet(kg, 20, 21));
             kg.Keys.AddRange(ClKeyGroup.GenereateSubHIDSet(kg, 23, 22));
             kg.Keys.AddRange(ClKeyGroup.GenereateSubHIDSet(kg, 26, 23));
+            kg.Keys.AddRange(ClKeyGroup.GenereateSubHIDSet(kg, 60, 35));
             // dual roles fn1
             kg.Keys.AddRange(ClKeyGroup.GenereateSubHIDSet(kg, 29, 24, true));
             // dual roles fn2
