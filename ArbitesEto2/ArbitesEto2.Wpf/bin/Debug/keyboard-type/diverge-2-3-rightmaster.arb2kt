@@ -95,7 +95,7 @@
     </ClButtonInfo>
     <ClButtonInfo>
       <GX>82</GX>
-      <GY>5</GY>
+      <GY>60</GY>
       <X>1</X>
       <Y>0</Y>
       <GW>72</GW>
@@ -104,7 +104,7 @@
     </ClButtonInfo>
     <ClButtonInfo>
       <GX>1160</GX>
-      <GY>5</GY>
+      <GY>60</GY>
       <X>1</X>
       <Y>0</Y>
       <GW>72</GW>
@@ -113,7 +113,7 @@
     </ClButtonInfo>
     <ClButtonInfo>
       <GX>82</GX>
-      <GY>82</GY>
+      <GY>137</GY>
       <X>1</X>
       <Y>1</Y>
       <GW>72</GW>
@@ -122,7 +122,7 @@
     </ClButtonInfo>
     <ClButtonInfo>
       <GX>1160</GX>
-      <GY>82</GY>
+      <GY>137</GY>
       <X>1</X>
       <Y>1</Y>
       <GW>72</GW>
@@ -131,7 +131,7 @@
     </ClButtonInfo>
     <ClButtonInfo>
       <GX>82</GX>
-      <GY>159</GY>
+      <GY>214</GY>
       <X>1</X>
       <Y>2</Y>
       <GW>72</GW>
@@ -140,7 +140,7 @@
     </ClButtonInfo>
     <ClButtonInfo>
       <GX>1160</GX>
-      <GY>159</GY>
+      <GY>214</GY>
       <X>1</X>
       <Y>2</Y>
       <GW>72</GW>
@@ -149,7 +149,7 @@
     </ClButtonInfo>
     <ClButtonInfo>
       <GX>82</GX>
-      <GY>236</GY>
+      <GY>291</GY>
       <X>1</X>
       <Y>3</Y>
       <GW>72</GW>
@@ -158,7 +158,7 @@
     </ClButtonInfo>
     <ClButtonInfo>
       <GX>1160</GX>
-      <GY>236</GY>
+      <GY>291</GY>
       <X>1</X>
       <Y>3</Y>
       <GW>72</GW>
@@ -167,7 +167,7 @@
     </ClButtonInfo>
     <ClButtonInfo>
       <GX>82</GX>
-      <GY>313</GY>
+      <GY>368</GY>
       <X>1</X>
       <Y>4</Y>
       <GW>72</GW>
@@ -176,7 +176,7 @@
     </ClButtonInfo>
     <ClButtonInfo>
       <GX>1160</GX>
-      <GY>313</GY>
+      <GY>368</GY>
       <X>1</X>
       <Y>4</Y>
       <GW>72</GW>
@@ -185,7 +185,7 @@
     </ClButtonInfo>
     <ClButtonInfo>
       <GX>159</GX>
-      <GY>5</GY>
+      <GY>25</GY>
       <X>2</X>
       <Y>0</Y>
       <GW>72</GW>
@@ -194,7 +194,7 @@
     </ClButtonInfo>
     <ClButtonInfo>
       <GX>1083</GX>
-      <GY>5</GY>
+      <GY>25</GY>
       <X>2</X>
       <Y>0</Y>
       <GW>72</GW>
@@ -203,7 +203,7 @@
     </ClButtonInfo>
     <ClButtonInfo>
       <GX>159</GX>
-      <GY>82</GY>
+      <GY>102</GY>
       <X>2</X>
       <Y>1</Y>
       <GW>72</GW>
@@ -212,7 +212,7 @@
     </ClButtonInfo>
     <ClButtonInfo>
       <GX>1083</GX>
-      <GY>82</GY>
+      <GY>102</GY>
       <X>2</X>
       <Y>1</Y>
       <GW>72</GW>
@@ -221,7 +221,7 @@
     </ClButtonInfo>
     <ClButtonInfo>
       <GX>159</GX>
-      <GY>159</GY>
+      <GY>179</GY>
       <X>2</X>
       <Y>2</Y>
       <GW>72</GW>
@@ -230,7 +230,7 @@
     </ClButtonInfo>
     <ClButtonInfo>
       <GX>1083</GX>
-      <GY>159</GY>
+      <GY>179</GY>
       <X>2</X>
       <Y>2</Y>
       <GW>72</GW>
@@ -239,7 +239,7 @@
     </ClButtonInfo>
     <ClButtonInfo>
       <GX>159</GX>
-      <GY>236</GY>
+      <GY>256</GY>
       <X>2</X>
       <Y>3</Y>
       <GW>72</GW>
@@ -248,7 +248,7 @@
     </ClButtonInfo>
     <ClButtonInfo>
       <GX>1083</GX>
-      <GY>236</GY>
+      <GY>256</GY>
       <X>2</X>
       <Y>3</Y>
       <GW>72</GW>
@@ -257,7 +257,7 @@
     </ClButtonInfo>
     <ClButtonInfo>
       <GX>159</GX>
-      <GY>313</GY>
+      <GY>333</GY>
       <X>2</X>
       <Y>4</Y>
       <GW>72</GW>
@@ -266,7 +266,7 @@
     </ClButtonInfo>
     <ClButtonInfo>
       <GX>1083</GX>
-      <GY>313</GY>
+      <GY>333</GY>
       <X>2</X>
       <Y>4</Y>
       <GW>72</GW>
@@ -455,7 +455,7 @@
     </ClButtonInfo>
     <ClButtonInfo>
       <GX>390</GX>
-      <GY>5</GY>
+      <GY>25</GY>
       <X>5</X>
       <Y>0</Y>
       <GW>72</GW>
@@ -464,7 +464,7 @@
     </ClButtonInfo>
     <ClButtonInfo>
       <GX>852</GX>
-      <GY>5</GY>
+      <GY>25</GY>
       <X>5</X>
       <Y>0</Y>
       <GW>72</GW>
@@ -473,7 +473,7 @@
     </ClButtonInfo>
     <ClButtonInfo>
       <GX>390</GX>
-      <GY>82</GY>
+      <GY>102</GY>
       <X>5</X>
       <Y>1</Y>
       <GW>72</GW>
@@ -482,7 +482,7 @@
     </ClButtonInfo>
     <ClButtonInfo>
       <GX>852</GX>
-      <GY>82</GY>
+      <GY>102</GY>
       <X>5</X>
       <Y>1</Y>
       <GW>72</GW>
@@ -491,7 +491,7 @@
     </ClButtonInfo>
     <ClButtonInfo>
       <GX>390</GX>
-      <GY>159</GY>
+      <GY>179</GY>
       <X>5</X>
       <Y>2</Y>
       <GW>72</GW>
@@ -500,7 +500,7 @@
     </ClButtonInfo>
     <ClButtonInfo>
       <GX>852</GX>
-      <GY>159</GY>
+      <GY>179</GY>
       <X>5</X>
       <Y>2</Y>
       <GW>72</GW>
@@ -509,7 +509,7 @@
     </ClButtonInfo>
     <ClButtonInfo>
       <GX>390</GX>
-      <GY>236</GY>
+      <GY>256</GY>
       <X>5</X>
       <Y>3</Y>
       <GW>72</GW>
@@ -518,7 +518,7 @@
     </ClButtonInfo>
     <ClButtonInfo>
       <GX>852</GX>
-      <GY>236</GY>
+      <GY>256</GY>
       <X>5</X>
       <Y>3</Y>
       <GW>72</GW>
@@ -526,8 +526,8 @@
       <Command>1</Command>
     </ClButtonInfo>
     <ClButtonInfo>
-      <GX>390</GX>
-      <GY>313</GY>
+      <GX>410</GX>
+      <GY>353</GY>
       <X>5</X>
       <Y>4</Y>
       <GW>72</GW>
@@ -535,8 +535,8 @@
       <Command>0</Command>
     </ClButtonInfo>
     <ClButtonInfo>
-      <GX>852</GX>
-      <GY>313</GY>
+      <GX>832</GX>
+      <GY>353</GY>
       <X>5</X>
       <Y>4</Y>
       <GW>72</GW>
@@ -545,7 +545,7 @@
     </ClButtonInfo>
     <ClButtonInfo>
       <GX>467</GX>
-      <GY>5</GY>
+      <GY>35</GY>
       <X>6</X>
       <Y>0</Y>
       <GW>72</GW>
@@ -554,7 +554,7 @@
     </ClButtonInfo>
     <ClButtonInfo>
       <GX>775</GX>
-      <GY>5</GY>
+      <GY>35</GY>
       <X>6</X>
       <Y>0</Y>
       <GW>72</GW>
@@ -563,7 +563,7 @@
     </ClButtonInfo>
     <ClButtonInfo>
       <GX>467</GX>
-      <GY>82</GY>
+      <GY>112</GY>
       <X>6</X>
       <Y>1</Y>
       <GW>72</GW>
@@ -572,7 +572,7 @@
     </ClButtonInfo>
     <ClButtonInfo>
       <GX>775</GX>
-      <GY>82</GY>
+      <GY>112</GY>
       <X>6</X>
       <Y>1</Y>
       <GW>72</GW>
@@ -581,7 +581,7 @@
     </ClButtonInfo>
     <ClButtonInfo>
       <GX>467</GX>
-      <GY>159</GY>
+      <GY>189</GY>
       <X>6</X>
       <Y>2</Y>
       <GW>72</GW>
@@ -590,7 +590,7 @@
     </ClButtonInfo>
     <ClButtonInfo>
       <GX>775</GX>
-      <GY>159</GY>
+      <GY>189</GY>
       <X>6</X>
       <Y>2</Y>
       <GW>72</GW>
@@ -599,7 +599,7 @@
     </ClButtonInfo>
     <ClButtonInfo>
       <GX>467</GX>
-      <GY>236</GY>
+      <GY>266</GY>
       <X>6</X>
       <Y>3</Y>
       <GW>72</GW>
@@ -608,7 +608,7 @@
     </ClButtonInfo>
     <ClButtonInfo>
       <GX>775</GX>
-      <GY>236</GY>
+      <GY>266</GY>
       <X>6</X>
       <Y>3</Y>
       <GW>72</GW>
@@ -616,8 +616,8 @@
       <Command>1</Command>
     </ClButtonInfo>
     <ClButtonInfo>
-      <GX>467</GX>
-      <GY>313</GY>
+      <GX>487</GX>
+      <GY>373</GY>
       <X>6</X>
       <Y>4</Y>
       <GW>72</GW>
@@ -625,8 +625,8 @@
       <Command>0</Command>
     </ClButtonInfo>
     <ClButtonInfo>
-      <GX>775</GX>
-      <GY>313</GY>
+      <GX>755</GX>
+      <GY>373</GY>
       <X>6</X>
       <Y>4</Y>
       <GW>72</GW>
@@ -634,8 +634,8 @@
       <Command>1</Command>
     </ClButtonInfo>
     <ClButtonInfo>
-      <GX>544</GX>
-      <GY>313</GY>
+      <GX>564</GX>
+      <GY>403</GY>
       <X>7</X>
       <Y>4</Y>
       <GW>72</GW>
@@ -643,8 +643,8 @@
       <Command>0</Command>
     </ClButtonInfo>
     <ClButtonInfo>
-      <GX>698</GX>
-      <GY>313</GY>
+      <GX>678</GX>
+      <GY>403</GY>
       <X>7</X>
       <Y>4</Y>
       <GW>72</GW>
