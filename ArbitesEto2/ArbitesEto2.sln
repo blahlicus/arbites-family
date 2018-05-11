@@ -11,8 +11,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArbitesEto2.Gtk3", "Arbites
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArbitesEto2.Wpf", "ArbitesEto2.Wpf\ArbitesEto2.Wpf.csproj", "{9E2B87B8-2ABE-4B35-A6F6-81CBA0B10B31}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArbitesEto2.WinForms", "ArbitesEto2.WinForms\ArbitesEto2.WinForms.csproj", "{8061F354-E506-40B1-B9E3-EA85018A8FEE}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArbitesEto2.Mac", "ArbitesEto2.Mac\ArbitesEto2.Mac.csproj", "{0FC324F2-6183-4723-ABC4-5D41B8AF7D42}"
 EndProject
 Global
@@ -37,10 +35,6 @@ Global
 		{9E2B87B8-2ABE-4B35-A6F6-81CBA0B10B31}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9E2B87B8-2ABE-4B35-A6F6-81CBA0B10B31}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9E2B87B8-2ABE-4B35-A6F6-81CBA0B10B31}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8061F354-E506-40B1-B9E3-EA85018A8FEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8061F354-E506-40B1-B9E3-EA85018A8FEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8061F354-E506-40B1-B9E3-EA85018A8FEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8061F354-E506-40B1-B9E3-EA85018A8FEE}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0FC324F2-6183-4723-ABC4-5D41B8AF7D42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0FC324F2-6183-4723-ABC4-5D41B8AF7D42}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0FC324F2-6183-4723-ABC4-5D41B8AF7D42}.Release|Any CPU.ActiveCfg = Release|Any CPU
