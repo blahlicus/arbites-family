@@ -1,1 +1,0 @@
-﻿mono ArbitesEto2.Gtk2.exe
