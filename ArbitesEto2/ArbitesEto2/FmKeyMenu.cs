@@ -25,9 +25,9 @@ namespace ArbitesEto2
             this.Height = 640;
             this.Width = 860;
             this.Topmost = MdConfig.Main.KeyMenuTopmost;
-            this.Icon = MdSessionData.WindowIcon;
+            // this.Icon = MdSessionData.WindowIcon;
         }
-        
+
         public void Init()
         {
             int gIndex = 0;

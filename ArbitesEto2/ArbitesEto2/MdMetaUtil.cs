@@ -28,7 +28,7 @@ namespace ArbitesEto2
                     needsRestore = true;
                 }
             }
-            catch (Exception ex)
+            catch
             {
                 needsRestore = true;
             }

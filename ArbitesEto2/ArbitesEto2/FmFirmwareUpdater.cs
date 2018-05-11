@@ -79,14 +79,14 @@ namespace ArbitesEto2
             bw.DoWork += (sender, e) => BWDoWork(sender, e);
             bw.ProgressChanged += (sender, e) => BWReportProgress(sender, e);
         }
-        
+
 
         private void BWCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             PBMain.Value = 0;
             if (e.Error != null)
             {
-                RTAStatus.Append(e.Error.ToString(),true);
+                RTAStatus.Append(e.Error.ToString(), true);
             }
             else
             {
@@ -117,8 +117,8 @@ namespace ArbitesEto2
         {
             PBMain.Value = e.ProgressPercentage;
         }
-        
-        
+
+
         private void UploadProgressChanged(object sender, double e)
         {
             int prog = Convert.ToInt32(e * 100);
@@ -141,7 +141,7 @@ namespace ArbitesEto2
         {
 
             var dialog = new OpenFileDialog();
-            dialog.Filters.Add(new FileDialogFilter("Hex Binary File", "*.hex"));
+            dialog.Filters.Add(new FileFilter("Hex Binary File", "*.hex"));
             dialog.Title = "Load Layout";
             try
             {

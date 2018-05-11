@@ -43,7 +43,7 @@ namespace ArbitesEto2
         public void LoadLayoutFile()
         {
             var dialog = new OpenFileDialog();
-            dialog.Filters.Add(new FileDialogFilter(this.Keyboard.Name + " layout", "*." + this.Keyboard.SaveFileExtension));
+            dialog.Filters.Add(new FileFilter(this.Keyboard.Name + " layout", "*." + this.Keyboard.SaveFileExtension));
             dialog.Title = "Load Layout";
             dialog.Directory = new Uri(Environment.CurrentDirectory + MdConstant.psep + "layouts");
             try
@@ -80,7 +80,7 @@ namespace ArbitesEto2
         public void SaveLayoutAs()
         {
             var dialog = new SaveFileDialog();
-            dialog.Filters.Add(new FileDialogFilter(this.Keyboard.Name + " layout", "*." + this.Keyboard.SaveFileExtension));
+            dialog.Filters.Add(new FileFilter(this.Keyboard.Name + " layout", "*." + this.Keyboard.SaveFileExtension));
             dialog.Title = "Save Layout As";
             dialog.Directory = new Uri(Environment.CurrentDirectory + MdConstant.psep + "layouts");
             try

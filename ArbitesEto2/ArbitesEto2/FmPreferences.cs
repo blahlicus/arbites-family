@@ -64,7 +64,7 @@ namespace ArbitesEto2
         private void AddKeyGroup()
         {
             var dialog = new OpenFileDialog();
-            dialog.Filters.Add(new FileDialogFilter("Arbites Keygroup File", MdConstant.E_KEYGROUP));
+            dialog.Filters.Add(new FileFilter("Arbites Keygroup File", MdConstant.E_KEYGROUP));
             dialog.Title = "Load Keygroup";
             try
             {
@@ -94,7 +94,7 @@ namespace ArbitesEto2
         private void AddKeyboard()
         {
             var dialog = new OpenFileDialog();
-            dialog.Filters.Add(new FileDialogFilter("Arbites Keyboard File", MdConstant.E_KEYBOARD));
+            dialog.Filters.Add(new FileFilter("Arbites Keyboard File", MdConstant.E_KEYBOARD));
             dialog.Title = "Load Keyboard Type";
             dialog.Directory = new Uri(Environment.CurrentDirectory + MdConstant.psep + "keyboards");
             try
@@ -126,7 +126,7 @@ namespace ArbitesEto2
         private void AddLanguage()
         {
             var dialog = new OpenFileDialog();
-            dialog.Filters.Add(new FileDialogFilter("Arbites Input Method File", MdConstant.E_INPUT_METHOD));
+            dialog.Filters.Add(new FileFilter("Arbites Input Method File", MdConstant.E_INPUT_METHOD));
             dialog.Title = "Load Input Method";
             dialog.Directory = new Uri(Environment.CurrentDirectory + MdConstant.psep + "input-method");
             try

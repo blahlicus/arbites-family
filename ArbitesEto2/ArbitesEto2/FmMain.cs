@@ -29,7 +29,7 @@ namespace ArbitesEto2
         {
             this.DDInputMethod.Items.Clear();
             var inputMethods = MdMetaUtil.GetListOfInputMethods();
-            this.Icon = MdSessionData.WindowIcon;
+            // this.Icon = MdSessionData.WindowIcon;
 
             for (var i = 0; i < inputMethods.Count; i++)
             {
@@ -65,7 +65,7 @@ namespace ArbitesEto2
         }
         private void OpenMacroMenu()
         {
-            var lst = new List<string> {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9"};
+            var lst = new List<string> { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9" };
             var fm = new FmSelectTextDialog(lst, lst.Select(ele => "macro" + ele).ToList(), "Select a macro key to edit");
             fm.ShowModal();
             var outputInd = fm.OutputIndex;
