@@ -1,5 +1,6 @@
 # Projet files
 *.suo
+.vs
 
 # Windows image file caches
 Thumbs.db
