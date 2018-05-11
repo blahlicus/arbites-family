@@ -16,12 +16,6 @@
         <PackageReference Include="Eto.Platform.Gtk2" Version="2.4.1" />
     </ItemGroup>
     <ItemGroup>
-        <Compile Remove="Properties\AssemblyInfo.cs" />
-    </ItemGroup>
-    <ItemGroup>
-        <None Remove="packages.config" />
-    </ItemGroup>
-    <ItemGroup>
         <None Update="persistent-data.arb2pd" CopyToOutputDirectory="PreserveNewest" />
     </ItemGroup>
 </Project>
