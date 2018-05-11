@@ -1,7 +1,0 @@
-C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesEto\ArbitesEto\obj\Debug\.NETFramework,Version=v4.0.AssemblyAttribute.cs
-C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesEto\ArbitesEto\bin\Debug\ArbitesEto.dll.mdb
-C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesEto\ArbitesEto\bin\Debug\ArbitesEto.dll
-C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesEto\ArbitesEto\obj\Debug\ArbitesEto.dll
-C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesEto\ArbitesEto\obj\Debug\ArbitesEto.dll.mdb
-C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesEto\ArbitesEto\bin\Debug\Eto.dll
-C:\Users\blahlicus\Documents\GitHub\arbites-family\ArbitesEto\ArbitesEto\obj\Debug\.NETFramework,Version=v4.0,Profile=Mono.AssemblyAttribute.cs
