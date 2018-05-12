@@ -7,16 +7,8 @@ using System.Linq;
 
 namespace ArbitesEto2
 {
-
     public sealed partial class FmKeyMenu
     {
-
-        private List<StackLayout> slMainList = new List<StackLayout>();
-        private readonly List<StackLayout> slList = new List<StackLayout>();
-        private readonly List<int> slcList = new List<int>();
-        private readonly List<Button> buttons = new List<Button>();
-        private readonly List<int> LoadedTabs = new List<int>();
-
         public FmKeyMenu()
         {
             InitializeComponent();
@@ -29,76 +21,36 @@ namespace ArbitesEto2
 
         public void Init()
         {
-            int gIndex = 0;
-            foreach (var str in MdSessionData.CurrentInputMethod.Groups)
+            int groupIndex = 0;
+            foreach (var groupName in MdSessionData.CurrentInputMethod.Groups)
             {
-                var tp = new TabPage();
-                tp.Text = str;
-                tp.Tag = gIndex;
-                gIndex++;
+                var tabPage = new TabPage
+                {
+                    Text = groupName,
+                    Tag = groupIndex,
+                    Content = CreateList(groupIndex++)
+                };
 
-                var sc = new Scrollable();
-                sc.Border = BorderType.None;
-                tp.Content = sc;
-
-                this.slcList.Add(999);
-                var msl = new StackLayout();
-                msl.Orientation = Orientation.Vertical;
-                this.slMainList.Add(msl);
-                sc.Content = msl;
-
-                this.slList.Add(null);
-
-                int ind = TCMain.Pages.Count;
-                this.TCMain.Pages.Add(tp);
-                tp.Click += (sender, e) => PressedTab(sender, ind);
+                this.TCMain.Pages.Add(tabPage);
             }
-
-            PressedTab(TCMain.Pages[0], 0);
         }
 
-        private void PressedTab(object sndr, int index)
+        private ListControl CreateList(int groupIndex)
         {
-            if (this.LoadedTabs.Contains(index))
-            {
-                return;
-            }
-
-            this.LoadedTabs.Add(index);
-
-            MdSessionData
+            var layout = new ListBox();
+            var keys = MdSessionData
                 .CurrentInputMethod
                 .Keys
-                .Where((key) => key.GroupIndex == index)
-                .All((key) =>
-                {
-                    var button = new Button
-                    {
-                        Tag = key.Index,
-                        Text = key.DisplayText,
-                        ToolTip = key.DisplayText,
-                        Size = new Size(72, 72),
-                    };
-                    button.Click += (sender, e) => SelectKey(sender);
+                .Where((key) => key.GroupIndex == groupIndex);
 
-                    AddKey(button, key.GroupIndex);
-                    return true;
-                });
-        }
-
-        private void AddKey(Button btn, int groupIndex)
-        {
-            if (this.slcList[groupIndex] > 10)
+            foreach (var key in keys)
             {
-                var nsl = new StackLayout();
-                nsl.Orientation = Orientation.Horizontal;
-                this.slMainList[groupIndex].Items.Add(nsl);
-                this.slList[groupIndex] = nsl;
-                this.slcList[groupIndex] = 0;
+                layout.Items.Add(key.DisplayText, key.Index.ToString());
             }
-            this.buttons.Add(btn);
-            this.slcList[groupIndex]++;
-            this.slList[groupIndex].Items.Add(btn);
+
+            layout.SelectedKeyChanged += (sender, args) => SelectKey(sender, args);
+
+            return layout;
         }
 
         public void ReloadInputMethod()
@@ -106,11 +58,15 @@ namespace ArbitesEto2
             this.Close();
         }
 
-        private void SelectKey(object sender)
+        private void SelectKey(object sender, EventArgs args)
         {
             MdSessionData.SelectedFromKeyMenu = true;
-            var button = sender as Button;
-            if (button != null) MdSessionData.KeyMenuKey = KeyGroup.GetKeyFromDisplayId(Convert.ToInt32(button.Tag.ToString()));
+            var layout = sender as ListBox;
+            if (layout != null)
+            {
+                var keyId = Convert.ToInt32(layout.SelectedKey);
+                MdSessionData.KeyMenuKey = KeyGroup.GetKeyFromDisplayId(keyId);
+            }
         }
 
         public void ReloadTopmost()
