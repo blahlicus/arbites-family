@@ -2,13 +2,10 @@
 using Eto.Drawing;
 using Eto.Forms;
 
-
 namespace ArbitesEto2
 {
-
     public sealed partial class UCMacroButton
     {
-
         public ClKey Key { get; set; }
         public int KeyIndex { get; set; }
         public bool IsDown { get; set; }
@@ -69,7 +66,6 @@ namespace ArbitesEto2
                 DeleteClick(this, e);
             }
         }
-
 
         private void ToggleIsDown()
         {
@@ -145,7 +141,5 @@ namespace ArbitesEto2
                 ValueChanged(this, EventArgs.Empty);
             }
         }
-
     }
-
 }

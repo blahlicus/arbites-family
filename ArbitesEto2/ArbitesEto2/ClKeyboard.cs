@@ -1,12 +1,9 @@
 ﻿using System.Collections.Generic;
 
-
 namespace ArbitesEto2
 {
-
     public class ClKeyboard
     {
-
         public string Name { get; set; }
         public int MaxLayers { get; set; }
         public List<ClButtonInfo> Buttons { get; set; }
@@ -55,7 +52,6 @@ namespace ArbitesEto2
 
             return newLay;
         }
-
 
         public static ClKeyboard GenerateDiverge2()
         {
@@ -175,7 +171,6 @@ namespace ArbitesEto2
             return kb;
         }
 
-
         public static ClKeyboard GenerateTerminus2()
         {
             var kb = new ClKeyboard();
@@ -231,7 +226,6 @@ namespace ArbitesEto2
                 }
             }
 
-
             for (var i = 0; i < 7; i++)
             {
                 for (var j = 0; j < 5; j++)
@@ -264,7 +258,6 @@ namespace ArbitesEto2
 
             return kb;
         }
-
 
         public static ClKeyboard GenerateTerminusMini()
         {
@@ -306,7 +299,6 @@ namespace ArbitesEto2
             return kb;
         }
 
-
         public static ClKeyboard GenerateTerminusMini2()
         {
             var kb = new ClKeyboard();
@@ -320,49 +312,41 @@ namespace ArbitesEto2
             {
                 for (var j = 0; j < 4; j++)
                 {
-                    //if ((i == 5 && j == 3) || (i == 7 && j == 3))
+                    var bi = new ClButtonInfo();
+                    bi.X = i;
+                    bi.Y = j;
+                    bi.Command = 0;
+                    bi.GW = 72;
+                    bi.GH = 72;
+
+                    if ((i > 4) && (j < 3))
                     {
-                        //do nothing
+                        bi.GX = 5 + (i + 2) * 77;
                     }
-                    //else
+                    else
                     {
-                        var bi = new ClButtonInfo();
-                        bi.X = i;
-                        bi.Y = j;
-                        bi.Command = 0;
-                        bi.GW = 72;
-                        bi.GH = 72;
-
-                        if ((i > 4) && (j < 3))
-                        {
-                            bi.GX = 5 + (i + 2) * 77;
-                        }
-                        else
-                        {
-                            bi.GX = 5 + i * 77;
-                        }
-
-                        if ((i > 4) && (j == 3))
-                        {
-                            bi.GX = 5 + (i + 1) * 77;
-                        }
-
-
-                        if ((i > 5) && (j == 3))
-                        {
-                            bi.GX = 5 + (i + 2) * 77;
-                        }
-
-                        if (((i == 4) && (j == 3)) || ((i == 5) && (j == 3)))
-                        {
-                            bi.GW = 149;
-                        }
-                        bi.GY = 5 + j * 77;
-                        kb.Buttons.Add(bi);
+                        bi.GX = 5 + i * 77;
                     }
+
+                    if ((i > 4) && (j == 3))
+                    {
+                        bi.GX = 5 + (i + 1) * 77;
+                    }
+
+
+                    if ((i > 5) && (j == 3))
+                    {
+                        bi.GX = 5 + (i + 2) * 77;
+                    }
+
+                    if (((i == 4) && (j == 3)) || ((i == 5) && (j == 3)))
+                    {
+                        bi.GW = 149;
+                    }
+                    bi.GY = 5 + j * 77;
+                    kb.Buttons.Add(bi);
                 }
             }
-
 
             for (var i = 5; i < 7; i++)
             {
@@ -398,7 +382,6 @@ namespace ArbitesEto2
                     bi.GW = 72;
                     bi.GH = 72;
 
-
                     bi.GX = 5 + i * 77;
                     bi.GY = 5 + j * 77;
                     kb.Buttons.Add(bi);
@@ -407,7 +390,6 @@ namespace ArbitesEto2
 
             return kb;
         }
-
 
         public static ClKeyboard GenerateFelix()
         {
@@ -429,7 +411,6 @@ namespace ArbitesEto2
                     bi.GW = 72;
                     bi.GH = 72;
 
-
                     bi.GX = 5 + i * 77;
                     bi.GY = 5 + j * 77;
                     kb.Buttons.Add(bi);
@@ -437,7 +418,5 @@ namespace ArbitesEto2
             }
             return kb;
         }
-
     }
-
 }

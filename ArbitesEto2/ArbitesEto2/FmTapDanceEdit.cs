@@ -15,12 +15,10 @@ namespace ArbitesEto2
         public FmTapDanceEdit()
         {
             InitializeComponent();
-            this.Icon = MdSessionData.WindowIcon;
+            // this.Icon = MdSessionData.WindowIcon;
             this.Buttons = new List<UCMacroButton>();
             this.Data = new ClTapDanceData();
             this.SaveOutput = false;
-
-
 
             this.DDDelay.Items.AddRange(new List<ListItem> { "5", "10", "20", "25", "30", "40", "50", "60" });
             foreach (var item in this.DDDelay.Items)

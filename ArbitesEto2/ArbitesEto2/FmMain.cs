@@ -6,13 +6,10 @@ using System.IO.Ports;
 using System.Linq;
 using Eto.Forms;
 
-
 namespace ArbitesEto2
 {
-
     public partial class FmMain
     {
-
         public FmMain()
         {
             InitializeComponent();
@@ -118,7 +115,6 @@ namespace ArbitesEto2
                             }
                         }
 
-
                         var mdialog = new FmMacroEdit(new ClMacroData(data));
                         mdialog.Show();
                     }
@@ -129,7 +125,6 @@ namespace ArbitesEto2
                 }
             }
         }
-
 
         private void OpenTapDanceMenu()
         {
@@ -186,7 +181,6 @@ namespace ArbitesEto2
                             }
                         }
 
-
                         var mdialog = new FmTapDanceEdit(new ClTapDanceData(data));
                         mdialog.Show();
                     }
@@ -197,7 +191,6 @@ namespace ArbitesEto2
                 }
             }
         }
-
 
         private void OpenSettings()
         {
@@ -306,7 +299,6 @@ namespace ArbitesEto2
                     else
                     {
                         // probably is mac
-
                         var psi = new Process();
                         psi.StartInfo.WindowStyle = ProcessWindowStyle.Normal;
                         psi.EnableRaisingEvents = false;
@@ -337,16 +329,5 @@ namespace ArbitesEto2
                 this.BtnSelectPort.Text = "Port: " + dialog.OutputKeys[dialog.OutputIndex];
             }
         }
-
-
-        public void Test()
-        {
-            MdCore.Serialize(new MdPersistentData(), MdConstant.N_PERSISTENT_DATA);
-
-
-            MdMetaUtil.ResetDefaults();
-        }
-
     }
-
 }

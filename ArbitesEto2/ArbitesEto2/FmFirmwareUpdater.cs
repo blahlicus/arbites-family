@@ -25,42 +25,24 @@ namespace ArbitesEto2
         {
             public void Error(string message, Exception exception)
             {
-                //Logger.Error(exception, message);
-                //Console.WriteLine("e: " + message);
-
             }
 
             public void Warn(string message)
             {
-                //Console.WriteLine("w: " + message);
-
-                //Logger.Warn(message);
             }
 
             public void Info(string message)
             {
-                //Console.WriteLine("i: " + message);
-                //Application.Instance.Invoke(new Action(() => RTA.Append(message)));
-                //RTA.Append(message);
-
             }
 
             public void Debug(string message)
             {
-                //Console.WriteLine("d: " + message);
-
-
-                //Logger.Debug(message);
             }
 
             public void Trace(string message)
             {
-                //RTA.Append(message);
-                //Console.WriteLine(message);
-
             }
         }
-
 
         public FmFirmwareUpdater()
         {
@@ -79,7 +61,6 @@ namespace ArbitesEto2
             bw.DoWork += (sender, e) => BWDoWork(sender, e);
             bw.ProgressChanged += (sender, e) => BWReportProgress(sender, e);
         }
-
 
         private void BWCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
@@ -117,7 +98,6 @@ namespace ArbitesEto2
         {
             PBMain.Value = e.ProgressPercentage;
         }
-
 
         private void UploadProgressChanged(object sender, double e)
         {

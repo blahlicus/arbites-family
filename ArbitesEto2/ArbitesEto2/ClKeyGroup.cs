@@ -21,7 +21,6 @@ namespace ArbitesEto2
             return new ClKey(MdSessionData.KeyGroup.Keys.Find(ele => ele.DisplayID == id));
         }
 
-
         public static List<ClKey> GenereateSubHIDSet(ClKeyGroup kg, int first2Digits, byte keyType, bool overrideAllLayers = false)
         {
             var dat = kg.Keys.Where(ele => ele.DisplayID >= 0 && ele.DisplayID < 300).ToList();
@@ -44,7 +43,6 @@ namespace ArbitesEto2
         public static ClKeyGroup GenerateDefault()
         {
             var kg = new ClKeyGroup();
-
 
             kg.Keys.Add(new ClKey(0, 0, 0, 0, false, false));
             kg.Keys.Add(new ClKey(1, 0, 1, 0, false, false));
@@ -258,7 +256,6 @@ namespace ArbitesEto2
             kg.Keys.Add(new ClKey(383, 10, 10, 10, false, true));
             kg.Keys.Add(new ClKey(384, 20, 20, 10, false, true));
 
-
             kg.Keys.Add(new ClKey(390, 0, 0, 7, false, true));
             kg.Keys.Add(new ClKey(391, 1, 1, 7, false, true));
             kg.Keys.Add(new ClKey(392, 2, 2, 7, false, true));
@@ -269,8 +266,6 @@ namespace ArbitesEto2
             kg.Keys.Add(new ClKey(397, 7, 7, 7, false, true));
             kg.Keys.Add(new ClKey(398, 8, 8, 7, false, true));
             kg.Keys.Add(new ClKey(399, 9, 9, 7, false, true));
-
-
 
             kg.Keys.Add(new ClKey(400, 0, 0, 19, false, true));
             kg.Keys.Add(new ClKey(401, 1, 1, 19, false, true));
@@ -293,9 +288,7 @@ namespace ArbitesEto2
             kg.Keys.Add(new ClKey(418, 18, 18, 19, false, true));
             kg.Keys.Add(new ClKey(419, 19, 19, 19, false, true));
 
-
             // mouse options
-
             kg.Keys.Add(new ClKey(450, 127, 127, 31, false, true));
             kg.Keys.Add(new ClKey(451, 126, 126, 31, false, true));
             kg.Keys.Add(new ClKey(452, 125, 125, 31, false, true));
@@ -346,28 +339,20 @@ namespace ArbitesEto2
             kg.Keys.AddRange(ClKeyGroup.GenereateSubHIDSet(kg, 53, 17));
             kg.Keys.AddRange(ClKeyGroup.GenereateSubHIDSet(kg, 56, 18));
 
-
-            // stickyctrl
+            // stickyctrls
             kg.Keys.Add(new ClKey(5900, 0, 0, 30, false, false));
-            // stickyctrl
             kg.Keys.Add(new ClKey(5901, 0, 1, 30, false, false));
-            // stickyctrl
             kg.Keys.Add(new ClKey(5902, 0, 2, 30, false, false));
-            // stickyctrl
             kg.Keys.Add(new ClKey(5903, 0, 3, 30, false, false));
 
             byte ctr = 4;
             for (int i = 5904; i < 5914; i++)
             {
-
                 kg.Keys.Add(new ClKey(i, 0, ctr, 30, true, false));
                 ctr++;
             }
 
-
             return kg;
         }
-
     }
-
 }

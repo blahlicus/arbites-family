@@ -2,13 +2,10 @@
 using System.IO.Ports;
 using Eto.Drawing;
 
-
 namespace ArbitesEto2
 {
-
     public class MdSessionData
     {
-
         public static ClLayoutContainer CurrentLayout;
         public static ClKeyboard CurrentKeyboardType;
         public static UCKeyboard CurrentKeyboardUI;
@@ -38,11 +35,8 @@ namespace ArbitesEto2
                 WindowIcon = new Icon(Path.Combine(MdConstant.root, MdConstant.N_ICON));
             }
 
-
             CurrentInputMethod = MdConfig.Main.GetCurrentInputMethod();
             KeyGroup = MdCore.Deserialize<ClKeyGroup>(Path.Combine(MdPersistentData.ConfigPath, MdConstant.D_KEYGROUP, "Core" + MdConstant.E_KEYGROUP));
         }
-
     }
-
 }

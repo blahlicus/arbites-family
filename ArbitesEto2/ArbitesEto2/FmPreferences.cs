@@ -34,7 +34,7 @@ namespace ArbitesEto2
             }
             EventHook();
 
-            this.Icon = MdSessionData.WindowIcon;
+            // this.Icon = MdSessionData.WindowIcon;
         }
 
         public void EventHook()

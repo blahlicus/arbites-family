@@ -1,12 +1,9 @@
 ﻿using System.IO;
 
-
 namespace ArbitesEto2
 {
-
     public class MdConfig
     {
-
         public static MdConfig Main { get; set; }
 
         public static int SoftwareVersion = 2;
@@ -39,7 +36,5 @@ namespace ArbitesEto2
         {
             return MdCore.Deserialize<ClDisplayCharacterContainer>(Path.Combine(MdPersistentData.ConfigPath, MdConstant.D_INPUT_METHOD, this.CurrentInputMethod));
         }
-
     }
-
 }

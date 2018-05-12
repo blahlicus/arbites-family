@@ -22,7 +22,7 @@ namespace ArbitesEto2
             this.OutputValues = new List<string>();
 
             this.Title = "Select an item below";
-            this.Icon = MdSessionData.WindowIcon;
+            // this.Icon = MdSessionData.WindowIcon;
         }
 
 

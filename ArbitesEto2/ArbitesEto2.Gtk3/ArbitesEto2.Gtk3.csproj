@@ -6,8 +6,8 @@
         <OutputType>Exe</OutputType>
     </PropertyGroup>
     <PropertyGroup Condition=" '$(RunConfiguration)' == 'Default' ">
-      <StartAction>Project</StartAction>
-      <ExternalConsole>false</ExternalConsole>
+        <StartAction>Project</StartAction>
+        <ExternalConsole>false</ExternalConsole>
     </PropertyGroup>
     <ItemGroup>
         <ProjectReference Include="..\ArbitesEto2\ArbitesEto2.csproj" />
@@ -15,8 +15,5 @@
     <ItemGroup>
         <PackageReference Include="Eto.Platform.Gtk3" Version="2.4.1" />
         <PackageReference Include="gtk-sharp-3" Version="3.22.6.4" />
-    </ItemGroup>
-    <ItemGroup>
-        <None Update="persistent-data.arb2pd" CopyToOutputDirectory="PreserveNewest" />
     </ItemGroup>
 </Project>
