@@ -1,31 +1,29 @@
 ﻿using System.IO;
-using System.Xml.Serialization;
-
+using Newtonsoft.Json;
 
 namespace ArbitesEto2
 {
-
     internal class MdCore
     {
-
         public static void Serialize<T>(T obj, string path)
         {
-            var sw = new StreamWriter(path, false);
-            var ser = new XmlSerializer(typeof(T));
-            ser.Serialize(sw, obj);
-            sw.Close();
+            var streamWriter = new StreamWriter(path, false);
+            var serializer = new JsonSerializer();
+            serializer.Serialize(streamWriter, obj);
+            streamWriter.Close();
         }
 
         public static T Deserialize<T>(string path)
         {
-            var sr = new StreamReader(path);
-            var ser = new XmlSerializer(typeof(T));
-            var output = (T) ser.Deserialize(sr);
+            var streamReader = new StreamReader(path);
+            var jsonReader = new JsonTextReader(streamReader);
+            var serializer = new JsonSerializer();
+            var output = serializer.Deserialize<T>(jsonReader);
 
-            sr.Close();
+            jsonReader.Close();
+            streamReader.Close();
+
             return output;
         }
-
     }
-
 }
