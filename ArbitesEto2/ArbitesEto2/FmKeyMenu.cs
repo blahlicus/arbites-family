@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using Eto.Drawing;
 using Eto.Forms;
-
+using System.Linq;
 
 namespace ArbitesEto2
 {
@@ -11,12 +11,11 @@ namespace ArbitesEto2
     public sealed partial class FmKeyMenu
     {
 
-        [SuppressMessage("ReSharper", "FieldCanBeMadeReadOnly.Local")] private List<StackLayout> slMainList = new List<StackLayout>();
+        private List<StackLayout> slMainList = new List<StackLayout>();
         private readonly List<StackLayout> slList = new List<StackLayout>();
         private readonly List<int> slcList = new List<int>();
         private readonly List<Button> buttons = new List<Button>();
         private readonly List<int> LoadedTabs = new List<int>();
-
 
         public FmKeyMenu()
         {
@@ -62,31 +61,29 @@ namespace ArbitesEto2
         {
             if (this.LoadedTabs.Contains(index))
             {
-                // do nothing
+                return;
             }
-            else
-            {
-                this.LoadedTabs.Add(index);
-                for (var i = 0; i < MdSessionData.CurrentInputMethod.Display.Count; i++)
+
+            this.LoadedTabs.Add(index);
+
+            MdSessionData
+                .CurrentInputMethod
+                .Keys
+                .Where((key) => key.GroupIndex == index)
+                .All((key) =>
                 {
-                    if (MdSessionData.CurrentInputMethod.GroupIndex[i] == index)
+                    var button = new Button
                     {
+                        Tag = key.Index,
+                        Text = key.DisplayText,
+                        ToolTip = key.DisplayText,
+                        Size = new Size(72, 72),
+                    };
+                    button.Click += (sender, e) => SelectKey(sender);
 
-                        var gi = MdSessionData.CurrentInputMethod.GroupIndex[i];
-                        var dt = MdSessionData.CurrentInputMethod.Display[i];
-                        var di = MdSessionData.CurrentInputMethod.Index[i];
-                        var nb = new Button();
-                        nb.Tag = di;
-                        nb.Text = dt;
-                        nb.ToolTip = dt;
-                        nb.Size = new Size(72, 72);
-
-                        nb.Click += (sender, e) => SelectKey(sender);
-
-                        AddKey(nb, gi);
-                    }
-                }
-            }
+                    AddKey(button, key.GroupIndex);
+                    return true;
+                });
         }
 
         private void AddKey(Button btn, int groupIndex)
@@ -106,14 +103,6 @@ namespace ArbitesEto2
 
         public void ReloadInputMethod()
         {
-            // key menu needs to be reloaded
-            /*
-            foreach (var btn in this.buttons)
-            {
-                btn.Text = MdSessionData.CurrentInputMethod.GetDisplay(Convert.ToInt32(btn.Tag.ToString()));
-                btn.ToolTip = btn.Text;
-            }
-            //*/
             this.Close();
         }
 
@@ -128,7 +117,5 @@ namespace ArbitesEto2
         {
             this.Topmost = MdConfig.Main.KeyMenuTopmost;
         }
-
     }
-
 }

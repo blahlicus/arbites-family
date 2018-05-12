@@ -2,18 +2,24 @@
 using System.Collections.Generic;
 using Eto.Forms;
 
-
 namespace ArbitesEto2
 {
+    public class Key
+    {
+        public string DisplayText { get; set; }
+        public int Index { get; set; }
+        public int GroupIndex { get; set; }
+    }
 
     public class ClDisplayCharacterContainer
     {
-
         public string Name { get; set; }
         public List<string> Display { get; set; }
         public List<int> Index { get; set; }
         public List<int> GroupIndex { get; set; }
         public List<string> Groups { get; set; }
+
+        public List<Key> Keys { get; set; }
 
         public ClDisplayCharacterContainer()
         {
@@ -22,6 +28,7 @@ namespace ArbitesEto2
             this.Index = new List<int>();
             this.Groups = new List<string>();
             this.GroupIndex = new List<int>();
+            this.Keys = new List<Key>();
         }
 
         public ClDisplayCharacterContainer(ClDisplayCharacterContainer input) : this()
@@ -32,6 +39,8 @@ namespace ArbitesEto2
                 this.Display.Add(input.Display[i]);
                 this.Index.Add(input.Index[i]);
                 this.GroupIndex.Add(input.GroupIndex[i]);
+
+                this.Keys.Add(input.Keys[i]);
             }
 
             foreach (var str in input.Groups)
@@ -52,7 +61,6 @@ namespace ArbitesEto2
             }
             return output;
         }
-
 
         public int GetDisplayGroup(int input)
         {
@@ -75,6 +83,7 @@ namespace ArbitesEto2
                 if (this.Index[i] == key)
                 {
                     this.Display[i] = value;
+                    this.Keys[i].DisplayText = value;
                     keyIsNew = false;
                 }
             }
@@ -84,24 +93,18 @@ namespace ArbitesEto2
                 this.Index.Add(key);
                 this.Display.Add(value);
                 this.GroupIndex.Add(groupIndex);
+
+                this.Keys.Add(new Key
+                {
+                    DisplayText = value,
+                    Index = key,
+                    GroupIndex = groupIndex
+                });
             }
-        }
-
-
-        public static ClDisplayCharacterContainer GenerateTestOther()
-        {
-            var dcc = new ClDisplayCharacterContainer(GenerateUSASCII());
-
-            dcc.Display[4] = "TestChanged A";
-
-            return dcc;
         }
 
         public static void AddHIDSubGroup(ClDisplayCharacterContainer dcc, int startID, int groupID, string suffix, string postfix)
         {
-
-
-
             for (int i = 0; i < dcc.Index.Count; i++)
             {
                 if (dcc.Index[i] >= 0 && dcc.Index[i] < 300)
@@ -111,8 +114,6 @@ namespace ArbitesEto2
                     dcc.AddKey(sid, dis, groupID);
                 }
             }
-
-
         }
 
         public static ClDisplayCharacterContainer GenerateUSASCII()
@@ -147,7 +148,6 @@ namespace ArbitesEto2
             dcc.Groups.Add("Sticky"); //24
             dcc.Groups.Add("Others"); //25
 
-            // keyboard HID codes
             dcc.Name = "US-ANSI";
             dcc.AddKey(0, "-Scncde 0", 25);
             dcc.AddKey(1, "-Scncde 1", 25);
@@ -371,7 +371,6 @@ namespace ArbitesEto2
             dcc.AddKey(398, "macro8", 5);
             dcc.AddKey(399, "macro9", 5);
 
-
             dcc.AddKey(400, "tapDance0", 5);
             dcc.AddKey(401, "tapDance1", 5);
             dcc.AddKey(402, "tapDance2", 5);
@@ -431,19 +430,15 @@ namespace ArbitesEto2
             AddHIDSubGroup(dcc, 41, 23, "", " || FN5");
             AddHIDSubGroup(dcc, 44, 24, "", " || FN6");
 
-
             AddHIDSubGroup(dcc, 47, 10, "", " + Ctrl + Shift");
             AddHIDSubGroup(dcc, 50, 11, "", " + Ctrl + Shift + Alt");
             AddHIDSubGroup(dcc, 53, 12, "", " + Ctrl + Alt");
             AddHIDSubGroup(dcc, 56, 13, "", " + Shift + Alt");
 
-
-            // stickyctrl
             dcc.AddKey(5900, "StickyCtrl", 25);
             dcc.AddKey(5901, "StickyShift", 25);
             dcc.AddKey(5902, "StickyAlt", 25);
             dcc.AddKey(5903, "StickyAltGr", 25);
-
 
             int ctr = 1;
             for (int i = 5904; i < 5914; i++)
@@ -454,7 +449,6 @@ namespace ArbitesEto2
 
             return dcc;
         }
-
 
         public static ClDisplayCharacterContainer GenerateUKISO()
         {
@@ -487,7 +481,6 @@ namespace ArbitesEto2
             dcc.Groups.Add("Sticky"); //24
             dcc.Groups.Add("Others"); //25
 
-            // keyboard HID codes
             dcc.Name = "UK-QWERTY-BS4822";
             dcc.AddKey(0, "-Scncde 0", 25);
             dcc.AddKey(1, "-Scncde 1", 25);
@@ -711,7 +704,6 @@ namespace ArbitesEto2
             dcc.AddKey(398, "macro8", 5);
             dcc.AddKey(399, "macro9", 5);
 
-
             dcc.AddKey(400, "tapDance0", 5);
             dcc.AddKey(401, "tapDance1", 5);
             dcc.AddKey(402, "tapDance2", 5);
@@ -750,19 +742,15 @@ namespace ArbitesEto2
             AddHIDSubGroup(dcc, 41, 22, "", " || FN5");
             AddHIDSubGroup(dcc, 44, 23, "", " || FN6");
 
-
             AddHIDSubGroup(dcc, 47, 10, "", " + Ctrl + Shift");
             AddHIDSubGroup(dcc, 50, 11, "", " + Ctrl + Shift + Alt");
             AddHIDSubGroup(dcc, 53, 12, "", " + Ctrl + Alt");
             AddHIDSubGroup(dcc, 56, 13, "", " + Shift + Alt");
 
-
-            // stickyctrl
             dcc.AddKey(5900, "StickyCtrl", 24);
             dcc.AddKey(5901, "StickyShift", 24);
             dcc.AddKey(5902, "StickyAlt", 24);
             dcc.AddKey(5903, "StickyAltGr", 24);
-
 
             int ctr = 1;
             for (int i = 5904; i < 5914; i++)
@@ -805,7 +793,6 @@ namespace ArbitesEto2
             dcc.Groups.Add("Sticky"); //24
             dcc.Groups.Add("Others"); //25
 
-            // keyboard HID codes
             dcc.Name = "Deutsch-QWERTZ-T1";
             dcc.AddKey(0, "-Scncde 0", 25);
             dcc.AddKey(1, "-Scncde 1", 25);
@@ -1029,7 +1016,6 @@ namespace ArbitesEto2
             dcc.AddKey(398, "macro8", 5);
             dcc.AddKey(399, "macro9", 5);
 
-
             dcc.AddKey(400, "tapDance0", 5);
             dcc.AddKey(401, "tapDance1", 5);
             dcc.AddKey(402, "tapDance2", 5);
@@ -1068,19 +1054,15 @@ namespace ArbitesEto2
             AddHIDSubGroup(dcc, 41, 22, "", " || FN5");
             AddHIDSubGroup(dcc, 44, 23, "", " || FN6");
 
-
             AddHIDSubGroup(dcc, 47, 10, "", " + Ctrl + Shift");
             AddHIDSubGroup(dcc, 50, 11, "", " + Ctrl + Shift + Alt");
             AddHIDSubGroup(dcc, 53, 12, "", " + Ctrl + Alt");
             AddHIDSubGroup(dcc, 56, 13, "", " + Shift + Alt");
 
-
-            // stickyctrl
             dcc.AddKey(5900, "StickyCtrl", 24);
             dcc.AddKey(5901, "StickyShift", 24);
             dcc.AddKey(5902, "StickyAlt", 24);
             dcc.AddKey(5903, "StickyAltGr", 24);
-
 
             int ctr = 1;
             for (int i = 5904; i < 5914; i++)
@@ -1091,8 +1073,6 @@ namespace ArbitesEto2
 
             return dcc;
         }
-
-
 
         public static ClDisplayCharacterContainer GenerateSwissQWERTZDE()
         {
@@ -1125,7 +1105,6 @@ namespace ArbitesEto2
             dcc.Groups.Add("Sticky"); //24
             dcc.Groups.Add("Others"); //25
 
-            // keyboard HID codes
             dcc.Name = "Deutsch-QWERTZ-Schweizer";
             dcc.AddKey(0, "-Scncde 0", 25);
             dcc.AddKey(1, "-Scncde 1", 25);
@@ -1349,7 +1328,6 @@ namespace ArbitesEto2
             dcc.AddKey(398, "macro8", 5);
             dcc.AddKey(399, "macro9", 5);
 
-
             dcc.AddKey(400, "tapDance0", 5);
             dcc.AddKey(401, "tapDance1", 5);
             dcc.AddKey(402, "tapDance2", 5);
@@ -1388,19 +1366,15 @@ namespace ArbitesEto2
             AddHIDSubGroup(dcc, 41, 22, "", " || FN5");
             AddHIDSubGroup(dcc, 44, 23, "", " || FN6");
 
-
             AddHIDSubGroup(dcc, 47, 10, "", " + Ctrl + Shift");
             AddHIDSubGroup(dcc, 50, 11, "", " + Ctrl + Shift + Alt");
             AddHIDSubGroup(dcc, 53, 12, "", " + Ctrl + Alt");
             AddHIDSubGroup(dcc, 56, 13, "", " + Shift + Alt");
 
-
-            // stickyctrl
             dcc.AddKey(5900, "StickyCtrl", 24);
             dcc.AddKey(5901, "StickyShift", 24);
             dcc.AddKey(5902, "StickyAlt", 24);
             dcc.AddKey(5903, "StickyAltGr", 24);
-
 
             int ctr = 1;
             for (int i = 5904; i < 5914; i++)
@@ -1411,7 +1385,6 @@ namespace ArbitesEto2
 
             return dcc;
         }
-
 
         public static ClDisplayCharacterContainer GenerateSEDKQWERTY()
         {
@@ -1444,7 +1417,6 @@ namespace ArbitesEto2
             dcc.Groups.Add("Sticky"); //24
             dcc.Groups.Add("Others"); //25
 
-            // keyboard HID codes
             dcc.Name = "Swedish-Danish-QWERTY";
             dcc.AddKey(0, "-Scncde 0", 25);
             dcc.AddKey(1, "-Scncde 1", 25);
@@ -1668,7 +1640,6 @@ namespace ArbitesEto2
             dcc.AddKey(398, "macro8", 5);
             dcc.AddKey(399, "macro9", 5);
 
-
             dcc.AddKey(400, "tapDance0", 5);
             dcc.AddKey(401, "tapDance1", 5);
             dcc.AddKey(402, "tapDance2", 5);
@@ -1707,19 +1678,15 @@ namespace ArbitesEto2
             AddHIDSubGroup(dcc, 41, 22, "", " || FN5");
             AddHIDSubGroup(dcc, 44, 23, "", " || FN6");
 
-
             AddHIDSubGroup(dcc, 47, 10, "", " + Ctrl + Shift");
             AddHIDSubGroup(dcc, 50, 11, "", " + Ctrl + Shift + Alt");
             AddHIDSubGroup(dcc, 53, 12, "", " + Ctrl + Alt");
             AddHIDSubGroup(dcc, 56, 13, "", " + Shift + Alt");
 
-
-            // stickyctrl
             dcc.AddKey(5900, "StickyCtrl", 24);
             dcc.AddKey(5901, "StickyShift", 24);
             dcc.AddKey(5902, "StickyAlt", 24);
             dcc.AddKey(5903, "StickyAltGr", 24);
-
 
             int ctr = 1;
             for (int i = 5904; i < 5914; i++)
@@ -1730,8 +1697,6 @@ namespace ArbitesEto2
 
             return dcc;
         }
-
-
 
         public static ClDisplayCharacterContainer GenerateSwissQWERTZFR()
         {
@@ -1764,7 +1729,6 @@ namespace ArbitesEto2
             dcc.Groups.Add("Sticky"); //24
             dcc.Groups.Add("Others"); //25
 
-            // keyboard HID codes
             dcc.Name = "Français-QWERTZ-Suisse";
             dcc.AddKey(0, "-Scncde 0", 25);
             dcc.AddKey(1, "-Scncde 1", 25);
@@ -1988,7 +1952,6 @@ namespace ArbitesEto2
             dcc.AddKey(398, "macro8", 5);
             dcc.AddKey(399, "macro9", 5);
 
-
             dcc.AddKey(400, "tapDance0", 5);
             dcc.AddKey(401, "tapDance1", 5);
             dcc.AddKey(402, "tapDance2", 5);
@@ -2027,19 +1990,15 @@ namespace ArbitesEto2
             AddHIDSubGroup(dcc, 41, 22, "", " || FN5");
             AddHIDSubGroup(dcc, 44, 23, "", " || FN6");
 
-
             AddHIDSubGroup(dcc, 47, 10, "", " + Ctrl + Shift");
             AddHIDSubGroup(dcc, 50, 11, "", " + Ctrl + Shift + Alt");
             AddHIDSubGroup(dcc, 53, 12, "", " + Ctrl + Alt");
             AddHIDSubGroup(dcc, 56, 13, "", " + Shift + Alt");
 
-
-            // stickyctrl
             dcc.AddKey(5900, "StickyCtrl", 24);
             dcc.AddKey(5901, "StickyShift", 24);
             dcc.AddKey(5902, "StickyAlt", 24);
             dcc.AddKey(5903, "StickyAltGr", 24);
-
 
             int ctr = 1;
             for (int i = 5904; i < 5914; i++)
@@ -2050,7 +2009,5 @@ namespace ArbitesEto2
 
             return dcc;
         }
-
     }
-
 }
