@@ -1,19 +1,16 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-
 namespace ArbitesEto2
 {
-
-    public class ClMacroDataContainer : ClAdditionalData
+    public class MacroDataContainer : AdditionalData
     {
-
-        public List<ClMacroData> MacroKeys { get; set; }
+        public List<MacroData> MacroKeys { get; set; }
         public const string DATA_TYPE = "macro";
 
-        public ClMacroDataContainer()
+        public MacroDataContainer()
         {
-            this.MacroKeys = new List<ClMacroData>();
+            this.MacroKeys = new List<MacroData>();
         }
 
         public override string GetType()
@@ -26,7 +23,5 @@ namespace ArbitesEto2
         {
             return (from mk in this.MacroKeys where mk.Keys.Count > 0 select mk.GenerateCommand()).ToList();
         }
-
     }
-
 }

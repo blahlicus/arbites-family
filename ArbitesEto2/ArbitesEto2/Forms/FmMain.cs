@@ -14,7 +14,6 @@ namespace ArbitesEto2
         {
             InitializeComponent();
 
-            MdPersistentData.Init();
             MdMetaUtil.FirstRunCheck();
 
             MdSessionData.Init();
@@ -79,14 +78,14 @@ namespace ArbitesEto2
                     {
                         MdSessionData.OpenedMacroEdit = true;
                         var lay = MdSessionData.CurrentLayout;
-                        var dataCont = new ClMacroDataContainer();
+                        var dataCont = new MacroDataContainer();
                         var hasData = false;
                         foreach (var ele in lay.AddonDatas)
                         {
-                            if (ele.GetType() == ClMacroDataContainer.DATA_TYPE)
+                            if (ele.GetType() == MacroDataContainer.DATA_TYPE)
                             {
                                 hasData = true;
-                                dataCont = ele as ClMacroDataContainer;
+                                dataCont = ele as MacroDataContainer;
                             }
                         }
 
@@ -95,7 +94,7 @@ namespace ArbitesEto2
                             lay.AddonDatas.Add(dataCont);
                         }
 
-                        var data = new ClMacroData();
+                        var data = new MacroData();
                         data.Index = outputInd;
                         hasData = false;
                         if (dataCont != null)
@@ -115,7 +114,7 @@ namespace ArbitesEto2
                             }
                         }
 
-                        var mdialog = new FmMacroEdit(new ClMacroData(data));
+                        var mdialog = new FmMacroEdit(new MacroData(data));
                         mdialog.Show();
                     }
                 }
@@ -145,14 +144,14 @@ namespace ArbitesEto2
                     {
                         MdSessionData.OpenedTapDanceEdit = true;
                         var lay = MdSessionData.CurrentLayout;
-                        var dataCont = new ClTapDanceDataContainer();
+                        var dataCont = new TapDanceDataContainer();
                         var hasData = false;
                         foreach (var ele in lay.AddonDatas)
                         {
-                            if (ele.GetType() == ClTapDanceDataContainer.DATA_TYPE)
+                            if (ele.GetType() == TapDanceDataContainer.DATA_TYPE)
                             {
                                 hasData = true;
-                                dataCont = ele as ClTapDanceDataContainer;
+                                dataCont = ele as TapDanceDataContainer;
                             }
                         }
 
@@ -161,7 +160,7 @@ namespace ArbitesEto2
                             lay.AddonDatas.Add(dataCont);
                         }
 
-                        var data = new ClTapDanceData();
+                        var data = new TapDanceData();
                         data.Index = outputInd;
                         hasData = false;
                         if (dataCont != null)
@@ -181,7 +180,7 @@ namespace ArbitesEto2
                             }
                         }
 
-                        var mdialog = new FmTapDanceEdit(new ClTapDanceData(data));
+                        var mdialog = new FmTapDanceEdit(new TapDanceData(data));
                         mdialog.Show();
                     }
                 }
@@ -232,14 +231,14 @@ namespace ArbitesEto2
 
         private void SelectDevice()
         {
-            var lst = Directory.GetFiles(Path.Combine(MdPersistentData.ConfigPath, MdConstant.D_KEYBOARD), "*" + MdConstant.E_KEYBOARD).ToList();
+            var lst = Directory.GetFiles(Path.Combine(MdConstant.Root, MdConstant.D_KEYBOARD), "*" + MdConstant.E_KEYBOARD).ToList();
             var fm = new FmSelectTextDialog(lst, lst.Select(ele => Path.GetFileNameWithoutExtension(ele)).ToList(), "Select a device");
             fm.ShowModal();
             var outputInd = fm.OutputIndex;
 
             if (outputInd >= 0)
             {
-                var kb = MdCore.Deserialize<ClKeyboard>(fm.OutputValues[outputInd]);
+                var kb = MdCore.Deserialize<Keyboard>(fm.OutputValues[outputInd]);
                 MdSessionData.CurrentKeyboardType = kb;
                 MdSessionData.CurrentLayout = kb.GenerateLayout();
                 var ucl = new UCKeyboard(MdSessionData.CurrentKeyboardType, MdSessionData.CurrentLayout);
@@ -269,7 +268,7 @@ namespace ArbitesEto2
             MdSessionData.CurrentInputMethod = MdConfig.Main.GetCurrentInputMethod();
             MdMetaUtil.ReloadInputMethodUI();
 
-            MdCore.Serialize(MdConfig.Main, Path.Combine(MdPersistentData.ConfigPath, MdConstant.N_CONFIG));
+            MdCore.Serialize(MdConfig.Main, Path.Combine(MdConstant.Root, MdConstant.N_CONFIG));
         }
 
         public void LoadPortList()

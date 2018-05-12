@@ -10,7 +10,7 @@ namespace ArbitesEto2
     public partial class UCKeyboard
     {
 
-        public ClKeyboard Keyboard { get; set; }
+        public Keyboard Keyboard { get; set; }
         public List<UCLayer> Layers { get; set; }
         public string SavePath { get; set; }
         private readonly bool initalized;
@@ -20,7 +20,7 @@ namespace ArbitesEto2
             InitializeComponent();
         }
 
-        public UCKeyboard(ClKeyboard keyboard, ClLayoutContainer layout)
+        public UCKeyboard(Keyboard keyboard, LayoutContainer layout)
         {
             InitializeComponent();
             this.Keyboard = keyboard;
@@ -45,13 +45,13 @@ namespace ArbitesEto2
             var dialog = new OpenFileDialog();
             dialog.Filters.Add(new FileFilter(this.Keyboard.Name + " layout", "*." + this.Keyboard.SaveFileExtension));
             dialog.Title = "Load Layout";
-            dialog.Directory = new Uri(Environment.CurrentDirectory + MdConstant.psep + "layouts");
+            dialog.Directory = new Uri(Environment.CurrentDirectory + MdConstant.PathSeparator + "layouts");
             try
             {
                 dialog.ShowDialog(this);
                 if (!string.IsNullOrEmpty(dialog.FileName))
                 {
-                    MdSessionData.CurrentLayout = MdCore.Deserialize<ClLayoutContainer>(dialog.FileName);
+                    MdSessionData.CurrentLayout = MdCore.Deserialize<LayoutContainer>(dialog.FileName);
                     LoadLayout(MdSessionData.CurrentLayout);
                     this.SavePath = dialog.FileName;
                     this.LLayoutName.Text = Path.GetFileNameWithoutExtension(this.SavePath);
@@ -82,7 +82,7 @@ namespace ArbitesEto2
             var dialog = new SaveFileDialog();
             dialog.Filters.Add(new FileFilter(this.Keyboard.Name + " layout", "*." + this.Keyboard.SaveFileExtension));
             dialog.Title = "Save Layout As";
-            dialog.Directory = new Uri(Environment.CurrentDirectory + MdConstant.psep + "layouts");
+            dialog.Directory = new Uri(Environment.CurrentDirectory + MdConstant.PathSeparator + "layouts");
             try
             {
                 dialog.ShowDialog(this);
@@ -117,7 +117,7 @@ namespace ArbitesEto2
             }
         }
 
-        public void LoadLayout(ClLayoutContainer input)
+        public void LoadLayout(LayoutContainer input)
         {
             if (this.initalized)
             {

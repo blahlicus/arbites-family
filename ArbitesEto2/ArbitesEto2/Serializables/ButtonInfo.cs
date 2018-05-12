@@ -1,9 +1,7 @@
 ﻿namespace ArbitesEto2
 {
-
-    public class ClButtonInfo
+    public class ButtonInfo
     {
-
         public int GX { get; set; }
         public int GY { get; set; }
         public int X { get; set; }
@@ -12,7 +10,7 @@
         public int GH { get; set; }
         public int Command { get; set; }
 
-        public ClButtonInfo()
+        public ButtonInfo()
         {
             this.GX = 0;
             this.GY = 0;
@@ -23,7 +21,7 @@
             this.Command = 0;
         }
 
-        public ClButtonInfo(ClButtonInfo input)
+        public ButtonInfo(ButtonInfo input)
         {
             this.GX = input.GX;
             this.GY = input.GY;
@@ -33,7 +31,5 @@
             this.GH = input.GH;
             this.Command = input.Command;
         }
-
     }
-
 }

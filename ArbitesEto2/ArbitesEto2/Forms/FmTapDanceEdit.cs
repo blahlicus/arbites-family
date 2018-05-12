@@ -8,7 +8,7 @@ namespace ArbitesEto2
     public partial class FmTapDanceEdit
     {
         public List<UCMacroButton> Buttons { get; set; }
-        public ClTapDanceData Data { get; set; }
+        public TapDanceData Data { get; set; }
         public bool SaveOutput { get; set; }
         public int Delay { get; set; }
 
@@ -17,7 +17,7 @@ namespace ArbitesEto2
             InitializeComponent();
             // this.Icon = MdSessionData.WindowIcon;
             this.Buttons = new List<UCMacroButton>();
-            this.Data = new ClTapDanceData();
+            this.Data = new TapDanceData();
             this.SaveOutput = false;
 
             this.DDDelay.Items.AddRange(new List<ListItem> { "5", "10", "20", "25", "30", "40", "50", "60" });
@@ -53,9 +53,9 @@ namespace ArbitesEto2
             RefreshStack();
         }
 
-        public FmTapDanceEdit(ClTapDanceData data) : this()
+        public FmTapDanceEdit(TapDanceData data) : this()
         {
-            this.Data = new ClTapDanceData(data);
+            this.Data = new TapDanceData(data);
             RefreshStack();
         }
 
@@ -86,14 +86,14 @@ namespace ArbitesEto2
 
 
             var lay = MdSessionData.CurrentLayout;
-            var dataCont = new ClTapDanceDataContainer();
+            var dataCont = new TapDanceDataContainer();
             var hasData = false;
             foreach (var ele in lay.AddonDatas)
             {
-                if (ele.GetType() == ClTapDanceDataContainer.DATA_TYPE)
+                if (ele.GetType() == TapDanceDataContainer.DATA_TYPE)
                 {
                     hasData = true;
-                    dataCont = ele as ClTapDanceDataContainer;
+                    dataCont = ele as TapDanceDataContainer;
                 }
             }
 
@@ -198,7 +198,7 @@ namespace ArbitesEto2
             {
                 var index = btn.KeyIndex;
 
-                this.Data.Keys[index] = new ClKey(btn.Key);
+                this.Data.Keys[index] = new Key(btn.Key);
             }
         }
 
@@ -208,7 +208,7 @@ namespace ArbitesEto2
         {
             if (this.Data.Keys.Count < 3)
             {
-                this.Data.Keys.Add(new ClKey());
+                this.Data.Keys.Add(new Key());
                 RefreshStack();
             }
             else
@@ -223,7 +223,7 @@ namespace ArbitesEto2
             {
                 if (i < this.Data.Keys.Count)
                 {
-                    this.Buttons[i].Key = new ClKey(this.Data.Keys[i]);
+                    this.Buttons[i].Key = new Key(this.Data.Keys[i]);
                     this.Buttons[i].ReloadUI();
                     this.Buttons[i].Visible = true;
                 }

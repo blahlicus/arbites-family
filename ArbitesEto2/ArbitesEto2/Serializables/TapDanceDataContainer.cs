@@ -1,19 +1,16 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-
 namespace ArbitesEto2
 {
-
-    public class ClTapDanceDataContainer : ClAdditionalData
+    public class TapDanceDataContainer : AdditionalData
     {
-
-        public List<ClTapDanceData> TapDanceKeys { get; set; }
+        public List<TapDanceData> TapDanceKeys { get; set; }
         public const string DATA_TYPE = "tapdance";
 
-        public ClTapDanceDataContainer()
+        public TapDanceDataContainer()
         {
-            this.TapDanceKeys = new List<ClTapDanceData>();
+            this.TapDanceKeys = new List<TapDanceData>();
         }
 
         public override string GetType()
@@ -26,7 +23,5 @@ namespace ArbitesEto2
         {
             return (from mk in this.TapDanceKeys where mk.Keys.Count > 0 select mk.GenerateCommand()).ToList();
         }
-
     }
-
 }

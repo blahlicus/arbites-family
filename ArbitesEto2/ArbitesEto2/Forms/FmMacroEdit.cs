@@ -9,7 +9,7 @@ namespace ArbitesEto2
     {
 
         public List<UCMacroButton> Buttons { get; set; }
-        public ClMacroData Data { get; set; }
+        public MacroData Data { get; set; }
         public bool SaveOutput { get; set; }
 
         public FmMacroEdit()
@@ -17,7 +17,7 @@ namespace ArbitesEto2
             InitializeComponent();
             this.Icon = MdSessionData.WindowIcon;
             this.Buttons = new List<UCMacroButton>();
-            this.Data = new ClMacroData();
+            this.Data = new MacroData();
             this.SaveOutput = false;
             for (var i = 0; i < 8; i++)
             {
@@ -41,9 +41,9 @@ namespace ArbitesEto2
         }
 
 
-        public FmMacroEdit(ClMacroData data) : this()
+        public FmMacroEdit(MacroData data) : this()
         {
-            this.Data = new ClMacroData(data);
+            this.Data = new MacroData(data);
             RefreshStack();
         }
 
@@ -68,14 +68,14 @@ namespace ArbitesEto2
 
 
             var lay = MdSessionData.CurrentLayout;
-            var dataCont = new ClMacroDataContainer();
+            var dataCont = new MacroDataContainer();
             var hasData = false;
             foreach (var ele in lay.AddonDatas)
             {
-                if (ele.GetType() == ClMacroDataContainer.DATA_TYPE)
+                if (ele.GetType() == MacroDataContainer.DATA_TYPE)
                 {
                     hasData = true;
-                    dataCont = ele as ClMacroDataContainer;
+                    dataCont = ele as MacroDataContainer;
                 }
             }
 
@@ -187,7 +187,7 @@ namespace ArbitesEto2
             {
                 var index = btn.KeyIndex;
 
-                this.Data.Keys[index] = new ClKey(btn.Key);
+                this.Data.Keys[index] = new Key(btn.Key);
             }
         }
 
@@ -206,7 +206,7 @@ namespace ArbitesEto2
         {
             if (this.Data.Keys.Count < 8)
             {
-                this.Data.Keys.Add(new ClKey());
+                this.Data.Keys.Add(new Key());
                 this.Data.IsKeyDown.Add(true);
                 RefreshStack();
             }
@@ -222,7 +222,7 @@ namespace ArbitesEto2
             {
                 if (i < this.Data.Keys.Count)
                 {
-                    this.Buttons[i].Key = new ClKey(this.Data.Keys[i]);
+                    this.Buttons[i].Key = new Key(this.Data.Keys[i]);
                     this.Buttons[i].IsDown = this.Data.IsKeyDown[i];
                     this.Buttons[i].ReloadUI();
                     this.Buttons[i].Visible = true;

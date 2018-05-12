@@ -5,24 +5,23 @@ using System.Text;
 
 namespace ArbitesEto2
 {
-    public class ClTapDanceData
+    public class TapDanceData
     {
-
         public int Index { get; set; }
         public int Delay { get; set; }
-        public List<ClKey> Keys { get; set; }
+        public List<Key> Keys { get; set; }
 
-        public ClTapDanceData()
+        public TapDanceData()
         {
             this.Index = -1;
-            this.Keys = new List<ClKey>();
+            this.Keys = new List<Key>();
             this.Delay = 40;
         }
 
-        public ClTapDanceData(ClTapDanceData input) : this()
+        public TapDanceData(TapDanceData input) : this()
         {
             this.Index = input.Index;
-            this.Keys = input.Keys.Select(ele => new ClKey(ele)).ToList();
+            this.Keys = input.Keys.Select(ele => new Key(ele)).ToList();
             this.Delay = input.Delay;
         }
 

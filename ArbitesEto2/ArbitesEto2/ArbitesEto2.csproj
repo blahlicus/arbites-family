@@ -10,4 +10,8 @@
         <PackageReference Include="ArduinoUploader" Version="3.2.0" />
         <PackageReference Include="Eto.Forms" Version="2.4.1" />
     </ItemGroup>
+    <ItemGroup>
+        <Folder Include="Forms\" />
+        <Folder Include="Serializables\" />
+    </ItemGroup>
 </Project>

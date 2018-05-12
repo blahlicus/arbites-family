@@ -1,9 +1,7 @@
 ﻿namespace ArbitesEto2
 {
-
-    public class ClKey
+    public class Key
     {
-
         public int DisplayID { get; set; }
         public byte ValASCII { get; set; }
         public byte ValScan { get; set; }
@@ -11,7 +9,7 @@
         public bool AllLayers { get; set; }
         public bool HasASCII { get; set; }
 
-        public ClKey()
+        public Key()
         {
             this.DisplayID = 300;
             this.ValASCII = 0;
@@ -21,7 +19,7 @@
             this.HasASCII = true;
         }
 
-        public ClKey(int displayID, byte valASCII, byte valScan, byte keyType, bool allLayers, bool hasASCII)
+        public Key(int displayID, byte valASCII, byte valScan, byte keyType, bool allLayers, bool hasASCII)
         {
             this.DisplayID = displayID;
             this.ValASCII = valASCII;
@@ -31,15 +29,15 @@
             this.HasASCII = hasASCII;
         }
 
-        public ClKey(int displayID, byte valASCII, byte valScan, byte keyType) : this(displayID, valASCII, valScan, keyType, false, true)
+        public Key(int displayID, byte valASCII, byte valScan, byte keyType) : this(displayID, valASCII, valScan, keyType, false, true)
         {
         }
 
-        public ClKey(int displayID, byte valScan, byte keyType) : this(displayID, 0, valScan, keyType, false, false)
+        public Key(int displayID, byte valScan, byte keyType) : this(displayID, 0, valScan, keyType, false, false)
         {
         }
 
-        public ClKey(ClKey input)
+        public Key(Key input)
         {
             this.DisplayID = input.DisplayID;
             this.ValASCII = input.ValASCII;
@@ -48,7 +46,5 @@
             this.AllLayers = input.AllLayers;
             this.HasASCII = input.HasASCII;
         }
-
     }
-
 }

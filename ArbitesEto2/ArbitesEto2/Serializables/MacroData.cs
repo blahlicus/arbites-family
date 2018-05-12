@@ -1,28 +1,25 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-
 namespace ArbitesEto2
 {
-
-    public class ClMacroData
+    public class MacroData
     {
-
         public int Index { get; set; }
         public List<bool> IsKeyDown { get; set; }
-        public List<ClKey> Keys { get; set; }
+        public List<Key> Keys { get; set; }
 
-        public ClMacroData()
+        public MacroData()
         {
             this.IsKeyDown = new List<bool>();
-            this.Keys = new List<ClKey>();
+            this.Keys = new List<Key>();
             this.Index = -1;
         }
 
-        public ClMacroData(ClMacroData input) : this()
+        public MacroData(MacroData input) : this()
         {
             this.IsKeyDown = input.IsKeyDown.Select(ele => ele).ToList();
-            this.Keys = input.Keys.Select(ele => new ClKey(ele)).ToList();
+            this.Keys = input.Keys.Select(ele => new Key(ele)).ToList();
             this.Index = input.Index;
         }
 
@@ -54,7 +51,5 @@ namespace ArbitesEto2
 
             return output;
         }
-
     }
-
 }

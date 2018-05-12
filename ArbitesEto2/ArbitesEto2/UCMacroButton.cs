@@ -6,7 +6,7 @@ namespace ArbitesEto2
 {
     public sealed partial class UCMacroButton
     {
-        public ClKey Key { get; set; }
+        public Key Key { get; set; }
         public int KeyIndex { get; set; }
         public bool IsDown { get; set; }
         public bool ShowIsDown { get; set; }
@@ -21,7 +21,7 @@ namespace ArbitesEto2
         {
             InitializeComponent();
             this.Size = new Size(128, 128);
-            this.Key = new ClKey();
+            this.Key = new Key();
             this.KeyIndex = -1;
             this.ShowIsDown = true;
             this.IsDown = true;
@@ -131,7 +131,7 @@ namespace ArbitesEto2
             }
         }
 
-        private void EditKey(ClKey key)
+        private void EditKey(Key key)
         {
             this.BtnMain.Text = MdSessionData.CurrentInputMethod.GetDisplay(key.DisplayID);
             this.Key = key;

@@ -110,7 +110,7 @@ namespace ArbitesEto2
         {
             MdSessionData.SelectedFromKeyMenu = true;
             var button = sender as Button;
-            if (button != null) MdSessionData.KeyMenuKey = ClKeyGroup.GetKeyFromDisplayId(Convert.ToInt32(button.Tag.ToString()));
+            if (button != null) MdSessionData.KeyMenuKey = KeyGroup.GetKeyFromDisplayId(Convert.ToInt32(button.Tag.ToString()));
         }
 
         public void ReloadTopmost()

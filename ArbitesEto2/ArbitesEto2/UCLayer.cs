@@ -19,7 +19,7 @@ namespace ArbitesEto2
         }
 
 
-        public UCLayer(ClKeyboard keyboard, ClLayoutContainer layout, int layer)
+        public UCLayer(Keyboard keyboard, LayoutContainer layout, int layer)
         {
             InitializeComponent();
             this.Layer = layer;
@@ -98,7 +98,7 @@ namespace ArbitesEto2
             }
         }
 
-        private void EditKey(int x, int y, int z, int com, ClKey key)
+        private void EditKey(int x, int y, int z, int com, Key key)
         {
             foreach (var k in MdSessionData.CurrentLayout.KeyDatas)
             {
@@ -126,7 +126,7 @@ namespace ArbitesEto2
             }
         }
 
-        public void LoadLayout(ClLayoutContainer input)
+        public void LoadLayout(LayoutContainer input)
         {
             foreach (var btn in this.Buttons)
             {

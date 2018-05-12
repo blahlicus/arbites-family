@@ -1,31 +1,28 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-
 namespace ArbitesEto2
 {
-
-    public class ClLayoutContainer
+    public class LayoutContainer
     {
+        public List<KeyData> KeyDatas { get; set; }
+        public List<AdditionalData> AddonDatas { get; set; }
 
-        public List<ClKeyData> KeyDatas { get; set; }
-        public List<ClAdditionalData> AddonDatas { get; set; }
-
-        public ClLayoutContainer()
+        public LayoutContainer()
         {
-            this.KeyDatas = new List<ClKeyData>();
-            this.AddonDatas = new List<ClAdditionalData>();
+            this.KeyDatas = new List<KeyData>();
+            this.AddonDatas = new List<AdditionalData>();
         }
 
-        public ClLayoutContainer(ClLayoutContainer input)
+        public LayoutContainer(LayoutContainer input)
         {
-            this.KeyDatas = new List<ClKeyData>();
+            this.KeyDatas = new List<KeyData>();
             foreach (var kd in input.KeyDatas)
             {
-                this.KeyDatas.Add(new ClKeyData(kd));
+                this.KeyDatas.Add(new KeyData(kd));
             }
 
-            this.AddonDatas = new List<ClAdditionalData>();
+            this.AddonDatas = new List<AdditionalData>();
             foreach (var ad in input.AddonDatas)
             {
                 this.AddonDatas.Add(ad);
@@ -46,12 +43,12 @@ namespace ArbitesEto2
 
         public void AddLayer(int input)
         {
-            var alist = new List<ClKeyData>();
+            var alist = new List<KeyData>();
             foreach (var kd in this.KeyDatas)
             {
                 if (kd.Z == 0)
                 {
-                    var tkd = new ClKeyData(kd);
+                    var tkd = new KeyData(kd);
                     tkd.Z = input;
                     alist.Add(tkd);
                 }
@@ -59,7 +56,7 @@ namespace ArbitesEto2
             this.KeyDatas.AddRange(alist);
         }
 
-        public List<string> GenerateCommand(ClKeyboard board, bool isScancode = true)
+        public List<string> GenerateCommand(Keyboard board, bool isScancode = true)
         {
             var lt = new List<string>();
             var layCount = 0;
@@ -90,7 +87,5 @@ namespace ArbitesEto2
 
             return lt;
         }
-
     }
-
 }

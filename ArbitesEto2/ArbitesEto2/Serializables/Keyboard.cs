@@ -2,30 +2,30 @@
 
 namespace ArbitesEto2
 {
-    public class ClKeyboard
+    public class Keyboard
     {
         public string Name { get; set; }
         public int MaxLayers { get; set; }
-        public List<ClButtonInfo> Buttons { get; set; }
+        public List<ButtonInfo> Buttons { get; set; }
         public List<string> Commands { get; set; }
         public string SaveFileExtension { get; set; }
 
-        public ClKeyboard()
+        public Keyboard()
         {
             this.Name = "Unnamed Keyboard";
-            this.Buttons = new List<ClButtonInfo>();
+            this.Buttons = new List<ButtonInfo>();
             this.Commands = new List<string>();
             this.SaveFileExtension = "uk2kl";
             this.MaxLayers = 3;
         }
 
-        public ClKeyboard(ClKeyboard input)
+        public Keyboard(Keyboard input)
         {
             this.Name = input.Name;
-            this.Buttons = new List<ClButtonInfo>();
+            this.Buttons = new List<ButtonInfo>();
             foreach (var btn in input.Buttons)
             {
-                this.Buttons.Add(new ClButtonInfo(btn));
+                this.Buttons.Add(new ButtonInfo(btn));
             }
             this.Commands = new List<string>();
             foreach (var str in input.Commands)
@@ -36,26 +36,26 @@ namespace ArbitesEto2
             this.SaveFileExtension = input.SaveFileExtension;
         }
 
-        public ClLayoutContainer GenerateLayout()
+        public LayoutContainer GenerateLayout()
         {
-            var newLay = new ClLayoutContainer();
+            var newLay = new LayoutContainer();
             foreach (var bi in this.Buttons)
             {
-                var kd = new ClKeyData();
+                var kd = new KeyData();
                 kd.X = bi.X;
                 kd.Y = bi.Y;
                 kd.Z = 0;
                 kd.Command = bi.Command;
-                kd.Key = new ClKey();
+                kd.Key = new Key();
                 newLay.KeyDatas.Add(kd);
             }
 
             return newLay;
         }
 
-        public static ClKeyboard GenerateDiverge2()
+        public static Keyboard GenerateDiverge2()
         {
-            var kb = new ClKeyboard();
+            var kb = new Keyboard();
             kb.MaxLayers = 8;
             kb.Name = "Diverge 2 and 3";
             kb.SaveFileExtension = "arb2d2";
@@ -75,7 +75,7 @@ namespace ArbitesEto2
                     {
                         if ((i != 7) || (j == 4))
                         {
-                            var bi = new ClButtonInfo();
+                            var bi = new ButtonInfo();
                             bi.X = i;
                             bi.Y = j;
                             bi.Command = s;
@@ -116,9 +116,9 @@ namespace ArbitesEto2
             return kb;
         }
 
-        public static ClKeyboard GenerateDivergeTM()
+        public static Keyboard GenerateDivergeTM()
         {
-            var kb = new ClKeyboard();
+            var kb = new Keyboard();
             kb.MaxLayers = 13;
             kb.Name = "Diverge TM 1 and 2";
             kb.SaveFileExtension = "arb2dtm";
@@ -138,7 +138,7 @@ namespace ArbitesEto2
                         }
                         else
                         {
-                            var bi = new ClButtonInfo();
+                            var bi = new ButtonInfo();
                             bi.X = i;
                             bi.Y = j;
                             bi.Command = s;
@@ -171,9 +171,9 @@ namespace ArbitesEto2
             return kb;
         }
 
-        public static ClKeyboard GenerateTerminus2()
+        public static Keyboard GenerateTerminus2()
         {
-            var kb = new ClKeyboard();
+            var kb = new Keyboard();
             kb.MaxLayers = 10;
             kb.Name = "Terminus 2";
             kb.SaveFileExtension = "arb2t2";
@@ -191,7 +191,7 @@ namespace ArbitesEto2
                     }
                     else
                     {
-                        var bi = new ClButtonInfo();
+                        var bi = new ButtonInfo();
                         bi.X = i;
                         bi.Y = j;
                         bi.Command = 0;
@@ -236,7 +236,7 @@ namespace ArbitesEto2
                     }
                     else
                     {
-                        var bi = new ClButtonInfo();
+                        var bi = new ButtonInfo();
                         bi.X = i;
                         bi.Y = j;
                         bi.Command = 1;
@@ -259,9 +259,9 @@ namespace ArbitesEto2
             return kb;
         }
 
-        public static ClKeyboard GenerateTerminusMini()
+        public static Keyboard GenerateTerminusMini()
         {
-            var kb = new ClKeyboard();
+            var kb = new Keyboard();
             kb.MaxLayers = 6;
             kb.Name = "Terminus Mini";
             kb.SaveFileExtension = "arb2tm";
@@ -278,7 +278,7 @@ namespace ArbitesEto2
                     }
                     else
                     {
-                        var bi = new ClButtonInfo();
+                        var bi = new ButtonInfo();
                         bi.X = i;
                         bi.Y = j;
                         bi.Command = 0;
@@ -299,9 +299,9 @@ namespace ArbitesEto2
             return kb;
         }
 
-        public static ClKeyboard GenerateTerminusMini2()
+        public static Keyboard GenerateTerminusMini2()
         {
-            var kb = new ClKeyboard();
+            var kb = new Keyboard();
             kb.MaxLayers = 6;
             kb.Name = "Terminus Mini 2";
             kb.SaveFileExtension = "arb2tm2";
@@ -312,7 +312,7 @@ namespace ArbitesEto2
             {
                 for (var j = 0; j < 4; j++)
                 {
-                    var bi = new ClButtonInfo();
+                    var bi = new ButtonInfo();
                     bi.X = i;
                     bi.Y = j;
                     bi.Command = 0;
@@ -352,7 +352,7 @@ namespace ArbitesEto2
             {
                 for (var j = 0; j < 3; j++)
                 {
-                    var bi = new ClButtonInfo();
+                    var bi = new ButtonInfo();
                     bi.Y = 4;
                     if ((i == 5) && (j == 2))
                     {
@@ -391,9 +391,9 @@ namespace ArbitesEto2
             return kb;
         }
 
-        public static ClKeyboard GenerateFelix()
+        public static Keyboard GenerateFelix()
         {
-            var kb = new ClKeyboard();
+            var kb = new Keyboard();
             kb.MaxLayers = 15;
             kb.Name = "Felix";
             kb.SaveFileExtension = "arb2f";
@@ -404,7 +404,7 @@ namespace ArbitesEto2
             {
                 for (var j = 0; j < 5; j++)
                 {
-                    var bi = new ClButtonInfo();
+                    var bi = new ButtonInfo();
                     bi.X = i;
                     bi.Y = j;
                     bi.Command = 0;

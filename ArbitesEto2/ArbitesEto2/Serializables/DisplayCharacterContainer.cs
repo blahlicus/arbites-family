@@ -4,15 +4,15 @@ using Eto.Forms;
 
 namespace ArbitesEto2
 {
-    public class Key
+    public class DisplayCharacterContainer
     {
-        public string DisplayText { get; set; }
-        public int Index { get; set; }
-        public int GroupIndex { get; set; }
-    }
+        public class Key
+        {
+            public string DisplayText { get; set; }
+            public int Index { get; set; }
+            public int GroupIndex { get; set; }
+        }
 
-    public class ClDisplayCharacterContainer
-    {
         public string Name { get; set; }
         public List<string> Display { get; set; }
         public List<int> Index { get; set; }
@@ -21,7 +21,7 @@ namespace ArbitesEto2
 
         public List<Key> Keys { get; set; }
 
-        public ClDisplayCharacterContainer()
+        public DisplayCharacterContainer()
         {
             this.Name = "Unknown Input Method";
             this.Display = new List<string>();
@@ -31,7 +31,7 @@ namespace ArbitesEto2
             this.Keys = new List<Key>();
         }
 
-        public ClDisplayCharacterContainer(ClDisplayCharacterContainer input) : this()
+        public DisplayCharacterContainer(DisplayCharacterContainer input) : this()
         {
             this.Name = input.Name;
             for (var i = 0; i < input.Display.Count; i++)
@@ -103,7 +103,7 @@ namespace ArbitesEto2
             }
         }
 
-        public static void AddHIDSubGroup(ClDisplayCharacterContainer dcc, int startID, int groupID, string suffix, string postfix)
+        public static void AddHIDSubGroup(DisplayCharacterContainer dcc, int startID, int groupID, string suffix, string postfix)
         {
             for (int i = 0; i < dcc.Index.Count; i++)
             {
@@ -116,9 +116,9 @@ namespace ArbitesEto2
             }
         }
 
-        public static ClDisplayCharacterContainer GenerateUSASCII()
+        public static DisplayCharacterContainer GenerateUSASCII()
         {
-            var dcc = new ClDisplayCharacterContainer();
+            var dcc = new DisplayCharacterContainer();
 
             dcc.Groups.Add("Alphabets"); //0
             dcc.Groups.Add("Numbers"); //1
@@ -450,9 +450,9 @@ namespace ArbitesEto2
             return dcc;
         }
 
-        public static ClDisplayCharacterContainer GenerateUKISO()
+        public static DisplayCharacterContainer GenerateUKISO()
         {
-            var dcc = new ClDisplayCharacterContainer();
+            var dcc = new DisplayCharacterContainer();
 
             dcc.Groups.Add("Alphabets"); //0
             dcc.Groups.Add("Numbers"); //1
@@ -762,9 +762,9 @@ namespace ArbitesEto2
             return dcc;
         }
 
-        public static ClDisplayCharacterContainer GenerateDeuQWERTZ()
+        public static DisplayCharacterContainer GenerateDeuQWERTZ()
         {
-            var dcc = new ClDisplayCharacterContainer();
+            var dcc = new DisplayCharacterContainer();
 
             dcc.Groups.Add("Alphabets"); //0
             dcc.Groups.Add("Numbers"); //1
@@ -1074,9 +1074,9 @@ namespace ArbitesEto2
             return dcc;
         }
 
-        public static ClDisplayCharacterContainer GenerateSwissQWERTZDE()
+        public static DisplayCharacterContainer GenerateSwissQWERTZDE()
         {
-            var dcc = new ClDisplayCharacterContainer();
+            var dcc = new DisplayCharacterContainer();
 
             dcc.Groups.Add("Alphabets"); //0
             dcc.Groups.Add("Numbers"); //1
@@ -1386,9 +1386,9 @@ namespace ArbitesEto2
             return dcc;
         }
 
-        public static ClDisplayCharacterContainer GenerateSEDKQWERTY()
+        public static DisplayCharacterContainer GenerateSEDKQWERTY()
         {
-            var dcc = new ClDisplayCharacterContainer();
+            var dcc = new DisplayCharacterContainer();
 
             dcc.Groups.Add("Alphabets"); //0
             dcc.Groups.Add("Numbers"); //1
@@ -1698,9 +1698,9 @@ namespace ArbitesEto2
             return dcc;
         }
 
-        public static ClDisplayCharacterContainer GenerateSwissQWERTZFR()
+        public static DisplayCharacterContainer GenerateSwissQWERTZFR()
         {
-            var dcc = new ClDisplayCharacterContainer();
+            var dcc = new DisplayCharacterContainer();
 
             dcc.Groups.Add("Alphabets"); //0
             dcc.Groups.Add("Numbers"); //1

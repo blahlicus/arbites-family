@@ -57,7 +57,7 @@ namespace ArbitesEto2
 
         private void FmClosing()
         {
-            MdCore.Serialize(MdConfig.Main, Path.Combine(MdPersistentData.ConfigPath, MdConstant.N_CONFIG));
+            MdCore.Serialize(MdConfig.Main, Path.Combine(MdConstant.Root, MdConstant.N_CONFIG));
         }
 
 
@@ -76,7 +76,7 @@ namespace ArbitesEto2
 
                     if (File.Exists(savePath))
                     {
-                        File.Copy(savePath, Path.Combine(MdPersistentData.ConfigPath, MdConstant.D_KEYGROUP, "Core" + MdConstant.E_KEYGROUP), true);
+                        File.Copy(savePath, Path.Combine(MdConstant.Root, MdConstant.D_KEYGROUP, "Core" + MdConstant.E_KEYGROUP), true);
                         MessageBox.Show("Key definitions successfully updated.", MessageBoxType.Information);
                     }
                     else
@@ -96,7 +96,7 @@ namespace ArbitesEto2
             var dialog = new OpenFileDialog();
             dialog.Filters.Add(new FileFilter("Arbites Keyboard File", MdConstant.E_KEYBOARD));
             dialog.Title = "Load Keyboard Type";
-            dialog.Directory = new Uri(Environment.CurrentDirectory + MdConstant.psep + "keyboards");
+            dialog.Directory = new Uri(Environment.CurrentDirectory + MdConstant.PathSeparator + "keyboards");
             try
             {
                 dialog.ShowDialog(this);
@@ -107,7 +107,7 @@ namespace ArbitesEto2
 
                     if (File.Exists(savePath))
                     {
-                        File.Copy(savePath, Path.Combine(MdPersistentData.ConfigPath, MdConstant.D_KEYBOARD, Path.GetFileName(savePath)), true);
+                        File.Copy(savePath, Path.Combine(MdConstant.Root, MdConstant.D_KEYBOARD, Path.GetFileName(savePath)), true);
                         MessageBox.Show("Keyboard type successfully added", MessageBoxType.Information);
                     }
                     else
@@ -128,7 +128,7 @@ namespace ArbitesEto2
             var dialog = new OpenFileDialog();
             dialog.Filters.Add(new FileFilter("Arbites Input Method File", MdConstant.E_INPUT_METHOD));
             dialog.Title = "Load Input Method";
-            dialog.Directory = new Uri(Environment.CurrentDirectory + MdConstant.psep + "input-method");
+            dialog.Directory = new Uri(Environment.CurrentDirectory + MdConstant.PathSeparator + "input-method");
             try
             {
                 dialog.ShowDialog(this);
@@ -139,7 +139,7 @@ namespace ArbitesEto2
 
                     if (File.Exists(savePath))
                     {
-                        File.Copy(savePath, Path.Combine(MdPersistentData.ConfigPath, MdConstant.D_INPUT_METHOD, Path.GetFileName(savePath)), true);
+                        File.Copy(savePath, Path.Combine(MdConstant.Root, MdConstant.D_INPUT_METHOD, Path.GetFileName(savePath)), true);
                         MessageBox.Show("Input method successfully added", MessageBoxType.Information);
                     }
                     else
@@ -159,19 +159,19 @@ namespace ArbitesEto2
         {
             MdConfig.Main.KeyMenuTopmost = this.CBKeyMenuTopMost.Checked.Value;
             MdSessionData.KeyMenu.ReloadTopmost();
-            MdCore.Serialize(MdConfig.Main, Path.Combine(MdPersistentData.ConfigPath, MdConstant.N_CONFIG));
+            MdCore.Serialize(MdConfig.Main, Path.Combine(MdConstant.Root, MdConstant.N_CONFIG));
         }
 
         private void CheckedDisplayOutput()
         {
             MdConfig.Main.DisplayOutput = this.CBDisplayOutput.Checked.Value;
-            MdCore.Serialize(MdConfig.Main, Path.Combine(MdPersistentData.ConfigPath, MdConstant.N_CONFIG));
+            MdCore.Serialize(MdConfig.Main, Path.Combine(MdConstant.Root, MdConstant.N_CONFIG));
         }
 
         private void UploadDelayChanged()
         {
             MdConfig.Main.UploadDelay = Convert.ToInt32(this.DDUploadDelay.SelectedKey);
-            MdCore.Serialize(MdConfig.Main, Path.Combine(MdPersistentData.ConfigPath, MdConstant.N_CONFIG));
+            MdCore.Serialize(MdConfig.Main, Path.Combine(MdConstant.Root, MdConstant.N_CONFIG));
         }
 
         private void ResetDefaults()
