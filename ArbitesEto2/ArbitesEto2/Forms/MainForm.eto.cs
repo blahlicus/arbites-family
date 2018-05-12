@@ -14,11 +14,9 @@ namespace ArbitesEto2
         Panel PnMain;
         void InitializeComponent()
         {
-
-            Title = "Arbites Innova - 2.5 0003";
+            Title = "Arbites Innova - 3.0.0";
             ClientSize = new Size(1000, 600);
 
-            
             var tlMain = new TableLayout();
             tlMain.Padding = 5;
 
@@ -33,7 +31,7 @@ namespace ArbitesEto2
             tlTop.Padding = 5;
 
             var trContext = new TableRow();
-            
+
             tlTop.Rows.Add(trContext);
 
             var tcTopLeft = new TableCell();
@@ -70,7 +68,6 @@ namespace ArbitesEto2
             tcTopMid.ScaleWidth = true;
             trContext.Cells.Add(tcTopMid);
 
-
             var slTopMid = new StackLayout();
             slTopMid.Orientation = Orientation.Horizontal;
             slTopMid.VerticalContentAlignment = VerticalAlignment.Center;
@@ -102,7 +99,7 @@ namespace ArbitesEto2
             trContext.Cells.Add(tcTopRight);
 
             var tlTopRight = new TableLayout();
-            tlTopRight.Spacing = new Size(5,5);
+            tlTopRight.Spacing = new Size(5, 5);
             tcTopRight.Control = tlTopRight;
 
             var trTopRight = new TableRow();
@@ -137,7 +134,6 @@ namespace ArbitesEto2
             slTopRight.VerticalContentAlignment = VerticalAlignment.Center;
             slTopRight.Spacing = 5;
             tcTopRightContent.Control = slTopRight;
-
 
             BtnSelectPort = new Button();
             BtnSelectPort.Text = "Select Port";
