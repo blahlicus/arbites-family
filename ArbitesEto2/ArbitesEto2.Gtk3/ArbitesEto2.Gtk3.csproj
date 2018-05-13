@@ -16,4 +16,7 @@
         <PackageReference Include="Eto.Platform.Gtk3" Version="2.4.1" />
         <PackageReference Include="gtk-sharp-3" Version="3.22.6.4" />
     </ItemGroup>
+    <ItemGroup>
+        <None Include="favicon.ico" CopyToOutputDirectory="PreserveNewest" />
+    </ItemGroup>
 </Project>

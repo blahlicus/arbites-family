@@ -15,4 +15,7 @@
     <ItemGroup>
         <PackageReference Include="Eto.Platform.Wpf" Version="2.4.1" />
     </ItemGroup>
+    <ItemGroup>
+        <None Include="favicon.ico" CopyToOutputDirectory="PreserveNewest" />
+    </ItemGroup>
 </Project>
