@@ -3,13 +3,10 @@ using System.Collections.Generic;
 using Eto.Drawing;
 using Eto.Forms;
 
-
 namespace ArbitesEto2
 {
-
     public partial class UCLayer
     {
-
         public List<Button> Buttons { get; set; }
         public int Layer { get; set; }
 
@@ -17,7 +14,6 @@ namespace ArbitesEto2
         {
             InitializeComponent();
         }
-
 
         public UCLayer(Keyboard keyboard, LayoutContainer layout, int layer)
         {
@@ -42,6 +38,7 @@ namespace ArbitesEto2
                     this.PLMain.Size = new Size(this.PLMain.Size.Width, bi.GY + bi.GH);
                 }
                 btn.Click += (sender, e) => PressedKey(sender, e);
+                btn.MouseUp += (sender, e) => PressedKey(sender, e);
                 btn.KeyDown += (sender, e) => KeyboardInput(sender, e);
             }
             LoadLayout(layout);
@@ -82,8 +79,9 @@ namespace ArbitesEto2
             }
         }
 
-        private void PressedKey(object sender, EventArgs e)
+        private void PressedKey(object sender, EventArgs @event)
         {
+            var mouseEvent = @event as MouseEventArgs;
             var btn = sender as Button;
             btn.Focus();
             var arr = btn.Tag.ToString().Split('_');
@@ -91,11 +89,18 @@ namespace ArbitesEto2
             var y = Convert.ToInt32(arr[1]);
             var z = Convert.ToInt32(arr[2]);
             var com = Convert.ToInt32(arr[3]);
-            if (MdSessionData.SelectedFromKeyMenu)
+
+            if (mouseEvent != null && mouseEvent.Buttons == MouseButtons.Alternate)
+            {
+                var nullKey = new Key();
+                EditKey(x, y, z, com, nullKey);
+            }
+            else if (MdSessionData.SelectedFromKeyMenu)
             {
                 EditKey(x, y, z, com, MdSessionData.KeyMenuKey);
-                MdSessionData.SelectedFromKeyMenu = false;
             }
+
+            MdSessionData.SelectedFromKeyMenu = false;
         }
 
         private void EditKey(int x, int y, int z, int com, Key key)
@@ -145,7 +150,5 @@ namespace ArbitesEto2
                 }
             }
         }
-
     }
-
 }
