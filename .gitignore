@@ -1,6 +1,7 @@
 # Projet files
 *.suo
 .vs
+.vscode
 bin
 obj
 packages
