@@ -12,7 +12,6 @@ namespace ArbitesEto2
         private DropDown DropDown;
         private SearchBox SearchBox;
         private ListBox ListBox;
-        private int GroupIndex = 0;
 
         public FmKeyMenu()
         {
@@ -61,22 +60,33 @@ namespace ArbitesEto2
 
         private IEnumerable<DisplayCharacterContainer.Key> GetKeys()
         {
+            if ((string)DropDown.SelectedKey == "All")
+            {
+                return MdSessionData.CurrentInputMethod.Keys;
+            }
+
+            int groupIndex = MdSessionData
+                .CurrentInputMethod
+                .Groups
+                .FindIndex((value) => value == (string)DropDown.SelectedKey);
+
             return MdSessionData
                 .CurrentInputMethod
                 .Keys
-                .Where((key) => key.GroupIndex == GroupIndex);
+                .Where((key) => key.GroupIndex == groupIndex);
         }
 
         private DropDown CreateDropDown()
         {
             var groups = new DropDown();
 
+            groups.Items.Add("All");
             foreach (var groupName in MdSessionData.CurrentInputMethod.Groups)
             {
                 groups.Items.Add(groupName);
             }
 
-            groups.SelectedIndex = GroupIndex;
+            groups.SelectedIndex = 0;
             groups.SelectedIndexChanged += OnSelectGroup;
 
             return groups;
@@ -125,7 +135,6 @@ namespace ArbitesEto2
         private void OnSelectGroup(object sender, EventArgs args)
         {
             SearchBox.Text = "";
-            GroupIndex = (sender as DropDown).SelectedIndex;
             UpdateListBox(GetKeys());
         }
 
