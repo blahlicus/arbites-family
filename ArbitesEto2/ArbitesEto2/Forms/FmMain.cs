@@ -238,7 +238,7 @@ namespace ArbitesEto2
 
             if (outputInd >= 0)
             {
-                var kb = MdCore.Deserialize<Keyboard>(fm.OutputValues[outputInd]);
+                var kb = MdCore.DeserializeFromPath<Keyboard>(fm.OutputValues[outputInd]);
                 MdSessionData.CurrentKeyboardType = kb;
                 MdSessionData.CurrentLayout = kb.GenerateLayout();
                 var ucl = new UCKeyboard(MdSessionData.CurrentKeyboardType, MdSessionData.CurrentLayout);
@@ -268,7 +268,7 @@ namespace ArbitesEto2
             MdSessionData.CurrentInputMethod = MdConfig.Main.GetCurrentInputMethod();
             MdMetaUtil.ReloadInputMethodUI();
 
-            MdCore.Serialize(MdConfig.Main, Path.Combine(MdConstant.Root, MdConstant.N_CONFIG));
+            MdCore.SerializeToPath(MdConfig.Main, Path.Combine(MdConstant.Root, MdConstant.N_CONFIG));
         }
 
         public void LoadPortList()

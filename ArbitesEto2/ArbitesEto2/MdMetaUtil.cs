@@ -18,7 +18,7 @@ namespace ArbitesEto2
             bool needsRestore = false;
             try
             {
-                var cfg = MdCore.Deserialize<MdConfig>(Path.Combine(MdConstant.Root, MdConstant.N_CONFIG));
+                var cfg = MdCore.DeserializeFromPath<MdConfig>(Path.Combine(MdConstant.Root, MdConstant.N_CONFIG));
                 if (cfg.ConfigVersion != MdConfig.SoftwareVersion)
                 {
                     needsRestore = true;
@@ -51,7 +51,7 @@ namespace ArbitesEto2
 
         public static void CreateDefaultConfig()
         {
-            MdCore.Serialize(new MdConfig(), Path.Combine(MdConstant.Root, MdConstant.N_CONFIG));
+            MdCore.SerializeToPath(new MdConfig(), Path.Combine(MdConstant.Root, MdConstant.N_CONFIG));
         }
 
         public static void CreateDefaultKeyboards()
@@ -61,24 +61,24 @@ namespace ArbitesEto2
                 Directory.CreateDirectory(Path.Combine(MdConstant.Root, MdConstant.D_KEYBOARD));
             }
 
-            MdCore.Serialize(Keyboard.GenerateDiverge2(), Path.Combine(MdConstant.Root, MdConstant.D_KEYBOARD, "diverge-2-3" + MdConstant.E_KEYBOARD));
+            MdCore.SerializeToPath(Keyboard.GenerateDiverge2(), Path.Combine(MdConstant.Root, MdConstant.D_KEYBOARD, "diverge-2-3" + MdConstant.E_KEYBOARD));
             var d2r = Keyboard.GenerateDiverge2();
             d2r.Commands[0] = "uniqueksetsubkey";
             d2r.Commands[1] = "uniqueksetkey";
-            MdCore.Serialize(d2r, Path.Combine(MdConstant.Root, MdConstant.D_KEYBOARD, "diverge-2-3-rightmaster" + MdConstant.E_KEYBOARD));
-            MdCore.Serialize(Keyboard.GenerateDivergeTM(), Path.Combine(MdConstant.Root, MdConstant.D_KEYBOARD, "diverge-tm-1-2" + MdConstant.E_KEYBOARD));
+            MdCore.SerializeToPath(d2r, Path.Combine(MdConstant.Root, MdConstant.D_KEYBOARD, "diverge-2-3-rightmaster" + MdConstant.E_KEYBOARD));
+            MdCore.SerializeToPath(Keyboard.GenerateDivergeTM(), Path.Combine(MdConstant.Root, MdConstant.D_KEYBOARD, "diverge-tm-1-2" + MdConstant.E_KEYBOARD));
             var dtmr = Keyboard.GenerateDivergeTM();
             dtmr.Commands[0] = "uniqueksetsubkey";
             dtmr.Commands[1] = "uniqueksetkey";
-            MdCore.Serialize(dtmr, Path.Combine(MdConstant.Root, MdConstant.D_KEYBOARD, "diverge-tm-1-2-rightmaster" + MdConstant.E_KEYBOARD));
-            MdCore.Serialize(Keyboard.GenerateTerminusMini(), Path.Combine(MdConstant.Root, MdConstant.D_KEYBOARD, "terminus-mini" + MdConstant.E_KEYBOARD));
-            MdCore.Serialize(Keyboard.GenerateTerminusMini2(), Path.Combine(MdConstant.Root, MdConstant.D_KEYBOARD, "terminus-mini-2" + MdConstant.E_KEYBOARD));
-            MdCore.Serialize(Keyboard.GenerateFelix(), Path.Combine(MdConstant.Root, MdConstant.D_KEYBOARD, "felix" + MdConstant.E_KEYBOARD));
-            MdCore.Serialize(Keyboard.GenerateTerminus2(), Path.Combine(MdConstant.Root, MdConstant.D_KEYBOARD, "terminus-2" + MdConstant.E_KEYBOARD));
+            MdCore.SerializeToPath(dtmr, Path.Combine(MdConstant.Root, MdConstant.D_KEYBOARD, "diverge-tm-1-2-rightmaster" + MdConstant.E_KEYBOARD));
+            MdCore.SerializeToPath(Keyboard.GenerateTerminusMini(), Path.Combine(MdConstant.Root, MdConstant.D_KEYBOARD, "terminus-mini" + MdConstant.E_KEYBOARD));
+            MdCore.SerializeToPath(Keyboard.GenerateTerminusMini2(), Path.Combine(MdConstant.Root, MdConstant.D_KEYBOARD, "terminus-mini-2" + MdConstant.E_KEYBOARD));
+            MdCore.SerializeToPath(Keyboard.GenerateFelix(), Path.Combine(MdConstant.Root, MdConstant.D_KEYBOARD, "felix" + MdConstant.E_KEYBOARD));
+            MdCore.SerializeToPath(Keyboard.GenerateTerminus2(), Path.Combine(MdConstant.Root, MdConstant.D_KEYBOARD, "terminus-2" + MdConstant.E_KEYBOARD));
             var t2mr = Keyboard.GenerateTerminus2();
             t2mr.Commands[0] = "uniqueksetsubkey";
             t2mr.Commands[1] = "uniqueksetkey";
-            MdCore.Serialize(t2mr, Path.Combine(MdConstant.Root, MdConstant.D_KEYBOARD, "terminus-2-rightmaster" + MdConstant.E_KEYBOARD));
+            MdCore.SerializeToPath(t2mr, Path.Combine(MdConstant.Root, MdConstant.D_KEYBOARD, "terminus-2-rightmaster" + MdConstant.E_KEYBOARD));
         }
 
         public static void CreateDefaultKeygroups()
@@ -88,7 +88,7 @@ namespace ArbitesEto2
                 Directory.CreateDirectory(Path.Combine(MdConstant.Root, MdConstant.D_KEYGROUP));
             }
 
-            MdCore.Serialize(KeyGroup.GenerateDefault(), Path.Combine(MdConstant.Root, MdConstant.D_KEYGROUP, "Core" + MdConstant.E_KEYGROUP));
+            MdCore.SerializeToPath(KeyGroup.GenerateDefault(), Path.Combine(MdConstant.Root, MdConstant.D_KEYGROUP, "Core" + MdConstant.E_KEYGROUP));
         }
 
         public static void CreateDefaultInputMethods()
@@ -98,41 +98,41 @@ namespace ArbitesEto2
                 Directory.CreateDirectory(Path.Combine(MdConstant.Root, MdConstant.D_INPUT_METHOD));
             }
 
-            MdCore.Serialize(DisplayCharacterContainer.GenerateUSASCII()
+            MdCore.SerializeToPath(DisplayCharacterContainer.GenerateUSASCII()
                              , Path.Combine(
                                  MdConstant.Root
                                  , MdConstant.D_INPUT_METHOD,
                                  "US-ANSI" + MdConstant.E_INPUT_METHOD));
 
-            MdCore.Serialize(DisplayCharacterContainer.GenerateUKISO()
+            MdCore.SerializeToPath(DisplayCharacterContainer.GenerateUKISO()
                              , Path.Combine(
                                  MdConstant.Root
                                  , MdConstant.D_INPUT_METHOD,
                                  "UK-QWERTY-BS4822" + MdConstant.E_INPUT_METHOD));
 
             //Deutsch-QWERTZ-T1
-            MdCore.Serialize(DisplayCharacterContainer.GenerateDeuQWERTZ()
+            MdCore.SerializeToPath(DisplayCharacterContainer.GenerateDeuQWERTZ()
                              , Path.Combine(
                                  MdConstant.Root
                                  , MdConstant.D_INPUT_METHOD,
                                  "Deutsch-QWERTZ-T1" + MdConstant.E_INPUT_METHOD));
 
             //GenerateSEDKQWERTY
-            MdCore.Serialize(DisplayCharacterContainer.GenerateSEDKQWERTY()
+            MdCore.SerializeToPath(DisplayCharacterContainer.GenerateSEDKQWERTY()
                              , Path.Combine(
                                  MdConstant.Root
                                  , MdConstant.D_INPUT_METHOD,
                                  "Swedish-Danish-QWERTY" + MdConstant.E_INPUT_METHOD));
 
             //GenerateSwissGerman
-            MdCore.Serialize(DisplayCharacterContainer.GenerateSwissQWERTZDE()
+            MdCore.SerializeToPath(DisplayCharacterContainer.GenerateSwissQWERTZDE()
                              , Path.Combine(
                                  MdConstant.Root
                                  , MdConstant.D_INPUT_METHOD,
                                  "Deutsch-QWERTZ-Schweizer" + MdConstant.E_INPUT_METHOD));
 
             //GenerateSwissFrench
-            MdCore.Serialize(DisplayCharacterContainer.GenerateSwissQWERTZFR()
+            MdCore.SerializeToPath(DisplayCharacterContainer.GenerateSwissQWERTZFR()
                              , Path.Combine(
                                  MdConstant.Root
                                  , MdConstant.D_INPUT_METHOD,

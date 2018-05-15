@@ -21,7 +21,7 @@ namespace ArbitesEto2
         public static void Init()
         {
 
-            Main = MdCore.Deserialize<MdConfig>(Path.Combine(MdConstant.Root, MdConstant.N_CONFIG));
+            Main = MdCore.DeserializeFromPath<MdConfig>(Path.Combine(MdConstant.Root, MdConstant.N_CONFIG));
         }
 
         public MdConfig()
@@ -35,7 +35,7 @@ namespace ArbitesEto2
 
         public DisplayCharacterContainer GetCurrentInputMethod()
         {
-            return MdCore.Deserialize<DisplayCharacterContainer>(Path.Combine(MdConstant.Root, MdConstant.D_INPUT_METHOD, this.CurrentInputMethod));
+            return MdCore.DeserializeFromPath<DisplayCharacterContainer>(Path.Combine(MdConstant.Root, MdConstant.D_INPUT_METHOD, this.CurrentInputMethod));
         }
     }
 }

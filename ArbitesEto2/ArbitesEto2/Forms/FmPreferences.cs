@@ -57,7 +57,7 @@ namespace ArbitesEto2
 
         private void FmClosing()
         {
-            MdCore.Serialize(MdConfig.Main, Path.Combine(MdConstant.Root, MdConstant.N_CONFIG));
+            MdCore.SerializeToPath(MdConfig.Main, Path.Combine(MdConstant.Root, MdConstant.N_CONFIG));
         }
 
 
@@ -159,19 +159,19 @@ namespace ArbitesEto2
         {
             MdConfig.Main.KeyMenuTopmost = this.CBKeyMenuTopMost.Checked.Value;
             MdSessionData.KeyMenu.ReloadTopmost();
-            MdCore.Serialize(MdConfig.Main, Path.Combine(MdConstant.Root, MdConstant.N_CONFIG));
+            MdCore.SerializeToPath(MdConfig.Main, Path.Combine(MdConstant.Root, MdConstant.N_CONFIG));
         }
 
         private void CheckedDisplayOutput()
         {
             MdConfig.Main.DisplayOutput = this.CBDisplayOutput.Checked.Value;
-            MdCore.Serialize(MdConfig.Main, Path.Combine(MdConstant.Root, MdConstant.N_CONFIG));
+            MdCore.SerializeToPath(MdConfig.Main, Path.Combine(MdConstant.Root, MdConstant.N_CONFIG));
         }
 
         private void UploadDelayChanged()
         {
             MdConfig.Main.UploadDelay = Convert.ToInt32(this.DDUploadDelay.SelectedKey);
-            MdCore.Serialize(MdConfig.Main, Path.Combine(MdConstant.Root, MdConstant.N_CONFIG));
+            MdCore.SerializeToPath(MdConfig.Main, Path.Combine(MdConstant.Root, MdConstant.N_CONFIG));
         }
 
         private void ResetDefaults()

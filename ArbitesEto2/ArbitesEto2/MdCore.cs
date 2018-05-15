@@ -3,9 +3,20 @@ using Newtonsoft.Json;
 
 namespace ArbitesEto2
 {
-    internal class MdCore
+    public static class MdCore
     {
-        public static void Serialize<T>(T obj, string path)
+        public static string Serialize<T>(T @object)
+        {
+            return null;
+        }
+
+        public static T Deserialize<T>(string data)
+            where T : new()
+        {
+            return new T();
+        }
+
+        public static void SerializeToPath<T>(T obj, string path)
         {
             var streamWriter = new StreamWriter(path, false);
             var serializer = new JsonSerializer();
@@ -13,7 +24,7 @@ namespace ArbitesEto2
             streamWriter.Close();
         }
 
-        public static T Deserialize<T>(string path)
+        public static T DeserializeFromPath<T>(string path)
         {
             var streamReader = new StreamReader(path);
             var jsonReader = new JsonTextReader(streamReader);

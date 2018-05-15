@@ -36,7 +36,7 @@ namespace ArbitesEto2
             }
 
             CurrentInputMethod = MdConfig.Main.GetCurrentInputMethod();
-            KeyGroup = MdCore.Deserialize<KeyGroup>(Path.Combine(MdConstant.Root, MdConstant.D_KEYGROUP, "Core" + MdConstant.E_KEYGROUP));
+            KeyGroup = MdCore.DeserializeFromPath<KeyGroup>(Path.Combine(MdConstant.Root, MdConstant.D_KEYGROUP, "Core" + MdConstant.E_KEYGROUP));
         }
     }
 }

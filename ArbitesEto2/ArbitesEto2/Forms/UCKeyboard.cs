@@ -51,7 +51,7 @@ namespace ArbitesEto2
                 dialog.ShowDialog(this);
                 if (!string.IsNullOrEmpty(dialog.FileName))
                 {
-                    MdSessionData.CurrentLayout = MdCore.Deserialize<LayoutContainer>(dialog.FileName);
+                    MdSessionData.CurrentLayout = MdCore.DeserializeFromPath<LayoutContainer>(dialog.FileName);
                     LoadLayout(MdSessionData.CurrentLayout);
                     this.SavePath = dialog.FileName;
                     this.LLayoutName.Text = Path.GetFileNameWithoutExtension(this.SavePath);
@@ -72,7 +72,7 @@ namespace ArbitesEto2
             }
             else
             {
-                MdCore.Serialize(MdSessionData.CurrentLayout, this.SavePath);
+                MdCore.SerializeToPath(MdSessionData.CurrentLayout, this.SavePath);
                 this.DisplaySavedChangedSignal();
             }
         }
@@ -93,7 +93,7 @@ namespace ArbitesEto2
                     // this line is needed because gtk savefiledialog doesnt work properly with extensions
                     this.SavePath = Path.ChangeExtension(dialog.FileName, this.Keyboard.SaveFileExtension);
 
-                    MdCore.Serialize(MdSessionData.CurrentLayout, this.SavePath);
+                    MdCore.SerializeToPath(MdSessionData.CurrentLayout, this.SavePath);
                     this.DisplaySavedChangedSignal();
                     this.LLayoutName.Text = Path.GetFileNameWithoutExtension(this.SavePath);
                 }

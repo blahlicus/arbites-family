@@ -10,10 +10,10 @@ namespace ArbitesEto2
 
         public static char PathSeparator = Path.DirectorySeparatorChar;
 
-        public static string Root = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
+        public static string Root => Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
 
         // AVRDUDE location, does not require write access
-        public static string windowsAvrdudeLocation = Path.Combine(Root, "avrdude");
+        public static string WindowsAvrdudeLocation => Path.Combine(Root, "avrdude");
 
         public static string N_CONFIG = "config.arb2cfg";
         public static string N_ICON = "favicon.ico";
