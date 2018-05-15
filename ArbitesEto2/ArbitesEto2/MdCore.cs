@@ -8,6 +8,24 @@ namespace ArbitesEto2
 {
     public static class MdCore
     {
+        public static void SerializeToPath<T>(T obj, string path)
+        {
+            using (var streamWriter = new StreamWriter(path, false))
+            {
+                var serializer = new JsonSerializer();
+                serializer.Serialize(streamWriter, obj);
+            }
+        }
+
+        public static T DeserializeFromPath<T>(string path)
+            where T : class, new()
+        {
+            using (var stream = new StreamReader(path))
+            {
+                return Deserialize<T>(stream.ReadToEnd());
+            }
+        }
+
         public static T Deserialize<T>(string data)
             where T : class, new()
         {
@@ -42,24 +60,6 @@ namespace ArbitesEto2
             catch
             {
                 return null;
-            }
-        }
-
-        public static void SerializeToPath<T>(T obj, string path)
-            where T : class, new()
-        {
-            var streamWriter = new StreamWriter(path, false);
-            var serializer = new JsonSerializer();
-            serializer.Serialize(streamWriter, obj);
-            streamWriter.Close();
-        }
-
-        public static T DeserializeFromPath<T>(string path)
-            where T : class, new()
-        {
-            using (var stream = new StreamReader(path))
-            {
-                return Deserialize<T>(stream.ReadToEnd());
             }
         }
     }

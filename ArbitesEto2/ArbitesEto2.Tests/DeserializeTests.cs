@@ -19,6 +19,7 @@ namespace ArbitesEto2.Tests
             @"</MdConfig>"
         });
 
+        // config.arb2cfg
         static readonly string JsonConfiguration = @"{
         	""ConfigVersion"":3,
 			""KeyMenuTopmost"":false,
@@ -33,15 +34,27 @@ namespace ArbitesEto2.Tests
             @"<ClKeyGroup xmlns:xsd=""http://www.w3.org/2001/XMLSchema"" xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"">",
             @"  <Keys>",
             @"    <ClKey>",
-            @"      <DisplayID>0</DisplayID>",
-            @"      <ValASCII>0</ValASCII>",
-            @"      <ValScan>0</ValScan>",
-            @"      <KeyType>0</KeyType>",
-            @"      <AllLayers>false</AllLayers>",
-            @"      <HasASCII>false</HasASCII>",
             @"    </ClKey>",
             @"  </Keys>",
             @"</ClKeyGroup>"
+        });
+
+        // keyboard-type/diverge-tm-1-2.arb2kbt
+        static readonly string XmlKeyboardType = string.Concat(new string[] {
+            @"<?xml version=""1.0"" encoding=""utf-8""?>",
+            @"<ClKeyboard xmlns:xsd=""http://www.w3.org/2001/XMLSchema"" xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"">",
+            @"  <Buttons>",
+            @"    <ClButtonInfo>",
+            @"    </ClButtonInfo>",            @"  </Buttons>",
+            @"</ClKeyboard>"
+        });
+
+        // input-method/US-ANSI.arb2im
+        static readonly string XmlInputMethod = string.Concat(new string[] {
+            @"<?xml version=""1.0"" encoding=""utf-8""?>",
+            @"<ClDisplayCharacterContainer xmlns:xsd=""http://www.w3.org/2001/XMLSchema"" xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"">",
+            @"  <Name>US-ANSI</Name>",
+            @"</ClDisplayCharacterContainer>"
         });
 
         [Fact]
@@ -87,9 +100,25 @@ namespace ArbitesEto2.Tests
         [Fact]
         public void ShouldHandleOldXmlKeyGroup()
         {
-            var config = MdCore.Deserialize<KeyGroup>(XmlKeyGroup);
-            Assert.NotNull(config);
-            Assert.Single(config.Keys);
+            var keyGroup = MdCore.Deserialize<KeyGroup>(XmlKeyGroup);
+            Assert.NotNull(keyGroup);
+            Assert.Single(keyGroup.Keys);
+        }
+
+        [Fact]
+        public void ShouldHandleOldXmlKeyboardType()
+        {
+            var keyboard = MdCore.Deserialize<Keyboard>(XmlKeyboardType);
+            Assert.NotNull(keyboard);
+            Assert.Single(keyboard.Buttons);
+        }
+
+        [Fact]
+        public void ShouldHandleOldXmlInputMethod()
+        {
+            var inputMethod = MdCore.Deserialize<DisplayCharacterContainer>(XmlInputMethod);
+            Assert.NotNull(inputMethod);
+            Assert.Equal("US-ANSI", inputMethod.Name);
         }
     }
 }

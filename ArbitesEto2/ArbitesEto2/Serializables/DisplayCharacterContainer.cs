@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using Eto.Forms;
+using System.Xml.Serialization;
 
 namespace ArbitesEto2
 {
+    [XmlType("ClDisplayCharacterContainer")]
     public class DisplayCharacterContainer
     {
         public class Key

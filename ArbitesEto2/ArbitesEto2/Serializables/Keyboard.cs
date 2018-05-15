@@ -1,7 +1,9 @@
 ﻿using System.Collections.Generic;
+using System.Xml.Serialization;
 
 namespace ArbitesEto2
 {
+    [XmlType("ClKeyboard")]
     public class Keyboard
     {
         public string Name { get; set; }

@@ -1,5 +1,8 @@
-﻿namespace ArbitesEto2
+﻿using System.Xml.Serialization;
+
+namespace ArbitesEto2
 {
+    [XmlType("ClButtonInfo")]
     public class ButtonInfo
     {
         public int GX { get; set; }
