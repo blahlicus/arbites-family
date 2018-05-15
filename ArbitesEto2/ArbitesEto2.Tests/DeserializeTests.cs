@@ -7,6 +7,7 @@ namespace ArbitesEto2.Tests
 {
     public class DeserializeTests
     {
+        // config.arb2cfg
         static readonly string XmlConfiguration = string.Concat(new string[] {
             @"<?xml version=""1.0"" encoding=""utf-8""?>",
             @"<MdConfig xmlns:xsd=""http://www.w3.org/2001/XMLSchema"" xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"">",
@@ -25,6 +26,23 @@ namespace ArbitesEto2.Tests
 			""UploadDelay"":20,
 			""CurrentInputMethod"":""US-ANSI.arb2im""
 		}";
+
+        // keygroup/Core.arb2kg
+        static readonly string XmlKeyGroup = string.Concat(new string[] {
+            @"<?xml version=""1.0"" encoding=""utf-8""?>",
+            @"<ClKeyGroup xmlns:xsd=""http://www.w3.org/2001/XMLSchema"" xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"">",
+            @"  <Keys>",
+            @"    <ClKey>",
+            @"      <DisplayID>0</DisplayID>",
+            @"      <ValASCII>0</ValASCII>",
+            @"      <ValScan>0</ValScan>",
+            @"      <KeyType>0</KeyType>",
+            @"      <AllLayers>false</AllLayers>",
+            @"      <HasASCII>false</HasASCII>",
+            @"    </ClKey>",
+            @"  </Keys>",
+            @"</ClKeyGroup>"
+        });
 
         [Fact]
         public void ShouldReturnNewObjectsOnNullStrings()
@@ -64,6 +82,14 @@ namespace ArbitesEto2.Tests
             Assert.True(config.DisplayOutput);
             Assert.Equal(20, config.UploadDelay);
             Assert.Equal("US-ANSI.arb2im", config.CurrentInputMethod);
+        }
+
+        [Fact]
+        public void ShouldHandleOldXmlKeyGroup()
+        {
+            var config = MdCore.Deserialize<KeyGroup>(XmlKeyGroup);
+            Assert.NotNull(config);
+            Assert.Single(config.Keys);
         }
     }
 }

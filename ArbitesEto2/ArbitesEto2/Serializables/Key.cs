@@ -1,5 +1,9 @@
-﻿namespace ArbitesEto2
+﻿using System.Xml.Schema;
+using System.Xml.Serialization;
+
+namespace ArbitesEto2
 {
+    [XmlType("ClKey")]
     public class Key
     {
         public int DisplayID { get; set; }

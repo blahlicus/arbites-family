@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Xml.Serialization;
 using System.Linq;
 
 namespace ArbitesEto2
 {
+    [XmlType("ClKeyGroup")]
     public class KeyGroup
     {
         public List<Key> Keys { get; set; }
