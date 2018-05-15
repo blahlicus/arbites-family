@@ -46,6 +46,7 @@ namespace ArbitesEto2
         }
 
         public static void SerializeToPath<T>(T obj, string path)
+            where T : class, new()
         {
             var streamWriter = new StreamWriter(path, false);
             var serializer = new JsonSerializer();
@@ -54,16 +55,12 @@ namespace ArbitesEto2
         }
 
         public static T DeserializeFromPath<T>(string path)
+            where T : class, new()
         {
-            var streamReader = new StreamReader(path);
-            var jsonReader = new JsonTextReader(streamReader);
-            var serializer = new JsonSerializer();
-            var output = serializer.Deserialize<T>(jsonReader);
-
-            jsonReader.Close();
-            streamReader.Close();
-
-            return output;
+            using (var stream = new StreamReader(path))
+            {
+                return Deserialize<T>(stream.ReadToEnd());
+            }
         }
     }
 }
