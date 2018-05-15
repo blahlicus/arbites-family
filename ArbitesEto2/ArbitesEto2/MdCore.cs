@@ -8,25 +8,40 @@ namespace ArbitesEto2
 {
     public static class MdCore
     {
-        public static string Serialize<T>(T @object)
+        public static T Deserialize<T>(string data)
+            where T : class, new()
         {
-            return null;
+            return DeserializeXml<T>(data)
+                ?? DeserializeJson<T>(data)
+                ?? new T();
         }
 
-        public static T Deserialize<T>(string data)
-            where T : new()
+        static T DeserializeXml<T>(string data)
+            where T : class
         {
             try
             {
                 var serializer = new XmlSerializer(typeof(T));
-                using (var stream = data.ToStream())
-                {
-                    return (T)serializer.Deserialize(stream);
-                }
+                return (T)serializer.Deserialize(data.ToStream());
             }
             catch
             {
-                return new T();
+                return null;
+            }
+        }
+
+        static T DeserializeJson<T>(string data)
+            where T : class
+        {
+            try
+            {
+                var jsonReader = new JsonTextReader(data.ToStream());
+                var serializer = new JsonSerializer();
+                return serializer.Deserialize<T>(jsonReader);
+            }
+            catch
+            {
+                return null;
             }
         }
 

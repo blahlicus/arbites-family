@@ -15,7 +15,16 @@ namespace ArbitesEto2.Tests
             @"  <DisplayOutput>true</DisplayOutput>",
             @"  <UploadDelay>20</UploadDelay>",
             @"  <CurrentInputMethod>US-ANSI.arb2im</CurrentInputMethod>",
-            @"</MdConfig>"});
+            @"</MdConfig>"
+        });
+
+        static readonly string JsonConfiguration = @"{
+        	""ConfigVersion"":3,
+			""KeyMenuTopmost"":false,
+			""DisplayOutput"":true,
+			""UploadDelay"":20,
+			""CurrentInputMethod"":""US-ANSI.arb2im""
+		}";
 
         [Fact]
         public void ShouldReturnNewObjectsOnNullStrings()
@@ -38,6 +47,19 @@ namespace ArbitesEto2.Tests
 
             Assert.NotNull(config);
             Assert.Equal(2, config.ConfigVersion);
+            Assert.False(config.KeyMenuTopmost);
+            Assert.True(config.DisplayOutput);
+            Assert.Equal(20, config.UploadDelay);
+            Assert.Equal("US-ANSI.arb2im", config.CurrentInputMethod);
+        }
+
+        [Fact]
+        public void ShouldHandleNewJsonConfiguration()
+        {
+            var config = MdCore.Deserialize<MdConfig>(JsonConfiguration);
+
+            Assert.NotNull(config);
+            Assert.Equal(3, config.ConfigVersion);
             Assert.False(config.KeyMenuTopmost);
             Assert.True(config.DisplayOutput);
             Assert.Equal(20, config.UploadDelay);
