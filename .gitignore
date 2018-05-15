@@ -1,10 +1,11 @@
-# Projet files
+# Project files
 *.suo
 .vs
 .vscode
 bin
 obj
 packages
+*.zip
 
 # Windows image file caches
 Thumbs.db
