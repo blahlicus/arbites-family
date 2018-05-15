@@ -1,5 +1,8 @@
 ﻿using System.IO;
 using Newtonsoft.Json;
+using System.Xml.Serialization;
+using System.Xml;
+using System;
 
 namespace ArbitesEto2
 {
@@ -13,7 +16,18 @@ namespace ArbitesEto2
         public static T Deserialize<T>(string data)
             where T : new()
         {
-            return new T();
+            try
+            {
+                var serializer = new XmlSerializer(typeof(T));
+                using (var stream = data.ToStream())
+                {
+                    return (T)serializer.Deserialize(stream);
+                }
+            }
+            catch
+            {
+                return new T();
+            }
         }
 
         public static void SerializeToPath<T>(T obj, string path)
