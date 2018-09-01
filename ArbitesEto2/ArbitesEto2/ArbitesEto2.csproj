@@ -1,139 +1,18 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
-  <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B1797CCA-241F-4036-9371-9319E24C0E6F}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <RootNamespace>ArbitesEto2</RootNamespace>
-    <AssemblyName>ArbitesEto2</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
-    <DoNotCopyLocalIfInGac>true</DoNotCopyLocalIfInGac>
-    <TargetFrameworkProfile />
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
-  </PropertyGroup>
-  <PropertyGroup>
-    <ApplicationIcon>favicon.ico</ApplicationIcon>
-  </PropertyGroup>
-  <ItemGroup>
-    <Reference Include="ArduinoUploader, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\ArduinoUploader.3.0.0\lib\net452\ArduinoUploader.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Eto, Version=2.3.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Eto.Forms.2.3.0\lib\net45\Eto.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="IntelHexFormatReader, Version=2.2.3.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\IntelHexFormatReader.2.2.3\lib\net45\IntelHexFormatReader.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="PresentationCore" />
-    <Reference Include="PresentationFramework" />
-    <Reference Include="RJCP.SerialPortStream, Version=2.1.2.0, Culture=neutral, PublicKeyToken=5f5e7b70c6a74deb, processorArchitecture=MSIL">
-      <HintPath>..\packages\SerialPortStream.2.1.2\lib\net45\RJCP.SerialPortStream.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.XML" />
-    <Reference Include="WindowsBase" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="ClAdditionalData.cs" />
-    <Compile Include="ClButtonInfo.cs" />
-    <Compile Include="ClKeyGroup.cs" />
-    <Compile Include="ClMacroData.cs" />
-    <Compile Include="ClMacroDataContainer.cs" />
-    <Compile Include="ClTapDanceData.cs" />
-    <Compile Include="ClTapDanceDataContainer.cs" />
-    <Compile Include="FmFirmwareUpdater.cs" />
-    <Compile Include="FmFirmwareUpdater.eto.cs">
-      <DependentUpon>FmFirmwareUpdater.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FmKeyMenu.cs" />
-    <Compile Include="FmKeyMenu.eto.cs">
-      <DependentUpon>FmKeyMenu.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FmLayoutUploader.cs" />
-    <Compile Include="FmLayoutUploader.eto.cs">
-      <DependentUpon>FmLayoutUploader.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FmMacroEdit.cs" />
-    <Compile Include="FmMacroEdit.eto.cs">
-      <DependentUpon>FmMacroEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FmPreferences.cs" />
-    <Compile Include="FmPreferences.eto.cs">
-      <DependentUpon>FmPreferences.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FmRichTextDisplay.cs" />
-    <Compile Include="FmRichTextDisplay.eto.cs">
-      <DependentUpon>FmRichTextDisplay.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FmSelectTextDialog.cs" />
-    <Compile Include="FmSelectTextDialog.eto.cs">
-      <DependentUpon>FmSelectTextDialog.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FmTapDanceEdit.cs" />
-    <Compile Include="FmTapDanceEdit.eto.cs">
-      <DependentUpon>FmTapDanceEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MdConfig.cs" />
-    <Compile Include="ClDisplayCharacterContainer.cs" />
-    <Compile Include="ClKey.cs" />
-    <Compile Include="ClKeyboard.cs" />
-    <Compile Include="ClKeyData.cs" />
-    <Compile Include="ClLayoutContainer.cs" />
-    <Compile Include="MdConstant.cs" />
-    <Compile Include="MdCore.cs" />
-    <Compile Include="MdMetaUtil.cs" />
-    <Compile Include="MdPersistentData.cs" />
-    <Compile Include="MdSessionData.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="FmMain.cs" />
-    <Compile Include="MainForm.eto.cs">
-      <DependentUpon>FmMain.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UCKeyboard.cs" />
-    <Compile Include="UCKeyboard.eto.cs">
-      <DependentUpon>UCKeyboard.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UCLayer.cs" />
-    <Compile Include="UCLayer.eto.cs">
-      <DependentUpon>UCLayer.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UCMacroButton.cs" />
-    <Compile Include="UCMacroButton.eto.cs">
-      <DependentUpon>UCMacroButton.cs</DependentUpon>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="favicon.ico">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFramework>net461</TargetFramework>
+        <DebugType>Full</DebugType>
+    </PropertyGroup>
+    <ItemGroup>
+        <PackageReference Include="IntelHexFormatReader" Version="2.2.3" />
+        <PackageReference Include="SerialPortStream" Version="2.1.3" />
+        <PackageReference Include="ArduinoUploader" Version="3.2.0" />
+        <PackageReference Include="Eto.Forms" Version="2.4.1" />
+        <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+    </ItemGroup>
+    <ItemGroup>
+        <Folder Include="Forms\" />
+        <Folder Include="Serializables\" />
+    </ItemGroup>
 </Project>

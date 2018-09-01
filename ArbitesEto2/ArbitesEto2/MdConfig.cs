@@ -1,12 +1,10 @@
-﻿using System.IO;
-
+﻿using System;
+using System.IO;
 
 namespace ArbitesEto2
 {
-
     public class MdConfig
     {
-
         public static MdConfig Main { get; set; }
 
         public static int SoftwareVersion = 2;
@@ -23,7 +21,7 @@ namespace ArbitesEto2
         public static void Init()
         {
 
-            Main = MdCore.Deserialize<MdConfig>(Path.Combine(MdPersistentData.ConfigPath, MdConstant.N_CONFIG));
+            Main = MdCore.DeserializeFromPath<MdConfig>(Path.Combine(MdConstant.Root, MdConstant.N_CONFIG));
         }
 
         public MdConfig()
@@ -35,11 +33,9 @@ namespace ArbitesEto2
             this.ConfigVersion = 2;
         }
 
-        public ClDisplayCharacterContainer GetCurrentInputMethod()
+        public DisplayCharacterContainer GetCurrentInputMethod()
         {
-            return MdCore.Deserialize<ClDisplayCharacterContainer>(Path.Combine(MdPersistentData.ConfigPath, MdConstant.D_INPUT_METHOD, this.CurrentInputMethod));
+            return MdCore.DeserializeFromPath<DisplayCharacterContainer>(Path.Combine(MdConstant.Root, MdConstant.D_INPUT_METHOD, this.CurrentInputMethod));
         }
-
     }
-
 }

@@ -1,31 +1,66 @@
 ﻿using System.IO;
+using Newtonsoft.Json;
 using System.Xml.Serialization;
-
+using System.Xml;
+using System;
 
 namespace ArbitesEto2
 {
-
-    internal class MdCore
+    public static class MdCore
     {
-
-        public static void Serialize<T>(T obj, string path)
+        public static void SerializeToPath<T>(T obj, string path)
         {
-            var sw = new StreamWriter(path, false);
-            var ser = new XmlSerializer(typeof(T));
-            ser.Serialize(sw, obj);
-            sw.Close();
+            using (var streamWriter = new StreamWriter(path, false))
+            {
+                var serializer = new JsonSerializer();
+                serializer.Serialize(streamWriter, obj);
+            }
         }
 
-        public static T Deserialize<T>(string path)
+        public static T DeserializeFromPath<T>(string path)
+            where T : class, new()
         {
-            var sr = new StreamReader(path);
-            var ser = new XmlSerializer(typeof(T));
-            var output = (T) ser.Deserialize(sr);
-
-            sr.Close();
-            return output;
+            using (var stream = new StreamReader(path))
+            {
+                return Deserialize<T>(stream.ReadToEnd());
+            }
         }
 
+        public static T Deserialize<T>(string data)
+            where T : class, new()
+        {
+            return DeserializeXml<T>(data)
+                ?? DeserializeJson<T>(data)
+                ?? new T();
+        }
+
+        static T DeserializeXml<T>(string data)
+            where T : class
+        {
+            try
+            {
+                var serializer = new XmlSerializer(typeof(T));
+                return (T)serializer.Deserialize(data.ToStream());
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
+        static T DeserializeJson<T>(string data)
+            where T : class
+        {
+            try
+            {
+                var jsonReader = new JsonTextReader(data.ToStream());
+                var serializer = new JsonSerializer();
+                return serializer.Deserialize<T>(jsonReader);
+            }
+            catch
+            {
+                return null;
+            }
+        }
     }
-
 }
