@@ -63,11 +63,13 @@ namespace ArbitesEto2
 
             MdCore.SerializeToPath(Keyboard.GenerateDiverge2(), Path.Combine(MdConstant.Root, MdConstant.D_KEYBOARD, "diverge-2-3" + MdConstant.E_KEYBOARD));
             var d2r = Keyboard.GenerateDiverge2();
+            d2r.Name = "Diverge 2 3 Right Master";
             d2r.Commands[0] = "uniqueksetsubkey";
             d2r.Commands[1] = "uniqueksetkey";
             MdCore.SerializeToPath(d2r, Path.Combine(MdConstant.Root, MdConstant.D_KEYBOARD, "diverge-2-3-rightmaster" + MdConstant.E_KEYBOARD));
             MdCore.SerializeToPath(Keyboard.GenerateDivergeTM(), Path.Combine(MdConstant.Root, MdConstant.D_KEYBOARD, "diverge-tm-1-2" + MdConstant.E_KEYBOARD));
             var dtmr = Keyboard.GenerateDivergeTM();
+            dtmr.Name = "Diverge TM 1 2 Right Master";
             dtmr.Commands[0] = "uniqueksetsubkey";
             dtmr.Commands[1] = "uniqueksetkey";
             MdCore.SerializeToPath(dtmr, Path.Combine(MdConstant.Root, MdConstant.D_KEYBOARD, "diverge-tm-1-2-rightmaster" + MdConstant.E_KEYBOARD));
@@ -76,7 +78,8 @@ namespace ArbitesEto2
             MdCore.SerializeToPath(Keyboard.GenerateFelix(), Path.Combine(MdConstant.Root, MdConstant.D_KEYBOARD, "felix" + MdConstant.E_KEYBOARD));
             MdCore.SerializeToPath(Keyboard.GenerateTerminus2(), Path.Combine(MdConstant.Root, MdConstant.D_KEYBOARD, "terminus-2" + MdConstant.E_KEYBOARD));
             var t2mr = Keyboard.GenerateTerminus2();
-            t2mr.Commands[0] = "uniqueksetsubkey";
+            t2mr.Name = "Terminus 2 Right Master";
+            t2mr.Commands[0] = "uniqueksetsubkey"; 
             t2mr.Commands[1] = "uniqueksetkey";
             MdCore.SerializeToPath(t2mr, Path.Combine(MdConstant.Root, MdConstant.D_KEYBOARD, "terminus-2-rightmaster" + MdConstant.E_KEYBOARD));
         }
