@@ -224,7 +224,11 @@ namespace ArbitesEto2
             }
             else
             {
-                var upl = new FmLayoutUploader(MdSessionData.CurrentLayout.GenerateCommand(MdSessionData.CurrentKeyboardType));
+                // deprecated old upload method
+                //var upl = new FmLayoutUploader(MdSessionData.CurrentLayout.GenerateCommand(MdSessionData.CurrentKeyboardType));
+
+                // experimental new upload method
+                var upl = new FmLayoutUploader(MdSessionData.CurrentLayout.GenerateBinaryCommand(MdSessionData.CurrentKeyboardType));
                 upl.ShowModal();
             }
         }

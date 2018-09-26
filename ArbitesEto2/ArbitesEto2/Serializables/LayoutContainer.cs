@@ -56,6 +56,62 @@ namespace ArbitesEto2
             this.KeyDatas.AddRange(alist);
         }
 
+        public List<byte> GenerateBinaryCommand(Keyboard board)
+        {
+            var preArr = new List<byte>();
+            preArr.Add(0); //message key
+            preArr.Add(1); //message key
+            preArr.Add(2); //message key
+            preArr.Add(3); //message key
+            preArr.Add(4); //message type (load layout and mod data)
+
+
+            // generate main key layout
+
+            int commandType = 0;
+            if (board.Commands[0] == "uniqueksetsubkey")
+            {
+                commandType = 1;
+            }
+            var arr = new List<byte>();
+            for (int k = 0; k < KeyDatas.Select(ele => ele.Z).Max() + 1; k++)
+            {
+                for (int i = 0; i < board.YCount; i++)
+                {
+                    for (int j = 0; j < board.XCount; j++)
+                    {
+                        var result = KeyDatas.Where(ele => ele.X == j && ele.Y == i && ele.Z == k && ele.Command == commandType).ToList();
+                        if (result.Count > 0)
+                        {
+                            arr.Add(result[0].Key.ValScan);
+                            arr.Add(result[0].Key.KeyType);
+                        }
+                        else
+                        {
+                            arr.Add(0);
+                            arr.Add(0);
+                        }
+                    }
+                }
+            }
+
+            //TODO: add mod handling here
+
+            while (arr.Count < board.MaxEEPROM)
+            {
+                arr.Add(0);
+            }
+            // end of main layout
+
+            //TODO: generate sub layout
+
+            var output = new List<byte>();
+            output.AddRange(preArr);
+            output.AddRange(arr);
+            return output;
+        }
+
+        // Deprecated
         public List<string> GenerateCommand(Keyboard board, bool isScancode = true)
         {
             var lt = new List<string>();

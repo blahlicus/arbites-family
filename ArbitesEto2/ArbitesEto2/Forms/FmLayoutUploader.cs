@@ -12,6 +12,8 @@ namespace ArbitesEto2
 
         private readonly BackgroundWorker bw;
         private readonly List<string> commands;
+        private readonly List<byte> byteCommands;
+        private bool byteMode = true;
         private bool inProgress = true;
 
         public FmLayoutUploader()
@@ -34,6 +36,14 @@ namespace ArbitesEto2
         public FmLayoutUploader(List<string> input) : this()
         {
             this.commands = input;
+            this.byteMode = false;
+            this.bw.RunWorkerAsync();
+        }
+
+        public FmLayoutUploader(List<byte> input) : this()
+        {
+            this.byteCommands = input;
+            this.byteMode = true;
             this.bw.RunWorkerAsync();
         }
 
@@ -44,8 +54,16 @@ namespace ArbitesEto2
 
         public void UploadCommand(object sender, DoWorkEventArgs e)
         {
-            //try
+            if (byteMode)
             {
+                MdSessionData.SP.Write(byteCommands.ToArray(), 0, byteCommands.Count);
+                Thread.Sleep(MdConfig.Main.UploadDelay);
+                var pg = 100;
+                this.bw.ReportProgress(pg);
+            }
+            else
+            {
+
                 for (var i = 0; i < this.commands.Count; i++)
                 {
                     MdSessionData.SP.Write(this.commands[i]);
@@ -57,10 +75,6 @@ namespace ArbitesEto2
                     }
                     this.bw.ReportProgress(pg);
                 }
-            }
-            //catch (Exception ex)
-            {
-                //bw.ReportProgress(pg);
             }
         }
 

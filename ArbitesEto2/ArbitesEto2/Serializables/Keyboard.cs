@@ -8,17 +8,22 @@ namespace ArbitesEto2
     {
         public string Name { get; set; }
         public int MaxLayers { get; set; }
+        public int MaxEEPROM { get; set; }
         public List<ButtonInfo> Buttons { get; set; }
         public List<string> Commands { get; set; }
         public string SaveFileExtension { get; set; }
-
+        public int XCount { get; set; }
+        public int YCount { get; set; }
         public Keyboard()
         {
             this.Name = "Unnamed Keyboard";
             this.Buttons = new List<ButtonInfo>();
             this.Commands = new List<string>();
-            this.SaveFileExtension = "uk2kl";
+            this.SaveFileExtension = "uk2xkl";
             this.MaxLayers = 3;
+            this.MaxEEPROM = 900;
+            this.XCount = 10;
+            this.YCount = 10;
         }
 
         public Keyboard(Keyboard input)
@@ -36,6 +41,9 @@ namespace ArbitesEto2
             }
             this.MaxLayers = input.MaxLayers;
             this.SaveFileExtension = input.SaveFileExtension;
+            this.MaxEEPROM = input.MaxEEPROM;
+            this.XCount = input.XCount;
+            this.YCount = input.YCount;
         }
 
         public LayoutContainer GenerateLayout()
@@ -59,10 +67,14 @@ namespace ArbitesEto2
         {
             var kb = new Keyboard();
             kb.MaxLayers = 8;
+            kb.MaxEEPROM = 900;
             kb.Name = "Diverge 2 and 3";
-            kb.SaveFileExtension = "arb2d2";
+            kb.SaveFileExtension = "arb2xd2";
             kb.Commands.Add("uniqueksetkey");
             kb.Commands.Add("uniqueksetsubkey");
+
+            kb.XCount = 8;
+            kb.YCount = 5;
 
             var basexl = 5;
             var basexr = 1237;
@@ -121,12 +133,15 @@ namespace ArbitesEto2
         public static Keyboard GenerateDivergeTM()
         {
             var kb = new Keyboard();
+            kb.MaxEEPROM = 900;
             kb.MaxLayers = 13;
             kb.Name = "Diverge TM 1 and 2";
-            kb.SaveFileExtension = "arb2dtm";
+            kb.SaveFileExtension = "arb2xdtm";
             kb.Commands.Add("uniqueksetkey");
             kb.Commands.Add("uniqueksetsubkey");
 
+            kb.XCount = 6;
+            kb.YCount = 4;
             // buttons
             for (var i = 0; i < 6; i++)
             {
@@ -176,12 +191,15 @@ namespace ArbitesEto2
         public static Keyboard GenerateTerminus2()
         {
             var kb = new Keyboard();
+            kb.MaxEEPROM = 900;
             kb.MaxLayers = 10;
             kb.Name = "Terminus 2";
-            kb.SaveFileExtension = "arb2t2";
+            kb.SaveFileExtension = "arb2xt2";
             kb.Commands.Add("uniqueksetkey");
             kb.Commands.Add("uniqueksetsubkey");
 
+            kb.XCount = 7;
+            kb.YCount = 5;
             // buttons
             for (var i = 0; i < 7; i++)
             {
@@ -264,11 +282,14 @@ namespace ArbitesEto2
         public static Keyboard GenerateTerminusMini()
         {
             var kb = new Keyboard();
+            kb.MaxEEPROM = 900;
             kb.MaxLayers = 6;
             kb.Name = "Terminus Mini";
-            kb.SaveFileExtension = "arb2tm";
+            kb.SaveFileExtension = "arb2xtm";
             kb.Commands.Add("uniqueksetkey");
 
+            kb.XCount = 12;
+            kb.YCount = 4;
             // buttons
             for (var i = 0; i < 12; i++)
             {
@@ -304,11 +325,14 @@ namespace ArbitesEto2
         public static Keyboard GenerateTerminusMini2()
         {
             var kb = new Keyboard();
+            kb.MaxEEPROM = 900;
             kb.MaxLayers = 6;
             kb.Name = "Terminus Mini 2";
-            kb.SaveFileExtension = "arb2tm2";
+            kb.SaveFileExtension = "arb2xtm2";
             kb.Commands.Add("uniqueksetkey");
 
+            kb.XCount = 10;
+            kb.YCount = 5;
             // buttons
             for (var i = 0; i < 10; i++)
             {
@@ -396,11 +420,14 @@ namespace ArbitesEto2
         public static Keyboard GenerateFelix()
         {
             var kb = new Keyboard();
+            kb.MaxEEPROM = 900;
             kb.MaxLayers = 15;
             kb.Name = "Felix";
-            kb.SaveFileExtension = "arb2f";
+            kb.SaveFileExtension = "arb2xf";
             kb.Commands.Add("uniqueksetkey");
 
+            kb.XCount = 4;
+            kb.YCount = 5;
             // buttons
             for (var i = 0; i < 4; i++)
             {
