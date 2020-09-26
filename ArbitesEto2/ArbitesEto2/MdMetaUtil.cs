@@ -61,6 +61,7 @@ namespace ArbitesEto2
                 Directory.CreateDirectory(Path.Combine(MdConstant.Root, MdConstant.D_KEYBOARD));
             }
 
+            MdCore.SerializeToPath(Keyboard.GenerateDiverge1(), Path.Combine(MdConstant.Root, MdConstant.D_KEYBOARD, "diverge-1" + MdConstant.E_KEYBOARD));
             MdCore.SerializeToPath(Keyboard.GenerateDiverge2(), Path.Combine(MdConstant.Root, MdConstant.D_KEYBOARD, "diverge-2-3" + MdConstant.E_KEYBOARD));
             var d2r = Keyboard.GenerateDiverge2();
             d2r.Name = "Diverge 2 3 Right Master";
