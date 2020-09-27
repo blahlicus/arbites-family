@@ -99,12 +99,14 @@ namespace ArbitesEto2
                             bi.GX = i * 77;
                             bi.GY = basey + j * 77;
 
-                            if (i == 1)
-                                bi.GY += 55;
-                            else if (i == 2 || i == 5)
-                                bi.GY += 20;
-                            else if (i == 6)
+                            if (i == 0)
+                                bi.GY += 40;
+                            else if (i == 1)
                                 bi.GY += 30;
+                            else if (i == 2)
+                                bi.GY += 20;
+                            else if (i == 3)
+                                bi.GY += 10;
 
                             if (j == 4 && i >= 5)
                             {
@@ -114,7 +116,7 @@ namespace ArbitesEto2
                                 else if (i == 6)
                                     bi.GY += 30;
                                 else if (i == 7)
-                                    bi.GY += 90;
+                                    bi.GY += 40;
                             }
 
                             if (s == 0)
