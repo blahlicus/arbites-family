@@ -1,4 +1,11 @@
 # Arbites
+
+## Project Update
+See https://github.com/blahlicus/arbites-family/issues/33
+
+## Switching to QMK
+See https://github.com/blahlicus/arbites-family/issues/32
+
 ## Introduction
 This is a .NET and [Eto.Forms](https://github.com/picoe/Eto) based GUI key rebinder for use by devices running the [Animus](https://github.com/blahlicus/animus-family) firmware. Arbites is fully cross-platform and can run on Windows, Linux, and Mac thanks for the wonders of Mono and Eto.Forms.
 
