@@ -224,12 +224,18 @@ namespace ArbitesEto2
             }
             else
             {
-                // deprecated old upload method
-                //var upl = new FmLayoutUploader(MdSessionData.CurrentLayout.GenerateCommand(MdSessionData.CurrentKeyboardType));
-
-                // experimental new upload method
-                var upl = new FmLayoutUploader(MdSessionData.CurrentLayout.GenerateBinaryCommand(MdSessionData.CurrentKeyboardType));
-                upl.ShowModal();
+                if(MdSessionData.CurrentKeyboardType.Name == "Diverge 1")
+                {
+                    // deprecated old upload method
+                    var upl = new FmLayoutUploader(MdSessionData.CurrentLayout.GenerateCommand(MdSessionData.CurrentKeyboardType));
+                    upl.ShowModal();
+                }
+                else
+                {
+                    // experimental new upload method
+                    var upl = new FmLayoutUploader(MdSessionData.CurrentLayout.GenerateBinaryCommand(MdSessionData.CurrentKeyboardType));
+                    upl.ShowModal();
+                }
             }
         }
 

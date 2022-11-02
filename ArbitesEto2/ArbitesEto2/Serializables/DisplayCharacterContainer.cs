@@ -281,7 +281,7 @@ namespace ArbitesEto2
             dcc.AddKey(128, "KB Vol Up", 26);
             dcc.AddKey(129, "KB Vol Dn", 26);
             dcc.AddKey(224, "L Ctrl", 4);
-            dcc.AddKey(226, "L Shift", 4);
+            dcc.AddKey(225, "L Shift", 4);
             dcc.AddKey(226, "L Alt", 4);
             dcc.AddKey(227, "L Win", 4);
             dcc.AddKey(228, "R Ctrl", 4);
@@ -614,7 +614,7 @@ namespace ArbitesEto2
             dcc.AddKey(128, "KB Vol Up", 26);
             dcc.AddKey(129, "KB Vol Dn", 26);
             dcc.AddKey(224, "L Ctrl", 4);
-            dcc.AddKey(226, "L Shift", 4);
+            dcc.AddKey(225, "L Shift", 4);
             dcc.AddKey(226, "L Alt", 4);
             dcc.AddKey(227, "L Win", 4);
             dcc.AddKey(228, "R Ctrl", 4);
@@ -947,7 +947,7 @@ namespace ArbitesEto2
             dcc.AddKey(128, "KB Vol Up", 26);
             dcc.AddKey(129, "KB Vol Dn", 26);
             dcc.AddKey(224, "L Ctrl", 4);
-            dcc.AddKey(226, "L Shift", 4);
+            dcc.AddKey(225, "L Shift", 4);
             dcc.AddKey(226, "L Alt", 4);
             dcc.AddKey(227, "L Win", 4);
             dcc.AddKey(228, "R Ctrl", 4);
@@ -1281,7 +1281,7 @@ namespace ArbitesEto2
             dcc.AddKey(128, "KB Vol Up", 26);
             dcc.AddKey(129, "KB Vol Dn", 26);
             dcc.AddKey(224, "L Ctrl", 4);
-            dcc.AddKey(226, "L Shift", 4);
+            dcc.AddKey(225, "L Shift", 4);
             dcc.AddKey(226, "L Alt", 4);
             dcc.AddKey(227, "L Win", 4);
             dcc.AddKey(228, "R Ctrl", 4);
@@ -1615,7 +1615,7 @@ namespace ArbitesEto2
             dcc.AddKey(128, "KB Vol Up", 26);
             dcc.AddKey(129, "KB Vol Dn", 26);
             dcc.AddKey(224, "L Ctrl", 4);
-            dcc.AddKey(226, "L Shift", 4);
+            dcc.AddKey(225, "L Shift", 4);
             dcc.AddKey(226, "L Alt", 4);
             dcc.AddKey(227, "L Win", 4);
             dcc.AddKey(228, "R Ctrl", 4);
@@ -1949,7 +1949,7 @@ namespace ArbitesEto2
             dcc.AddKey(128, "KB Vol Up", 26);
             dcc.AddKey(129, "KB Vol Dn", 26);
             dcc.AddKey(224, "L Ctrl", 4);
-            dcc.AddKey(226, "L Shift", 4);
+            dcc.AddKey(225, "L Shift", 4);
             dcc.AddKey(226, "L Alt", 4);
             dcc.AddKey(227, "L Win", 4);
             dcc.AddKey(228, "R Ctrl", 4);

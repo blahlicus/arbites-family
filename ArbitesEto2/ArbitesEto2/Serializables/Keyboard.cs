@@ -63,6 +63,75 @@ namespace ArbitesEto2
             return newLay;
         }
 
+        public static Keyboard GenerateDiverge1()
+        {
+            var kb = new Keyboard();
+            kb.MaxLayers = 8;
+            kb.MaxEEPROM = 900;
+            kb.Name = "Diverge 1";
+            kb.SaveFileExtension = "arb2xd1";
+            kb.Commands.Add("uniqueksetkey");
+            kb.Commands.Add("uniqueksetsubkey");
+
+            kb.XCount = 8;
+            kb.YCount = 5;
+
+            var basexl = 5;
+            var basexr = 1237;
+            var basey = 5;
+
+            // buttons
+            for (var i = 0; i < 8; i++)
+            {
+                for (var j = 0; j < 5; j++)
+                {
+                    for (var s = 0; s < 2; s++)
+                    {
+                        if ((i != 7) || (j == 4))
+                        {
+                            var bi = new ButtonInfo();
+                            bi.X = s == 0 ? i : 7 - i;
+                            bi.Y = j;
+                            bi.Command = s;
+                            bi.GW = 72;
+                            bi.GH = 72;
+
+                            bi.GX = i * 77;
+                            bi.GY = basey + j * 77;
+
+                            if (i == 0)
+                                bi.GY += 40;
+                            else if (i == 1)
+                                bi.GY += 30;
+                            else if (i == 2)
+                                bi.GY += 20;
+                            else if (i == 3)
+                                bi.GY += 10;
+
+                            if (j == 4 && i >= 5)
+                            {
+                                bi.GX += 20;
+                                if (i == 5)
+                                    bi.GY += 20;
+                                else if (i == 6)
+                                    bi.GY += 30;
+                                else if (i == 7)
+                                    bi.GY += 40;
+                            }
+
+                            if (s == 0)
+                                bi.GX = basexl + bi.GX;
+                            else
+                                bi.GX = basexr - bi.GX;
+
+                            kb.Buttons.Add(bi);
+                        }
+                    }
+                }
+            }
+            return kb;
+        }
+
         public static Keyboard GenerateDiverge2()
         {
             var kb = new Keyboard();
